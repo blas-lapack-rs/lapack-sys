@@ -2,7 +2,7 @@
 name = "liblapack-sys"
 version = "0.0.1"
 authors = ["Ivan Ukhov <ivan.ukhov@gmail.com>"]
-links = "liblapack"
+links = "lapack"
 build = "build.rs"
 
 [dependencies.libblas-sys]
