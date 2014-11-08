@@ -1,6 +1,6 @@
 //! The library facilitates static linking with the [Linear Algebra PACKage][1].
 //!
-//![1]: http://www.netlib.org/lapack/
+//! [1]: http://www.netlib.org/lapack/
 
 extern crate libc;
 
