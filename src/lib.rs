@@ -4,6 +4,9 @@
 
 extern crate libc;
 
+// Only for the purpose of linking with BLAS.
+extern crate "libblas-sys" as raw;
+
 use libc::{c_char, c_double, c_int};
 
 pub use dsyev_ as dsyev;
