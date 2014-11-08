@@ -2,6 +2,8 @@
 
 The library facilitates static linking with the [Linear Algebra PACKage][1].
 
+## [Documentation][docs]
+
 ## Contributing
 
 1. Fork the project.
