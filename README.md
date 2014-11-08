@@ -1,4 +1,4 @@
-# liblapack-sys
+# liblapack-sys [![Build Status][travis-svg]][travis-url]
 
 The library facilitates static linking with the [Linear Algebra PACKage][1].
 
@@ -9,3 +9,7 @@ The library facilitates static linking with the [Linear Algebra PACKage][1].
 3. Create a pull request.
 
 [1]: http://www.netlib.org/lapack/
+
+[travis-svg]: https://travis-ci.org/stainless-steel/liblapack-sys.svg?branch=master
+[travis-url]: https://travis-ci.org/stainless-steel/liblapack-sys
+[docs]: https://stainless-steel.github.io/liblapack-sys

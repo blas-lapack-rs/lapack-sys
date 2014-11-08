@@ -1,0 +1,14 @@
+language: rust
+
+before_install:
+  - sudo add-apt-repository --yes ppa:kalakris/cmake
+  - sudo apt-get update -qq
+  - sudo apt-get install cmake
+  - sudo apt-get install gfortran
+
+after_success:
+  - curl https://stainless-steel.github.io/travis/after_success.sh | bash
+
+env:
+  global:
+    secure: K7pZnNDJLqoIorFRrViyTRzlm931f2LLv155xCdrE2r3EsAHg3+gP+/cE6nLW346lBQaB4GS3xUo69JcD7Ihk1xIsCijtyGEpPmybt5BzvUfjGgluWGCMk4IX7wx0f00ERszRMmoCbNKmWFD5bpJfhVe1tGU/Bd9qb0mU5ii5gE=
