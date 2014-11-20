@@ -2,6 +2,11 @@
 name = "liblapack-sys"
 version = "0.0.1"
 authors = ["Ivan Ukhov <ivan.ukhov@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/stainless-steel/liblapack-sys"
+homepage = "https://github.com/stainless-steel/liblapack-sys"
+documentation = "https://stainless-steel.github.io/liblapack-sys"
+description = "The library facilitates static linking with the Linear Algebra PACKage."
 links = "lapack"
 build = "build.rs"
 
