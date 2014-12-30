@@ -12,3 +12,7 @@ after_success:
 env:
   global:
     secure: K7pZnNDJLqoIorFRrViyTRzlm931f2LLv155xCdrE2r3EsAHg3+gP+/cE6nLW346lBQaB4GS3xUo69JcD7Ihk1xIsCijtyGEpPmybt5BzvUfjGgluWGCMk4IX7wx0f00ERszRMmoCbNKmWFD5bpJfhVe1tGU/Bd9qb0mU5ii5gE=
+
+notifications:
+  email:
+    on_success: never
