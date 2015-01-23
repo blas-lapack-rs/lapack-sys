@@ -21,7 +21,7 @@ macro_rules! run(
 );
 
 fn main() {
-    let from = Path::new(get!("CARGO_MANIFEST_DIR")).join("liblapack");
+    let from = Path::new(get!("CARGO_MANIFEST_DIR")).join("lapack");
     let into = Path::new(get!("OUT_DIR"));
 
     run!(cmd!("cmake").cwd(&into).arg(&from)
