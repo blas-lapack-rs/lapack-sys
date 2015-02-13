@@ -2,8 +2,6 @@
 //!
 //! [1]: http://www.netlib.org/lapack/
 
-#![feature(libc)]
-
 extern crate libc;
 
 // Only for the purpose of linking with BLAS.

@@ -1,6 +1,6 @@
 [package]
 name = "liblapack-sys"
-version = "0.0.7"
+version = "0.0.8"
 authors = ["Ivan Ukhov <ivan.ukhov@gmail.com>"]
 license = "MIT"
 repository = "https://github.com/stainless-steel/liblapack-sys"
@@ -11,4 +11,5 @@ links = "lapack"
 build = "build.rs"
 
 [dependencies]
-libblas-sys = "0.0.7"
+libblas-sys = "0.0.8"
+libc = "*"
