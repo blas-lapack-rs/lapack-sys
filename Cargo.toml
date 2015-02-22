@@ -1,15 +1,15 @@
 [package]
 name = "liblapack-sys"
-version = "0.0.8"
+version = "0.0.12"
 authors = ["Ivan Ukhov <ivan.ukhov@gmail.com>"]
 license = "MIT"
 repository = "https://github.com/stainless-steel/liblapack-sys"
 homepage = "https://github.com/stainless-steel/liblapack-sys"
 documentation = "https://stainless-steel.github.io/liblapack-sys"
-description = "The library facilitates static linking with the Linear Algebra PACKage."
+description = "The package facilitates static linking with the Linear Algebra PACKage."
 links = "lapack"
 build = "build.rs"
 
 [dependencies]
-libblas-sys = "0.0.8"
+libblas-sys = "0.0.12"
 libc = "*"

@@ -1,4 +1,4 @@
-//! Facilitation of static linking with the [Linear Algebra PACKage][1].
+//! Static linking with the [Linear Algebra PACKage][1].
 //!
 //! [1]: http://www.netlib.org/lapack/
 
