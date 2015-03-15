@@ -11,5 +11,4 @@ links = "lapack"
 build = "build.rs"
 
 [dependencies]
-libblas-sys = "0.0.14"
 libc = "*"
