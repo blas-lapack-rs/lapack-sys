@@ -17,8 +17,7 @@ openblas = ["openblas-blas-provider"]
 netlib = ["netlib-blas-provider"]
 
 [dependencies.openblas-blas-provider]
-#version = "*"
-git = "https://github.com/cmr/openblas-blas-provider"
+version = "*"
 optional = true
 
 [dependencies.netlib-blas-provider]
