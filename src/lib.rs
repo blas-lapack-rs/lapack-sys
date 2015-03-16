@@ -1,6 +1,6 @@
 //! Bindings to the [Linear Algebra PACKage][1].
 //!
-//! [1]: http://www.netlib.org/lapack/
+//! [1]: http://en.wikipedia.org/wiki/LAPACK
 
 #![allow(bad_style)]
 

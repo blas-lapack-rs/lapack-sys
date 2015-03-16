@@ -10,7 +10,7 @@ The package provides bindings to the [Linear Algebra PACKage][1].
 2. Implement your idea.
 3. Create a pull request.
 
-[1]: http://www.netlib.org/lapack/
+[1]: http://en.wikipedia.org/wiki/LAPACK
 
 [travis-svg]: https://travis-ci.org/stainless-steel/liblapack-sys.svg?branch=master
 [travis-url]: https://travis-ci.org/stainless-steel/liblapack-sys
