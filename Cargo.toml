@@ -7,9 +7,20 @@ repository = "https://github.com/stainless-steel/liblapack-sys"
 homepage = "https://github.com/stainless-steel/liblapack-sys"
 documentation = "https://stainless-steel.github.io/liblapack-sys"
 description = "The package facilitates static linking with the Linear Algebra PACKage."
-links = "lapack"
-build = "build.rs"
 
 [dependencies]
-libblas-sys = "0.0.14"
 libc = "*"
+
+[features]
+default = ["openblas"]
+openblas = ["openblas-blas-provider"]
+netlib = ["netlib-blas-provider"]
+
+[dependencies.openblas-blas-provider]
+#version = "*"
+git = "https://github.com/cmr/openblas-blas-provider"
+optional = true
+
+[dependencies.netlib-blas-provider]
+version = "*"
+optional = true

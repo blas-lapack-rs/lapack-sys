@@ -9,11 +9,10 @@ fn linking() {
     let lda = 1;
     let mut w = vec![0.0];
     let mut work = vec![0.0, 0.0];
-    let mut lwork = 2;
-    let mut info = 1;
+    let lwork = 2;
 
     unsafe {
-        raw::dsyev_(&jobz, &uplo, &n, a.as_mut_ptr(), &lda, w.as_mut_ptr(),
-                    work.as_mut_ptr(), &mut lwork, &mut info);
+        raw::LAPACKE_dsyev_work(raw::LAPACK_ROW_MAJOR, jobz, uplo, n, a.as_mut_ptr(), lda, w.as_mut_ptr(),
+                    work.as_mut_ptr(), lwork);
     }
 }
