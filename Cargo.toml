@@ -6,7 +6,7 @@ license = "MIT"
 repository = "https://github.com/stainless-steel/liblapack-sys"
 homepage = "https://github.com/stainless-steel/liblapack-sys"
 documentation = "https://stainless-steel.github.io/liblapack-sys"
-description = "The package facilitates static linking with the Linear Algebra PACKage."
+description = "The package provides bindings to the Linear Algebra PACKage."
 
 [dependencies]
 libc = "*"

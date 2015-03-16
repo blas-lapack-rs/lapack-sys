@@ -1,6 +1,6 @@
 # liblapack-sys [![Build Status][travis-svg]][travis-url]
 
-The package facilitates static linking with the [Linear Algebra PACKage][1].
+The package provides bindings to the [Linear Algebra PACKage][1].
 
 ## [Documentation][docs]
 
