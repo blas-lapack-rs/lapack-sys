@@ -1,4 +1,4 @@
-extern crate "liblapack-sys" as raw;
+extern crate liblapack_sys as raw;
 
 #[test]
 fn linking() {
