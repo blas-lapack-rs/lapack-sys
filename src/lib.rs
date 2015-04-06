@@ -14,15 +14,15 @@ extern crate libc;
 
 use libc::{c_char, c_double, c_float, c_void, c_int};
 
-pub type LAPACK_S_SELECT2 = ::std::option::Option<extern "C" fn(arg1: *const c_float, arg2: *const c_float) -> c_int>;
-pub type LAPACK_S_SELECT3 = ::std::option::Option<extern "C" fn(arg1: *const c_float, arg2: *const c_float, arg3: *const c_float) -> c_int>;
-pub type LAPACK_D_SELECT2 = ::std::option::Option<extern "C" fn(arg1: *const c_double, arg2: *const c_double) -> c_int>;
-pub type LAPACK_D_SELECT3 = ::std::option::Option<extern "C" fn(arg1: *const c_double, arg2: *const c_double, arg3: *const c_double) -> c_int>;
-pub type LAPACK_C_SELECT1 = ::std::option::Option<extern "C" fn(arg1: *const c_void) -> c_int>;
-pub type LAPACK_C_SELECT2 = ::std::option::Option<extern "C" fn(arg1: *const c_void, arg2: *const c_void) -> c_int>;
-pub type LAPACK_Z_SELECT1 = ::std::option::Option<extern "C" fn(arg1: *const c_void) -> c_int>;
-pub type LAPACK_Z_SELECT2 = ::std::option::Option<extern "C" fn(arg1: *const c_void, arg2: *const c_void) -> c_int>;
-pub type LAPACK_Z_SELECT3 = ::std::option::Option<extern "C" fn(arg1: *const c_void, arg2: *const c_void) -> c_int>;
+pub type LAPACK_S_SELECT2 = Option<extern "C" fn(*const c_float, *const c_float) -> c_int>;
+pub type LAPACK_S_SELECT3 = Option<extern "C" fn(*const c_float, *const c_float, *const c_float) -> c_int>;
+pub type LAPACK_D_SELECT2 = Option<extern "C" fn(*const c_double, *const c_double) -> c_int>;
+pub type LAPACK_D_SELECT3 = Option<extern "C" fn(*const c_double, *const c_double, *const c_double) -> c_int>;
+pub type LAPACK_C_SELECT1 = Option<extern "C" fn(*const c_void) -> c_int>;
+pub type LAPACK_C_SELECT2 = Option<extern "C" fn(*const c_void, *const c_void) -> c_int>;
+pub type LAPACK_Z_SELECT1 = Option<extern "C" fn(*const c_void) -> c_int>;
+pub type LAPACK_Z_SELECT2 = Option<extern "C" fn(*const c_void, *const c_void) -> c_int>;
+pub type LAPACK_Z_SELECT3 = Option<extern "C" fn(*const c_void, *const c_void) -> c_int>;
 
 pub const LAPACK_ROW_MAJOR: c_int = 101;
 pub const LAPACK_COL_MAJOR: c_int = 102;
