@@ -2116,6 +2116,9 @@ extern "C" {
     pub fn LAPACKE_csyr_work(matrix_order: c_int, uplo: c_char, n: c_int, alpha: c_void, x: *const c_void, incx: c_int, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_zsyr_work(matrix_order: c_int, uplo: c_char, n: c_int, alpha: c_void, x: *const c_void, incx: c_int, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_ilaver(vers_major: *const c_int, vers_minor: *const c_int, vers_patch: *const c_int) -> ();
+}
+
+extern "C" {
     pub fn sgetrf_(m: *mut c_int, n: *mut c_int, a: *mut c_float, lda: *mut c_int, ipiv: *mut c_int, info: *mut c_int) -> ();
     pub fn dgetrf_(m: *mut c_int, n: *mut c_int, a: *mut c_double, lda: *mut c_int, ipiv: *mut c_int, info: *mut c_int) -> ();
     pub fn cgetrf_(m: *mut c_int, n: *mut c_int, a: *mut c_void, lda: *mut c_int, ipiv: *mut c_int, info: *mut c_int) -> ();
