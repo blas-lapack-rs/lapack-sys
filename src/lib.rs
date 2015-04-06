@@ -1377,6 +1377,7 @@ extern "C" {
     pub fn LAPACKE_ctpmqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, nb: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_ztpmqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, nb: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
 
+    pub fn LAPACKE_stpqrt(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, t: *mut c_float, ldt: c_int) -> c_int;
     pub fn LAPACKE_dtpqrt(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, t: *mut c_double, ldt: c_int) -> c_int;
     pub fn LAPACKE_ctpqrt(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, t: *mut c_void, ldt: c_int) -> c_int;
     pub fn LAPACKE_ztpqrt(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, t: *mut c_void, ldt: c_int) -> c_int;
@@ -2741,6 +2742,7 @@ extern "C" {
     pub fn LAPACKE_ctpmqrt_work(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, nb: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, work: *mut c_void) -> c_int;
     pub fn LAPACKE_ztpmqrt_work(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, nb: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, work: *mut c_void) -> c_int;
 
+    pub fn LAPACKE_stpqrt_work(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, t: *mut c_float, ldt: c_int, work: *mut c_float) -> c_int;
     pub fn LAPACKE_dtpqrt_work(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, t: *mut c_double, ldt: c_int, work: *mut c_double) -> c_int;
     pub fn LAPACKE_ctpqrt_work(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, t: *mut c_void, ldt: c_int, work: *mut c_void) -> c_int;
     pub fn LAPACKE_ztpqrt_work(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, t: *mut c_void, ldt: c_int, work: *mut c_void) -> c_int;
@@ -4073,6 +4075,7 @@ extern "C" {
     pub fn ctpmqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int, k: *mut c_int, l: *mut c_int, nb: *mut c_int, v: *const c_void, ldv: *mut c_int, t: *const c_void, ldt: *mut c_int, a: *mut c_void, lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, work: *mut c_void, info: *mut c_int) -> ();
     pub fn ztpmqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int, k: *mut c_int, l: *mut c_int, nb: *mut c_int, v: *const c_void, ldv: *mut c_int, t: *const c_void, ldt: *mut c_int, a: *mut c_void, lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, work: *mut c_void, info: *mut c_int) -> ();
 
+    pub fn stpqrt_(m: *mut c_int, n: *mut c_int, l: *mut c_int, nb: *mut c_int, a: *mut c_float, lda: *mut c_int, b: *mut c_float, ldb: *mut c_int, t: *mut c_float, ldt: *mut c_int, work: *mut c_float, info: *mut c_int) -> ();
     pub fn dtpqrt_(m: *mut c_int, n: *mut c_int, l: *mut c_int, nb: *mut c_int, a: *mut c_double, lda: *mut c_int, b: *mut c_double, ldb: *mut c_int, t: *mut c_double, ldt: *mut c_int, work: *mut c_double, info: *mut c_int) -> ();
     pub fn ctpqrt_(m: *mut c_int, n: *mut c_int, l: *mut c_int, nb: *mut c_int, a: *mut c_void, lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, t: *mut c_void, ldt: *mut c_int, work: *mut c_void, info: *mut c_int) -> ();
     pub fn ztpqrt_(m: *mut c_int, n: *mut c_int, l: *mut c_int, nb: *mut c_int, a: *mut c_void, lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, t: *mut c_void, ldt: *mut c_int, work: *mut c_void, info: *mut c_int) -> ();
