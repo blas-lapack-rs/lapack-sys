@@ -36,7 +36,7 @@ pub const LAPACK_TRANSPOSE_MEMORY_ERROR: c_int = -1011;
 extern "C" {
     pub fn lapack_make_complex_float(re: c_float, im: c_float) -> complex_float;
     pub fn lapack_make_complex_double(re: c_double, im: c_double) -> complex_double;
-    pub fn lsame_(ca: *mut c_char, cb: *mut c_char, lca: c_int, lcb: c_int) -> c_int;
+    pub fn LAPACK_lsame(ca: *mut c_char, cb: *mut c_char, lca: c_int, lcb: c_int) -> c_int;
     pub fn LAPACKE_sbdsdc(matrix_order: c_int, uplo: c_char, compq: c_char, n: c_int, d: *mut c_float, e: *mut c_float, u: *mut c_float, ldu: c_int, vt: *mut c_float, ldvt: c_int, q: *mut c_float, iq: *mut c_int) -> c_int;
     pub fn LAPACKE_dbdsdc(matrix_order: c_int, uplo: c_char, compq: c_char, n: c_int, d: *mut c_double, e: *mut c_double, u: *mut c_double, ldu: c_int, vt: *mut c_double, ldvt: c_int, q: *mut c_double, iq: *mut c_int) -> c_int;
     pub fn LAPACKE_sbdsqr(matrix_order: c_int, uplo: c_char, n: c_int, ncvt: c_int, nru: c_int, ncc: c_int, d: *mut c_float, e: *mut c_float, vt: *mut c_float, ldvt: c_int, u: *mut c_float, ldu: c_int, c: *mut c_float, ldc: c_int) -> c_int;
