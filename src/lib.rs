@@ -43,966 +43,1273 @@ extern "C" {
 extern "C" {
     pub fn LAPACKE_sbdsdc(matrix_order: c_int, uplo: c_char, compq: c_char, n: c_int, d: *mut c_float, e: *mut c_float, u: *mut c_float, ldu: c_int, vt: *mut c_float, ldvt: c_int, q: *mut c_float, iq: *mut c_int) -> c_int;
     pub fn LAPACKE_dbdsdc(matrix_order: c_int, uplo: c_char, compq: c_char, n: c_int, d: *mut c_double, e: *mut c_double, u: *mut c_double, ldu: c_int, vt: *mut c_double, ldvt: c_int, q: *mut c_double, iq: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sbdsqr(matrix_order: c_int, uplo: c_char, n: c_int, ncvt: c_int, nru: c_int, ncc: c_int, d: *mut c_float, e: *mut c_float, vt: *mut c_float, ldvt: c_int, u: *mut c_float, ldu: c_int, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dbdsqr(matrix_order: c_int, uplo: c_char, n: c_int, ncvt: c_int, nru: c_int, ncc: c_int, d: *mut c_double, e: *mut c_double, vt: *mut c_double, ldvt: c_int, u: *mut c_double, ldu: c_int, c: *mut c_double, ldc: c_int) -> c_int;
     pub fn LAPACKE_cbdsqr(matrix_order: c_int, uplo: c_char, n: c_int, ncvt: c_int, nru: c_int, ncc: c_int, d: *mut c_float, e: *mut c_float, vt: *mut c_void, ldvt: c_int, u: *mut c_void, ldu: c_int, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zbdsqr(matrix_order: c_int, uplo: c_char, n: c_int, ncvt: c_int, nru: c_int, ncc: c_int, d: *mut c_double, e: *mut c_double, vt: *mut c_void, ldvt: c_int, u: *mut c_void, ldu: c_int, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sdisna(job: c_char, m: c_int, n: c_int, d: *const c_float, sep: *mut c_float) -> c_int;
     pub fn LAPACKE_ddisna(job: c_char, m: c_int, n: c_int, d: *const c_double, sep: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgbbrd(matrix_order: c_int, vect: c_char, m: c_int, n: c_int, ncc: c_int, kl: c_int, ku: c_int, ab: *mut c_float, ldab: c_int, d: *mut c_float, e: *mut c_float, q: *mut c_float, ldq: c_int, pt: *mut c_float, ldpt: c_int, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dgbbrd(matrix_order: c_int, vect: c_char, m: c_int, n: c_int, ncc: c_int, kl: c_int, ku: c_int, ab: *mut c_double, ldab: c_int, d: *mut c_double, e: *mut c_double, q: *mut c_double, ldq: c_int, pt: *mut c_double, ldpt: c_int, c: *mut c_double, ldc: c_int) -> c_int;
     pub fn LAPACKE_cgbbrd(matrix_order: c_int, vect: c_char, m: c_int, n: c_int, ncc: c_int, kl: c_int, ku: c_int, ab: *mut c_void, ldab: c_int, d: *mut c_float, e: *mut c_float, q: *mut c_void, ldq: c_int, pt: *mut c_void, ldpt: c_int, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zgbbrd(matrix_order: c_int, vect: c_char, m: c_int, n: c_int, ncc: c_int, kl: c_int, ku: c_int, ab: *mut c_void, ldab: c_int, d: *mut c_double, e: *mut c_double, q: *mut c_void, ldq: c_int, pt: *mut c_void, ldpt: c_int, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sgbcon(matrix_order: c_int, norm: c_char, n: c_int, kl: c_int, ku: c_int, ab: *const c_float, ldab: c_int, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dgbcon(matrix_order: c_int, norm: c_char, n: c_int, kl: c_int, ku: c_int, ab: *const c_double, ldab: c_int, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_cgbcon(matrix_order: c_int, norm: c_char, n: c_int, kl: c_int, ku: c_int, ab: *const c_void, ldab: c_int, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zgbcon(matrix_order: c_int, norm: c_char, n: c_int, kl: c_int, ku: c_int, ab: *const c_void, ldab: c_int, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgbequ(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *const c_float, ldab: c_int, r: *mut c_float, c: *mut c_float, rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dgbequ(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *const c_double, ldab: c_int, r: *mut c_double, c: *mut c_double, rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_cgbequ(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *const c_void, ldab: c_int, r: *mut c_float, c: *mut c_float, rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zgbequ(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *const c_void, ldab: c_int, r: *mut c_double, c: *mut c_double, rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgbequb(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *const c_float, ldab: c_int, r: *mut c_float, c: *mut c_float, rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dgbequb(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *const c_double, ldab: c_int, r: *mut c_double, c: *mut c_double, rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_cgbequb(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *const c_void, ldab: c_int, r: *mut c_float, c: *mut c_float, rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zgbequb(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *const c_void, ldab: c_int, r: *mut c_double, c: *mut c_double, rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgbrfs(matrix_order: c_int, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_float, ldab: c_int, afb: *const c_float, ldafb: c_int, ipiv: *const c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dgbrfs(matrix_order: c_int, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_double, ldab: c_int, afb: *const c_double, ldafb: c_int, ipiv: *const c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cgbrfs(matrix_order: c_int, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, afb: *const c_void, ldafb: c_int, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zgbrfs(matrix_order: c_int, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, afb: *const c_void, ldafb: c_int, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgbrfsx(matrix_order: c_int, trans: c_char, equed: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_float, ldab: c_int, afb: *const c_float, ldafb: c_int, ipiv: *const c_int, r: *const c_float, c: *const c_float, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_dgbrfsx(matrix_order: c_int, trans: c_char, equed: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_double, ldab: c_int, afb: *const c_double, ldafb: c_int, ipiv: *const c_int, r: *const c_double, c: *const c_double, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
     pub fn LAPACKE_cgbrfsx(matrix_order: c_int, trans: c_char, equed: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, afb: *const c_void, ldafb: c_int, ipiv: *const c_int, r: *const c_float, c: *const c_float, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zgbrfsx(matrix_order: c_int, trans: c_char, equed: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, afb: *const c_void, ldafb: c_int, ipiv: *const c_int, r: *const c_double, c: *const c_double, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgbsv(matrix_order: c_int, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_float, ldab: c_int, ipiv: *mut c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dgbsv(matrix_order: c_int, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_double, ldab: c_int, ipiv: *mut c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cgbsv(matrix_order: c_int, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zgbsv(matrix_order: c_int, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sgbsvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_float, ldab: c_int, afb: *mut c_float, ldafb: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_float, c: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float, rpivot: *mut c_float) -> c_int;
     pub fn LAPACKE_dgbsvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_double, ldab: c_int, afb: *mut c_double, ldafb: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_double, c: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double, rpivot: *mut c_double) -> c_int;
     pub fn LAPACKE_cgbsvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, afb: *mut c_void, ldafb: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_float, c: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float, rpivot: *mut c_float) -> c_int;
     pub fn LAPACKE_zgbsvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, afb: *mut c_void, ldafb: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_double, c: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double, rpivot: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgbsvxx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_float, ldab: c_int, afb: *mut c_float, ldafb: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_float, c: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_dgbsvxx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_double, ldab: c_int, afb: *mut c_double, ldafb: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_double, c: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
     pub fn LAPACKE_cgbsvxx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, afb: *mut c_void, ldafb: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_float, c: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zgbsvxx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, afb: *mut c_void, ldafb: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_double, c: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgbtrf(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *mut c_float, ldab: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_dgbtrf(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *mut c_double, ldab: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_cgbtrf(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *mut c_void, ldab: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_zgbtrf(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, ab: *mut c_void, ldab: c_int, ipiv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgbtrs(matrix_order: c_int, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_float, ldab: c_int, ipiv: *const c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dgbtrs(matrix_order: c_int, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_double, ldab: c_int, ipiv: *const c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cgbtrs(matrix_order: c_int, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zgbtrs(matrix_order: c_int, trans: c_char, n: c_int, kl: c_int, ku: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sgebak(matrix_order: c_int, job: c_char, side: c_char, n: c_int, ilo: c_int, ihi: c_int, scale: *const c_float, m: c_int, v: *mut c_float, ldv: c_int) -> c_int;
     pub fn LAPACKE_dgebak(matrix_order: c_int, job: c_char, side: c_char, n: c_int, ilo: c_int, ihi: c_int, scale: *const c_double, m: c_int, v: *mut c_double, ldv: c_int) -> c_int;
     pub fn LAPACKE_cgebak(matrix_order: c_int, job: c_char, side: c_char, n: c_int, ilo: c_int, ihi: c_int, scale: *const c_float, m: c_int, v: *mut c_void, ldv: c_int) -> c_int;
     pub fn LAPACKE_zgebak(matrix_order: c_int, job: c_char, side: c_char, n: c_int, ilo: c_int, ihi: c_int, scale: *const c_double, m: c_int, v: *mut c_void, ldv: c_int) -> c_int;
+
     pub fn LAPACKE_sgebal(matrix_order: c_int, job: c_char, n: c_int, a: *mut c_float, lda: c_int, ilo: *mut c_int, ihi: *mut c_int, scale: *mut c_float) -> c_int;
     pub fn LAPACKE_dgebal(matrix_order: c_int, job: c_char, n: c_int, a: *mut c_double, lda: c_int, ilo: *mut c_int, ihi: *mut c_int, scale: *mut c_double) -> c_int;
     pub fn LAPACKE_cgebal(matrix_order: c_int, job: c_char, n: c_int, a: *mut c_void, lda: c_int, ilo: *mut c_int, ihi: *mut c_int, scale: *mut c_float) -> c_int;
     pub fn LAPACKE_zgebal(matrix_order: c_int, job: c_char, n: c_int, a: *mut c_void, lda: c_int, ilo: *mut c_int, ihi: *mut c_int, scale: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgebrd(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, d: *mut c_float, e: *mut c_float, tauq: *mut c_float, taup: *mut c_float) -> c_int;
     pub fn LAPACKE_dgebrd(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, d: *mut c_double, e: *mut c_double, tauq: *mut c_double, taup: *mut c_double) -> c_int;
     pub fn LAPACKE_cgebrd(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, d: *mut c_float, e: *mut c_float, tauq: *mut c_void, taup: *mut c_void) -> c_int;
     pub fn LAPACKE_zgebrd(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, d: *mut c_double, e: *mut c_double, tauq: *mut c_void, taup: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgecon(matrix_order: c_int, norm: c_char, n: c_int, a: *const c_float, lda: c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dgecon(matrix_order: c_int, norm: c_char, n: c_int, a: *const c_double, lda: c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_cgecon(matrix_order: c_int, norm: c_char, n: c_int, a: *const c_void, lda: c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zgecon(matrix_order: c_int, norm: c_char, n: c_int, a: *const c_void, lda: c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgeequ(matrix_order: c_int, m: c_int, n: c_int, a: *const c_float, lda: c_int, r: *mut c_float, c: *mut c_float, rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeequ(matrix_order: c_int, m: c_int, n: c_int, a: *const c_double, lda: c_int, r: *mut c_double, c: *mut c_double, rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeequ(matrix_order: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, r: *mut c_float, c: *mut c_float, rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zgeequ(matrix_order: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, r: *mut c_double, c: *mut c_double, rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgeequb(matrix_order: c_int, m: c_int, n: c_int, a: *const c_float, lda: c_int, r: *mut c_float, c: *mut c_float, rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeequb(matrix_order: c_int, m: c_int, n: c_int, a: *const c_double, lda: c_int, r: *mut c_double, c: *mut c_double, rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeequb(matrix_order: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, r: *mut c_float, c: *mut c_float, rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zgeequb(matrix_order: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, r: *mut c_double, c: *mut c_double, rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgees(matrix_order: c_int, jobvs: c_char, sort: c_char, select: LAPACK_S_SELECT2, n: c_int, a: *mut c_float, lda: c_int, sdim: *mut c_int, wr: *mut c_float, wi: *mut c_float, vs: *mut c_float, ldvs: c_int) -> c_int;
     pub fn LAPACKE_dgees(matrix_order: c_int, jobvs: c_char, sort: c_char, select: LAPACK_D_SELECT2, n: c_int, a: *mut c_double, lda: c_int, sdim: *mut c_int, wr: *mut c_double, wi: *mut c_double, vs: *mut c_double, ldvs: c_int) -> c_int;
     pub fn LAPACKE_cgees(matrix_order: c_int, jobvs: c_char, sort: c_char, select: LAPACK_C_SELECT1, n: c_int, a: *mut c_void, lda: c_int, sdim: *mut c_int, w: *mut c_void, vs: *mut c_void, ldvs: c_int) -> c_int;
     pub fn LAPACKE_zgees(matrix_order: c_int, jobvs: c_char, sort: c_char, select: LAPACK_Z_SELECT1, n: c_int, a: *mut c_void, lda: c_int, sdim: *mut c_int, w: *mut c_void, vs: *mut c_void, ldvs: c_int) -> c_int;
+
     pub fn LAPACKE_sgeesx(matrix_order: c_int, jobvs: c_char, sort: c_char, select: LAPACK_S_SELECT2, sense: c_char, n: c_int, a: *mut c_float, lda: c_int, sdim: *mut c_int, wr: *mut c_float, wi: *mut c_float, vs: *mut c_float, ldvs: c_int, rconde: *mut c_float, rcondv: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeesx(matrix_order: c_int, jobvs: c_char, sort: c_char, select: LAPACK_D_SELECT2, sense: c_char, n: c_int, a: *mut c_double, lda: c_int, sdim: *mut c_int, wr: *mut c_double, wi: *mut c_double, vs: *mut c_double, ldvs: c_int, rconde: *mut c_double, rcondv: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeesx(matrix_order: c_int, jobvs: c_char, sort: c_char, select: LAPACK_C_SELECT1, sense: c_char, n: c_int, a: *mut c_void, lda: c_int, sdim: *mut c_int, w: *mut c_void, vs: *mut c_void, ldvs: c_int, rconde: *mut c_float, rcondv: *mut c_float) -> c_int;
     pub fn LAPACKE_zgeesx(matrix_order: c_int, jobvs: c_char, sort: c_char, select: LAPACK_Z_SELECT1, sense: c_char, n: c_int, a: *mut c_void, lda: c_int, sdim: *mut c_int, w: *mut c_void, vs: *mut c_void, ldvs: c_int, rconde: *mut c_double, rcondv: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgeev(matrix_order: c_int, jobvl: c_char, jobvr: c_char, n: c_int, a: *mut c_float, lda: c_int, wr: *mut c_float, wi: *mut c_float, vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int) -> c_int;
     pub fn LAPACKE_dgeev(matrix_order: c_int, jobvl: c_char, jobvr: c_char, n: c_int, a: *mut c_double, lda: c_int, wr: *mut c_double, wi: *mut c_double, vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int) -> c_int;
     pub fn LAPACKE_cgeev(matrix_order: c_int, jobvl: c_char, jobvr: c_char, n: c_int, a: *mut c_void, lda: c_int, w: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int) -> c_int;
     pub fn LAPACKE_zgeev(matrix_order: c_int, jobvl: c_char, jobvr: c_char, n: c_int, a: *mut c_void, lda: c_int, w: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int) -> c_int;
+
     pub fn LAPACKE_sgeevx(matrix_order: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char, sense: c_char, n: c_int, a: *mut c_float, lda: c_int, wr: *mut c_float, wi: *mut c_float, vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int, ilo: *mut c_int, ihi: *mut c_int, scale: *mut c_float, abnrm: *mut c_float, rconde: *mut c_float, rcondv: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeevx(matrix_order: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char, sense: c_char, n: c_int, a: *mut c_double, lda: c_int, wr: *mut c_double, wi: *mut c_double, vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int, ilo: *mut c_int, ihi: *mut c_int, scale: *mut c_double, abnrm: *mut c_double, rconde: *mut c_double, rcondv: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeevx(matrix_order: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char, sense: c_char, n: c_int, a: *mut c_void, lda: c_int, w: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, ilo: *mut c_int, ihi: *mut c_int, scale: *mut c_float, abnrm: *mut c_float, rconde: *mut c_float, rcondv: *mut c_float) -> c_int;
     pub fn LAPACKE_zgeevx(matrix_order: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char, sense: c_char, n: c_int, a: *mut c_void, lda: c_int, w: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, ilo: *mut c_int, ihi: *mut c_int, scale: *mut c_double, abnrm: *mut c_double, rconde: *mut c_double, rcondv: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgehrd(matrix_order: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgehrd(matrix_order: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgehrd(matrix_order: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgehrd(matrix_order: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgejsv(matrix_order: c_int, joba: c_char, jobu: c_char, jobv: c_char, jobr: c_char, jobt: c_char, jobp: c_char, m: c_int, n: c_int, a: *mut c_float, lda: c_int, sva: *mut c_float, u: *mut c_float, ldu: c_int, v: *mut c_float, ldv: c_int, stat: *mut c_float, istat: *mut c_int) -> c_int;
     pub fn LAPACKE_dgejsv(matrix_order: c_int, joba: c_char, jobu: c_char, jobv: c_char, jobr: c_char, jobt: c_char, jobp: c_char, m: c_int, n: c_int, a: *mut c_double, lda: c_int, sva: *mut c_double, u: *mut c_double, ldu: c_int, v: *mut c_double, ldv: c_int, stat: *mut c_double, istat: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgelq2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgelq2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgelq2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgelq2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgelqf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgelqf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgelqf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgelqf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgels(matrix_order: c_int, trans: c_char, m: c_int, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dgels(matrix_order: c_int, trans: c_char, m: c_int, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cgels(matrix_order: c_int, trans: c_char, m: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zgels(matrix_order: c_int, trans: c_char, m: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sgelsd(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, s: *mut c_float, rcond: c_float, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_dgelsd(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, s: *mut c_double, rcond: c_double, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_cgelsd(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, s: *mut c_float, rcond: c_float, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_zgelsd(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, s: *mut c_double, rcond: c_double, rank: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgelss(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, s: *mut c_float, rcond: c_float, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_dgelss(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, s: *mut c_double, rcond: c_double, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_cgelss(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, s: *mut c_float, rcond: c_float, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_zgelss(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, s: *mut c_double, rcond: c_double, rank: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgelsy(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, jpvt: *mut c_int, rcond: c_float, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_dgelsy(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, jpvt: *mut c_int, rcond: c_double, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_cgelsy(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, jpvt: *mut c_int, rcond: c_float, rank: *mut c_int) -> c_int;
     pub fn LAPACKE_zgelsy(matrix_order: c_int, m: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, jpvt: *mut c_int, rcond: c_double, rank: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgeqlf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeqlf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeqlf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgeqlf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgeqp3(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, jpvt: *mut c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeqp3(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, jpvt: *mut c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeqp3(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, jpvt: *mut c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgeqp3(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, jpvt: *mut c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgeqpf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, jpvt: *mut c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeqpf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, jpvt: *mut c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeqpf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, jpvt: *mut c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgeqpf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, jpvt: *mut c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgeqr2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeqr2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeqr2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgeqr2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgeqrf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeqrf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeqrf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgeqrf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgeqrfp(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgeqrfp(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgeqrfp(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgeqrfp(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgerfs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, af: *const c_float, ldaf: c_int, ipiv: *const c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dgerfs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, af: *const c_double, ldaf: c_int, ipiv: *const c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cgerfs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zgerfs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgerfsx(matrix_order: c_int, trans: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, af: *const c_float, ldaf: c_int, ipiv: *const c_int, r: *const c_float, c: *const c_float, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_dgerfsx(matrix_order: c_int, trans: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, af: *const c_double, ldaf: c_int, ipiv: *const c_int, r: *const c_double, c: *const c_double, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
     pub fn LAPACKE_cgerfsx(matrix_order: c_int, trans: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, r: *const c_float, c: *const c_float, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zgerfsx(matrix_order: c_int, trans: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, r: *const c_double, c: *const c_double, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgerqf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dgerqf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_cgerqf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zgerqf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgesdd(matrix_order: c_int, jobz: c_char, m: c_int, n: c_int, a: *mut c_float, lda: c_int, s: *mut c_float, u: *mut c_float, ldu: c_int, vt: *mut c_float, ldvt: c_int) -> c_int;
     pub fn LAPACKE_dgesdd(matrix_order: c_int, jobz: c_char, m: c_int, n: c_int, a: *mut c_double, lda: c_int, s: *mut c_double, u: *mut c_double, ldu: c_int, vt: *mut c_double, ldvt: c_int) -> c_int;
     pub fn LAPACKE_cgesdd(matrix_order: c_int, jobz: c_char, m: c_int, n: c_int, a: *mut c_void, lda: c_int, s: *mut c_float, u: *mut c_void, ldu: c_int, vt: *mut c_void, ldvt: c_int) -> c_int;
     pub fn LAPACKE_zgesdd(matrix_order: c_int, jobz: c_char, m: c_int, n: c_int, a: *mut c_void, lda: c_int, s: *mut c_double, u: *mut c_void, ldu: c_int, vt: *mut c_void, ldvt: c_int) -> c_int;
+
     pub fn LAPACKE_sgesv(matrix_order: c_int, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, ipiv: *mut c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dgesv(matrix_order: c_int, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, ipiv: *mut c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cgesv(matrix_order: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zgesv(matrix_order: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_dsgesv(matrix_order: c_int, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, ipiv: *mut c_int, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, iter: *mut c_int) -> c_int;
     pub fn LAPACKE_zcgesv(matrix_order: c_int, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, iter: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgesvd(matrix_order: c_int, jobu: c_char, jobvt: c_char, m: c_int, n: c_int, a: *mut c_float, lda: c_int, s: *mut c_float, u: *mut c_float, ldu: c_int, vt: *mut c_float, ldvt: c_int, superb: *mut c_float) -> c_int;
     pub fn LAPACKE_dgesvd(matrix_order: c_int, jobu: c_char, jobvt: c_char, m: c_int, n: c_int, a: *mut c_double, lda: c_int, s: *mut c_double, u: *mut c_double, ldu: c_int, vt: *mut c_double, ldvt: c_int, superb: *mut c_double) -> c_int;
     pub fn LAPACKE_cgesvd(matrix_order: c_int, jobu: c_char, jobvt: c_char, m: c_int, n: c_int, a: *mut c_void, lda: c_int, s: *mut c_float, u: *mut c_void, ldu: c_int, vt: *mut c_void, ldvt: c_int, superb: *mut c_float) -> c_int;
     pub fn LAPACKE_zgesvd(matrix_order: c_int, jobu: c_char, jobvt: c_char, m: c_int, n: c_int, a: *mut c_void, lda: c_int, s: *mut c_double, u: *mut c_void, ldu: c_int, vt: *mut c_void, ldvt: c_int, superb: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgesvj(matrix_order: c_int, joba: c_char, jobu: c_char, jobv: c_char, m: c_int, n: c_int, a: *mut c_float, lda: c_int, sva: *mut c_float, mv: c_int, v: *mut c_float, ldv: c_int, stat: *mut c_float) -> c_int;
     pub fn LAPACKE_dgesvj(matrix_order: c_int, joba: c_char, jobu: c_char, jobv: c_char, m: c_int, n: c_int, a: *mut c_double, lda: c_int, sva: *mut c_double, mv: c_int, v: *mut c_double, ldv: c_int, stat: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgesvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, af: *mut c_float, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_float, c: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float, rpivot: *mut c_float) -> c_int;
     pub fn LAPACKE_dgesvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, af: *mut c_double, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_double, c: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double, rpivot: *mut c_double) -> c_int;
     pub fn LAPACKE_cgesvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_float, c: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float, rpivot: *mut c_float) -> c_int;
     pub fn LAPACKE_zgesvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_double, c: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double, rpivot: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgesvxx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, af: *mut c_float, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_float, c: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_dgesvxx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, af: *mut c_double, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_double, c: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
     pub fn LAPACKE_cgesvxx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_float, c: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zgesvxx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, r: *mut c_double, c: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgetf2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_dgetf2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_cgetf2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_zgetf2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgetrf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_dgetrf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_cgetrf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_zgetrf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgetri(matrix_order: c_int, n: c_int, a: *mut c_float, lda: c_int, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_dgetri(matrix_order: c_int, n: c_int, a: *mut c_double, lda: c_int, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_cgetri(matrix_order: c_int, n: c_int, a: *mut c_void, lda: c_int, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_zgetri(matrix_order: c_int, n: c_int, a: *mut c_void, lda: c_int, ipiv: *const c_int) -> c_int;
+
     pub fn LAPACKE_sgetrs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, ipiv: *const c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dgetrs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, ipiv: *const c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cgetrs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zgetrs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sggbak(matrix_order: c_int, job: c_char, side: c_char, n: c_int, ilo: c_int, ihi: c_int, lscale: *const c_float, rscale: *const c_float, m: c_int, v: *mut c_float, ldv: c_int) -> c_int;
     pub fn LAPACKE_dggbak(matrix_order: c_int, job: c_char, side: c_char, n: c_int, ilo: c_int, ihi: c_int, lscale: *const c_double, rscale: *const c_double, m: c_int, v: *mut c_double, ldv: c_int) -> c_int;
     pub fn LAPACKE_cggbak(matrix_order: c_int, job: c_char, side: c_char, n: c_int, ilo: c_int, ihi: c_int, lscale: *const c_float, rscale: *const c_float, m: c_int, v: *mut c_void, ldv: c_int) -> c_int;
     pub fn LAPACKE_zggbak(matrix_order: c_int, job: c_char, side: c_char, n: c_int, ilo: c_int, ihi: c_int, lscale: *const c_double, rscale: *const c_double, m: c_int, v: *mut c_void, ldv: c_int) -> c_int;
+
     pub fn LAPACKE_sggbal(matrix_order: c_int, job: c_char, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, ilo: *mut c_int, ihi: *mut c_int, lscale: *mut c_float, rscale: *mut c_float) -> c_int;
     pub fn LAPACKE_dggbal(matrix_order: c_int, job: c_char, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, ilo: *mut c_int, ihi: *mut c_int, lscale: *mut c_double, rscale: *mut c_double) -> c_int;
     pub fn LAPACKE_cggbal(matrix_order: c_int, job: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, ilo: *mut c_int, ihi: *mut c_int, lscale: *mut c_float, rscale: *mut c_float) -> c_int;
     pub fn LAPACKE_zggbal(matrix_order: c_int, job: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, ilo: *mut c_int, ihi: *mut c_int, lscale: *mut c_double, rscale: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgges(matrix_order: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char, selctg: LAPACK_S_SELECT3, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, sdim: *mut c_int, alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float, vsl: *mut c_float, ldvsl: c_int, vsr: *mut c_float, ldvsr: c_int) -> c_int;
     pub fn LAPACKE_dgges(matrix_order: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char, selctg: LAPACK_D_SELECT3, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, sdim: *mut c_int, alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double, vsl: *mut c_double, ldvsl: c_int, vsr: *mut c_double, ldvsr: c_int) -> c_int;
     pub fn LAPACKE_cgges(matrix_order: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char, selctg: LAPACK_C_SELECT2, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, sdim: *mut c_int, alpha: *mut c_void, beta: *mut c_void, vsl: *mut c_void, ldvsl: c_int, vsr: *mut c_void, ldvsr: c_int) -> c_int;
     pub fn LAPACKE_zgges(matrix_order: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char, selctg: LAPACK_Z_SELECT2, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, sdim: *mut c_int, alpha: *mut c_void, beta: *mut c_void, vsl: *mut c_void, ldvsl: c_int, vsr: *mut c_void, ldvsr: c_int) -> c_int;
+
     pub fn LAPACKE_sggesx(matrix_order: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char, selctg: LAPACK_S_SELECT3, sense: c_char, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, sdim: *mut c_int, alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float, vsl: *mut c_float, ldvsl: c_int, vsr: *mut c_float, ldvsr: c_int, rconde: *mut c_float, rcondv: *mut c_float) -> c_int;
     pub fn LAPACKE_dggesx(matrix_order: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char, selctg: LAPACK_D_SELECT3, sense: c_char, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, sdim: *mut c_int, alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double, vsl: *mut c_double, ldvsl: c_int, vsr: *mut c_double, ldvsr: c_int, rconde: *mut c_double, rcondv: *mut c_double) -> c_int;
     pub fn LAPACKE_cggesx(matrix_order: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char, selctg: LAPACK_C_SELECT2, sense: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, sdim: *mut c_int, alpha: *mut c_void, beta: *mut c_void, vsl: *mut c_void, ldvsl: c_int, vsr: *mut c_void, ldvsr: c_int, rconde: *mut c_float, rcondv: *mut c_float) -> c_int;
     pub fn LAPACKE_zggesx(matrix_order: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char, selctg: LAPACK_Z_SELECT2, sense: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, sdim: *mut c_int, alpha: *mut c_void, beta: *mut c_void, vsl: *mut c_void, ldvsl: c_int, vsr: *mut c_void, ldvsr: c_int, rconde: *mut c_double, rcondv: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sggev(matrix_order: c_int, jobvl: c_char, jobvr: c_char, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float, vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int) -> c_int;
     pub fn LAPACKE_dggev(matrix_order: c_int, jobvl: c_char, jobvr: c_char, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double, vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int) -> c_int;
     pub fn LAPACKE_cggev(matrix_order: c_int, jobvl: c_char, jobvr: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, alpha: *mut c_void, beta: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int) -> c_int;
     pub fn LAPACKE_zggev(matrix_order: c_int, jobvl: c_char, jobvr: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, alpha: *mut c_void, beta: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int) -> c_int;
+
     pub fn LAPACKE_sggevx(matrix_order: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char, sense: c_char, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float, vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int, ilo: *mut c_int, ihi: *mut c_int, lscale: *mut c_float, rscale: *mut c_float, abnrm: *mut c_float, bbnrm: *mut c_float, rconde: *mut c_float, rcondv: *mut c_float) -> c_int;
     pub fn LAPACKE_dggevx(matrix_order: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char, sense: c_char, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double, vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int, ilo: *mut c_int, ihi: *mut c_int, lscale: *mut c_double, rscale: *mut c_double, abnrm: *mut c_double, bbnrm: *mut c_double, rconde: *mut c_double, rcondv: *mut c_double) -> c_int;
     pub fn LAPACKE_cggevx(matrix_order: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char, sense: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, alpha: *mut c_void, beta: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, ilo: *mut c_int, ihi: *mut c_int, lscale: *mut c_float, rscale: *mut c_float, abnrm: *mut c_float, bbnrm: *mut c_float, rconde: *mut c_float, rcondv: *mut c_float) -> c_int;
     pub fn LAPACKE_zggevx(matrix_order: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char, sense: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, alpha: *mut c_void, beta: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, ilo: *mut c_int, ihi: *mut c_int, lscale: *mut c_double, rscale: *mut c_double, abnrm: *mut c_double, bbnrm: *mut c_double, rconde: *mut c_double, rcondv: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sggglm(matrix_order: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, d: *mut c_float, x: *mut c_float, y: *mut c_float) -> c_int;
     pub fn LAPACKE_dggglm(matrix_order: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, d: *mut c_double, x: *mut c_double, y: *mut c_double) -> c_int;
     pub fn LAPACKE_cggglm(matrix_order: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, d: *mut c_void, x: *mut c_void, y: *mut c_void) -> c_int;
     pub fn LAPACKE_zggglm(matrix_order: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, d: *mut c_void, x: *mut c_void, y: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sgghrd(matrix_order: c_int, compq: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, q: *mut c_float, ldq: c_int, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dgghrd(matrix_order: c_int, compq: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, q: *mut c_double, ldq: c_int, z: *mut c_double, ldz: c_int) -> c_int;
     pub fn LAPACKE_cgghrd(matrix_order: c_int, compq: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, q: *mut c_void, ldq: c_int, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zgghrd(matrix_order: c_int, compq: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, q: *mut c_void, ldq: c_int, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sgglse(matrix_order: c_int, m: c_int, n: c_int, p: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, c: *mut c_float, d: *mut c_float, x: *mut c_float) -> c_int;
     pub fn LAPACKE_dgglse(matrix_order: c_int, m: c_int, n: c_int, p: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, c: *mut c_double, d: *mut c_double, x: *mut c_double) -> c_int;
     pub fn LAPACKE_cgglse(matrix_order: c_int, m: c_int, n: c_int, p: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, c: *mut c_void, d: *mut c_void, x: *mut c_void) -> c_int;
     pub fn LAPACKE_zgglse(matrix_order: c_int, m: c_int, n: c_int, p: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, c: *mut c_void, d: *mut c_void, x: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sggqrf(matrix_order: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_float, lda: c_int, taua: *mut c_float, b: *mut c_float, ldb: c_int, taub: *mut c_float) -> c_int;
     pub fn LAPACKE_dggqrf(matrix_order: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_double, lda: c_int, taua: *mut c_double, b: *mut c_double, ldb: c_int, taub: *mut c_double) -> c_int;
     pub fn LAPACKE_cggqrf(matrix_order: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_void, lda: c_int, taua: *mut c_void, b: *mut c_void, ldb: c_int, taub: *mut c_void) -> c_int;
     pub fn LAPACKE_zggqrf(matrix_order: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_void, lda: c_int, taua: *mut c_void, b: *mut c_void, ldb: c_int, taub: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sggrqf(matrix_order: c_int, m: c_int, p: c_int, n: c_int, a: *mut c_float, lda: c_int, taua: *mut c_float, b: *mut c_float, ldb: c_int, taub: *mut c_float) -> c_int;
     pub fn LAPACKE_dggrqf(matrix_order: c_int, m: c_int, p: c_int, n: c_int, a: *mut c_double, lda: c_int, taua: *mut c_double, b: *mut c_double, ldb: c_int, taub: *mut c_double) -> c_int;
     pub fn LAPACKE_cggrqf(matrix_order: c_int, m: c_int, p: c_int, n: c_int, a: *mut c_void, lda: c_int, taua: *mut c_void, b: *mut c_void, ldb: c_int, taub: *mut c_void) -> c_int;
     pub fn LAPACKE_zggrqf(matrix_order: c_int, m: c_int, p: c_int, n: c_int, a: *mut c_void, lda: c_int, taua: *mut c_void, b: *mut c_void, ldb: c_int, taub: *mut c_void) -> c_int;
+
     pub fn LAPACKE_sggsvd(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, n: c_int, p: c_int, k: *mut c_int, l: *mut c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, alpha: *mut c_float, beta: *mut c_float, u: *mut c_float, ldu: c_int, v: *mut c_float, ldv: c_int, q: *mut c_float, ldq: c_int, iwork: *mut c_int) -> c_int;
     pub fn LAPACKE_dggsvd(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, n: c_int, p: c_int, k: *mut c_int, l: *mut c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, alpha: *mut c_double, beta: *mut c_double, u: *mut c_double, ldu: c_int, v: *mut c_double, ldv: c_int, q: *mut c_double, ldq: c_int, iwork: *mut c_int) -> c_int;
     pub fn LAPACKE_cggsvd(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, n: c_int, p: c_int, k: *mut c_int, l: *mut c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, alpha: *mut c_float, beta: *mut c_float, u: *mut c_void, ldu: c_int, v: *mut c_void, ldv: c_int, q: *mut c_void, ldq: c_int, iwork: *mut c_int) -> c_int;
     pub fn LAPACKE_zggsvd(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, n: c_int, p: c_int, k: *mut c_int, l: *mut c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, alpha: *mut c_double, beta: *mut c_double, u: *mut c_void, ldu: c_int, v: *mut c_void, ldv: c_int, q: *mut c_void, ldq: c_int, iwork: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sggsvp(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, p: c_int, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, tola: c_float, tolb: c_float, k: *mut c_int, l: *mut c_int, u: *mut c_float, ldu: c_int, v: *mut c_float, ldv: c_int, q: *mut c_float, ldq: c_int) -> c_int;
     pub fn LAPACKE_dggsvp(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, p: c_int, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, tola: c_double, tolb: c_double, k: *mut c_int, l: *mut c_int, u: *mut c_double, ldu: c_int, v: *mut c_double, ldv: c_int, q: *mut c_double, ldq: c_int) -> c_int;
     pub fn LAPACKE_cggsvp(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, p: c_int, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, tola: c_float, tolb: c_float, k: *mut c_int, l: *mut c_int, u: *mut c_void, ldu: c_int, v: *mut c_void, ldv: c_int, q: *mut c_void, ldq: c_int) -> c_int;
     pub fn LAPACKE_zggsvp(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, p: c_int, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, tola: c_double, tolb: c_double, k: *mut c_int, l: *mut c_int, u: *mut c_void, ldu: c_int, v: *mut c_void, ldv: c_int, q: *mut c_void, ldq: c_int) -> c_int;
+
     pub fn LAPACKE_sgtcon(norm: c_char, n: c_int, dl: *const c_float, d: *const c_float, du: *const c_float, du2: *const c_float, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dgtcon(norm: c_char, n: c_int, dl: *const c_double, d: *const c_double, du: *const c_double, du2: *const c_double, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_cgtcon(norm: c_char, n: c_int, dl: *const c_void, d: *const c_void, du: *const c_void, du2: *const c_void, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zgtcon(norm: c_char, n: c_int, dl: *const c_void, d: *const c_void, du: *const c_void, du2: *const c_void, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgtrfs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_float, d: *const c_float, du: *const c_float, dlf: *const c_float, df: *const c_float, duf: *const c_float, du2: *const c_float, ipiv: *const c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dgtrfs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_double, d: *const c_double, du: *const c_double, dlf: *const c_double, df: *const c_double, duf: *const c_double, du2: *const c_double, ipiv: *const c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cgtrfs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_void, d: *const c_void, du: *const c_void, dlf: *const c_void, df: *const c_void, duf: *const c_void, du2: *const c_void, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zgtrfs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_void, d: *const c_void, du: *const c_void, dlf: *const c_void, df: *const c_void, duf: *const c_void, du2: *const c_void, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgtsv(matrix_order: c_int, n: c_int, nrhs: c_int, dl: *mut c_float, d: *mut c_float, du: *mut c_float, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dgtsv(matrix_order: c_int, n: c_int, nrhs: c_int, dl: *mut c_double, d: *mut c_double, du: *mut c_double, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cgtsv(matrix_order: c_int, n: c_int, nrhs: c_int, dl: *mut c_void, d: *mut c_void, du: *mut c_void, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zgtsv(matrix_order: c_int, n: c_int, nrhs: c_int, dl: *mut c_void, d: *mut c_void, du: *mut c_void, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sgtsvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_float, d: *const c_float, du: *const c_float, dlf: *mut c_float, df: *mut c_float, duf: *mut c_float, du2: *mut c_float, ipiv: *mut c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dgtsvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_double, d: *const c_double, du: *const c_double, dlf: *mut c_double, df: *mut c_double, duf: *mut c_double, du2: *mut c_double, ipiv: *mut c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cgtsvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_void, d: *const c_void, du: *const c_void, dlf: *mut c_void, df: *mut c_void, duf: *mut c_void, du2: *mut c_void, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zgtsvx(matrix_order: c_int, fact: c_char, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_void, d: *const c_void, du: *const c_void, dlf: *mut c_void, df: *mut c_void, duf: *mut c_void, du2: *mut c_void, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sgttrf(n: c_int, dl: *mut c_float, d: *mut c_float, du: *mut c_float, du2: *mut c_float, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_dgttrf(n: c_int, dl: *mut c_double, d: *mut c_double, du: *mut c_double, du2: *mut c_double, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_cgttrf(n: c_int, dl: *mut c_void, d: *mut c_void, du: *mut c_void, du2: *mut c_void, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_zgttrf(n: c_int, dl: *mut c_void, d: *mut c_void, du: *mut c_void, du2: *mut c_void, ipiv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sgttrs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_float, d: *const c_float, du: *const c_float, du2: *const c_float, ipiv: *const c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dgttrs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_double, d: *const c_double, du: *const c_double, du2: *const c_double, ipiv: *const c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cgttrs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_void, d: *const c_void, du: *const c_void, du2: *const c_void, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zgttrs(matrix_order: c_int, trans: c_char, n: c_int, nrhs: c_int, dl: *const c_void, d: *const c_void, du: *const c_void, du2: *const c_void, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_chbev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int, w: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhbev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int, w: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chbevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int, w: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhbevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int, w: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chbevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int, q: *mut c_void, ldq: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_zhbevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int, q: *mut c_void, ldq: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_chbgst(matrix_order: c_int, vect: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_void, ldab: c_int, bb: *const c_void, ldbb: c_int, x: *mut c_void, ldx: c_int) -> c_int;
     pub fn LAPACKE_zhbgst(matrix_order: c_int, vect: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_void, ldab: c_int, bb: *const c_void, ldbb: c_int, x: *mut c_void, ldx: c_int) -> c_int;
+
     pub fn LAPACKE_chbgv(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_void, ldab: c_int, bb: *mut c_void, ldbb: c_int, w: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhbgv(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_void, ldab: c_int, bb: *mut c_void, ldbb: c_int, w: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chbgvd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_void, ldab: c_int, bb: *mut c_void, ldbb: c_int, w: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhbgvd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_void, ldab: c_int, bb: *mut c_void, ldbb: c_int, w: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chbgvx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_void, ldab: c_int, bb: *mut c_void, ldbb: c_int, q: *mut c_void, ldq: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_zhbgvx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_void, ldab: c_int, bb: *mut c_void, ldbb: c_int, q: *mut c_void, ldq: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_chbtrd(matrix_order: c_int, vect: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int, d: *mut c_float, e: *mut c_float, q: *mut c_void, ldq: c_int) -> c_int;
     pub fn LAPACKE_zhbtrd(matrix_order: c_int, vect: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int, d: *mut c_double, e: *mut c_double, q: *mut c_void, ldq: c_int) -> c_int;
+
     pub fn LAPACKE_checon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zhecon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_cheequb(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zheequb(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_cheev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, w: *mut c_float) -> c_int;
     pub fn LAPACKE_zheev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, w: *mut c_double) -> c_int;
+
     pub fn LAPACKE_cheevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, w: *mut c_float) -> c_int;
     pub fn LAPACKE_zheevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, w: *mut c_double) -> c_int;
+
     pub fn LAPACKE_cheevr(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, isuppz: *mut c_int) -> c_int;
     pub fn LAPACKE_zheevr(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, isuppz: *mut c_int) -> c_int;
+
     pub fn LAPACKE_cheevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_zheevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_chegst(matrix_order: c_int, itype: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *const c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zhegst(matrix_order: c_int, itype: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *const c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_chegv(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, w: *mut c_float) -> c_int;
     pub fn LAPACKE_zhegv(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, w: *mut c_double) -> c_int;
+
     pub fn LAPACKE_chegvd(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, w: *mut c_float) -> c_int;
     pub fn LAPACKE_zhegvd(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, w: *mut c_double) -> c_int;
+
     pub fn LAPACKE_chegvx(matrix_order: c_int, itype: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_zhegvx(matrix_order: c_int, itype: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_cherfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zherfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_cherfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, s: *const c_float, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zherfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, s: *const c_double, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_chesv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zhesv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_chesvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zhesvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_chesvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zhesvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_chetrd(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, d: *mut c_float, e: *mut c_float, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zhetrd(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, d: *mut c_double, e: *mut c_double, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_chetrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_zhetrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_chetri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_zhetri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *const c_int) -> c_int;
+
     pub fn LAPACKE_chetrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zhetrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_chfrk(matrix_order: c_int, transr: c_char, uplo: c_char, trans: c_char, n: c_int, k: c_int, alpha: c_float, a: *const c_void, lda: c_int, beta: c_float, c: *mut c_void) -> c_int;
     pub fn LAPACKE_zhfrk(matrix_order: c_int, transr: c_char, uplo: c_char, trans: c_char, n: c_int, k: c_int, alpha: c_double, a: *const c_void, lda: c_int, beta: c_double, c: *mut c_void) -> c_int;
+
     pub fn LAPACKE_shgeqz(matrix_order: c_int, job: c_char, compq: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, h: *mut c_float, ldh: c_int, t: *mut c_float, ldt: c_int, alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float, q: *mut c_float, ldq: c_int, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dhgeqz(matrix_order: c_int, job: c_char, compq: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, h: *mut c_double, ldh: c_int, t: *mut c_double, ldt: c_int, alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double, q: *mut c_double, ldq: c_int, z: *mut c_double, ldz: c_int) -> c_int;
     pub fn LAPACKE_chgeqz(matrix_order: c_int, job: c_char, compq: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, h: *mut c_void, ldh: c_int, t: *mut c_void, ldt: c_int, alpha: *mut c_void, beta: *mut c_void, q: *mut c_void, ldq: c_int, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhgeqz(matrix_order: c_int, job: c_char, compq: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, h: *mut c_void, ldh: c_int, t: *mut c_void, ldt: c_int, alpha: *mut c_void, beta: *mut c_void, q: *mut c_void, ldq: c_int, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chpcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zhpcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_chpev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_void, w: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhpev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_void, w: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chpevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_void, w: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhpevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_void, w: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chpevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ap: *mut c_void, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_zhpevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ap: *mut c_void, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_chpgst(matrix_order: c_int, itype: c_int, uplo: c_char, n: c_int, ap: *mut c_void, bp: *const c_void) -> c_int;
     pub fn LAPACKE_zhpgst(matrix_order: c_int, itype: c_int, uplo: c_char, n: c_int, ap: *mut c_void, bp: *const c_void) -> c_int;
+
     pub fn LAPACKE_chpgv(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_void, bp: *mut c_void, w: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhpgv(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_void, bp: *mut c_void, w: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chpgvd(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_void, bp: *mut c_void, w: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhpgvd(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_void, bp: *mut c_void, w: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_chpgvx(matrix_order: c_int, itype: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ap: *mut c_void, bp: *mut c_void, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_zhpgvx(matrix_order: c_int, itype: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ap: *mut c_void, bp: *mut c_void, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_chprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *const c_void, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zhprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *const c_void, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_chpsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_void, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zhpsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_void, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_chpsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *mut c_void, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zhpsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *mut c_void, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_chptrd(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, d: *mut c_float, e: *mut c_float, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zhptrd(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, d: *mut c_double, e: *mut c_double, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_chptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_zhptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, ipiv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_chptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_zhptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, ipiv: *const c_int) -> c_int;
+
     pub fn LAPACKE_chptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zhptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_shsein(matrix_order: c_int, job: c_char, eigsrc: c_char, initv: c_char, select: *mut c_int, n: c_int, h: *const c_float, ldh: c_int, wr: *mut c_float, wi: *const c_float, vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int, mm: c_int, m: *mut c_int, ifaill: *mut c_int, ifailr: *mut c_int) -> c_int;
     pub fn LAPACKE_dhsein(matrix_order: c_int, job: c_char, eigsrc: c_char, initv: c_char, select: *mut c_int, n: c_int, h: *const c_double, ldh: c_int, wr: *mut c_double, wi: *const c_double, vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int, mm: c_int, m: *mut c_int, ifaill: *mut c_int, ifailr: *mut c_int) -> c_int;
     pub fn LAPACKE_chsein(matrix_order: c_int, job: c_char, eigsrc: c_char, initv: c_char, select: *const c_int, n: c_int, h: *const c_void, ldh: c_int, w: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, mm: c_int, m: *mut c_int, ifaill: *mut c_int, ifailr: *mut c_int) -> c_int;
     pub fn LAPACKE_zhsein(matrix_order: c_int, job: c_char, eigsrc: c_char, initv: c_char, select: *const c_int, n: c_int, h: *const c_void, ldh: c_int, w: *mut c_void, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, mm: c_int, m: *mut c_int, ifaill: *mut c_int, ifailr: *mut c_int) -> c_int;
+
     pub fn LAPACKE_shseqr(matrix_order: c_int, job: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, h: *mut c_float, ldh: c_int, wr: *mut c_float, wi: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dhseqr(matrix_order: c_int, job: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, h: *mut c_double, ldh: c_int, wr: *mut c_double, wi: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
     pub fn LAPACKE_chseqr(matrix_order: c_int, job: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, h: *mut c_void, ldh: c_int, w: *mut c_void, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zhseqr(matrix_order: c_int, job: c_char, compz: c_char, n: c_int, ilo: c_int, ihi: c_int, h: *mut c_void, ldh: c_int, w: *mut c_void, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_clacgv(n: c_int, x: *mut c_void, incx: c_int) -> c_int;
     pub fn LAPACKE_zlacgv(n: c_int, x: *mut c_void, incx: c_int) -> c_int;
+
     pub fn LAPACKE_slacn2(n: c_int, v: *mut c_float, x: *mut c_float, isgn: *mut c_int, est: *mut c_float, kase: *mut c_int, isave: *mut c_int) -> c_int;
     pub fn LAPACKE_dlacn2(n: c_int, v: *mut c_double, x: *mut c_double, isgn: *mut c_int, est: *mut c_double, kase: *mut c_int, isave: *mut c_int) -> c_int;
     pub fn LAPACKE_clacn2(n: c_int, v: *mut c_void, x: *mut c_void, est: *mut c_float, kase: *mut c_int, isave: *mut c_int) -> c_int;
     pub fn LAPACKE_zlacn2(n: c_int, v: *mut c_void, x: *mut c_void, est: *mut c_double, kase: *mut c_int, isave: *mut c_int) -> c_int;
+
     pub fn LAPACKE_slacpy(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, a: *const c_float, lda: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dlacpy(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, a: *const c_double, lda: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_clacpy(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, a: *const c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zlacpy(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, a: *const c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_clacp2(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, a: *const c_float, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zlacp2(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, a: *const c_double, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_zlag2c(matrix_order: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, sa: *mut c_void, ldsa: c_int) -> c_int;
+
     pub fn LAPACKE_slag2d(matrix_order: c_int, m: c_int, n: c_int, sa: *const c_float, ldsa: c_int, a: *mut c_double, lda: c_int) -> c_int;
+
     pub fn LAPACKE_dlag2s(matrix_order: c_int, m: c_int, n: c_int, a: *const c_double, lda: c_int, sa: *mut c_float, ldsa: c_int) -> c_int;
+
     pub fn LAPACKE_clag2z(matrix_order: c_int, m: c_int, n: c_int, sa: *const c_void, ldsa: c_int, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_slagge(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, d: *const c_float, a: *mut c_float, lda: c_int, iseed: *mut c_int) -> c_int;
     pub fn LAPACKE_dlagge(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, d: *const c_double, a: *mut c_double, lda: c_int, iseed: *mut c_int) -> c_int;
     pub fn LAPACKE_clagge(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, d: *const c_float, a: *mut c_void, lda: c_int, iseed: *mut c_int) -> c_int;
     pub fn LAPACKE_zlagge(matrix_order: c_int, m: c_int, n: c_int, kl: c_int, ku: c_int, d: *const c_double, a: *mut c_void, lda: c_int, iseed: *mut c_int) -> c_int;
+
     pub fn LAPACKE_slamch(cmach: c_char) -> c_float;
     pub fn LAPACKE_dlamch(cmach: c_char) -> c_double;
+
     pub fn LAPACKE_slange(matrix_order: c_int, norm: c_char, m: c_int, n: c_int, a: *const c_float, lda: c_int) -> c_float;
     pub fn LAPACKE_dlange(matrix_order: c_int, norm: c_char, m: c_int, n: c_int, a: *const c_double, lda: c_int) -> c_double;
     pub fn LAPACKE_clange(matrix_order: c_int, norm: c_char, m: c_int, n: c_int, a: *const c_void, lda: c_int) -> c_float;
     pub fn LAPACKE_zlange(matrix_order: c_int, norm: c_char, m: c_int, n: c_int, a: *const c_void, lda: c_int) -> c_double;
+
     pub fn LAPACKE_clanhe(matrix_order: c_int, norm: c_char, uplo: c_char, n: c_int, a: *const c_void, lda: c_int) -> c_float;
     pub fn LAPACKE_zlanhe(matrix_order: c_int, norm: c_char, uplo: c_char, n: c_int, a: *const c_void, lda: c_int) -> c_double;
+
     pub fn LAPACKE_slansy(matrix_order: c_int, norm: c_char, uplo: c_char, n: c_int, a: *const c_float, lda: c_int) -> c_float;
     pub fn LAPACKE_dlansy(matrix_order: c_int, norm: c_char, uplo: c_char, n: c_int, a: *const c_double, lda: c_int) -> c_double;
     pub fn LAPACKE_clansy(matrix_order: c_int, norm: c_char, uplo: c_char, n: c_int, a: *const c_void, lda: c_int) -> c_float;
     pub fn LAPACKE_zlansy(matrix_order: c_int, norm: c_char, uplo: c_char, n: c_int, a: *const c_void, lda: c_int) -> c_double;
+
     pub fn LAPACKE_slantr(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, m: c_int, n: c_int, a: *const c_float, lda: c_int) -> c_float;
     pub fn LAPACKE_dlantr(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, m: c_int, n: c_int, a: *const c_double, lda: c_int) -> c_double;
     pub fn LAPACKE_clantr(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, m: c_int, n: c_int, a: *const c_void, lda: c_int) -> c_float;
     pub fn LAPACKE_zlantr(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, m: c_int, n: c_int, a: *const c_void, lda: c_int) -> c_double;
+
     pub fn LAPACKE_slarfb(matrix_order: c_int, side: c_char, trans: c_char, direct: c_char, storev: c_char, m: c_int, n: c_int, k: c_int, v: *const c_float, ldv: c_int, t: *const c_float, ldt: c_int, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dlarfb(matrix_order: c_int, side: c_char, trans: c_char, direct: c_char, storev: c_char, m: c_int, n: c_int, k: c_int, v: *const c_double, ldv: c_int, t: *const c_double, ldt: c_int, c: *mut c_double, ldc: c_int) -> c_int;
     pub fn LAPACKE_clarfb(matrix_order: c_int, side: c_char, trans: c_char, direct: c_char, storev: c_char, m: c_int, n: c_int, k: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zlarfb(matrix_order: c_int, side: c_char, trans: c_char, direct: c_char, storev: c_char, m: c_int, n: c_int, k: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_slarfg(n: c_int, alpha: *mut c_float, x: *mut c_float, incx: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dlarfg(n: c_int, alpha: *mut c_double, x: *mut c_double, incx: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_clarfg(n: c_int, alpha: *mut c_void, x: *mut c_void, incx: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_zlarfg(n: c_int, alpha: *mut c_void, x: *mut c_void, incx: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_slarft(matrix_order: c_int, direct: c_char, storev: c_char, n: c_int, k: c_int, v: *const c_float, ldv: c_int, tau: *const c_float, t: *mut c_float, ldt: c_int) -> c_int;
     pub fn LAPACKE_dlarft(matrix_order: c_int, direct: c_char, storev: c_char, n: c_int, k: c_int, v: *const c_double, ldv: c_int, tau: *const c_double, t: *mut c_double, ldt: c_int) -> c_int;
     pub fn LAPACKE_clarft(matrix_order: c_int, direct: c_char, storev: c_char, n: c_int, k: c_int, v: *const c_void, ldv: c_int, tau: *const c_void, t: *mut c_void, ldt: c_int) -> c_int;
     pub fn LAPACKE_zlarft(matrix_order: c_int, direct: c_char, storev: c_char, n: c_int, k: c_int, v: *const c_void, ldv: c_int, tau: *const c_void, t: *mut c_void, ldt: c_int) -> c_int;
+
     pub fn LAPACKE_slarfx(matrix_order: c_int, side: c_char, m: c_int, n: c_int, v: *const c_float, tau: c_float, c: *mut c_float, ldc: c_int, work: *mut c_float) -> c_int;
     pub fn LAPACKE_dlarfx(matrix_order: c_int, side: c_char, m: c_int, n: c_int, v: *const c_double, tau: c_double, c: *mut c_double, ldc: c_int, work: *mut c_double) -> c_int;
     pub fn LAPACKE_clarfx(matrix_order: c_int, side: c_char, m: c_int, n: c_int, v: *const c_void, tau: c_void, c: *mut c_void, ldc: c_int, work: *mut c_void) -> c_int;
     pub fn LAPACKE_zlarfx(matrix_order: c_int, side: c_char, m: c_int, n: c_int, v: *const c_void, tau: c_void, c: *mut c_void, ldc: c_int, work: *mut c_void) -> c_int;
+
     pub fn LAPACKE_slarnv(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_float) -> c_int;
     pub fn LAPACKE_dlarnv(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_double) -> c_int;
     pub fn LAPACKE_clarnv(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_void) -> c_int;
     pub fn LAPACKE_zlarnv(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_void) -> c_int;
+
     pub fn LAPACKE_slaset(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, alpha: c_float, beta: c_float, a: *mut c_float, lda: c_int) -> c_int;
     pub fn LAPACKE_dlaset(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, alpha: c_double, beta: c_double, a: *mut c_double, lda: c_int) -> c_int;
     pub fn LAPACKE_claset(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, alpha: c_void, beta: c_void, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_zlaset(matrix_order: c_int, uplo: c_char, m: c_int, n: c_int, alpha: c_void, beta: c_void, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_slasrt(id: c_char, n: c_int, d: *mut c_float) -> c_int;
     pub fn LAPACKE_dlasrt(id: c_char, n: c_int, d: *mut c_double) -> c_int;
+
     pub fn LAPACKE_slaswp(matrix_order: c_int, n: c_int, a: *mut c_float, lda: c_int, k1: c_int, k2: c_int, ipiv: *const c_int, incx: c_int) -> c_int;
     pub fn LAPACKE_dlaswp(matrix_order: c_int, n: c_int, a: *mut c_double, lda: c_int, k1: c_int, k2: c_int, ipiv: *const c_int, incx: c_int) -> c_int;
     pub fn LAPACKE_claswp(matrix_order: c_int, n: c_int, a: *mut c_void, lda: c_int, k1: c_int, k2: c_int, ipiv: *const c_int, incx: c_int) -> c_int;
     pub fn LAPACKE_zlaswp(matrix_order: c_int, n: c_int, a: *mut c_void, lda: c_int, k1: c_int, k2: c_int, ipiv: *const c_int, incx: c_int) -> c_int;
+
     pub fn LAPACKE_slatms(matrix_order: c_int, m: c_int, n: c_int, dist: c_char, iseed: *mut c_int, sym: c_char, d: *mut c_float, mode: c_int, cond: c_float, dmax: c_float, kl: c_int, ku: c_int, pack: c_char, a: *mut c_float, lda: c_int) -> c_int;
     pub fn LAPACKE_dlatms(matrix_order: c_int, m: c_int, n: c_int, dist: c_char, iseed: *mut c_int, sym: c_char, d: *mut c_double, mode: c_int, cond: c_double, dmax: c_double, kl: c_int, ku: c_int, pack: c_char, a: *mut c_double, lda: c_int) -> c_int;
     pub fn LAPACKE_clatms(matrix_order: c_int, m: c_int, n: c_int, dist: c_char, iseed: *mut c_int, sym: c_char, d: *mut c_float, mode: c_int, cond: c_float, dmax: c_float, kl: c_int, ku: c_int, pack: c_char, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_zlatms(matrix_order: c_int, m: c_int, n: c_int, dist: c_char, iseed: *mut c_int, sym: c_char, d: *mut c_double, mode: c_int, cond: c_double, dmax: c_double, kl: c_int, ku: c_int, pack: c_char, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_slauum(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int) -> c_int;
     pub fn LAPACKE_dlauum(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int) -> c_int;
     pub fn LAPACKE_clauum(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_zlauum(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_sopgtr(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_float, tau: *const c_float, q: *mut c_float, ldq: c_int) -> c_int;
     pub fn LAPACKE_dopgtr(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_double, tau: *const c_double, q: *mut c_double, ldq: c_int) -> c_int;
+
     pub fn LAPACKE_sopmtr(matrix_order: c_int, side: c_char, uplo: c_char, trans: c_char, m: c_int, n: c_int, ap: *const c_float, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dopmtr(matrix_order: c_int, side: c_char, uplo: c_char, trans: c_char, m: c_int, n: c_int, ap: *const c_double, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sorgbr(matrix_order: c_int, vect: c_char, m: c_int, n: c_int, k: c_int, a: *mut c_float, lda: c_int, tau: *const c_float) -> c_int;
     pub fn LAPACKE_dorgbr(matrix_order: c_int, vect: c_char, m: c_int, n: c_int, k: c_int, a: *mut c_double, lda: c_int, tau: *const c_double) -> c_int;
+
     pub fn LAPACKE_sorghr(matrix_order: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_float, lda: c_int, tau: *const c_float) -> c_int;
     pub fn LAPACKE_dorghr(matrix_order: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_double, lda: c_int, tau: *const c_double) -> c_int;
+
     pub fn LAPACKE_sorglq(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_float, lda: c_int, tau: *const c_float) -> c_int;
     pub fn LAPACKE_dorglq(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_double, lda: c_int, tau: *const c_double) -> c_int;
+
     pub fn LAPACKE_sorgql(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_float, lda: c_int, tau: *const c_float) -> c_int;
     pub fn LAPACKE_dorgql(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_double, lda: c_int, tau: *const c_double) -> c_int;
+
     pub fn LAPACKE_sorgqr(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_float, lda: c_int, tau: *const c_float) -> c_int;
     pub fn LAPACKE_dorgqr(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_double, lda: c_int, tau: *const c_double) -> c_int;
+
     pub fn LAPACKE_sorgrq(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_float, lda: c_int, tau: *const c_float) -> c_int;
     pub fn LAPACKE_dorgrq(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_double, lda: c_int, tau: *const c_double) -> c_int;
+
     pub fn LAPACKE_sorgtr(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, tau: *const c_float) -> c_int;
     pub fn LAPACKE_dorgtr(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, tau: *const c_double) -> c_int;
+
     pub fn LAPACKE_sormbr(matrix_order: c_int, vect: c_char, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_float, lda: c_int, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dormbr(matrix_order: c_int, vect: c_char, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_double, lda: c_int, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sormhr(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *const c_float, lda: c_int, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dormhr(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *const c_double, lda: c_int, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sormlq(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_float, lda: c_int, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dormlq(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_double, lda: c_int, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sormql(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_float, lda: c_int, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dormql(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_double, lda: c_int, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sormqr(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_float, lda: c_int, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dormqr(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_double, lda: c_int, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sormrq(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_float, lda: c_int, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dormrq(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_double, lda: c_int, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sormrz(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, a: *const c_float, lda: c_int, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dormrz(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, a: *const c_double, lda: c_int, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sormtr(matrix_order: c_int, side: c_char, uplo: c_char, trans: c_char, m: c_int, n: c_int, a: *const c_float, lda: c_int, tau: *const c_float, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dormtr(matrix_order: c_int, side: c_char, uplo: c_char, trans: c_char, m: c_int, n: c_int, a: *const c_double, lda: c_int, tau: *const c_double, c: *mut c_double, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_spbcon(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *const c_float, ldab: c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dpbcon(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *const c_double, ldab: c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_cpbcon(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *const c_void, ldab: c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zpbcon(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *const c_void, ldab: c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spbequ(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *const c_float, ldab: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dpbequ(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *const c_double, ldab: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_cpbequ(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *const c_void, ldab: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zpbequ(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *const c_void, ldab: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spbrfs(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_float, ldab: c_int, afb: *const c_float, ldafb: c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dpbrfs(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_double, ldab: c_int, afb: *const c_double, ldafb: c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cpbrfs(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, afb: *const c_void, ldafb: c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zpbrfs(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, afb: *const c_void, ldafb: c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spbstf(matrix_order: c_int, uplo: c_char, n: c_int, kb: c_int, bb: *mut c_float, ldbb: c_int) -> c_int;
     pub fn LAPACKE_dpbstf(matrix_order: c_int, uplo: c_char, n: c_int, kb: c_int, bb: *mut c_double, ldbb: c_int) -> c_int;
     pub fn LAPACKE_cpbstf(matrix_order: c_int, uplo: c_char, n: c_int, kb: c_int, bb: *mut c_void, ldbb: c_int) -> c_int;
     pub fn LAPACKE_zpbstf(matrix_order: c_int, uplo: c_char, n: c_int, kb: c_int, bb: *mut c_void, ldbb: c_int) -> c_int;
+
     pub fn LAPACKE_spbsv(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *mut c_float, ldab: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dpbsv(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *mut c_double, ldab: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cpbsv(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zpbsv(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_spbsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *mut c_float, ldab: c_int, afb: *mut c_float, ldafb: c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dpbsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *mut c_double, ldab: c_int, afb: *mut c_double, ldafb: c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cpbsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, afb: *mut c_void, ldafb: c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zpbsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *mut c_void, ldab: c_int, afb: *mut c_void, ldafb: c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spbtrf(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_float, ldab: c_int) -> c_int;
     pub fn LAPACKE_dpbtrf(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_double, ldab: c_int) -> c_int;
     pub fn LAPACKE_cpbtrf(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int) -> c_int;
     pub fn LAPACKE_zpbtrf(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_void, ldab: c_int) -> c_int;
+
     pub fn LAPACKE_spbtrs(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_float, ldab: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dpbtrs(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_double, ldab: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cpbtrs(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zpbtrs(matrix_order: c_int, uplo: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_spftrf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *mut c_float) -> c_int;
     pub fn LAPACKE_dpftrf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *mut c_double) -> c_int;
     pub fn LAPACKE_cpftrf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *mut c_void) -> c_int;
     pub fn LAPACKE_zpftrf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *mut c_void) -> c_int;
+
     pub fn LAPACKE_spftri(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *mut c_float) -> c_int;
     pub fn LAPACKE_dpftri(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *mut c_double) -> c_int;
     pub fn LAPACKE_cpftri(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *mut c_void) -> c_int;
     pub fn LAPACKE_zpftri(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *mut c_void) -> c_int;
+
     pub fn LAPACKE_spftrs(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_float, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dpftrs(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_double, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cpftrs(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zpftrs(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_spocon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_float, lda: c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dpocon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_double, lda: c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_cpocon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zpocon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spoequ(matrix_order: c_int, n: c_int, a: *const c_float, lda: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dpoequ(matrix_order: c_int, n: c_int, a: *const c_double, lda: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_cpoequ(matrix_order: c_int, n: c_int, a: *const c_void, lda: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zpoequ(matrix_order: c_int, n: c_int, a: *const c_void, lda: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spoequb(matrix_order: c_int, n: c_int, a: *const c_float, lda: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dpoequb(matrix_order: c_int, n: c_int, a: *const c_double, lda: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_cpoequb(matrix_order: c_int, n: c_int, a: *const c_void, lda: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zpoequb(matrix_order: c_int, n: c_int, a: *const c_void, lda: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sporfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, af: *const c_float, ldaf: c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dporfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, af: *const c_double, ldaf: c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cporfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zporfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sporfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, af: *const c_float, ldaf: c_int, s: *const c_float, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_dporfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, af: *const c_double, ldaf: c_int, s: *const c_double, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
     pub fn LAPACKE_cporfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, s: *const c_float, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zporfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, s: *const c_double, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sposv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dposv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cposv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zposv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_dsposv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, iter: *mut c_int) -> c_int;
     pub fn LAPACKE_zcposv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, iter: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sposvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, af: *mut c_float, ldaf: c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dposvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, af: *mut c_double, ldaf: c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cposvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zposvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sposvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, af: *mut c_float, ldaf: c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_dposvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, af: *mut c_double, ldaf: c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
     pub fn LAPACKE_cposvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zposvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spotrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int) -> c_int;
     pub fn LAPACKE_dpotrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int) -> c_int;
     pub fn LAPACKE_cpotrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_zpotrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_spotri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int) -> c_int;
     pub fn LAPACKE_dpotri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int) -> c_int;
     pub fn LAPACKE_cpotri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_zpotri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_spotrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dpotrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cpotrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zpotrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sppcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_float, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dppcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_double, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_cppcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zppcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sppequ(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_float, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dppequ(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_double, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_cppequ(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zppequ(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_float, afp: *const c_float, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dpprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_double, afp: *const c_double, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cpprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *const c_void, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zpprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *const c_void, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sppsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_float, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dppsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_double, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cppsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_void, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zppsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_void, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sppsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_float, afp: *mut c_float, equed: *mut c_char, s: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dppsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_double, afp: *mut c_double, equed: *mut c_char, s: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cppsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_void, afp: *mut c_void, equed: *mut c_char, s: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zppsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_void, afp: *mut c_void, equed: *mut c_char, s: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_float) -> c_int;
     pub fn LAPACKE_dpptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_double) -> c_int;
     pub fn LAPACKE_cpptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void) -> c_int;
     pub fn LAPACKE_zpptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void) -> c_int;
+
     pub fn LAPACKE_spptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_float) -> c_int;
     pub fn LAPACKE_dpptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_double) -> c_int;
     pub fn LAPACKE_cpptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void) -> c_int;
     pub fn LAPACKE_zpptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void) -> c_int;
+
     pub fn LAPACKE_spptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_float, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dpptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_double, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cpptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zpptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_spstrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, piv: *mut c_int, rank: *mut c_int, tol: c_float) -> c_int;
     pub fn LAPACKE_dpstrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, piv: *mut c_int, rank: *mut c_int, tol: c_double) -> c_int;
     pub fn LAPACKE_cpstrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, piv: *mut c_int, rank: *mut c_int, tol: c_float) -> c_int;
     pub fn LAPACKE_zpstrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, piv: *mut c_int, rank: *mut c_int, tol: c_double) -> c_int;
+
     pub fn LAPACKE_sptcon(n: c_int, d: *const c_float, e: *const c_float, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dptcon(n: c_int, d: *const c_double, e: *const c_double, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_cptcon(n: c_int, d: *const c_float, e: *const c_void, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zptcon(n: c_int, d: *const c_double, e: *const c_void, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spteqr(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_float, e: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dpteqr(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_double, e: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
     pub fn LAPACKE_cpteqr(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_float, e: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zpteqr(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_double, e: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sptrfs(matrix_order: c_int, n: c_int, nrhs: c_int, d: *const c_float, e: *const c_float, df: *const c_float, ef: *const c_float, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dptrfs(matrix_order: c_int, n: c_int, nrhs: c_int, d: *const c_double, e: *const c_double, df: *const c_double, ef: *const c_double, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cptrfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, d: *const c_float, e: *const c_void, df: *const c_float, ef: *const c_void, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zptrfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, d: *const c_double, e: *const c_void, df: *const c_double, ef: *const c_void, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sptsv(matrix_order: c_int, n: c_int, nrhs: c_int, d: *mut c_float, e: *mut c_float, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dptsv(matrix_order: c_int, n: c_int, nrhs: c_int, d: *mut c_double, e: *mut c_double, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cptsv(matrix_order: c_int, n: c_int, nrhs: c_int, d: *mut c_float, e: *mut c_void, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zptsv(matrix_order: c_int, n: c_int, nrhs: c_int, d: *mut c_double, e: *mut c_void, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sptsvx(matrix_order: c_int, fact: c_char, n: c_int, nrhs: c_int, d: *const c_float, e: *const c_float, df: *mut c_float, ef: *mut c_float, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dptsvx(matrix_order: c_int, fact: c_char, n: c_int, nrhs: c_int, d: *const c_double, e: *const c_double, df: *mut c_double, ef: *mut c_double, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cptsvx(matrix_order: c_int, fact: c_char, n: c_int, nrhs: c_int, d: *const c_float, e: *const c_void, df: *mut c_float, ef: *mut c_void, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zptsvx(matrix_order: c_int, fact: c_char, n: c_int, nrhs: c_int, d: *const c_double, e: *const c_void, df: *mut c_double, ef: *mut c_void, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_spttrf(n: c_int, d: *mut c_float, e: *mut c_float) -> c_int;
     pub fn LAPACKE_dpttrf(n: c_int, d: *mut c_double, e: *mut c_double) -> c_int;
     pub fn LAPACKE_cpttrf(n: c_int, d: *mut c_float, e: *mut c_void) -> c_int;
     pub fn LAPACKE_zpttrf(n: c_int, d: *mut c_double, e: *mut c_void) -> c_int;
+
     pub fn LAPACKE_spttrs(matrix_order: c_int, n: c_int, nrhs: c_int, d: *const c_float, e: *const c_float, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dpttrs(matrix_order: c_int, n: c_int, nrhs: c_int, d: *const c_double, e: *const c_double, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cpttrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, d: *const c_float, e: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zpttrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, d: *const c_double, e: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_ssbev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_float, ldab: c_int, w: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dsbev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_double, ldab: c_int, w: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_ssbevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_float, ldab: c_int, w: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dsbevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_double, ldab: c_int, w: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_ssbevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_float, ldab: c_int, q: *mut c_float, ldq: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_dsbevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_double, ldab: c_int, q: *mut c_double, ldq: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssbgst(matrix_order: c_int, vect: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_float, ldab: c_int, bb: *const c_float, ldbb: c_int, x: *mut c_float, ldx: c_int) -> c_int;
     pub fn LAPACKE_dsbgst(matrix_order: c_int, vect: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_double, ldab: c_int, bb: *const c_double, ldbb: c_int, x: *mut c_double, ldx: c_int) -> c_int;
+
     pub fn LAPACKE_ssbgv(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_float, ldab: c_int, bb: *mut c_float, ldbb: c_int, w: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dsbgv(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_double, ldab: c_int, bb: *mut c_double, ldbb: c_int, w: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_ssbgvd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_float, ldab: c_int, bb: *mut c_float, ldbb: c_int, w: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dsbgvd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_double, ldab: c_int, bb: *mut c_double, ldbb: c_int, w: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_ssbgvx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_float, ldab: c_int, bb: *mut c_float, ldbb: c_int, q: *mut c_float, ldq: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_dsbgvx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ka: c_int, kb: c_int, ab: *mut c_double, ldab: c_int, bb: *mut c_double, ldbb: c_int, q: *mut c_double, ldq: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssbtrd(matrix_order: c_int, vect: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_float, ldab: c_int, d: *mut c_float, e: *mut c_float, q: *mut c_float, ldq: c_int) -> c_int;
     pub fn LAPACKE_dsbtrd(matrix_order: c_int, vect: c_char, uplo: c_char, n: c_int, kd: c_int, ab: *mut c_double, ldab: c_int, d: *mut c_double, e: *mut c_double, q: *mut c_double, ldq: c_int) -> c_int;
+
     pub fn LAPACKE_ssfrk(matrix_order: c_int, transr: c_char, uplo: c_char, trans: c_char, n: c_int, k: c_int, alpha: c_float, a: *const c_float, lda: c_int, beta: c_float, c: *mut c_float) -> c_int;
     pub fn LAPACKE_dsfrk(matrix_order: c_int, transr: c_char, uplo: c_char, trans: c_char, n: c_int, k: c_int, alpha: c_double, a: *const c_double, lda: c_int, beta: c_double, c: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sspcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_float, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dspcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_double, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_cspcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zspcon(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sspev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_float, w: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dspev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_double, w: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sspevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_float, w: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dspevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_double, w: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sspevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ap: *mut c_float, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_dspevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ap: *mut c_double, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sspgst(matrix_order: c_int, itype: c_int, uplo: c_char, n: c_int, ap: *mut c_float, bp: *const c_float) -> c_int;
     pub fn LAPACKE_dspgst(matrix_order: c_int, itype: c_int, uplo: c_char, n: c_int, ap: *mut c_double, bp: *const c_double) -> c_int;
+
     pub fn LAPACKE_sspgv(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_float, bp: *mut c_float, w: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dspgv(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_double, bp: *mut c_double, w: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sspgvd(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_float, bp: *mut c_float, w: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dspgvd(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, ap: *mut c_double, bp: *mut c_double, w: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sspgvx(matrix_order: c_int, itype: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ap: *mut c_float, bp: *mut c_float, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_dspgvx(matrix_order: c_int, itype: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, ap: *mut c_double, bp: *mut c_double, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_float, afp: *const c_float, ipiv: *const c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dsprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_double, afp: *const c_double, ipiv: *const c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_csprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *const c_void, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zsprfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *const c_void, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sspsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_float, ipiv: *mut c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dspsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_double, ipiv: *mut c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_cspsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_void, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zspsv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *mut c_void, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sspsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_float, afp: *mut c_float, ipiv: *mut c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dspsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_double, afp: *mut c_double, ipiv: *mut c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_cspsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *mut c_void, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zspsvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, afp: *mut c_void, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssptrd(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_float, d: *mut c_float, e: *mut c_float, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dsptrd(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_double, d: *mut c_double, e: *mut c_double, tau: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_float, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_dsptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_double, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_csptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_zsptrf(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, ipiv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_float, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_dsptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_double, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_csptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_zsptri(matrix_order: c_int, uplo: c_char, n: c_int, ap: *mut c_void, ipiv: *const c_int) -> c_int;
+
     pub fn LAPACKE_ssptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_float, ipiv: *const c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dsptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_double, ipiv: *const c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_csptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zsptrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, ap: *const c_void, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_sstebz(range: c_char, order: c_char, n: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, d: *const c_float, e: *const c_float, m: *mut c_int, nsplit: *mut c_int, w: *mut c_float, iblock: *mut c_int, isplit: *mut c_int) -> c_int;
     pub fn LAPACKE_dstebz(range: c_char, order: c_char, n: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, d: *const c_double, e: *const c_double, m: *mut c_int, nsplit: *mut c_int, w: *mut c_double, iblock: *mut c_int, isplit: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sstedc(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_float, e: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dstedc(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_double, e: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
     pub fn LAPACKE_cstedc(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_float, e: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zstedc(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_double, e: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sstegr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, isuppz: *mut c_int) -> c_int;
     pub fn LAPACKE_dstegr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, isuppz: *mut c_int) -> c_int;
     pub fn LAPACKE_cstegr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, isuppz: *mut c_int) -> c_int;
     pub fn LAPACKE_zstegr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, isuppz: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sstein(matrix_order: c_int, n: c_int, d: *const c_float, e: *const c_float, m: c_int, w: *const c_float, iblock: *const c_int, isplit: *const c_int, z: *mut c_float, ldz: c_int, ifailv: *mut c_int) -> c_int;
     pub fn LAPACKE_dstein(matrix_order: c_int, n: c_int, d: *const c_double, e: *const c_double, m: c_int, w: *const c_double, iblock: *const c_int, isplit: *const c_int, z: *mut c_double, ldz: c_int, ifailv: *mut c_int) -> c_int;
     pub fn LAPACKE_cstein(matrix_order: c_int, n: c_int, d: *const c_float, e: *const c_float, m: c_int, w: *const c_float, iblock: *const c_int, isplit: *const c_int, z: *mut c_void, ldz: c_int, ifailv: *mut c_int) -> c_int;
     pub fn LAPACKE_zstein(matrix_order: c_int, n: c_int, d: *const c_double, e: *const c_double, m: c_int, w: *const c_double, iblock: *const c_int, isplit: *const c_int, z: *mut c_void, ldz: c_int, ifailv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sstemr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float, il: c_int, iu: c_int, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, nzc: c_int, isuppz: *mut c_int, tryrac: *mut c_int) -> c_int;
     pub fn LAPACKE_dstemr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double, il: c_int, iu: c_int, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, nzc: c_int, isuppz: *mut c_int, tryrac: *mut c_int) -> c_int;
     pub fn LAPACKE_cstemr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float, il: c_int, iu: c_int, m: *mut c_int, w: *mut c_float, z: *mut c_void, ldz: c_int, nzc: c_int, isuppz: *mut c_int, tryrac: *mut c_int) -> c_int;
     pub fn LAPACKE_zstemr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double, il: c_int, iu: c_int, m: *mut c_int, w: *mut c_double, z: *mut c_void, ldz: c_int, nzc: c_int, isuppz: *mut c_int, tryrac: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssteqr(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_float, e: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dsteqr(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_double, e: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
     pub fn LAPACKE_csteqr(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_float, e: *mut c_float, z: *mut c_void, ldz: c_int) -> c_int;
     pub fn LAPACKE_zsteqr(matrix_order: c_int, compz: c_char, n: c_int, d: *mut c_double, e: *mut c_double, z: *mut c_void, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_ssterf(n: c_int, d: *mut c_float, e: *mut c_float) -> c_int;
     pub fn LAPACKE_dsterf(n: c_int, d: *mut c_double, e: *mut c_double) -> c_int;
+
     pub fn LAPACKE_sstev(matrix_order: c_int, jobz: c_char, n: c_int, d: *mut c_float, e: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dstev(matrix_order: c_int, jobz: c_char, n: c_int, d: *mut c_double, e: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sstevd(matrix_order: c_int, jobz: c_char, n: c_int, d: *mut c_float, e: *mut c_float, z: *mut c_float, ldz: c_int) -> c_int;
     pub fn LAPACKE_dstevd(matrix_order: c_int, jobz: c_char, n: c_int, d: *mut c_double, e: *mut c_double, z: *mut c_double, ldz: c_int) -> c_int;
+
     pub fn LAPACKE_sstevr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, isuppz: *mut c_int) -> c_int;
     pub fn LAPACKE_dstevr(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, isuppz: *mut c_int) -> c_int;
+
     pub fn LAPACKE_sstevx(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_dstevx(matrix_order: c_int, jobz: c_char, range: c_char, n: c_int, d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssycon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_float, lda: c_int, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dsycon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_double, lda: c_int, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_csycon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, anorm: c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_zsycon(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, anorm: c_double, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssyequb(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_float, lda: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_dsyequb(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_double, lda: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
     pub fn LAPACKE_csyequb(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, s: *mut c_float, scond: *mut c_float, amax: *mut c_float) -> c_int;
     pub fn LAPACKE_zsyequb(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, s: *mut c_double, scond: *mut c_double, amax: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssyev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, w: *mut c_float) -> c_int;
     pub fn LAPACKE_dsyev(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, w: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssyevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, w: *mut c_float) -> c_int;
     pub fn LAPACKE_dsyevd(matrix_order: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, w: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssyevr(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, isuppz: *mut c_int) -> c_int;
     pub fn LAPACKE_dsyevr(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, isuppz: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssyevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_dsyevx(matrix_order: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssygst(matrix_order: c_int, itype: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, b: *const c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dsygst(matrix_order: c_int, itype: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, b: *const c_double, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_ssygv(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, w: *mut c_float) -> c_int;
     pub fn LAPACKE_dsygv(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, w: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssygvd(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, w: *mut c_float) -> c_int;
     pub fn LAPACKE_dsygvd(matrix_order: c_int, itype: c_int, jobz: c_char, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, w: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssygvx(matrix_order: c_int, itype: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, vl: c_float, vu: c_float, il: c_int, iu: c_int, abstol: c_float, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int, ifail: *mut c_int) -> c_int;
     pub fn LAPACKE_dsygvx(matrix_order: c_int, itype: c_int, jobz: c_char, range: c_char, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, vl: c_double, vu: c_double, il: c_int, iu: c_int, abstol: c_double, m: *mut c_int, w: *mut c_double, z: *mut c_double, ldz: c_int, ifail: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssyrfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, af: *const c_float, ldaf: c_int, ipiv: *const c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dsyrfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, af: *const c_double, ldaf: c_int, ipiv: *const c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_csyrfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zsyrfs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssyrfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, af: *const c_float, ldaf: c_int, ipiv: *const c_int, s: *const c_float, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_dsyrfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, af: *const c_double, ldaf: c_int, ipiv: *const c_int, s: *const c_double, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
     pub fn LAPACKE_csyrfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, s: *const c_float, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zsyrfsx(matrix_order: c_int, uplo: c_char, equed: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *const c_void, ldaf: c_int, ipiv: *const c_int, s: *const c_double, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssysv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, ipiv: *mut c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dsysv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, ipiv: *mut c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_csysv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zsysv(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_ssysvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, af: *mut c_float, ldaf: c_int, ipiv: *mut c_int, b: *const c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dsysvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, af: *mut c_double, ldaf: c_int, ipiv: *mut c_int, b: *const c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_csysvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_zsysvx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, b: *const c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssysvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, af: *mut c_float, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_float, ldb: c_int, x: *mut c_float, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_dsysvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, af: *mut c_double, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_double, ldb: c_int, x: *mut c_double, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
     pub fn LAPACKE_csysvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, s: *mut c_float, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_float, rpvgrw: *mut c_float, berr: *mut c_float, n_err_bnds: c_int, err_bnds_norm: *mut c_float, err_bnds_comp: *mut c_float, nparams: c_int, params: *mut c_float) -> c_int;
     pub fn LAPACKE_zsysvxx(matrix_order: c_int, fact: c_char, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, af: *mut c_void, ldaf: c_int, ipiv: *mut c_int, equed: *mut c_char, s: *mut c_double, b: *mut c_void, ldb: c_int, x: *mut c_void, ldx: c_int, rcond: *mut c_double, rpvgrw: *mut c_double, berr: *mut c_double, n_err_bnds: c_int, err_bnds_norm: *mut c_double, err_bnds_comp: *mut c_double, nparams: c_int, params: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssytrd(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, d: *mut c_float, e: *mut c_float, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dsytrd(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, d: *mut c_double, e: *mut c_double, tau: *mut c_double) -> c_int;
+
     pub fn LAPACKE_ssytrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_dsytrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_csytrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int) -> c_int;
     pub fn LAPACKE_zsytrf(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int) -> c_int;
+
     pub fn LAPACKE_ssytri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_float, lda: c_int, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_dsytri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_double, lda: c_int, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_csytri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *const c_int) -> c_int;
     pub fn LAPACKE_zsytri(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *const c_int) -> c_int;
+
     pub fn LAPACKE_ssytrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, ipiv: *const c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dsytrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, ipiv: *const c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_csytrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zsytrs(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_stbcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, kd: c_int, ab: *const c_float, ldab: c_int, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dtbcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, kd: c_int, ab: *const c_double, ldab: c_int, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_ctbcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, kd: c_int, ab: *const c_void, ldab: c_int, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_ztbcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, kd: c_int, ab: *const c_void, ldab: c_int, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_stbrfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_float, ldab: c_int, b: *const c_float, ldb: c_int, x: *const c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dtbrfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_double, ldab: c_int, b: *const c_double, ldb: c_int, x: *const c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_ctbrfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, b: *const c_void, ldb: c_int, x: *const c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_ztbrfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, b: *const c_void, ldb: c_int, x: *const c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_stbtrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_float, ldab: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dtbtrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_double, ldab: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_ctbtrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_ztbtrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, kd: c_int, nrhs: c_int, ab: *const c_void, ldab: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_stfsm(matrix_order: c_int, transr: c_char, side: c_char, uplo: c_char, trans: c_char, diag: c_char, m: c_int, n: c_int, alpha: c_float, a: *const c_float, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dtfsm(matrix_order: c_int, transr: c_char, side: c_char, uplo: c_char, trans: c_char, diag: c_char, m: c_int, n: c_int, alpha: c_double, a: *const c_double, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_ctfsm(matrix_order: c_int, transr: c_char, side: c_char, uplo: c_char, trans: c_char, diag: c_char, m: c_int, n: c_int, alpha: c_void, a: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_ztfsm(matrix_order: c_int, transr: c_char, side: c_char, uplo: c_char, trans: c_char, diag: c_char, m: c_int, n: c_int, alpha: c_void, a: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_stftri(matrix_order: c_int, transr: c_char, uplo: c_char, diag: c_char, n: c_int, a: *mut c_float) -> c_int;
     pub fn LAPACKE_dtftri(matrix_order: c_int, transr: c_char, uplo: c_char, diag: c_char, n: c_int, a: *mut c_double) -> c_int;
     pub fn LAPACKE_ctftri(matrix_order: c_int, transr: c_char, uplo: c_char, diag: c_char, n: c_int, a: *mut c_void) -> c_int;
     pub fn LAPACKE_ztftri(matrix_order: c_int, transr: c_char, uplo: c_char, diag: c_char, n: c_int, a: *mut c_void) -> c_int;
+
     pub fn LAPACKE_stfttp(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, arf: *const c_float, ap: *mut c_float) -> c_int;
     pub fn LAPACKE_dtfttp(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, arf: *const c_double, ap: *mut c_double) -> c_int;
     pub fn LAPACKE_ctfttp(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, arf: *const c_void, ap: *mut c_void) -> c_int;
     pub fn LAPACKE_ztfttp(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, arf: *const c_void, ap: *mut c_void) -> c_int;
+
     pub fn LAPACKE_stfttr(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, arf: *const c_float, a: *mut c_float, lda: c_int) -> c_int;
     pub fn LAPACKE_dtfttr(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, arf: *const c_double, a: *mut c_double, lda: c_int) -> c_int;
     pub fn LAPACKE_ctfttr(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, arf: *const c_void, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_ztfttr(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, arf: *const c_void, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_stgevc(matrix_order: c_int, side: c_char, howmny: c_char, select: *const c_int, n: c_int, s: *const c_float, lds: c_int, p: *const c_float, ldp: c_int, vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_dtgevc(matrix_order: c_int, side: c_char, howmny: c_char, select: *const c_int, n: c_int, s: *const c_double, lds: c_int, p: *const c_double, ldp: c_int, vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_ctgevc(matrix_order: c_int, side: c_char, howmny: c_char, select: *const c_int, n: c_int, s: *const c_void, lds: c_int, p: *const c_void, ldp: c_int, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_ztgevc(matrix_order: c_int, side: c_char, howmny: c_char, select: *const c_int, n: c_int, s: *const c_void, lds: c_int, p: *const c_void, ldp: c_int, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, mm: c_int, m: *mut c_int) -> c_int;
+
     pub fn LAPACKE_stgexc(matrix_order: c_int, wantq: c_int, wantz: c_int, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, q: *mut c_float, ldq: c_int, z: *mut c_float, ldz: c_int, ifst: *mut c_int, ilst: *mut c_int) -> c_int;
     pub fn LAPACKE_dtgexc(matrix_order: c_int, wantq: c_int, wantz: c_int, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, q: *mut c_double, ldq: c_int, z: *mut c_double, ldz: c_int, ifst: *mut c_int, ilst: *mut c_int) -> c_int;
     pub fn LAPACKE_ctgexc(matrix_order: c_int, wantq: c_int, wantz: c_int, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, q: *mut c_void, ldq: c_int, z: *mut c_void, ldz: c_int, ifst: c_int, ilst: c_int) -> c_int;
     pub fn LAPACKE_ztgexc(matrix_order: c_int, wantq: c_int, wantz: c_int, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, q: *mut c_void, ldq: c_int, z: *mut c_void, ldz: c_int, ifst: c_int, ilst: c_int) -> c_int;
+
     pub fn LAPACKE_stgsen(matrix_order: c_int, ijob: c_int, wantq: c_int, wantz: c_int, select: *const c_int, n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float, q: *mut c_float, ldq: c_int, z: *mut c_float, ldz: c_int, m: *mut c_int, pl: *mut c_float, pr: *mut c_float, dif: *mut c_float) -> c_int;
     pub fn LAPACKE_dtgsen(matrix_order: c_int, ijob: c_int, wantq: c_int, wantz: c_int, select: *const c_int, n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double, q: *mut c_double, ldq: c_int, z: *mut c_double, ldz: c_int, m: *mut c_int, pl: *mut c_double, pr: *mut c_double, dif: *mut c_double) -> c_int;
     pub fn LAPACKE_ctgsen(matrix_order: c_int, ijob: c_int, wantq: c_int, wantz: c_int, select: *const c_int, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, alpha: *mut c_void, beta: *mut c_void, q: *mut c_void, ldq: c_int, z: *mut c_void, ldz: c_int, m: *mut c_int, pl: *mut c_float, pr: *mut c_float, dif: *mut c_float) -> c_int;
     pub fn LAPACKE_ztgsen(matrix_order: c_int, ijob: c_int, wantq: c_int, wantz: c_int, select: *const c_int, n: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, alpha: *mut c_void, beta: *mut c_void, q: *mut c_void, ldq: c_int, z: *mut c_void, ldz: c_int, m: *mut c_int, pl: *mut c_double, pr: *mut c_double, dif: *mut c_double) -> c_int;
+
     pub fn LAPACKE_stgsja(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, p: c_int, n: c_int, k: c_int, l: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, tola: c_float, tolb: c_float, alpha: *mut c_float, beta: *mut c_float, u: *mut c_float, ldu: c_int, v: *mut c_float, ldv: c_int, q: *mut c_float, ldq: c_int, ncycle: *mut c_int) -> c_int;
     pub fn LAPACKE_dtgsja(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, p: c_int, n: c_int, k: c_int, l: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, tola: c_double, tolb: c_double, alpha: *mut c_double, beta: *mut c_double, u: *mut c_double, ldu: c_int, v: *mut c_double, ldv: c_int, q: *mut c_double, ldq: c_int, ncycle: *mut c_int) -> c_int;
     pub fn LAPACKE_ctgsja(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, p: c_int, n: c_int, k: c_int, l: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, tola: c_float, tolb: c_float, alpha: *mut c_float, beta: *mut c_float, u: *mut c_void, ldu: c_int, v: *mut c_void, ldv: c_int, q: *mut c_void, ldq: c_int, ncycle: *mut c_int) -> c_int;
     pub fn LAPACKE_ztgsja(matrix_order: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int, p: c_int, n: c_int, k: c_int, l: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, tola: c_double, tolb: c_double, alpha: *mut c_double, beta: *mut c_double, u: *mut c_void, ldu: c_int, v: *mut c_void, ldv: c_int, q: *mut c_void, ldq: c_int, ncycle: *mut c_int) -> c_int;
+
     pub fn LAPACKE_stgsna(matrix_order: c_int, job: c_char, howmny: c_char, select: *const c_int, n: c_int, a: *const c_float, lda: c_int, b: *const c_float, ldb: c_int, vl: *const c_float, ldvl: c_int, vr: *const c_float, ldvr: c_int, s: *mut c_float, dif: *mut c_float, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_dtgsna(matrix_order: c_int, job: c_char, howmny: c_char, select: *const c_int, n: c_int, a: *const c_double, lda: c_int, b: *const c_double, ldb: c_int, vl: *const c_double, ldvl: c_int, vr: *const c_double, ldvr: c_int, s: *mut c_double, dif: *mut c_double, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_ctgsna(matrix_order: c_int, job: c_char, howmny: c_char, select: *const c_int, n: c_int, a: *const c_void, lda: c_int, b: *const c_void, ldb: c_int, vl: *const c_void, ldvl: c_int, vr: *const c_void, ldvr: c_int, s: *mut c_float, dif: *mut c_float, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_ztgsna(matrix_order: c_int, job: c_char, howmny: c_char, select: *const c_int, n: c_int, a: *const c_void, lda: c_int, b: *const c_void, ldb: c_int, vl: *const c_void, ldvl: c_int, vr: *const c_void, ldvr: c_int, s: *mut c_double, dif: *mut c_double, mm: c_int, m: *mut c_int) -> c_int;
+
     pub fn LAPACKE_stgsyl(matrix_order: c_int, trans: c_char, ijob: c_int, m: c_int, n: c_int, a: *const c_float, lda: c_int, b: *const c_float, ldb: c_int, c: *mut c_float, ldc: c_int, d: *const c_float, ldd: c_int, e: *const c_float, lde: c_int, f: *mut c_float, ldf: c_int, scale: *mut c_float, dif: *mut c_float) -> c_int;
     pub fn LAPACKE_dtgsyl(matrix_order: c_int, trans: c_char, ijob: c_int, m: c_int, n: c_int, a: *const c_double, lda: c_int, b: *const c_double, ldb: c_int, c: *mut c_double, ldc: c_int, d: *const c_double, ldd: c_int, e: *const c_double, lde: c_int, f: *mut c_double, ldf: c_int, scale: *mut c_double, dif: *mut c_double) -> c_int;
     pub fn LAPACKE_ctgsyl(matrix_order: c_int, trans: c_char, ijob: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, b: *const c_void, ldb: c_int, c: *mut c_void, ldc: c_int, d: *const c_void, ldd: c_int, e: *const c_void, lde: c_int, f: *mut c_void, ldf: c_int, scale: *mut c_float, dif: *mut c_float) -> c_int;
     pub fn LAPACKE_ztgsyl(matrix_order: c_int, trans: c_char, ijob: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, b: *const c_void, ldb: c_int, c: *mut c_void, ldc: c_int, d: *const c_void, ldd: c_int, e: *const c_void, lde: c_int, f: *mut c_void, ldf: c_int, scale: *mut c_double, dif: *mut c_double) -> c_int;
+
     pub fn LAPACKE_stpcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, ap: *const c_float, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dtpcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, ap: *const c_double, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_ctpcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, ap: *const c_void, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_ztpcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, ap: *const c_void, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_stprfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, ap: *const c_float, b: *const c_float, ldb: c_int, x: *const c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dtprfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, ap: *const c_double, b: *const c_double, ldb: c_int, x: *const c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_ctprfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, ap: *const c_void, b: *const c_void, ldb: c_int, x: *const c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_ztprfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, ap: *const c_void, b: *const c_void, ldb: c_int, x: *const c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_stptri(matrix_order: c_int, uplo: c_char, diag: c_char, n: c_int, ap: *mut c_float) -> c_int;
     pub fn LAPACKE_dtptri(matrix_order: c_int, uplo: c_char, diag: c_char, n: c_int, ap: *mut c_double) -> c_int;
     pub fn LAPACKE_ctptri(matrix_order: c_int, uplo: c_char, diag: c_char, n: c_int, ap: *mut c_void) -> c_int;
     pub fn LAPACKE_ztptri(matrix_order: c_int, uplo: c_char, diag: c_char, n: c_int, ap: *mut c_void) -> c_int;
+
     pub fn LAPACKE_stptrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, ap: *const c_float, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dtptrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, ap: *const c_double, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_ctptrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, ap: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_ztptrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, ap: *const c_void, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_stpttf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, ap: *const c_float, arf: *mut c_float) -> c_int;
     pub fn LAPACKE_dtpttf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, ap: *const c_double, arf: *mut c_double) -> c_int;
     pub fn LAPACKE_ctpttf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, ap: *const c_void, arf: *mut c_void) -> c_int;
     pub fn LAPACKE_ztpttf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, ap: *const c_void, arf: *mut c_void) -> c_int;
+
     pub fn LAPACKE_stpttr(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_float, a: *mut c_float, lda: c_int) -> c_int;
     pub fn LAPACKE_dtpttr(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_double, a: *mut c_double, lda: c_int) -> c_int;
     pub fn LAPACKE_ctpttr(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_ztpttr(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_strcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, a: *const c_float, lda: c_int, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_dtrcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, a: *const c_double, lda: c_int, rcond: *mut c_double) -> c_int;
     pub fn LAPACKE_ctrcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, a: *const c_void, lda: c_int, rcond: *mut c_float) -> c_int;
     pub fn LAPACKE_ztrcon(matrix_order: c_int, norm: c_char, uplo: c_char, diag: c_char, n: c_int, a: *const c_void, lda: c_int, rcond: *mut c_double) -> c_int;
+
     pub fn LAPACKE_strevc(matrix_order: c_int, side: c_char, howmny: c_char, select: *mut c_int, n: c_int, t: *const c_float, ldt: c_int, vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_dtrevc(matrix_order: c_int, side: c_char, howmny: c_char, select: *mut c_int, n: c_int, t: *const c_double, ldt: c_int, vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_ctrevc(matrix_order: c_int, side: c_char, howmny: c_char, select: *const c_int, n: c_int, t: *mut c_void, ldt: c_int, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_ztrevc(matrix_order: c_int, side: c_char, howmny: c_char, select: *const c_int, n: c_int, t: *mut c_void, ldt: c_int, vl: *mut c_void, ldvl: c_int, vr: *mut c_void, ldvr: c_int, mm: c_int, m: *mut c_int) -> c_int;
+
     pub fn LAPACKE_strexc(matrix_order: c_int, compq: c_char, n: c_int, t: *mut c_float, ldt: c_int, q: *mut c_float, ldq: c_int, ifst: *mut c_int, ilst: *mut c_int) -> c_int;
     pub fn LAPACKE_dtrexc(matrix_order: c_int, compq: c_char, n: c_int, t: *mut c_double, ldt: c_int, q: *mut c_double, ldq: c_int, ifst: *mut c_int, ilst: *mut c_int) -> c_int;
     pub fn LAPACKE_ctrexc(matrix_order: c_int, compq: c_char, n: c_int, t: *mut c_void, ldt: c_int, q: *mut c_void, ldq: c_int, ifst: c_int, ilst: c_int) -> c_int;
     pub fn LAPACKE_ztrexc(matrix_order: c_int, compq: c_char, n: c_int, t: *mut c_void, ldt: c_int, q: *mut c_void, ldq: c_int, ifst: c_int, ilst: c_int) -> c_int;
+
     pub fn LAPACKE_strrfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, b: *const c_float, ldb: c_int, x: *const c_float, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_dtrrfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, b: *const c_double, ldb: c_int, x: *const c_double, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
     pub fn LAPACKE_ctrrfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, b: *const c_void, ldb: c_int, x: *const c_void, ldx: c_int, ferr: *mut c_float, berr: *mut c_float) -> c_int;
     pub fn LAPACKE_ztrrfs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, b: *const c_void, ldb: c_int, x: *const c_void, ldx: c_int, ferr: *mut c_double, berr: *mut c_double) -> c_int;
+
     pub fn LAPACKE_strsen(matrix_order: c_int, job: c_char, compq: c_char, select: *const c_int, n: c_int, t: *mut c_float, ldt: c_int, q: *mut c_float, ldq: c_int, wr: *mut c_float, wi: *mut c_float, m: *mut c_int, s: *mut c_float, sep: *mut c_float) -> c_int;
     pub fn LAPACKE_dtrsen(matrix_order: c_int, job: c_char, compq: c_char, select: *const c_int, n: c_int, t: *mut c_double, ldt: c_int, q: *mut c_double, ldq: c_int, wr: *mut c_double, wi: *mut c_double, m: *mut c_int, s: *mut c_double, sep: *mut c_double) -> c_int;
     pub fn LAPACKE_ctrsen(matrix_order: c_int, job: c_char, compq: c_char, select: *const c_int, n: c_int, t: *mut c_void, ldt: c_int, q: *mut c_void, ldq: c_int, w: *mut c_void, m: *mut c_int, s: *mut c_float, sep: *mut c_float) -> c_int;
     pub fn LAPACKE_ztrsen(matrix_order: c_int, job: c_char, compq: c_char, select: *const c_int, n: c_int, t: *mut c_void, ldt: c_int, q: *mut c_void, ldq: c_int, w: *mut c_void, m: *mut c_int, s: *mut c_double, sep: *mut c_double) -> c_int;
+
     pub fn LAPACKE_strsna(matrix_order: c_int, job: c_char, howmny: c_char, select: *const c_int, n: c_int, t: *const c_float, ldt: c_int, vl: *const c_float, ldvl: c_int, vr: *const c_float, ldvr: c_int, s: *mut c_float, sep: *mut c_float, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_dtrsna(matrix_order: c_int, job: c_char, howmny: c_char, select: *const c_int, n: c_int, t: *const c_double, ldt: c_int, vl: *const c_double, ldvl: c_int, vr: *const c_double, ldvr: c_int, s: *mut c_double, sep: *mut c_double, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_ctrsna(matrix_order: c_int, job: c_char, howmny: c_char, select: *const c_int, n: c_int, t: *const c_void, ldt: c_int, vl: *const c_void, ldvl: c_int, vr: *const c_void, ldvr: c_int, s: *mut c_float, sep: *mut c_float, mm: c_int, m: *mut c_int) -> c_int;
     pub fn LAPACKE_ztrsna(matrix_order: c_int, job: c_char, howmny: c_char, select: *const c_int, n: c_int, t: *const c_void, ldt: c_int, vl: *const c_void, ldvl: c_int, vr: *const c_void, ldvr: c_int, s: *mut c_double, sep: *mut c_double, mm: c_int, m: *mut c_int) -> c_int;
+
     pub fn LAPACKE_strsyl(matrix_order: c_int, trana: c_char, tranb: c_char, isgn: c_int, m: c_int, n: c_int, a: *const c_float, lda: c_int, b: *const c_float, ldb: c_int, c: *mut c_float, ldc: c_int, scale: *mut c_float) -> c_int;
     pub fn LAPACKE_dtrsyl(matrix_order: c_int, trana: c_char, tranb: c_char, isgn: c_int, m: c_int, n: c_int, a: *const c_double, lda: c_int, b: *const c_double, ldb: c_int, c: *mut c_double, ldc: c_int, scale: *mut c_double) -> c_int;
     pub fn LAPACKE_ctrsyl(matrix_order: c_int, trana: c_char, tranb: c_char, isgn: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, b: *const c_void, ldb: c_int, c: *mut c_void, ldc: c_int, scale: *mut c_float) -> c_int;
     pub fn LAPACKE_ztrsyl(matrix_order: c_int, trana: c_char, tranb: c_char, isgn: c_int, m: c_int, n: c_int, a: *const c_void, lda: c_int, b: *const c_void, ldb: c_int, c: *mut c_void, ldc: c_int, scale: *mut c_double) -> c_int;
+
     pub fn LAPACKE_strtri(matrix_order: c_int, uplo: c_char, diag: c_char, n: c_int, a: *mut c_float, lda: c_int) -> c_int;
     pub fn LAPACKE_dtrtri(matrix_order: c_int, uplo: c_char, diag: c_char, n: c_int, a: *mut c_double, lda: c_int) -> c_int;
     pub fn LAPACKE_ctrtri(matrix_order: c_int, uplo: c_char, diag: c_char, n: c_int, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_ztrtri(matrix_order: c_int, uplo: c_char, diag: c_char, n: c_int, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_strtrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, a: *const c_float, lda: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dtrtrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, a: *const c_double, lda: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_ctrtrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_ztrtrs(matrix_order: c_int, uplo: c_char, trans: c_char, diag: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_strttf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *const c_float, lda: c_int, arf: *mut c_float) -> c_int;
     pub fn LAPACKE_dtrttf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *const c_double, lda: c_int, arf: *mut c_double) -> c_int;
     pub fn LAPACKE_ctrttf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, arf: *mut c_void) -> c_int;
     pub fn LAPACKE_ztrttf(matrix_order: c_int, transr: c_char, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, arf: *mut c_void) -> c_int;
+
     pub fn LAPACKE_strttp(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_float, lda: c_int, ap: *mut c_float) -> c_int;
     pub fn LAPACKE_dtrttp(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_double, lda: c_int, ap: *mut c_double) -> c_int;
     pub fn LAPACKE_ctrttp(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, ap: *mut c_void) -> c_int;
     pub fn LAPACKE_ztrttp(matrix_order: c_int, uplo: c_char, n: c_int, a: *const c_void, lda: c_int, ap: *mut c_void) -> c_int;
+
     pub fn LAPACKE_stzrzf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, tau: *mut c_float) -> c_int;
     pub fn LAPACKE_dtzrzf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, tau: *mut c_double) -> c_int;
     pub fn LAPACKE_ctzrzf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
     pub fn LAPACKE_ztzrzf(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, tau: *mut c_void) -> c_int;
+
     pub fn LAPACKE_cungbr(matrix_order: c_int, vect: c_char, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
     pub fn LAPACKE_zungbr(matrix_order: c_int, vect: c_char, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
+
     pub fn LAPACKE_cunghr(matrix_order: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
     pub fn LAPACKE_zunghr(matrix_order: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
+
     pub fn LAPACKE_cunglq(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
     pub fn LAPACKE_zunglq(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
+
     pub fn LAPACKE_cungql(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
     pub fn LAPACKE_zungql(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
+
     pub fn LAPACKE_cungqr(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
     pub fn LAPACKE_zungqr(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
+
     pub fn LAPACKE_cungrq(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
     pub fn LAPACKE_zungrq(matrix_order: c_int, m: c_int, n: c_int, k: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
+
     pub fn LAPACKE_cungtr(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
     pub fn LAPACKE_zungtr(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, tau: *const c_void) -> c_int;
+
     pub fn LAPACKE_cunmbr(matrix_order: c_int, vect: c_char, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zunmbr(matrix_order: c_int, vect: c_char, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_cunmhr(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zunmhr(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, ilo: c_int, ihi: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_cunmlq(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zunmlq(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_cunmql(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zunmql(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_cunmqr(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zunmqr(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_cunmrq(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zunmrq(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_cunmrz(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zunmrz(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_cunmtr(matrix_order: c_int, side: c_char, uplo: c_char, trans: c_char, m: c_int, n: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zunmtr(matrix_order: c_int, side: c_char, uplo: c_char, trans: c_char, m: c_int, n: c_int, a: *const c_void, lda: c_int, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_cupgtr(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, tau: *const c_void, q: *mut c_void, ldq: c_int) -> c_int;
     pub fn LAPACKE_zupgtr(matrix_order: c_int, uplo: c_char, n: c_int, ap: *const c_void, tau: *const c_void, q: *mut c_void, ldq: c_int) -> c_int;
+
     pub fn LAPACKE_cupmtr(matrix_order: c_int, side: c_char, uplo: c_char, trans: c_char, m: c_int, n: c_int, ap: *const c_void, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zupmtr(matrix_order: c_int, side: c_char, uplo: c_char, trans: c_char, m: c_int, n: c_int, ap: *const c_void, tau: *const c_void, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_claghe(matrix_order: c_int, n: c_int, k: c_int, d: *const c_float, a: *mut c_void, lda: c_int, iseed: *mut c_int) -> c_int;
     pub fn LAPACKE_zlaghe(matrix_order: c_int, n: c_int, k: c_int, d: *const c_double, a: *mut c_void, lda: c_int, iseed: *mut c_int) -> c_int;
+
     pub fn LAPACKE_slagsy(matrix_order: c_int, n: c_int, k: c_int, d: *const c_float, a: *mut c_float, lda: c_int, iseed: *mut c_int) -> c_int;
     pub fn LAPACKE_dlagsy(matrix_order: c_int, n: c_int, k: c_int, d: *const c_double, a: *mut c_double, lda: c_int, iseed: *mut c_int) -> c_int;
     pub fn LAPACKE_clagsy(matrix_order: c_int, n: c_int, k: c_int, d: *const c_float, a: *mut c_void, lda: c_int, iseed: *mut c_int) -> c_int;
     pub fn LAPACKE_zlagsy(matrix_order: c_int, n: c_int, k: c_int, d: *const c_double, a: *mut c_void, lda: c_int, iseed: *mut c_int) -> c_int;
+
     pub fn LAPACKE_slapmr(matrix_order: c_int, forwrd: c_int, m: c_int, n: c_int, x: *mut c_float, ldx: c_int, k: *mut c_int) -> c_int;
     pub fn LAPACKE_dlapmr(matrix_order: c_int, forwrd: c_int, m: c_int, n: c_int, x: *mut c_double, ldx: c_int, k: *mut c_int) -> c_int;
     pub fn LAPACKE_clapmr(matrix_order: c_int, forwrd: c_int, m: c_int, n: c_int, x: *mut c_void, ldx: c_int, k: *mut c_int) -> c_int;
     pub fn LAPACKE_zlapmr(matrix_order: c_int, forwrd: c_int, m: c_int, n: c_int, x: *mut c_void, ldx: c_int, k: *mut c_int) -> c_int;
+
     pub fn LAPACKE_slapy2(x: c_float, y: c_float) -> c_float;
     pub fn LAPACKE_dlapy2(x: c_double, y: c_double) -> c_double;
+
     pub fn LAPACKE_slapy3(x: c_float, y: c_float, z: c_float) -> c_float;
     pub fn LAPACKE_dlapy3(x: c_double, y: c_double, z: c_double) -> c_double;
+
     pub fn LAPACKE_slartgp(f: c_float, g: c_float, cs: *mut c_float, sn: *mut c_float, r: *mut c_float) -> c_int;
     pub fn LAPACKE_dlartgp(f: c_double, g: c_double, cs: *mut c_double, sn: *mut c_double, r: *mut c_double) -> c_int;
+
     pub fn LAPACKE_slartgs(x: c_float, y: c_float, sigma: c_float, cs: *mut c_float, sn: *mut c_float) -> c_int;
     pub fn LAPACKE_dlartgs(x: c_double, y: c_double, sigma: c_double, cs: *mut c_double, sn: *mut c_double) -> c_int;
+
+    // LAPACK 3.3.0
     pub fn LAPACKE_cbbcsd(matrix_order: c_int, jobu1: c_char, jobu2: c_char, jobv1t: c_char, jobv2t: c_char, trans: c_char, m: c_int, p: c_int, q: c_int, theta: *mut c_float, phi: *mut c_float, u1: *mut c_void, ldu1: c_int, u2: *mut c_void, ldu2: c_int, v1t: *mut c_void, ldv1t: c_int, v2t: *mut c_void, ldv2t: c_int, b11d: *mut c_float, b11e: *mut c_float, b12d: *mut c_float, b12e: *mut c_float, b21d: *mut c_float, b21e: *mut c_float, b22d: *mut c_float, b22e: *mut c_float) -> c_int;
     pub fn LAPACKE_cheswapr(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, i1: c_int, i2: c_int) -> c_int;
     pub fn LAPACKE_chetri2(matrix_order: c_int, uplo: c_char, n: c_int, a: *mut c_void, lda: c_int, ipiv: *const c_int) -> c_int;
@@ -1043,43 +1350,56 @@ extern "C" {
     pub fn LAPACKE_zsytrs2(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *const c_void, lda: c_int, ipiv: *const c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zunbdb(matrix_order: c_int, trans: c_char, signs: c_char, m: c_int, p: c_int, q: c_int, x11: *mut c_void, ldx11: c_int, x12: *mut c_void, ldx12: c_int, x21: *mut c_void, ldx21: c_int, x22: *mut c_void, ldx22: c_int, theta: *mut c_double, phi: *mut c_double, taup1: *mut c_void, taup2: *mut c_void, tauq1: *mut c_void, tauq2: *mut c_void) -> c_int;
     pub fn LAPACKE_zuncsd(matrix_order: c_int, jobu1: c_char, jobu2: c_char, jobv1t: c_char, jobv2t: c_char, trans: c_char, signs: c_char, m: c_int, p: c_int, q: c_int, x11: *mut c_void, ldx11: c_int, x12: *mut c_void, ldx12: c_int, x21: *mut c_void, ldx21: c_int, x22: *mut c_void, ldx22: c_int, theta: *mut c_double, u1: *mut c_void, ldu1: c_int, u2: *mut c_void, ldu2: c_int, v1t: *mut c_void, ldv1t: c_int, v2t: *mut c_void, ldv2t: c_int) -> c_int;
+
+    // LAPACK 3.4.0
     pub fn LAPACKE_sgemqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, nb: c_int, v: *const c_float, ldv: c_int, t: *const c_float, ldt: c_int, c: *mut c_float, ldc: c_int) -> c_int;
     pub fn LAPACKE_dgemqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, nb: c_int, v: *const c_double, ldv: c_int, t: *const c_double, ldt: c_int, c: *mut c_double, ldc: c_int) -> c_int;
     pub fn LAPACKE_cgemqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, nb: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, c: *mut c_void, ldc: c_int) -> c_int;
     pub fn LAPACKE_zgemqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, nb: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, c: *mut c_void, ldc: c_int) -> c_int;
+
     pub fn LAPACKE_sgeqrt(matrix_order: c_int, m: c_int, n: c_int, nb: c_int, a: *mut c_float, lda: c_int, t: *mut c_float, ldt: c_int) -> c_int;
     pub fn LAPACKE_dgeqrt(matrix_order: c_int, m: c_int, n: c_int, nb: c_int, a: *mut c_double, lda: c_int, t: *mut c_double, ldt: c_int) -> c_int;
     pub fn LAPACKE_cgeqrt(matrix_order: c_int, m: c_int, n: c_int, nb: c_int, a: *mut c_void, lda: c_int, t: *mut c_void, ldt: c_int) -> c_int;
     pub fn LAPACKE_zgeqrt(matrix_order: c_int, m: c_int, n: c_int, nb: c_int, a: *mut c_void, lda: c_int, t: *mut c_void, ldt: c_int) -> c_int;
+
     pub fn LAPACKE_sgeqrt2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, t: *mut c_float, ldt: c_int) -> c_int;
     pub fn LAPACKE_dgeqrt2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, t: *mut c_double, ldt: c_int) -> c_int;
     pub fn LAPACKE_cgeqrt2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, t: *mut c_void, ldt: c_int) -> c_int;
     pub fn LAPACKE_zgeqrt2(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, t: *mut c_void, ldt: c_int) -> c_int;
+
     pub fn LAPACKE_sgeqrt3(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_float, lda: c_int, t: *mut c_float, ldt: c_int) -> c_int;
     pub fn LAPACKE_dgeqrt3(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_double, lda: c_int, t: *mut c_double, ldt: c_int) -> c_int;
     pub fn LAPACKE_cgeqrt3(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, t: *mut c_void, ldt: c_int) -> c_int;
     pub fn LAPACKE_zgeqrt3(matrix_order: c_int, m: c_int, n: c_int, a: *mut c_void, lda: c_int, t: *mut c_void, ldt: c_int) -> c_int;
+
     pub fn LAPACKE_stpmqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, nb: c_int, v: *const c_float, ldv: c_int, t: *const c_float, ldt: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dtpmqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, nb: c_int, v: *const c_double, ldv: c_int, t: *const c_double, ldt: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_ctpmqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, nb: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_ztpmqrt(matrix_order: c_int, side: c_char, trans: c_char, m: c_int, n: c_int, k: c_int, l: c_int, nb: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_dtpqrt(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, t: *mut c_double, ldt: c_int) -> c_int;
     pub fn LAPACKE_ctpqrt(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, t: *mut c_void, ldt: c_int) -> c_int;
     pub fn LAPACKE_ztpqrt(matrix_order: c_int, m: c_int, n: c_int, l: c_int, nb: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, t: *mut c_void, ldt: c_int) -> c_int;
+
     pub fn LAPACKE_stpqrt2(matrix_order: c_int, m: c_int, n: c_int, l: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int, t: *mut c_float, ldt: c_int) -> c_int;
     pub fn LAPACKE_dtpqrt2(matrix_order: c_int, m: c_int, n: c_int, l: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int, t: *mut c_double, ldt: c_int) -> c_int;
     pub fn LAPACKE_ctpqrt2(matrix_order: c_int, m: c_int, n: c_int, l: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, t: *mut c_void, ldt: c_int) -> c_int;
     pub fn LAPACKE_ztpqrt2(matrix_order: c_int, m: c_int, n: c_int, l: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int, t: *mut c_void, ldt: c_int) -> c_int;
+
     pub fn LAPACKE_stprfb(matrix_order: c_int, side: c_char, trans: c_char, direct: c_char, storev: c_char, m: c_int, n: c_int, k: c_int, l: c_int, v: *const c_float, ldv: c_int, t: *const c_float, ldt: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dtprfb(matrix_order: c_int, side: c_char, trans: c_char, direct: c_char, storev: c_char, m: c_int, n: c_int, k: c_int, l: c_int, v: *const c_double, ldv: c_int, t: *const c_double, ldt: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_ctprfb(matrix_order: c_int, side: c_char, trans: c_char, direct: c_char, storev: c_char, m: c_int, n: c_int, k: c_int, l: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_ztprfb(matrix_order: c_int, side: c_char, trans: c_char, direct: c_char, storev: c_char, m: c_int, n: c_int, k: c_int, l: c_int, v: *const c_void, ldv: c_int, t: *const c_void, ldt: c_int, a: *mut c_void, lda: c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
+    // LAPACK 3.X.X
     pub fn LAPACKE_ssysv_rook(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_float, lda: c_int, ipiv: *mut c_int, b: *mut c_float, ldb: c_int) -> c_int;
     pub fn LAPACKE_dsysv_rook(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_double, lda: c_int, ipiv: *mut c_int, b: *mut c_double, ldb: c_int) -> c_int;
     pub fn LAPACKE_csysv_rook(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
     pub fn LAPACKE_zsysv_rook(matrix_order: c_int, uplo: c_char, n: c_int, nrhs: c_int, a: *mut c_void, lda: c_int, ipiv: *mut c_int, b: *mut c_void, ldb: c_int) -> c_int;
+
     pub fn LAPACKE_csyr(matrix_order: c_int, uplo: c_char, n: c_int, alpha: c_void, x: *const c_void, incx: c_int, a: *mut c_void, lda: c_int) -> c_int;
     pub fn LAPACKE_zsyr(matrix_order: c_int, uplo: c_char, n: c_int, alpha: c_void, x: *const c_void, incx: c_int, a: *mut c_void, lda: c_int) -> c_int;
+
     pub fn LAPACKE_ilaver(vers_major: *const c_int, vers_minor: *const c_int, vers_patch: *const c_int) -> ();
 }
 
