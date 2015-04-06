@@ -24,6 +24,9 @@ pub type LAPACK_Z_SELECT1 = Option<extern "C" fn(*const c_void) -> c_int>;
 pub type LAPACK_Z_SELECT2 = Option<extern "C" fn(*const c_void, *const c_void) -> c_int>;
 pub type LAPACK_Z_SELECT3 = Option<extern "C" fn(*const c_void, *const c_void) -> c_int>;
 
+pub type complex_float = [c_float; 2];
+pub type complex_double = [c_double; 2];
+
 pub const LAPACK_ROW_MAJOR: c_int = 101;
 pub const LAPACK_COL_MAJOR: c_int = 102;
 
@@ -31,8 +34,8 @@ pub const LAPACK_WORK_MEMORY_ERROR: c_int = -1010;
 pub const LAPACK_TRANSPOSE_MEMORY_ERROR: c_int = -1011;
 
 extern "C" {
-    pub fn lapack_make_complex_float(re: c_float, im: c_float) -> [c_float; 2];
-    pub fn lapack_make_complex_double(re: c_double, im: c_double) -> [c_double; 2];
+    pub fn lapack_make_complex_float(re: c_float, im: c_float) -> complex_float;
+    pub fn lapack_make_complex_double(re: c_double, im: c_double) -> complex_double;
     pub fn lsame_(ca: *mut c_char, cb: *mut c_char, lca: c_int, lcb: c_int) -> c_int;
     pub fn LAPACKE_sbdsdc(matrix_order: c_int, uplo: c_char, compq: c_char, n: c_int, d: *mut c_float, e: *mut c_float, u: *mut c_float, ldu: c_int, vt: *mut c_float, ldvt: c_int, q: *mut c_float, iq: *mut c_int) -> c_int;
     pub fn LAPACKE_dbdsdc(matrix_order: c_int, uplo: c_char, compq: c_char, n: c_int, d: *mut c_double, e: *mut c_double, u: *mut c_double, ldu: c_int, vt: *mut c_double, ldvt: c_int, q: *mut c_double, iq: *mut c_int) -> c_int;
