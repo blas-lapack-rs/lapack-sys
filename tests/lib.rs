@@ -2,17 +2,19 @@ extern crate liblapack_sys as raw;
 
 #[test]
 fn linking() {
-    let jobz = b'V' as i8;
-    let uplo = b'U' as i8;
-    let n = 1;
+    let mut jobz = b'V' as i8;
+    let mut uplo = b'U' as i8;
+    let mut n = 1;
     let mut a = vec![0.0];
-    let lda = 1;
+    let mut lda = 1;
     let mut w = vec![0.0];
     let mut work = vec![0.0, 0.0];
-    let lwork = 2;
+    let mut lwork = 2;
+    let mut flag = 0;
 
     unsafe {
-        raw::LAPACKE_dsyev_work(raw::LAPACK_ROW_MAJOR, jobz, uplo, n, a.as_mut_ptr(), lda, w.as_mut_ptr(),
-                    work.as_mut_ptr(), lwork);
+        raw::dsyev_(&mut jobz as *mut _, &mut uplo as *mut _, &mut n as *mut _, a.as_mut_ptr(),
+                    &mut lda as *mut _, w.as_mut_ptr(), work.as_mut_ptr(), &mut lwork as *mut _,
+                    &mut flag as *mut _);
     }
 }
