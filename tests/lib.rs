@@ -1,7 +1,7 @@
-extern crate liblapack_sys as raw;
+extern crate lapack_sys as raw;
 
 #[test]
-fn linking() {
+fn link() {
     let mut jobz = b'V' as i8;
     let mut uplo = b'U' as i8;
     let mut n = 1;

@@ -1,11 +1,11 @@
 [package]
-name = "liblapack-sys"
+name = "lapack-sys"
 version = "0.2.0"
 authors = ["Corey Richardson <corey@octayn.net>", "Ivan Ukhov <ivan.ukhov@gmail.com>"]
 license = "MIT"
-repository = "https://github.com/stainless-steel/liblapack-sys"
-homepage = "https://github.com/stainless-steel/liblapack-sys"
-documentation = "https://stainless-steel.github.io/liblapack-sys"
+repository = "https://github.com/stainless-steel/lapack-sys"
+homepage = "https://github.com/stainless-steel/lapack-sys"
+documentation = "https://stainless-steel.github.io/lapack-sys"
 description = "The package provides bindings to the Linear Algebra PACKage."
 
 [dependencies]
