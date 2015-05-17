@@ -1,7 +1,6 @@
 # lapack-sys [![Build Status][status-svg]][status-url]
 
-The package provides bindings to the [Linear Algebra PACKage][1]. The bindings
-are directly to Fortran routines, that is, without any overhead.
+The package provides bindings to the [Linear Algebra PACKage][1].
 
 ## [Documentation][2]
 

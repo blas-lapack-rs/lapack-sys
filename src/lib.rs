@@ -1,7 +1,5 @@
 //! Bindings to the [Linear Algebra PACKage][1].
 //!
-//! The bindings are directly to Fortran routines, that is, without any overhead.
-//!
 //! [1]: http://en.wikipedia.org/wiki/LAPACK
 
 #![allow(non_camel_case_types)]
