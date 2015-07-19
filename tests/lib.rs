@@ -1,4 +1,4 @@
-extern crate lapack_sys as raw;
+extern crate lapack_sys as ffi;
 
 #[test]
 fn link() {
@@ -13,7 +13,7 @@ fn link() {
     let mut flag = 0;
 
     unsafe {
-        raw::dsyev_(&jobz, &uplo, &n, a.as_mut_ptr(), &lda, w.as_mut_ptr(), work.as_mut_ptr(),
+        ffi::dsyev_(&jobz, &uplo, &n, a.as_mut_ptr(), &lda, w.as_mut_ptr(), work.as_mut_ptr(),
                     &lwork, &mut flag);
     }
 }
