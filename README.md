@@ -1,8 +1,8 @@
-# lapack-sys [![Build Status][status-svg]][status-url]
+# lapack-sys [![Version][version-img]][version-url] [![Status][status-img]][status-url]
 
 The package provides bindings to the [Linear Algebra PACKage][1].
 
-## [Documentation][2]
+## [Documentation][docs]
 
 ## Contributing
 
@@ -11,7 +11,9 @@ The package provides bindings to the [Linear Algebra PACKage][1].
 3. Open a pull request.
 
 [1]: http://en.wikipedia.org/wiki/LAPACK
-[2]: https://stainless-steel.github.io/lapack-sys
 
-[status-svg]: https://travis-ci.org/stainless-steel/lapack-sys.svg?branch=master
+[version-img]: https://img.shields.io/crates/v/lapack-sys.svg
+[version-url]: https://crates.io/crates/lapack-sys
+[status-img]: https://travis-ci.org/stainless-steel/lapack-sys.svg?branch=master
 [status-url]: https://travis-ci.org/stainless-steel/lapack-sys
+[docs]: https://stainless-steel.github.io/lapack-sys
