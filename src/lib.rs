@@ -3946,90 +3946,6 @@ extern "C" {
 // The following code nees to be revised in terms mutability.
 extern "C" {
     // LAPACK 3.3.0
-    pub fn cbbcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
-                   jobv2t: *mut c_char, trans: *mut c_char, m: *mut c_int, p: *mut c_int,
-                   q: *mut c_int, theta: *mut c_float, phi: *mut c_float, u1: *mut complex_float,
-                   ldu1: *mut c_int, u2: *mut complex_float, ldu2: *mut c_int,
-                   v1t: *mut complex_float, ldv1t: *mut c_int, v2t: *mut complex_float,
-                   ldv2t: *mut c_int, b11d: *mut c_float, b11e: *mut c_float, b12d: *mut c_float,
-                   b12e: *mut c_float, b21d: *mut c_float, b21e: *mut c_float, b22d: *mut c_float,
-                   b22e: *mut c_float, rwork: *mut c_float, lrwork: *mut c_int, info: *mut c_int);
-    pub fn cheswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, i1: *mut c_int,
-                     i2: *mut c_int);
-    pub fn chetri2_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, lda: *mut c_int,
-                    ipiv: *const c_int, work: *mut complex_float, lwork: *mut c_int,
-                    info: *mut c_int);
-    pub fn chetri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, lda: *mut c_int,
-                     ipiv: *const c_int, work: *mut complex_float, nb: *mut c_int,
-                     info: *mut c_int);
-    pub fn chetrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const complex_float,
-                    lda: *mut c_int, ipiv: *const c_int, b: *mut complex_float, ldb: *mut c_int,
-                    work: *mut complex_float, info: *mut c_int);
-    pub fn csyconv_(uplo: *mut c_char, way: *mut c_char, n: *mut c_int, a: *mut complex_float,
-                    lda: *mut c_int, ipiv: *const c_int, work: *mut complex_float,
-                    info: *mut c_int);
-    pub fn csyswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, i1: *mut c_int,
-                     i2: *mut c_int);
-    pub fn csytri2_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, lda: *mut c_int,
-                    ipiv: *const c_int, work: *mut complex_float, lwork: *mut c_int,
-                    info: *mut c_int);
-    pub fn csytri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, lda: *mut c_int,
-                     ipiv: *const c_int, work: *mut complex_float, nb: *mut c_int,
-                     info: *mut c_int);
-    pub fn csytrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const complex_float,
-                    lda: *mut c_int, ipiv: *const c_int, b: *mut complex_float, ldb: *mut c_int,
-                    work: *mut complex_float, info: *mut c_int);
-    pub fn cunbdb_(trans: *mut c_char, signs: *mut c_char, m: *mut c_int, p: *mut c_int,
-                   q: *mut c_int, x11: *mut complex_float, ldx11: *mut c_int,
-                   x12: *mut complex_float, ldx12: *mut c_int, x21: *mut complex_float,
-                   ldx21: *mut c_int, x22: *mut complex_float, ldx22: *mut c_int,
-                   theta: *mut c_float, phi: *mut c_float, taup1: *mut complex_float,
-                   taup2: *mut complex_float, tauq1: *mut complex_float, tauq2: *mut complex_float,
-                   work: *mut complex_float, lwork: *mut c_int, info: *mut c_int);
-    pub fn cuncsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
-                   jobv2t: *mut c_char, trans: *mut c_char, signs: *mut c_char, m: *mut c_int,
-                   p: *mut c_int, q: *mut c_int, x11: *mut complex_float, ldx11: *mut c_int,
-                   x12: *mut complex_float, ldx12: *mut c_int, x21: *mut complex_float,
-                   ldx21: *mut c_int, x22: *mut complex_float, ldx22: *mut c_int,
-                   theta: *mut c_float, u1: *mut complex_float, ldu1: *mut c_int,
-                   u2: *mut complex_float, ldu2: *mut c_int, v1t: *mut complex_float,
-                   ldv1t: *mut c_int, v2t: *mut complex_float, ldv2t: *mut c_int,
-                   work: *mut complex_float, lwork: *mut c_int, rwork: *mut c_float,
-                   lrwork: *mut c_int, iwork: *mut c_int, info: *mut c_int);
-    pub fn dbbcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
-                   jobv2t: *mut c_char, trans: *mut c_char, m: *mut c_int, p: *mut c_int,
-                   q: *mut c_int, theta: *mut c_double, phi: *mut c_double, u1: *mut c_double,
-                   ldu1: *mut c_int, u2: *mut c_double, ldu2: *mut c_int, v1t: *mut c_double,
-                   ldv1t: *mut c_int, v2t: *mut c_double, ldv2t: *mut c_int, b11d: *mut c_double,
-                   b11e: *mut c_double, b12d: *mut c_double, b12e: *mut c_double,
-                   b21d: *mut c_double, b21e: *mut c_double, b22d: *mut c_double,
-                   b22e: *mut c_double, work: *mut c_double, lwork: *mut c_int, info: *mut c_int);
-    pub fn dorbdb_(trans: *mut c_char, signs: *mut c_char, m: *mut c_int, p: *mut c_int,
-                   q: *mut c_int, x11: *mut c_double, ldx11: *mut c_int, x12: *mut c_double,
-                   ldx12: *mut c_int, x21: *mut c_double, ldx21: *mut c_int, x22: *mut c_double,
-                   ldx22: *mut c_int, theta: *mut c_double, phi: *mut c_double,
-                   taup1: *mut c_double, taup2: *mut c_double, tauq1: *mut c_double,
-                   tauq2: *mut c_double, work: *mut c_double, lwork: *mut c_int, info: *mut c_int);
-    pub fn dorcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
-                   jobv2t: *mut c_char, trans: *mut c_char, signs: *mut c_char, m: *mut c_int,
-                   p: *mut c_int, q: *mut c_int, x11: *mut c_double, ldx11: *mut c_int,
-                   x12: *mut c_double, ldx12: *mut c_int, x21: *mut c_double, ldx21: *mut c_int,
-                   x22: *mut c_double, ldx22: *mut c_int, theta: *mut c_double, u1: *mut c_double,
-                   ldu1: *mut c_int, u2: *mut c_double, ldu2: *mut c_int, v1t: *mut c_double,
-                   ldv1t: *mut c_int, v2t: *mut c_double, ldv2t: *mut c_int, work: *mut c_double,
-                   lwork: *mut c_int, iwork: *mut c_int, info: *mut c_int);
-    pub fn dsyconv_(uplo: *mut c_char, way: *mut c_char, n: *mut c_int, a: *mut c_double,
-                    lda: *mut c_int, ipiv: *const c_int, work: *mut c_double, info: *mut c_int);
-    pub fn dsyswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut c_double, i1: *mut c_int,
-                     i2: *mut c_int);
-    pub fn dsytri2_(uplo: *mut c_char, n: *mut c_int, a: *mut c_double, lda: *mut c_int,
-                    ipiv: *const c_int, work: *mut complex_double, lwork: *mut c_int,
-                    info: *mut c_int);
-    pub fn dsytri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut c_double, lda: *mut c_int,
-                     ipiv: *const c_int, work: *mut c_double, nb: *mut c_int, info: *mut c_int);
-    pub fn dsytrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const c_double,
-                    lda: *mut c_int, ipiv: *const c_int, b: *mut c_double, ldb: *mut c_int,
-                    work: *mut c_double, info: *mut c_int);
     pub fn sbbcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
                    jobv2t: *mut c_char, trans: *mut c_char, m: *mut c_int, p: *mut c_int,
                    q: *mut c_int, theta: *mut c_float, phi: *mut c_float, u1: *mut c_float,
@@ -4038,32 +3954,22 @@ extern "C" {
                    b11e: *mut c_float, b12d: *mut c_float, b12e: *mut c_float, b21d: *mut c_float,
                    b21e: *mut c_float, b22d: *mut c_float, b22e: *mut c_float, work: *mut c_float,
                    lwork: *mut c_int, info: *mut c_int);
-    pub fn sorbdb_(trans: *mut c_char, signs: *mut c_char, m: *mut c_int, p: *mut c_int,
-                   q: *mut c_int, x11: *mut c_float, ldx11: *mut c_int, x12: *mut c_float,
-                   ldx12: *mut c_int, x21: *mut c_float, ldx21: *mut c_int, x22: *mut c_float,
-                   ldx22: *mut c_int, theta: *mut c_float, phi: *mut c_float, taup1: *mut c_float,
-                   taup2: *mut c_float, tauq1: *mut c_float, tauq2: *mut c_float,
-                   work: *mut c_float, lwork: *mut c_int, info: *mut c_int);
-    pub fn sorcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
-                   jobv2t: *mut c_char, trans: *mut c_char, signs: *mut c_char, m: *mut c_int,
-                   p: *mut c_int, q: *mut c_int, x11: *mut c_float, ldx11: *mut c_int,
-                   x12: *mut c_float, ldx12: *mut c_int, x21: *mut c_float, ldx21: *mut c_int,
-                   x22: *mut c_float, ldx22: *mut c_int, theta: *mut c_float, u1: *mut c_float,
-                   ldu1: *mut c_int, u2: *mut c_float, ldu2: *mut c_int, v1t: *mut c_float,
-                   ldv1t: *mut c_int, v2t: *mut c_float, ldv2t: *mut c_int, work: *mut c_float,
-                   lwork: *mut c_int, iwork: *mut c_int, info: *mut c_int);
-    pub fn ssyconv_(uplo: *mut c_char, way: *mut c_char, n: *mut c_int, a: *mut c_float,
-                    lda: *mut c_int, ipiv: *const c_int, work: *mut c_float, info: *mut c_int);
-    pub fn ssyswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut c_float, i1: *mut c_int,
-                     i2: *mut c_int);
-    pub fn ssytri2_(uplo: *mut c_char, n: *mut c_int, a: *mut c_float, lda: *mut c_int,
-                    ipiv: *const c_int, work: *mut complex_float, lwork: *mut c_int,
-                    info: *mut c_int);
-    pub fn ssytri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut c_float, lda: *mut c_int,
-                     ipiv: *const c_int, work: *mut c_float, nb: *mut c_int, info: *mut c_int);
-    pub fn ssytrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const c_float,
-                    lda: *mut c_int, ipiv: *const c_int, b: *mut c_float, ldb: *mut c_int,
-                    work: *mut c_float, info: *mut c_int);
+    pub fn dbbcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
+                   jobv2t: *mut c_char, trans: *mut c_char, m: *mut c_int, p: *mut c_int,
+                   q: *mut c_int, theta: *mut c_double, phi: *mut c_double, u1: *mut c_double,
+                   ldu1: *mut c_int, u2: *mut c_double, ldu2: *mut c_int, v1t: *mut c_double,
+                   ldv1t: *mut c_int, v2t: *mut c_double, ldv2t: *mut c_int, b11d: *mut c_double,
+                   b11e: *mut c_double, b12d: *mut c_double, b12e: *mut c_double,
+                   b21d: *mut c_double, b21e: *mut c_double, b22d: *mut c_double,
+                   b22e: *mut c_double, work: *mut c_double, lwork: *mut c_int, info: *mut c_int);
+    pub fn cbbcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
+                   jobv2t: *mut c_char, trans: *mut c_char, m: *mut c_int, p: *mut c_int,
+                   q: *mut c_int, theta: *mut c_float, phi: *mut c_float, u1: *mut complex_float,
+                   ldu1: *mut c_int, u2: *mut complex_float, ldu2: *mut c_int,
+                   v1t: *mut complex_float, ldv1t: *mut c_int, v2t: *mut complex_float,
+                   ldv2t: *mut c_int, b11d: *mut c_float, b11e: *mut c_float, b12d: *mut c_float,
+                   b12e: *mut c_float, b21d: *mut c_float, b21e: *mut c_float, b22d: *mut c_float,
+                   b22e: *mut c_float, rwork: *mut c_float, lrwork: *mut c_int, info: *mut c_int);
     pub fn zbbcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
                    jobv2t: *mut c_char, trans: *mut c_char, m: *mut c_int, p: *mut c_int,
                    q: *mut c_int, theta: *mut c_double, phi: *mut c_double,
@@ -4074,31 +3980,97 @@ extern "C" {
                    b21d: *mut c_double, b21e: *mut c_double, b22d: *mut c_double,
                    b22e: *mut c_double, rwork: *mut c_double, lrwork: *mut c_int,
                    info: *mut c_int);
+
+    pub fn cheswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, i1: *mut c_int,
+                     i2: *mut c_int);
     pub fn zheswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_double, i1: *mut c_int,
                      i2: *mut c_int);
+
+    pub fn chetri2_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, lda: *mut c_int,
+                    ipiv: *const c_int, work: *mut complex_float, lwork: *mut c_int,
+                    info: *mut c_int);
     pub fn zhetri2_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_double, lda: *mut c_int,
                     ipiv: *const c_int, work: *mut complex_double, lwork: *mut c_int,
                     info: *mut c_int);
+
+    pub fn chetri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, lda: *mut c_int,
+                     ipiv: *const c_int, work: *mut complex_float, nb: *mut c_int,
+                     info: *mut c_int);
     pub fn zhetri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_double, lda: *mut c_int,
                      ipiv: *const c_int, work: *mut complex_double, nb: *mut c_int,
                      info: *mut c_int);
+
+    pub fn chetrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const complex_float,
+                    lda: *mut c_int, ipiv: *const c_int, b: *mut complex_float, ldb: *mut c_int,
+                    work: *mut complex_float, info: *mut c_int);
     pub fn zhetrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const complex_double,
                     lda: *mut c_int, ipiv: *const c_int, b: *mut complex_double, ldb: *mut c_int,
                     work: *mut complex_double, info: *mut c_int);
+
+    pub fn ssyconv_(uplo: *mut c_char, way: *mut c_char, n: *mut c_int, a: *mut c_float,
+                    lda: *mut c_int, ipiv: *const c_int, work: *mut c_float, info: *mut c_int);
+    pub fn dsyconv_(uplo: *mut c_char, way: *mut c_char, n: *mut c_int, a: *mut c_double,
+                    lda: *mut c_int, ipiv: *const c_int, work: *mut c_double, info: *mut c_int);
+    pub fn csyconv_(uplo: *mut c_char, way: *mut c_char, n: *mut c_int, a: *mut complex_float,
+                    lda: *mut c_int, ipiv: *const c_int, work: *mut complex_float,
+                    info: *mut c_int);
     pub fn zsyconv_(uplo: *mut c_char, way: *mut c_char, n: *mut c_int, a: *mut complex_double,
                     lda: *mut c_int, ipiv: *const c_int, work: *mut complex_double,
                     info: *mut c_int);
+
+    pub fn ssyswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut c_float, i1: *mut c_int,
+                     i2: *mut c_int);
+    pub fn dsyswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut c_double, i1: *mut c_int,
+                     i2: *mut c_int);
+    pub fn csyswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, i1: *mut c_int,
+                     i2: *mut c_int);
     pub fn zsyswapr_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_double, i1: *mut c_int,
                      i2: *mut c_int);
+
+    pub fn ssytri2_(uplo: *mut c_char, n: *mut c_int, a: *mut c_float, lda: *mut c_int,
+                    ipiv: *const c_int, work: *mut complex_float, lwork: *mut c_int,
+                    info: *mut c_int);
+    pub fn dsytri2_(uplo: *mut c_char, n: *mut c_int, a: *mut c_double, lda: *mut c_int,
+                    ipiv: *const c_int, work: *mut complex_double, lwork: *mut c_int,
+                    info: *mut c_int);
+    pub fn csytri2_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, lda: *mut c_int,
+                    ipiv: *const c_int, work: *mut complex_float, lwork: *mut c_int,
+                    info: *mut c_int);
     pub fn zsytri2_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_double, lda: *mut c_int,
                     ipiv: *const c_int, work: *mut complex_double, lwork: *mut c_int,
                     info: *mut c_int);
+
+    pub fn ssytri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut c_float, lda: *mut c_int,
+                     ipiv: *const c_int, work: *mut c_float, nb: *mut c_int, info: *mut c_int);
+    pub fn dsytri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut c_double, lda: *mut c_int,
+                     ipiv: *const c_int, work: *mut c_double, nb: *mut c_int, info: *mut c_int);
+    pub fn csytri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_float, lda: *mut c_int,
+                     ipiv: *const c_int, work: *mut complex_float, nb: *mut c_int,
+                     info: *mut c_int);
     pub fn zsytri2x_(uplo: *mut c_char, n: *mut c_int, a: *mut complex_double, lda: *mut c_int,
                      ipiv: *const c_int, work: *mut complex_double, nb: *mut c_int,
                      info: *mut c_int);
+
+    pub fn ssytrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const c_float,
+                    lda: *mut c_int, ipiv: *const c_int, b: *mut c_float, ldb: *mut c_int,
+                    work: *mut c_float, info: *mut c_int);
+    pub fn dsytrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const c_double,
+                    lda: *mut c_int, ipiv: *const c_int, b: *mut c_double, ldb: *mut c_int,
+                    work: *mut c_double, info: *mut c_int);
+    pub fn csytrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const complex_float,
+                    lda: *mut c_int, ipiv: *const c_int, b: *mut complex_float, ldb: *mut c_int,
+                    work: *mut complex_float, info: *mut c_int);
     pub fn zsytrs2_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *const complex_double,
                     lda: *mut c_int, ipiv: *const c_int, b: *mut complex_double, ldb: *mut c_int,
                     work: *mut complex_double, info: *mut c_int);
+
+    pub fn cunbdb_(trans: *mut c_char, signs: *mut c_char, m: *mut c_int, p: *mut c_int,
+                   q: *mut c_int, x11: *mut complex_float, ldx11: *mut c_int,
+                   x12: *mut complex_float, ldx12: *mut c_int, x21: *mut complex_float,
+                   ldx21: *mut c_int, x22: *mut complex_float, ldx22: *mut c_int,
+                   theta: *mut c_float, phi: *mut c_float, taup1: *mut complex_float,
+                   taup2: *mut complex_float, tauq1: *mut complex_float, tauq2: *mut complex_float,
+                   work: *mut complex_float, lwork: *mut c_int, info: *mut c_int);
     pub fn zunbdb_(trans: *mut c_char, signs: *mut c_char, m: *mut c_int, p: *mut c_int,
                    q: *mut c_int, x11: *mut complex_double, ldx11: *mut c_int,
                    x12: *mut complex_double, ldx12: *mut c_int, x21: *mut complex_double,
@@ -4107,6 +4079,17 @@ extern "C" {
                    taup2: *mut complex_double, tauq1: *mut complex_double,
                    tauq2: *mut complex_double, work: *mut complex_double, lwork: *mut c_int,
                    info: *mut c_int);
+
+    pub fn cuncsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
+                   jobv2t: *mut c_char, trans: *mut c_char, signs: *mut c_char, m: *mut c_int,
+                   p: *mut c_int, q: *mut c_int, x11: *mut complex_float, ldx11: *mut c_int,
+                   x12: *mut complex_float, ldx12: *mut c_int, x21: *mut complex_float,
+                   ldx21: *mut c_int, x22: *mut complex_float, ldx22: *mut c_int,
+                   theta: *mut c_float, u1: *mut complex_float, ldu1: *mut c_int,
+                   u2: *mut complex_float, ldu2: *mut c_int, v1t: *mut complex_float,
+                   ldv1t: *mut c_int, v2t: *mut complex_float, ldv2t: *mut c_int,
+                   work: *mut complex_float, lwork: *mut c_int, rwork: *mut c_float,
+                   lrwork: *mut c_int, iwork: *mut c_int, info: *mut c_int);
     pub fn zuncsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
                    jobv2t: *mut c_char, trans: *mut c_char, signs: *mut c_char, m: *mut c_int,
                    p: *mut c_int, q: *mut c_int, x11: *mut complex_double, ldx11: *mut c_int,
@@ -4117,6 +4100,36 @@ extern "C" {
                    ldv1t: *mut c_int, v2t: *mut complex_double, ldv2t: *mut c_int,
                    work: *mut complex_double, lwork: *mut c_int, rwork: *mut c_double,
                    lrwork: *mut c_int, iwork: *mut c_int, info: *mut c_int);
+
+    pub fn sorbdb_(trans: *mut c_char, signs: *mut c_char, m: *mut c_int, p: *mut c_int,
+                   q: *mut c_int, x11: *mut c_float, ldx11: *mut c_int, x12: *mut c_float,
+                   ldx12: *mut c_int, x21: *mut c_float, ldx21: *mut c_int, x22: *mut c_float,
+                   ldx22: *mut c_int, theta: *mut c_float, phi: *mut c_float, taup1: *mut c_float,
+                   taup2: *mut c_float, tauq1: *mut c_float, tauq2: *mut c_float,
+                   work: *mut c_float, lwork: *mut c_int, info: *mut c_int);
+    pub fn dorbdb_(trans: *mut c_char, signs: *mut c_char, m: *mut c_int, p: *mut c_int,
+                   q: *mut c_int, x11: *mut c_double, ldx11: *mut c_int, x12: *mut c_double,
+                   ldx12: *mut c_int, x21: *mut c_double, ldx21: *mut c_int, x22: *mut c_double,
+                   ldx22: *mut c_int, theta: *mut c_double, phi: *mut c_double,
+                   taup1: *mut c_double, taup2: *mut c_double, tauq1: *mut c_double,
+                   tauq2: *mut c_double, work: *mut c_double, lwork: *mut c_int, info: *mut c_int);
+
+    pub fn sorcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
+                   jobv2t: *mut c_char, trans: *mut c_char, signs: *mut c_char, m: *mut c_int,
+                   p: *mut c_int, q: *mut c_int, x11: *mut c_float, ldx11: *mut c_int,
+                   x12: *mut c_float, ldx12: *mut c_int, x21: *mut c_float, ldx21: *mut c_int,
+                   x22: *mut c_float, ldx22: *mut c_int, theta: *mut c_float, u1: *mut c_float,
+                   ldu1: *mut c_int, u2: *mut c_float, ldu2: *mut c_int, v1t: *mut c_float,
+                   ldv1t: *mut c_int, v2t: *mut c_float, ldv2t: *mut c_int, work: *mut c_float,
+                   lwork: *mut c_int, iwork: *mut c_int, info: *mut c_int);
+    pub fn dorcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
+                   jobv2t: *mut c_char, trans: *mut c_char, signs: *mut c_char, m: *mut c_int,
+                   p: *mut c_int, q: *mut c_int, x11: *mut c_double, ldx11: *mut c_int,
+                   x12: *mut c_double, ldx12: *mut c_int, x21: *mut c_double, ldx21: *mut c_int,
+                   x22: *mut c_double, ldx22: *mut c_int, theta: *mut c_double, u1: *mut c_double,
+                   ldu1: *mut c_int, u2: *mut c_double, ldu2: *mut c_int, v1t: *mut c_double,
+                   ldv1t: *mut c_int, v2t: *mut c_double, ldv2t: *mut c_int, work: *mut c_double,
+                   lwork: *mut c_int, iwork: *mut c_int, info: *mut c_int);
 }
 
 extern "C" {
