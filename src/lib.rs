@@ -4099,122 +4099,130 @@ extern "C" {
                    ldv1t: *mut c_int, v2t: *mut c_void, ldv2t: *mut c_int, work: *mut c_void,
                    lwork: *mut c_int, rwork: *mut c_double, lrwork: *mut c_int, iwork: *mut c_int,
                    info: *mut c_int);
-
-    // LAPACK 3.4.0
-    pub fn sgemqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
-                    k: *mut c_int, nb: *mut c_int, v: *const c_float, ldv: *mut c_int,
-                    t: *const c_float, ldt: *mut c_int, c: *mut c_float, ldc: *mut c_int,
-                    work: *mut c_float, info: *mut c_int);
-    pub fn dgemqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
-                    k: *mut c_int, nb: *mut c_int, v: *const c_double, ldv: *mut c_int,
-                    t: *const c_double, ldt: *mut c_int, c: *mut c_double, ldc: *mut c_int,
-                    work: *mut c_double, info: *mut c_int);
-    pub fn cgemqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
-                    k: *mut c_int, nb: *mut c_int, v: *const c_void, ldv: *mut c_int,
-                    t: *const c_void, ldt: *mut c_int, c: *mut c_void, ldc: *mut c_int,
-                    work: *mut c_void, info: *mut c_int);
-    pub fn zgemqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
-                    k: *mut c_int, nb: *mut c_int, v: *const c_void, ldv: *mut c_int,
-                    t: *const c_void, ldt: *mut c_int, c: *mut c_void, ldc: *mut c_int,
-                    work: *mut c_void, info: *mut c_int);
-
-    pub fn sgeqrt_(m: *mut c_int, n: *mut c_int, nb: *mut c_int, a: *mut c_float, lda: *mut c_int,
-                   t: *mut c_float, ldt: *mut c_int, work: *mut c_float, info: *mut c_int);
-    pub fn dgeqrt_(m: *mut c_int, n: *mut c_int, nb: *mut c_int, a: *mut c_double, lda: *mut c_int,
-                   t: *mut c_double, ldt: *mut c_int, work: *mut c_double, info: *mut c_int);
-    pub fn cgeqrt_(m: *mut c_int, n: *mut c_int, nb: *mut c_int, a: *mut c_void, lda: *mut c_int,
-                   t: *mut c_void, ldt: *mut c_int, work: *mut c_void, info: *mut c_int);
-    pub fn zgeqrt_(m: *mut c_int, n: *mut c_int, nb: *mut c_int, a: *mut c_void, lda: *mut c_int,
-                   t: *mut c_void, ldt: *mut c_int, work: *mut c_void, info: *mut c_int);
-
-    pub fn sgeqrt2_(m: *mut c_int, n: *mut c_int, a: *mut c_float, lda: *mut c_int,
-                    t: *mut c_float, ldt: *mut c_int, info: *mut c_int);
-    pub fn dgeqrt2_(m: *mut c_int, n: *mut c_int, a: *mut c_double, lda: *mut c_int,
-                    t: *mut c_double, ldt: *mut c_int, info: *mut c_int);
-    pub fn cgeqrt2_(m: *mut c_int, n: *mut c_int, a: *mut c_void, lda: *mut c_int, t: *mut c_void,
-                    ldt: *mut c_int, info: *mut c_int);
-    pub fn zgeqrt2_(m: *mut c_int, n: *mut c_int, a: *mut c_void, lda: *mut c_int, t: *mut c_void,
-                    ldt: *mut c_int, info: *mut c_int);
-
-    pub fn sgeqrt3_(m: *mut c_int, n: *mut c_int, a: *mut c_float, lda: *mut c_int,
-                    t: *mut c_float, ldt: *mut c_int, info: *mut c_int);
-    pub fn dgeqrt3_(m: *mut c_int, n: *mut c_int, a: *mut c_double, lda: *mut c_int,
-                    t: *mut c_double, ldt: *mut c_int, info: *mut c_int);
-    pub fn cgeqrt3_(m: *mut c_int, n: *mut c_int, a: *mut c_void, lda: *mut c_int, t: *mut c_void,
-                    ldt: *mut c_int, info: *mut c_int);
-    pub fn zgeqrt3_(m: *mut c_int, n: *mut c_int, a: *mut c_void, lda: *mut c_int, t: *mut c_void,
-                    ldt: *mut c_int, info: *mut c_int);
-
-    pub fn stpmqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
-                    k: *mut c_int, l: *mut c_int, nb: *mut c_int, v: *const c_float,
-                    ldv: *mut c_int, t: *const c_float, ldt: *mut c_int, a: *mut c_float,
-                    lda: *mut c_int, b: *mut c_float, ldb: *mut c_int, work: *mut c_float,
-                    info: *mut c_int);
-    pub fn dtpmqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
-                    k: *mut c_int, l: *mut c_int, nb: *mut c_int, v: *const c_double,
-                    ldv: *mut c_int, t: *const c_double, ldt: *mut c_int, a: *mut c_double,
-                    lda: *mut c_int, b: *mut c_double, ldb: *mut c_int, work: *mut c_double,
-                    info: *mut c_int);
-    pub fn ctpmqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
-                    k: *mut c_int, l: *mut c_int, nb: *mut c_int, v: *const c_void,
-                    ldv: *mut c_int, t: *const c_void, ldt: *mut c_int, a: *mut c_void,
-                    lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, work: *mut c_void,
-                    info: *mut c_int);
-    pub fn ztpmqrt_(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
-                    k: *mut c_int, l: *mut c_int, nb: *mut c_int, v: *const c_void,
-                    ldv: *mut c_int, t: *const c_void, ldt: *mut c_int, a: *mut c_void,
-                    lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, work: *mut c_void,
-                    info: *mut c_int);
-
-    pub fn stpqrt_(m: *mut c_int, n: *mut c_int, l: *mut c_int, nb: *mut c_int, a: *mut c_float,
-                   lda: *mut c_int, b: *mut c_float, ldb: *mut c_int, t: *mut c_float,
-                   ldt: *mut c_int, work: *mut c_float, info: *mut c_int);
-    pub fn dtpqrt_(m: *mut c_int, n: *mut c_int, l: *mut c_int, nb: *mut c_int, a: *mut c_double,
-                   lda: *mut c_int, b: *mut c_double, ldb: *mut c_int, t: *mut c_double,
-                   ldt: *mut c_int, work: *mut c_double, info: *mut c_int);
-    pub fn ctpqrt_(m: *mut c_int, n: *mut c_int, l: *mut c_int, nb: *mut c_int, a: *mut c_void,
-                   lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, t: *mut c_void,
-                   ldt: *mut c_int, work: *mut c_void, info: *mut c_int);
-    pub fn ztpqrt_(m: *mut c_int, n: *mut c_int, l: *mut c_int, nb: *mut c_int, a: *mut c_void,
-                   lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, t: *mut c_void,
-                   ldt: *mut c_int, work: *mut c_void, info: *mut c_int);
-
-    pub fn stpqrt2_(m: *mut c_int, n: *mut c_int, l: *mut c_int, a: *mut c_float, lda: *mut c_int,
-                    b: *mut c_float, ldb: *mut c_int, t: *mut c_float, ldt: *mut c_int,
-                    info: *mut c_int);
-    pub fn dtpqrt2_(m: *mut c_int, n: *mut c_int, l: *mut c_int, a: *mut c_double, lda: *mut c_int,
-                    b: *mut c_double, ldb: *mut c_int, t: *mut c_double, ldt: *mut c_int,
-                    info: *mut c_int);
-    pub fn ctpqrt2_(m: *mut c_int, n: *mut c_int, l: *mut c_int, a: *mut c_void, lda: *mut c_int,
-                    b: *mut c_void, ldb: *mut c_int, t: *mut c_void, ldt: *mut c_int,
-                    info: *mut c_int);
-    pub fn ztpqrt2_(m: *mut c_int, n: *mut c_int, l: *mut c_int, a: *mut c_void, lda: *mut c_int,
-                    b: *mut c_void, ldb: *mut c_int, t: *mut c_void, ldt: *mut c_int,
-                    info: *mut c_int);
-
-    pub fn stprfb_(side: *mut c_char, trans: *mut c_char, direct: *mut c_char, storev: *mut c_char,
-                   m: *mut c_int, n: *mut c_int, k: *mut c_int, l: *mut c_int, v: *const c_float,
-                   ldv: *mut c_int, t: *const c_float, ldt: *mut c_int, a: *mut c_float,
-                   lda: *mut c_int, b: *mut c_float, ldb: *mut c_int, work: *const c_float,
-                   ldwork: *mut c_int);
-    pub fn dtprfb_(side: *mut c_char, trans: *mut c_char, direct: *mut c_char, storev: *mut c_char,
-                   m: *mut c_int, n: *mut c_int, k: *mut c_int, l: *mut c_int, v: *const c_double,
-                   ldv: *mut c_int, t: *const c_double, ldt: *mut c_int, a: *mut c_double,
-                   lda: *mut c_int, b: *mut c_double, ldb: *mut c_int, work: *const c_double,
-                   ldwork: *mut c_int);
-    pub fn ctprfb_(side: *mut c_char, trans: *mut c_char, direct: *mut c_char, storev: *mut c_char,
-                   m: *mut c_int, n: *mut c_int, k: *mut c_int, l: *mut c_int, v: *const c_void,
-                   ldv: *mut c_int, t: *const c_void, ldt: *mut c_int, a: *mut c_void,
-                   lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, work: *const c_float,
-                   ldwork: *mut c_int);
-    pub fn ztprfb_(side: *mut c_char, trans: *mut c_char, direct: *mut c_char, storev: *mut c_char,
-                   m: *mut c_int, n: *mut c_int, k: *mut c_int, l: *mut c_int, v: *const c_void,
-                   ldv: *mut c_int, t: *const c_void, ldt: *mut c_int, a: *mut c_void,
-                   lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, work: *const c_double,
-                   ldwork: *mut c_int);
 }
 
 extern "C" {
+    // LAPACK 3.4.0
+    pub fn sgemqrt_(side: *const c_char, trans: *const c_char, m: *const c_int, n: *const c_int,
+                    k: *const c_int, nb: *const c_int, v: *const c_float, ldv: *const c_int,
+                    t: *const c_float, ldt: *const c_int, c: *mut c_float, ldc: *const c_int,
+                    work: *mut c_float, info: *mut c_int);
+    pub fn dgemqrt_(side: *const c_char, trans: *const c_char, m: *const c_int, n: *const c_int,
+                    k: *const c_int, nb: *const c_int, v: *const c_double, ldv: *const c_int,
+                    t: *const c_double, ldt: *const c_int, c: *mut c_double, ldc: *const c_int,
+                    work: *mut c_double, info: *mut c_int);
+    pub fn cgemqrt_(side: *const c_char, trans: *const c_char, m: *const c_int, n: *const c_int,
+                    k: *const c_int, nb: *const c_int, v: *const complex_float, ldv: *const c_int,
+                    t: *const complex_float, ldt: *const c_int, c: *mut complex_float,
+                    ldc: *const c_int, work: *mut complex_float, info: *mut c_int);
+    pub fn zgemqrt_(side: *const c_char, trans: *const c_char, m: *const c_int, n: *const c_int,
+                    k: *const c_int, nb: *const c_int, v: *const complex_double, ldv: *const c_int,
+                    t: *const complex_double, ldt: *const c_int, c: *mut complex_double,
+                    ldc: *const c_int, work: *mut complex_double, info: *mut c_int);
+
+    pub fn sgeqrt_(m: *const c_int, n: *const c_int, nb: *const c_int, a: *mut c_float,
+                   lda: *const c_int, t: *mut c_float, ldt: *const c_int, work: *mut c_float,
+                   info: *mut c_int);
+    pub fn dgeqrt_(m: *const c_int, n: *const c_int, nb: *const c_int, a: *mut c_double,
+                   lda: *const c_int, t: *mut c_double, ldt: *const c_int, work: *mut c_double,
+                   info: *mut c_int);
+    pub fn cgeqrt_(m: *const c_int, n: *const c_int, nb: *const c_int, a: *mut complex_float,
+                   lda: *const c_int, t: *mut complex_float, ldt: *const c_int,
+                   work: *mut complex_float, info: *mut c_int);
+    pub fn zgeqrt_(m: *const c_int, n: *const c_int, nb: *const c_int, a: *mut complex_double,
+                   lda: *const c_int, t: *mut complex_double, ldt: *const c_int,
+                   work: *mut complex_double, info: *mut c_int);
+
+    pub fn sgeqrt2_(m: *const c_int, n: *const c_int, a: *mut c_float, lda: *const c_int,
+                    t: *mut c_float, ldt: *const c_int, info: *mut c_int);
+    pub fn dgeqrt2_(m: *const c_int, n: *const c_int, a: *mut c_double, lda: *const c_int,
+                    t: *mut c_double, ldt: *const c_int, info: *mut c_int);
+    pub fn cgeqrt2_(m: *const c_int, n: *const c_int, a: *mut complex_float, lda: *const c_int,
+                    t: *mut complex_float, ldt: *const c_int, info: *mut c_int);
+    pub fn zgeqrt2_(m: *const c_int, n: *const c_int, a: *mut complex_double, lda: *const c_int,
+                    t: *mut complex_double, ldt: *const c_int, info: *mut c_int);
+
+    pub fn sgeqrt3_(m: *const c_int, n: *const c_int, a: *mut c_float, lda: *const c_int,
+                    t: *mut c_float, ldt: *const c_int, info: *mut c_int);
+    pub fn dgeqrt3_(m: *const c_int, n: *const c_int, a: *mut c_double, lda: *const c_int,
+                    t: *mut c_double, ldt: *const c_int, info: *mut c_int);
+    pub fn cgeqrt3_(m: *const c_int, n: *const c_int, a: *mut complex_float, lda: *const c_int,
+                    t: *mut complex_float, ldt: *const c_int, info: *mut c_int);
+    pub fn zgeqrt3_(m: *const c_int, n: *const c_int, a: *mut complex_double, lda: *const c_int,
+                    t: *mut complex_double, ldt: *const c_int, info: *mut c_int);
+
+    pub fn stpmqrt_(side: *const c_char, trans: *const c_char, m: *const c_int, n: *const c_int,
+                    k: *const c_int, l: *const c_int, nb: *const c_int, v: *const c_float,
+                    ldv: *const c_int, t: *const c_float, ldt: *const c_int, a: *mut c_float,
+                    lda: *const c_int, b: *mut c_float, ldb: *const c_int, work: *mut c_float,
+                    info: *mut c_int);
+    pub fn dtpmqrt_(side: *const c_char, trans: *const c_char, m: *const c_int, n: *const c_int,
+                    k: *const c_int, l: *const c_int, nb: *const c_int, v: *const c_double,
+                    ldv: *const c_int, t: *const c_double, ldt: *const c_int, a: *mut c_double,
+                    lda: *const c_int, b: *mut c_double, ldb: *const c_int, work: *mut c_double,
+                    info: *mut c_int);
+    pub fn ctpmqrt_(side: *const c_char, trans: *const c_char, m: *const c_int, n: *const c_int,
+                    k: *const c_int, l: *const c_int, nb: *const c_int, v: *const complex_float,
+                    ldv: *const c_int, t: *const complex_float, ldt: *const c_int,
+                    a: *mut complex_float, lda: *const c_int, b: *mut complex_float,
+                    ldb: *const c_int, work: *mut complex_float, info: *mut c_int);
+    pub fn ztpmqrt_(side: *const c_char, trans: *const c_char, m: *const c_int, n: *const c_int,
+                    k: *const c_int, l: *const c_int, nb: *const c_int, v: *const complex_double,
+                    ldv: *const c_int, t: *const complex_double, ldt: *const c_int,
+                    a: *mut complex_double, lda: *const c_int, b: *mut complex_double,
+                    ldb: *const c_int, work: *mut complex_double, info: *mut c_int);
+
+    pub fn stpqrt_(m: *const c_int, n: *const c_int, l: *const c_int, nb: *const c_int,
+                   a: *mut c_float, lda: *const c_int, b: *mut c_float, ldb: *const c_int,
+                   t: *mut c_float, ldt: *const c_int, work: *mut c_float, info: *mut c_int);
+    pub fn dtpqrt_(m: *const c_int, n: *const c_int, l: *const c_int, nb: *const c_int,
+                   a: *mut c_double, lda: *const c_int, b: *mut c_double, ldb: *const c_int,
+                   t: *mut c_double, ldt: *const c_int, work: *mut c_double, info: *mut c_int);
+    pub fn ctpqrt_(m: *const c_int, n: *const c_int, l: *const c_int, nb: *const c_int,
+                   a: *mut complex_float, lda: *const c_int, b: *mut complex_float,
+                   ldb: *const c_int, t: *mut complex_float, ldt: *const c_int,
+                   work: *mut complex_float, info: *mut c_int);
+    pub fn ztpqrt_(m: *const c_int, n: *const c_int, l: *const c_int, nb: *const c_int,
+                   a: *mut complex_double, lda: *const c_int, b: *mut complex_double,
+                   ldb: *const c_int, t: *mut complex_double, ldt: *const c_int,
+                   work: *mut complex_double, info: *mut c_int);
+
+    pub fn stpqrt2_(m: *const c_int, n: *const c_int, l: *const c_int, a: *mut c_float,
+                    lda: *const c_int, b: *mut c_float, ldb: *const c_int, t: *mut c_float,
+                    ldt: *const c_int, info: *mut c_int);
+    pub fn dtpqrt2_(m: *const c_int, n: *const c_int, l: *const c_int, a: *mut c_double,
+                    lda: *const c_int, b: *mut c_double, ldb: *const c_int, t: *mut c_double,
+                    ldt: *const c_int, info: *mut c_int);
+    pub fn ctpqrt2_(m: *const c_int, n: *const c_int, l: *const c_int, a: *mut complex_float,
+                    lda: *const c_int, b: *mut complex_float, ldb: *const c_int,
+                    t: *mut complex_float, ldt: *const c_int, info: *mut c_int);
+    pub fn ztpqrt2_(m: *const c_int, n: *const c_int, l: *const c_int, a: *mut complex_double,
+                    lda: *const c_int, b: *mut complex_double, ldb: *const c_int,
+                    t: *mut complex_double, ldt: *const c_int, info: *mut c_int);
+
+    pub fn stprfb_(side: *const c_char, trans: *const c_char, direct: *const c_char,
+                   storev: *const c_char, m: *const c_int, n: *const c_int, k: *const c_int,
+                   l: *const c_int, v: *const c_float, ldv: *const c_int, t: *const c_float,
+                   ldt: *const c_int, a: *mut c_float, lda: *const c_int, b: *mut c_float,
+                   ldb: *const c_int, work: *const c_float, ldwork: *mut c_int);
+    pub fn dtprfb_(side: *const c_char, trans: *const c_char, direct: *const c_char,
+                   storev: *const c_char, m: *const c_int, n: *const c_int, k: *const c_int,
+                   l: *const c_int, v: *const c_double, ldv: *const c_int, t: *const c_double,
+                   ldt: *const c_int, a: *mut c_double, lda: *const c_int, b: *mut c_double,
+                   ldb: *const c_int, work: *const c_double, ldwork: *mut c_int);
+    pub fn ctprfb_(side: *const c_char, trans: *const c_char, direct: *const c_char,
+                   storev: *const c_char, m: *const c_int, n: *const c_int, k: *const c_int,
+                   l: *const c_int, v: *const complex_float, ldv: *const c_int,
+                   t: *const complex_float, ldt: *const c_int, a: *mut complex_float,
+                   lda: *const c_int, b: *mut complex_float, ldb: *const c_int,
+                   work: *const c_float, ldwork: *mut c_int);
+    pub fn ztprfb_(side: *const c_char, trans: *const c_char, direct: *const c_char,
+                   storev: *const c_char, m: *const c_int, n: *const c_int, k: *const c_int,
+                   l: *const c_int, v: *const complex_double, ldv: *const c_int,
+                   t: *const complex_double, ldt: *const c_int, a: *mut complex_double,
+                   lda: *const c_int, b: *mut complex_double, ldb: *const c_int,
+                   work: *const c_double, ldwork: *mut c_int);
+
     // LAPACK 3.5.0
     pub fn ssysv_rook_(uplo: *const c_char, n: *const c_int, nrhs: *const c_int, a: *mut c_float,
                        lda: *const c_int, ipiv: *mut c_int, b: *mut c_float, ldb: *const c_int,
