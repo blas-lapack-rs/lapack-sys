@@ -4212,25 +4212,31 @@ extern "C" {
                    ldv: *mut c_int, t: *const c_void, ldt: *mut c_int, a: *mut c_void,
                    lda: *mut c_int, b: *mut c_void, ldb: *mut c_int, work: *const c_double,
                    ldwork: *mut c_int);
+}
 
+extern "C" {
     // LAPACK 3.5.0
-    pub fn ssysv_rook_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *mut c_float,
-                       lda: *mut c_int, ipiv: *mut c_int, b: *mut c_float, ldb: *mut c_int,
-                       work: *mut c_float, lwork: *mut c_int, info: *mut c_int);
-    pub fn dsysv_rook_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *mut c_double,
-                       lda: *mut c_int, ipiv: *mut c_int, b: *mut c_double, ldb: *mut c_int,
-                       work: *mut c_double, lwork: *mut c_int, info: *mut c_int);
-    pub fn csysv_rook_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *mut c_void,
-                       lda: *mut c_int, ipiv: *mut c_int, b: *mut c_void, ldb: *mut c_int,
-                       work: *mut c_void, lwork: *mut c_int, info: *mut c_int);
-    pub fn zsysv_rook_(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *mut c_void,
-                       lda: *mut c_int, ipiv: *mut c_int, b: *mut c_void, ldb: *mut c_int,
-                       work: *mut c_void, lwork: *mut c_int, info: *mut c_int);
+    pub fn ssysv_rook_(uplo: *const c_char, n: *const c_int, nrhs: *const c_int, a: *mut c_float,
+                       lda: *const c_int, ipiv: *mut c_int, b: *mut c_float, ldb: *const c_int,
+                       work: *mut c_float, lwork: *const c_int, info: *mut c_int);
+    pub fn dsysv_rook_(uplo: *const c_char, n: *const c_int, nrhs: *const c_int, a: *mut c_double,
+                       lda: *const c_int, ipiv: *mut c_int, b: *mut c_double, ldb: *const c_int,
+                       work: *mut c_double, lwork: *const c_int, info: *mut c_int);
+    pub fn csysv_rook_(uplo: *const c_char, n: *const c_int, nrhs: *const c_int,
+                       a: *mut complex_float, lda: *const c_int, ipiv: *mut c_int,
+                       b: *mut complex_float, ldb: *const c_int, work: *mut complex_float,
+                       lwork: *const c_int, info: *mut c_int);
+    pub fn zsysv_rook_(uplo: *const c_char, n: *const c_int, nrhs: *const c_int,
+                       a: *mut complex_double, lda: *const c_int, ipiv: *mut c_int,
+                       b: *mut complex_double, ldb: *const c_int, work: *mut complex_double,
+                       lwork: *const c_int, info: *mut c_int);
 
-    pub fn csyr_(uplo: *mut c_char, n: *mut c_int, alpha: *mut c_void, x: *const c_void,
-                 incx: *mut c_int, a: *mut c_void, lda: *mut c_int);
-    pub fn zsyr_(uplo: *mut c_char, n: *mut c_int, alpha: *mut c_void, x: *const c_void,
-                 incx: *mut c_int, a: *mut c_void, lda: *mut c_int);
+    pub fn csyr_(uplo: *const c_char, n: *const c_int, alpha: *const complex_float,
+                 x: *const complex_float, incx: *const c_int, a: *mut complex_float,
+                 lda: *const c_int);
+    pub fn zsyr_(uplo: *const c_char, n: *const c_int, alpha: *const complex_double,
+                 x: *const complex_double, incx: *const c_int, a: *mut complex_double,
+                 lda: *const c_int);
 
     pub fn ilaver_(vers_major: *const c_int, vers_minor: *const c_int, vers_patch: *const c_int);
 }
