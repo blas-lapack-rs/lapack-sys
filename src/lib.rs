@@ -3226,11 +3226,11 @@ extern "C" {
     pub fn dgesvj_(joba: *const c_char, jobu: *const c_char, jobv: *const c_char, m: *const c_int,
                    n: *const c_int, a: *mut c_double, lda: *const c_int, sva: *mut c_double,
                    mv: *const c_int, v: *mut c_double, ldv: *const c_int, work: *mut c_double,
-                   lwork: *mut c_int, info: *mut c_int);
+                   lwork: *const c_int, info: *mut c_int);
     pub fn sgesvj_(joba: *const c_char, jobu: *const c_char, jobv: *const c_char, m: *const c_int,
                    n: *const c_int, a: *mut c_float, lda: *const c_int, sva: *mut c_float,
                    mv: *const c_int, v: *mut c_float, ldv: *const c_int, work: *mut c_float,
-                   lwork: *mut c_int, info: *mut c_int);
+                   lwork: *const c_int, info: *mut c_int);
 
     pub fn sggsvd_(jobu: *const c_char, jobv: *const c_char, jobq: *const c_char, m: *const c_int,
                    n: *const c_int, p: *const c_int, k: *mut c_int, l: *mut c_int, a: *mut c_float,
@@ -4091,7 +4091,7 @@ extern "C" {
                    ldx22: *mut c_int, theta: *mut c_float, u1: *mut complex_float,
                    ldu1: *const c_int, u2: *mut complex_float, ldu2: *const c_int,
                    v1t: *mut complex_float, ldv1t: *const c_int, v2t: *mut complex_float,
-                   ldv2t: *const c_int, work: *mut complex_float, lwork: *mut c_int,
+                   ldv2t: *const c_int, work: *mut complex_float, lwork: *const c_int,
                    rwork: *mut c_float, lrwork: *const c_int, iwork: *mut c_int, info: *mut c_int);
     pub fn zuncsd_(jobu1: *const c_char, jobu2: *const c_char, jobv1t: *const c_char,
                    jobv2t: *const c_char, trans: *const c_char, signs: *const c_char,
@@ -4101,7 +4101,7 @@ extern "C" {
                    ldx22: *mut c_int, theta: *mut c_double, u1: *mut complex_double,
                    ldu1: *const c_int, u2: *mut complex_double, ldu2: *const c_int,
                    v1t: *mut complex_double, ldv1t: *const c_int, v2t: *mut complex_double,
-                   ldv2t: *const c_int, work: *mut complex_double, lwork: *mut c_int,
+                   ldv2t: *const c_int, work: *mut complex_double, lwork: *const c_int,
                    rwork: *mut c_double, lrwork: *const c_int, iwork: *mut c_int,
                    info: *mut c_int);
 
@@ -4240,24 +4240,24 @@ extern "C" {
                    storev: *const c_char, m: *const c_int, n: *const c_int, k: *const c_int,
                    l: *const c_int, v: *const c_float, ldv: *const c_int, t: *const c_float,
                    ldt: *const c_int, a: *mut c_float, lda: *const c_int, b: *mut c_float,
-                   ldb: *const c_int, work: *const c_float, ldwork: *mut c_int);
+                   ldb: *const c_int, work: *const c_float, ldwork: *const c_int);
     pub fn dtprfb_(side: *const c_char, trans: *const c_char, direct: *const c_char,
                    storev: *const c_char, m: *const c_int, n: *const c_int, k: *const c_int,
                    l: *const c_int, v: *const c_double, ldv: *const c_int, t: *const c_double,
                    ldt: *const c_int, a: *mut c_double, lda: *const c_int, b: *mut c_double,
-                   ldb: *const c_int, work: *const c_double, ldwork: *mut c_int);
+                   ldb: *const c_int, work: *const c_double, ldwork: *const c_int);
     pub fn ctprfb_(side: *const c_char, trans: *const c_char, direct: *const c_char,
                    storev: *const c_char, m: *const c_int, n: *const c_int, k: *const c_int,
                    l: *const c_int, v: *const complex_float, ldv: *const c_int,
                    t: *const complex_float, ldt: *const c_int, a: *mut complex_float,
                    lda: *const c_int, b: *mut complex_float, ldb: *const c_int,
-                   work: *const c_float, ldwork: *mut c_int);
+                   work: *const c_float, ldwork: *const c_int);
     pub fn ztprfb_(side: *const c_char, trans: *const c_char, direct: *const c_char,
                    storev: *const c_char, m: *const c_int, n: *const c_int, k: *const c_int,
                    l: *const c_int, v: *const complex_double, ldv: *const c_int,
                    t: *const complex_double, ldt: *const c_int, a: *mut complex_double,
                    lda: *const c_int, b: *mut complex_double, ldb: *const c_int,
-                   work: *const c_double, ldwork: *mut c_int);
+                   work: *const c_double, ldwork: *const c_int);
 
     // LAPACK 3.5.0
     pub fn ssysv_rook_(uplo: *const c_char, n: *const c_int, nrhs: *const c_int, a: *mut c_float,
