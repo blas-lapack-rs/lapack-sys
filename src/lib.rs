@@ -3831,28 +3831,26 @@ extern "C" {
     pub fn zlarfx_(side: *const c_char, m: *const c_int, n: *const c_int, v: *const complex_double,
                    tau: *const complex_double, c: *mut complex_double, ldc: *const c_int,
                    work: *mut complex_double);
-}
 
-extern "C" { // Find!
-    pub fn slatms_(m: *mut c_int, n: *mut c_int, dist: *mut c_char, iseed: *mut c_int,
-                   sym: *mut c_char, d: *mut c_float, mode: *mut c_int, cond: *mut c_float,
-                   dmax: *mut c_float, kl: *mut c_int, ku: *mut c_int, pack: *mut c_char,
-                   a: *mut c_float, lda: *mut c_int, work: *mut c_float, info: *mut c_int);
-    pub fn dlatms_(m: *mut c_int, n: *mut c_int, dist: *mut c_char, iseed: *mut c_int,
-                   sym: *mut c_char, d: *mut c_double, mode: *mut c_int, cond: *mut c_double,
-                   dmax: *mut c_double, kl: *mut c_int, ku: *mut c_int, pack: *mut c_char,
-                   a: *mut c_double, lda: *mut c_int, work: *mut c_double, info: *mut c_int);
-    pub fn clatms_(m: *mut c_int, n: *mut c_int, dist: *mut c_char, iseed: *mut c_int,
-                   sym: *mut c_char, d: *mut c_float, mode: *mut c_int, cond: *mut c_float,
-                   dmax: *mut c_float, kl: *mut c_int, ku: *mut c_int, pack: *mut c_char,
-                   a: *mut c_void, lda: *mut c_int, work: *mut c_void, info: *mut c_int);
-    pub fn zlatms_(m: *mut c_int, n: *mut c_int, dist: *mut c_char, iseed: *mut c_int,
-                   sym: *mut c_char, d: *mut c_double, mode: *mut c_int, cond: *mut c_double,
-                   dmax: *mut c_double, kl: *mut c_int, ku: *mut c_int, pack: *mut c_char,
-                   a: *mut c_void, lda: *mut c_int, work: *mut c_void, info: *mut c_int);
-}
+    pub fn slatms_(m: *const c_int, n: *const c_int, dist: *const c_char, iseed: *mut c_int,
+                   sym: *const c_char, d: *mut c_float, mode: *const c_int, cond: *const c_float,
+                   dmax: *const c_float, kl: *const c_int, ku: *const c_int, pack: *const c_char,
+                   a: *mut c_float, lda: *const c_int, work: *mut c_float, info: *mut c_int);
+    pub fn dlatms_(m: *const c_int, n: *const c_int, dist: *const c_char, iseed: *mut c_int,
+                   sym: *const c_char, d: *mut c_double, mode: *const c_int, cond: *const c_double,
+                   dmax: *const c_double, kl: *const c_int, ku: *const c_int, pack: *const c_char,
+                   a: *mut c_double, lda: *const c_int, work: *mut c_double, info: *mut c_int);
+    pub fn clatms_(m: *const c_int, n: *const c_int, dist: *const c_char, iseed: *mut c_int,
+                   sym: *const c_char, d: *mut c_float, mode: *const c_int, cond: *const c_float,
+                   dmax: *const c_float, kl: *const c_int, ku: *const c_int, pack: *const c_char,
+                   a: *mut complex_float, lda: *const c_int, work: *mut complex_float,
+                   info: *mut c_int);
+    pub fn zlatms_(m: *const c_int, n: *const c_int, dist: *const c_char, iseed: *mut c_int,
+                   sym: *const c_char, d: *mut c_double, mode: *const c_int, cond: *const c_double,
+                   dmax: *const c_double, kl: *const c_int, ku: *const c_int, pack: *const c_char,
+                   a: *mut complex_double, lda: *const c_int, work: *mut complex_double,
+                   info: *mut c_int);
 
-extern "C" {
     pub fn dlag2s_(m: *const c_int, n: *const c_int, a: *const c_double, lda: *const c_int,
                    sa: *mut c_float, ldsa: *const c_int, info: *mut c_int);
 
@@ -3873,24 +3871,20 @@ extern "C" {
                    info: *mut c_int);
     pub fn zlauum_(uplo: *const c_char, n: *const c_int, a: *mut complex_double, lda: *const c_int,
                    info: *mut c_int);
-}
 
-extern "C" { // Find!
-    pub fn slagge_(m: *mut c_int, n: *mut c_int, kl: *mut c_int, ku: *mut c_int, d: *const c_float,
-                   a: *mut c_float, lda: *mut c_int, iseed: *mut c_int, work: *mut c_float,
-                   info: *mut c_int);
-    pub fn dlagge_(m: *mut c_int, n: *mut c_int, kl: *mut c_int, ku: *mut c_int,
-                   d: *const c_double, a: *mut c_double, lda: *mut c_int, iseed: *mut c_int,
+    pub fn slagge_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
+                   d: *const c_float, a: *mut c_float, lda: *const c_int, iseed: *mut c_int,
+                   work: *mut c_float, info: *mut c_int);
+    pub fn dlagge_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
+                   d: *const c_double, a: *mut c_double, lda: *const c_int, iseed: *mut c_int,
                    work: *mut c_double, info: *mut c_int);
-    pub fn clagge_(m: *mut c_int, n: *mut c_int, kl: *mut c_int, ku: *mut c_int, d: *const c_float,
-                   a: *mut c_void, lda: *mut c_int, iseed: *mut c_int, work: *mut c_void,
-                   info: *mut c_int);
-    pub fn zlagge_(m: *mut c_int, n: *mut c_int, kl: *mut c_int, ku: *mut c_int,
-                   d: *const c_double, a: *mut c_void, lda: *mut c_int, iseed: *mut c_int,
-                   work: *mut c_void, info: *mut c_int);
-}
+    pub fn clagge_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
+                   d: *const c_float, a: *mut complex_float, lda: *const c_int, iseed: *mut c_int,
+                   work: *mut complex_float, info: *mut c_int);
+    pub fn zlagge_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
+                   d: *const c_double, a: *mut complex_double, lda: *const c_int,
+                   iseed: *mut c_int, work: *mut complex_double, info: *mut c_int);
 
-extern "C" {
     pub fn slaset_(uplo: *const c_char, m: *const c_int, n: *const c_int, alpha: *const c_float,
                    beta: *const c_float, a: *mut c_float, lda: *const c_int);
     pub fn dlaset_(uplo: *const c_char, m: *const c_int, n: *const c_int, alpha: *const c_double,
@@ -3904,52 +3898,53 @@ extern "C" {
 
     pub fn slasrt_(id: *const c_char, n: *const c_int, d: *mut c_float, info: *mut c_int);
     pub fn dlasrt_(id: *const c_char, n: *const c_int, d: *mut c_double, info: *mut c_int);
-}
 
-extern "C" { // Find!
-    pub fn claghe_(n: *mut c_int, k: *mut c_int, d: *const c_float, a: *mut c_void,
-                   lda: *mut c_int, iseed: *mut c_int, work: *mut c_void, info: *mut c_int);
-    pub fn zlaghe_(n: *mut c_int, k: *mut c_int, d: *const c_double, a: *mut c_void,
-                   lda: *mut c_int, iseed: *mut c_int, work: *mut c_void, info: *mut c_int);
+    pub fn claghe_(n: *const c_int, k: *const c_int, d: *const c_float, a: *mut complex_float,
+                   lda: *const c_int, iseed: *mut c_int, work: *mut complex_float,
+                   info: *mut c_int);
+    pub fn zlaghe_(n: *const c_int, k: *const c_int, d: *const c_double, a: *mut complex_double,
+                   lda: *const c_int, iseed: *mut c_int, work: *mut complex_double,
+                   info: *mut c_int);
 
-    pub fn slagsy_(n: *mut c_int, k: *mut c_int, d: *const c_float, a: *mut c_float,
-                   lda: *mut c_int, iseed: *mut c_int, work: *mut c_float, info: *mut c_int);
-    pub fn dlagsy_(n: *mut c_int, k: *mut c_int, d: *const c_double, a: *mut c_double,
-                   lda: *mut c_int, iseed: *mut c_int, work: *mut c_double, info: *mut c_int);
-    pub fn clagsy_(n: *mut c_int, k: *mut c_int, d: *const c_float, a: *mut c_void,
-                   lda: *mut c_int, iseed: *mut c_int, work: *mut c_void, info: *mut c_int);
-    pub fn zlagsy_(n: *mut c_int, k: *mut c_int, d: *const c_double, a: *mut c_void,
-                   lda: *mut c_int, iseed: *mut c_int, work: *mut c_void, info: *mut c_int);
+    pub fn slagsy_(n: *const c_int, k: *const c_int, d: *const c_float, a: *mut c_float,
+                   lda: *const c_int, iseed: *mut c_int, work: *mut c_float, info: *mut c_int);
+    pub fn dlagsy_(n: *const c_int, k: *const c_int, d: *const c_double, a: *mut c_double,
+                   lda: *const c_int, iseed: *mut c_int, work: *mut c_double, info: *mut c_int);
+    pub fn clagsy_(n: *const c_int, k: *const c_int, d: *const c_float, a: *mut complex_float,
+                   lda: *const c_int, iseed: *mut c_int, work: *mut complex_float,
+                   info: *mut c_int);
+    pub fn zlagsy_(n: *const c_int, k: *const c_int, d: *const c_double, a: *mut complex_double,
+                   lda: *const c_int, iseed: *mut c_int, work: *mut complex_double,
+                   info: *mut c_int);
 
-    pub fn slapmr_(forwrd: *mut c_int, m: *mut c_int, n: *mut c_int, x: *mut c_float,
-                   ldx: *mut c_int, k: *mut c_int);
-    pub fn dlapmr_(forwrd: *mut c_int, m: *mut c_int, n: *mut c_int, x: *mut c_double,
-                   ldx: *mut c_int, k: *mut c_int);
-    pub fn clapmr_(forwrd: *mut c_int, m: *mut c_int, n: *mut c_int, x: *mut c_void,
-                   ldx: *mut c_int, k: *mut c_int);
-    pub fn zlapmr_(forwrd: *mut c_int, m: *mut c_int, n: *mut c_int, x: *mut c_void,
-                   ldx: *mut c_int, k: *mut c_int);
-}
+    pub fn slapmr_(forwrd: *const c_int, m: *const c_int, n: *const c_int, x: *mut c_float,
+                   ldx: *const c_int, k: *mut c_int);
+    pub fn dlapmr_(forwrd: *const c_int, m: *const c_int, n: *const c_int, x: *mut c_double,
+                   ldx: *const c_int, k: *mut c_int);
+    pub fn clapmr_(forwrd: *const c_int, m: *const c_int, n: *const c_int, x: *mut complex_float,
+                   ldx: *const c_int, k: *mut c_int);
+    pub fn zlapmr_(forwrd: *const c_int, m: *const c_int, n: *const c_int, x: *mut complex_double,
+                   ldx: *const c_int, k: *mut c_int);
 
-extern "C" {
     pub fn slapy2_(x: *const c_float, y: *const c_float) -> c_float;
     pub fn dlapy2_(x: *const c_double, y: *const c_double) -> c_double;
 
     pub fn slapy3_(x: *const c_float, y: *const c_float, z: *const c_float) -> c_float;
     pub fn dlapy3_(x: *const c_double, y: *const c_double, z: *const c_double) -> c_double;
-}
 
-extern "C" { // Find!
-    pub fn slartgp_(f: *mut c_float, g: *mut c_float, cs: *mut c_float, sn: *mut c_float,
+    pub fn slartgp_(f: *const c_float, g: *const c_float, cs: *mut c_float, sn: *mut c_float,
                     r: *mut c_float);
-    pub fn dlartgp_(f: *mut c_double, g: *mut c_double, cs: *mut c_double, sn: *mut c_double,
+    pub fn dlartgp_(f: *const c_double, g: *const c_double, cs: *mut c_double, sn: *mut c_double,
                     r: *mut c_double);
 
-    pub fn slartgs_(x: *mut c_float, y: *mut c_float, sigma: *mut c_float, cs: *mut c_float,
+    pub fn slartgs_(x: *const c_float, y: *const c_float, sigma: *const c_float, cs: *mut c_float,
                     sn: *mut c_float);
-    pub fn dlartgs_(x: *mut c_double, y: *mut c_double, sigma: *mut c_double, cs: *mut c_double,
-                    sn: *mut c_double);
+    pub fn dlartgs_(x: *const c_double, y: *const c_double, sigma: *const c_double,
+                    cs: *mut c_double, sn: *mut c_double);
+}
 
+// The following code nees to be revised in terms of complexity and mutability.
+extern "C" {
     // LAPACK 3.3.0
     pub fn cbbcsd_(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
                    jobv2t: *mut c_char, trans: *mut c_char, m: *mut c_int, p: *mut c_int,
