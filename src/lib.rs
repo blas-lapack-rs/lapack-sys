@@ -4282,5 +4282,5 @@ extern "C" {
                  x: *const complex_double, incx: *const c_int, a: *mut complex_double,
                  lda: *const c_int);
 
-    pub fn ilaver_(vers_major: *const c_int, vers_minor: *const c_int, vers_patch: *const c_int);
+    pub fn ilaver_(vers_major: *mut c_int, vers_minor: *mut c_int, vers_patch: *mut c_int);
 }
