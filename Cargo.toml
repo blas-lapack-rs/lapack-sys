@@ -1,6 +1,6 @@
 [package]
 name = "lapack-sys"
-version = "0.3.1"
+version = "0.4.0"
 authors = [
   "Andrew Straw <strawman@astraw.com>",
   "Corey Richardson <corey@octayn.net>",
