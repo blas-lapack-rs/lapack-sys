@@ -11,7 +11,7 @@ after_success:
 
 env:
   global:
-    secure: K7pZnNDJLqoIorFRrViyTRzlm931f2LLv155xCdrE2r3EsAHg3+gP+/cE6nLW346lBQaB4GS3xUo69JcD7Ihk1xIsCijtyGEpPmybt5BzvUfjGgluWGCMk4IX7wx0f00ERszRMmoCbNKmWFD5bpJfhVe1tGU/Bd9qb0mU5ii5gE=
+    secure: etByoQAe+qULGNl7uRrY/JcfQvH/blKMN6mWvSAq+J1NQRygaT3rWqwTtf200mqeYD2DGQ46k+QFKzIKUWbdhl99bsvLD2GKMYQG0UasrQRBmj432aQCoY0QQfZwQc0RyGl3Pb04CGTwKP0UGELxncwZziXWtOrY8PxZ38ZVMHs=
 
 notifications:
   email: false
