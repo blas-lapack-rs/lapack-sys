@@ -12,7 +12,7 @@ The package provides bindings to the [Linear Algebra PACKage][1].
 
 [1]: http://en.wikipedia.org/wiki/LAPACK
 
-[version-img]: http://stainless-steel.github.io/images/crates.svg
+[version-img]: https://img.shields.io/crates/v/lapack-sys.svg
 [version-url]: https://crates.io/crates/lapack-sys
 [status-img]: https://travis-ci.org/stainless-steel/lapack-sys.svg?branch=master
 [status-url]: https://travis-ci.org/stainless-steel/lapack-sys
