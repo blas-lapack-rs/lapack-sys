@@ -4,14 +4,14 @@
 
 #![allow(non_camel_case_types)]
 
+#[cfg(feature = "accelerate")]
+extern crate accelerate_provider as raw;
+
 #[cfg(feature = "netlib")]
 extern crate netlib_provider as raw;
 
 #[cfg(feature = "openblas")]
 extern crate openblas_provider as raw;
-
-#[cfg(feature = "accelerate")]
-extern crate accelerate_provider as raw;
 
 extern crate libc;
 
