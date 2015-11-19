@@ -7,7 +7,10 @@ rust:
 
 addons:
   apt:
+    sources:
+      - kubuntu-backports
     packages:
+      - cmake
       - gfortran
 
 script:
