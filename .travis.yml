@@ -10,13 +10,12 @@ addons:
     packages:
       - gfortran
 
-env:
-  - PROVIDER=netlib-provider
-  - PROVIDER=openblas-provider
-
 script:
-  - cargo build --no-default-features --features=$PROVIDER --verbose
-  - cargo test --no-default-features --features=$PROVIDER --verbose
+  - cargo build --no-default-features --features=netlib-provider --verbose
+  - cargo test --no-default-features --features=netlib-provider --verbose
+
+  - cargo build --no-default-features --features=openblas-provider --verbose
+  - cargo test --no-default-features --features=openblas-provider --verbose
 
 after_success:
   - curl https://stainless-steel.github.io/travis/after_success.sh | bash
