@@ -12,15 +12,15 @@ homepage = "https://github.com/stainless-steel/lapack-sys"
 documentation = "https://stainless-steel.github.io/lapack-sys"
 description = "The package provides bindings to the Linear Algebra PACKage."
 
-[dependencies]
-libc = "0.2"
-
 [features]
 default = ["openblas"]
 
 accelerate = ["accelerate-provider"]
 netlib = ["netlib-provider"]
 openblas = ["openblas-provider"]
+
+[dependencies]
+libc = "0.2"
 
 [dependencies.accelerate-provider]
 version = "0.1"
