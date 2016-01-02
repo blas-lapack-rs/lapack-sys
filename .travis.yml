@@ -26,6 +26,9 @@ matrix:
       env: FEATURE=accelerate
 
 script:
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      curl https://stainless-steel.github.io/travis/install_gfortran_osx.sh | bash;
+    fi
   - cargo build --no-default-features --features=$FEATURE --verbose
   - cargo test --no-default-features --features=$FEATURE --verbose
 
