@@ -1,14 +1,39 @@
 language: rust
 sudo: false
 
+os:
+  - linux
+  - osx
+
 rust:
   - stable
   - beta
   - nightly
 
-os:
-  - linux
-  - osx
+env:
+  matrix:
+    - FEATURE=accelerate
+    - FEATURE=netlib
+    - FEATURE=openblas
+
+  global:
+    - RUSTDOC_VERSION=nightly
+    - secure: etByoQAe+qULGNl7uRrY/JcfQvH/blKMN6mWvSAq+J1NQRygaT3rWqwTtf200mqeYD2DGQ46k+QFKzIKUWbdhl99bsvLD2GKMYQG0UasrQRBmj432aQCoY0QQfZwQc0RyGl3Pb04CGTwKP0UGELxncwZziXWtOrY8PxZ38ZVMHs=
+
+matrix:
+  exclude:
+    - os: linux
+      env: FEATURE=accelerate
+
+script:
+  - cargo build --no-default-features --features=$FEATURE --verbose
+  - cargo test --no-default-features --features=$FEATURE --verbose
+
+after_success:
+  - curl https://stainless-steel.github.io/travis/after_success.sh | bash
+
+notifications:
+  email: false
 
 addons:
   apt:
@@ -17,25 +42,3 @@ addons:
     packages:
       - cmake
       - gfortran
-
-script:
-  - [ $TRAVIS_OS_NAME = osx ] &&
-    cargo build --no-default-features --features=accelerate --verbose &&
-    cargo test --no-default-features --features=accelerate --verbose
-
-  - cargo build --no-default-features --features=netlib --verbose &&
-    cargo test --no-default-features --features=netlib --verbose
-
-  - cargo build --no-default-features --features=openblas --verbose &&
-    cargo test --no-default-features --features=openblas --verbose
-
-after_success:
-  - curl https://stainless-steel.github.io/travis/after_success.sh | bash
-
-env:
-  global:
-    - RUSTDOC_VERSION=nightly
-    - secure: etByoQAe+qULGNl7uRrY/JcfQvH/blKMN6mWvSAq+J1NQRygaT3rWqwTtf200mqeYD2DGQ46k+QFKzIKUWbdhl99bsvLD2GKMYQG0UasrQRBmj432aQCoY0QQfZwQc0RyGl3Pb04CGTwKP0UGELxncwZziXWtOrY8PxZ38ZVMHs=
-
-notifications:
-  email: false
