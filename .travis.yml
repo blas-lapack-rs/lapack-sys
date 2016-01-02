@@ -1,9 +1,14 @@
 language: rust
 sudo: false
+
 rust:
   - stable
   - beta
   - nightly
+
+os:
+  - linux
+  - osx
 
 addons:
   apt:
@@ -14,11 +19,15 @@ addons:
       - gfortran
 
 script:
-  - cargo build --no-default-features --features=netlib --verbose
-  - cargo test --no-default-features --features=netlib --verbose
+  - [ $TRAVIS_OS_NAME = osx ] &&
+    cargo build --no-default-features --features=accelerate --verbose &&
+    cargo test --no-default-features --features=accelerate --verbose
 
-  - cargo build --no-default-features --features=openblas --verbose
-  - cargo test --no-default-features --features=openblas --verbose
+  - cargo build --no-default-features --features=netlib --verbose &&
+    cargo test --no-default-features --features=netlib --verbose
+
+  - cargo build --no-default-features --features=openblas --verbose &&
+    cargo test --no-default-features --features=openblas --verbose
 
 after_success:
   - curl https://stainless-steel.github.io/travis/after_success.sh | bash
