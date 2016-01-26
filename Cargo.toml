@@ -1,16 +1,16 @@
 [package]
 name = "lapack-sys"
-version = "0.4.1"
+version = "0.5.0"
+license = "Apache-2.0/MIT"
 authors = [
   "Andrew Straw <strawman@astraw.com>",
   "Corey Richardson <corey@octayn.net>",
   "Ivan Ukhov <ivan.ukhov@gmail.com>",
 ]
-license = "MIT"
-repository = "https://github.com/stainless-steel/lapack-sys"
-homepage = "https://github.com/stainless-steel/lapack-sys"
-documentation = "https://stainless-steel.github.io/lapack-sys"
 description = "The package provides bindings to the Linear Algebra PACKage."
+documentation = "https://stainless-steel.github.io/lapack-sys"
+homepage = "https://github.com/stainless-steel/lapack-sys"
+repository = "https://github.com/stainless-steel/lapack-sys"
 
 [features]
 default = ["openblas"]
@@ -23,13 +23,13 @@ openblas = ["openblas-provider"]
 libc = "0.2"
 
 [dependencies.accelerate-provider]
-version = "0.1"
+version = "0.2"
 optional = true
 
 [dependencies.netlib-provider]
-version = "0.1"
+version = "0.2"
 optional = true
 
 [dependencies.openblas-provider]
-version = "0.1"
+version = "0.2"
 optional = true
