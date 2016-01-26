@@ -2,13 +2,13 @@
 
 The package provides bindings to the [Linear Algebra PACKage][1].
 
-## [Documentation][docs]
+## [Documentation][doc]
 
-## Contributing
+## Contribution
 
-1. Fork the project.
-2. Implement your idea.
-3. Open a pull request.
+Your contribution is highly appreciated. Do not hesitate to open an issue or a
+pull request. Note that any contribution submitted for inclusion in the project
+will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 
 [1]: http://en.wikipedia.org/wiki/LAPACK
 
@@ -16,4 +16,4 @@ The package provides bindings to the [Linear Algebra PACKage][1].
 [version-url]: https://crates.io/crates/lapack-sys
 [status-img]: https://travis-ci.org/stainless-steel/lapack-sys.svg?branch=master
 [status-url]: https://travis-ci.org/stainless-steel/lapack-sys
-[docs]: https://stainless-steel.github.io/lapack-sys
+[doc]: https://stainless-steel.github.io/lapack-sys
