@@ -15,10 +15,10 @@ extern crate openblas_provider as raw;
 
 /// A complex number with 64-bit parts.
 #[allow(bad_style)]
-pub type complex_double = [libc::c_double; 2];
+pub type c_double_complex = [libc::c_double; 2];
 
 /// A complex number with 32-bit parts.
 #[allow(bad_style)]
-pub type complex_float = [libc::c_float; 2];
+pub type c_float_complex = [libc::c_float; 2];
 
 pub mod fortran;
