@@ -37,8 +37,7 @@ extern "C" {
     pub fn dgbtrf_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
                    ab: *mut c_double, ldab: *const c_int, ipiv: *mut c_int, info: *mut c_int);
     pub fn cgbtrf_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
-                   ab: *mut c_float_complex, ldab: *const c_int, ipiv: *mut c_int,
-                   info: *mut c_int);
+                   ab: *mut c_float_complex, ldab: *const c_int, ipiv: *mut c_int, info: *mut c_int);
     pub fn zgbtrf_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
                    ab: *mut c_double_complex, ldab: *const c_int, ipiv: *mut c_int,
                    info: *mut c_int);
@@ -87,8 +86,7 @@ extern "C" {
 
     pub fn spptrf_(uplo: *const c_char, n: *const c_int, ap: *mut c_float, info: *mut c_int);
     pub fn dpptrf_(uplo: *const c_char, n: *const c_int, ap: *mut c_double, info: *mut c_int);
-    pub fn cpptrf_(uplo: *const c_char, n: *const c_int, ap: *mut c_float_complex,
-                   info: *mut c_int);
+    pub fn cpptrf_(uplo: *const c_char, n: *const c_int, ap: *mut c_float_complex, info: *mut c_int);
     pub fn zpptrf_(uplo: *const c_char, n: *const c_int, ap: *mut c_double_complex,
                    info: *mut c_int);
 
@@ -159,8 +157,7 @@ extern "C" {
                    b: *mut c_double, ldb: *const c_int, info: *mut c_int);
     pub fn cgbtrs_(trans: *const c_char, n: *const c_int, kl: *const c_int, ku: *const c_int,
                    nrhs: *const c_int, ab: *const c_float_complex, ldab: *const c_int,
-                   ipiv: *const c_int, b: *mut c_float_complex, ldb: *const c_int,
-                   info: *mut c_int);
+                   ipiv: *const c_int, b: *mut c_float_complex, ldb: *const c_int, info: *mut c_int);
     pub fn zgbtrs_(trans: *const c_char, n: *const c_int, kl: *const c_int, ku: *const c_int,
                    nrhs: *const c_int, ab: *const c_double_complex, ldab: *const c_int,
                    ipiv: *const c_int, b: *mut c_double_complex, ldb: *const c_int,
@@ -310,8 +307,7 @@ extern "C" {
                    b: *mut c_double, ldb: *const c_int, info: *mut c_int);
     pub fn ctbtrs_(uplo: *const c_char, trans: *const c_char, diag: *const c_char, n: *const c_int,
                    kd: *const c_int, nrhs: *const c_int, ab: *const c_float_complex,
-                   ldab: *const c_int, b: *mut c_float_complex, ldb: *const c_int,
-                   info: *mut c_int);
+                   ldab: *const c_int, b: *mut c_float_complex, ldb: *const c_int, info: *mut c_int);
     pub fn ztbtrs_(uplo: *const c_char, trans: *const c_char, diag: *const c_char, n: *const c_int,
                    kd: *const c_int, nrhs: *const c_int, ab: *const c_double_complex,
                    ldab: *const c_int, b: *mut c_double_complex, ldb: *const c_int,
@@ -959,8 +955,7 @@ extern "C" {
 
     pub fn spptri_(uplo: *const c_char, n: *const c_int, ap: *mut c_float, info: *mut c_int);
     pub fn dpptri_(uplo: *const c_char, n: *const c_int, ap: *mut c_double, info: *mut c_int);
-    pub fn cpptri_(uplo: *const c_char, n: *const c_int, ap: *mut c_float_complex,
-                   info: *mut c_int);
+    pub fn cpptri_(uplo: *const c_char, n: *const c_int, ap: *mut c_float_complex, info: *mut c_int);
     pub fn zpptri_(uplo: *const c_char, n: *const c_int, ap: *mut c_double_complex,
                    info: *mut c_int);
 
@@ -1051,8 +1046,7 @@ extern "C" {
 
     pub fn sgbequ_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
                    ab: *const c_float, ldab: *const c_int, r: *mut c_float, c: *mut c_float,
-                   rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float,
-                   info: *mut c_int);
+                   rowcnd: *mut c_float, colcnd: *mut c_float, amax: *mut c_float, info: *mut c_int);
     pub fn dgbequ_(m: *const c_int, n: *const c_int, kl: *const c_int, ku: *const c_int,
                    ab: *const c_double, ldab: *const c_int, r: *mut c_double, c: *mut c_double,
                    rowcnd: *mut c_double, colcnd: *mut c_double, amax: *mut c_double,
@@ -1507,8 +1501,7 @@ extern "C" {
     pub fn dptsvx_(fact: *const c_char, n: *const c_int, nrhs: *const c_int, d: *const c_double,
                    e: *const c_double, df: *mut c_double, ef: *mut c_double, b: *const c_double,
                    ldb: *const c_int, x: *mut c_double, ldx: *const c_int, rcond: *mut c_double,
-                   ferr: *mut c_double, berr: *mut c_double, work: *mut c_double,
-                   info: *mut c_int);
+                   ferr: *mut c_double, berr: *mut c_double, work: *mut c_double, info: *mut c_int);
     pub fn cptsvx_(fact: *const c_char, n: *const c_int, nrhs: *const c_int, d: *const c_float,
                    e: *const c_float_complex, df: *mut c_float, ef: *mut c_float_complex,
                    b: *const c_float_complex, ldb: *const c_int, x: *mut c_float_complex,
@@ -1913,8 +1906,7 @@ extern "C" {
                    taub: *mut c_float, work: *mut c_float, lwork: *const c_int, info: *mut c_int);
     pub fn dggqrf_(n: *const c_int, m: *const c_int, p: *const c_int, a: *mut c_double,
                    lda: *const c_int, taua: *mut c_double, b: *mut c_double, ldb: *const c_int,
-                   taub: *mut c_double, work: *mut c_double, lwork: *const c_int,
-                   info: *mut c_int);
+                   taub: *mut c_double, work: *mut c_double, lwork: *const c_int, info: *mut c_int);
     pub fn cggqrf_(n: *const c_int, m: *const c_int, p: *const c_int, a: *mut c_float_complex,
                    lda: *const c_int, taua: *mut c_float_complex, b: *mut c_float_complex,
                    ldb: *const c_int, taub: *mut c_float_complex, work: *mut c_float_complex,
@@ -1929,8 +1921,7 @@ extern "C" {
                    taub: *mut c_float, work: *mut c_float, lwork: *const c_int, info: *mut c_int);
     pub fn dggrqf_(m: *const c_int, p: *const c_int, n: *const c_int, a: *mut c_double,
                    lda: *const c_int, taua: *mut c_double, b: *mut c_double, ldb: *const c_int,
-                   taub: *mut c_double, work: *mut c_double, lwork: *const c_int,
-                   info: *mut c_int);
+                   taub: *mut c_double, work: *mut c_double, lwork: *const c_int, info: *mut c_int);
     pub fn cggrqf_(m: *const c_int, p: *const c_int, n: *const c_int, a: *mut c_float_complex,
                    lda: *const c_int, taua: *mut c_float_complex, b: *mut c_float_complex,
                    ldb: *const c_int, taub: *mut c_float_complex, work: *mut c_float_complex,
@@ -2048,8 +2039,7 @@ extern "C" {
     pub fn sorgtr_(uplo: *const c_char, n: *const c_int, a: *mut c_float, lda: *const c_int,
                    tau: *const c_float, work: *mut c_float, lwork: *const c_int, info: *mut c_int);
     pub fn dorgtr_(uplo: *const c_char, n: *const c_int, a: *mut c_double, lda: *const c_int,
-                   tau: *const c_double, work: *mut c_double, lwork: *const c_int,
-                   info: *mut c_int);
+                   tau: *const c_double, work: *mut c_double, lwork: *const c_int, info: *mut c_int);
 
     pub fn sormtr_(side: *const c_char, uplo: *const c_char, trans: *const c_char, m: *const c_int,
                    n: *const c_int, a: *const c_float, lda: *const c_int, tau: *const c_float,
@@ -2104,8 +2094,7 @@ extern "C" {
     pub fn chptrd_(uplo: *const c_char, n: *const c_int, ap: *mut c_float_complex, d: *mut c_float,
                    e: *mut c_float, tau: *mut c_float_complex, info: *mut c_int);
     pub fn zhptrd_(uplo: *const c_char, n: *const c_int, ap: *mut c_double_complex,
-                   d: *mut c_double, e: *mut c_double, tau: *mut c_double_complex,
-                   info: *mut c_int);
+                   d: *mut c_double, e: *mut c_double, tau: *mut c_double_complex, info: *mut c_int);
 
     pub fn cupgtr_(uplo: *const c_char, n: *const c_int, ap: *const c_float_complex,
                    tau: *const c_float_complex, q: *mut c_float_complex, ldq: *const c_int,
@@ -2146,8 +2135,7 @@ extern "C" {
     pub fn dsteqr_(compz: *const c_char, n: *const c_int, d: *mut c_double, e: *mut c_double,
                    z: *mut c_double, ldz: *const c_int, work: *mut c_double, info: *mut c_int);
     pub fn csteqr_(compz: *const c_char, n: *const c_int, d: *mut c_float, e: *mut c_float,
-                   z: *mut c_float_complex, ldz: *const c_int, work: *mut c_float,
-                   info: *mut c_int);
+                   z: *mut c_float_complex, ldz: *const c_int, work: *mut c_float, info: *mut c_int);
     pub fn zsteqr_(compz: *const c_char, n: *const c_int, d: *mut c_double, e: *mut c_double,
                    z: *mut c_double_complex, ldz: *const c_int, work: *mut c_double,
                    info: *mut c_int);
@@ -2220,8 +2208,7 @@ extern "C" {
     pub fn dpteqr_(compz: *const c_char, n: *const c_int, d: *mut c_double, e: *mut c_double,
                    z: *mut c_double, ldz: *const c_int, work: *mut c_double, info: *mut c_int);
     pub fn cpteqr_(compz: *const c_char, n: *const c_int, d: *mut c_float, e: *mut c_float,
-                   z: *mut c_float_complex, ldz: *const c_int, work: *mut c_float,
-                   info: *mut c_int);
+                   z: *mut c_float_complex, ldz: *const c_int, work: *mut c_float, info: *mut c_int);
     pub fn zpteqr_(compz: *const c_char, n: *const c_int, d: *mut c_double, e: *mut c_double,
                    z: *mut c_double_complex, ldz: *const c_int, work: *mut c_double,
                    info: *mut c_int);
@@ -2521,26 +2508,22 @@ extern "C" {
     pub fn cgghrd_(compq: *const c_char, compz: *const c_char, n: *const c_int, ilo: *const c_int,
                    ihi: *const c_int, a: *mut c_float_complex, lda: *const c_int,
                    b: *mut c_float_complex, ldb: *const c_int, q: *mut c_float_complex,
-                   ldq: *const c_int, z: *mut c_float_complex, ldz: *const c_int,
-                   info: *mut c_int);
+                   ldq: *const c_int, z: *mut c_float_complex, ldz: *const c_int, info: *mut c_int);
     pub fn zgghrd_(compq: *const c_char, compz: *const c_char, n: *const c_int, ilo: *const c_int,
                    ihi: *const c_int, a: *mut c_double_complex, lda: *const c_int,
                    b: *mut c_double_complex, ldb: *const c_int, q: *mut c_double_complex,
-                   ldq: *const c_int, z: *mut c_double_complex, ldz: *const c_int,
-                   info: *mut c_int);
+                   ldq: *const c_int, z: *mut c_double_complex, ldz: *const c_int, info: *mut c_int);
 
     pub fn sggbal_(job: *const c_char, n: *const c_int, a: *mut c_float, lda: *const c_int,
                    b: *mut c_float, ldb: *const c_int, ilo: *mut c_int, ihi: *mut c_int,
-                   lscale: *mut c_float, rscale: *mut c_float, work: *mut c_float,
-                   info: *mut c_int);
+                   lscale: *mut c_float, rscale: *mut c_float, work: *mut c_float, info: *mut c_int);
     pub fn dggbal_(job: *const c_char, n: *const c_int, a: *mut c_double, lda: *const c_int,
                    b: *mut c_double, ldb: *const c_int, ilo: *mut c_int, ihi: *mut c_int,
                    lscale: *mut c_double, rscale: *mut c_double, work: *mut c_double,
                    info: *mut c_int);
     pub fn cggbal_(job: *const c_char, n: *const c_int, a: *mut c_float_complex, lda: *const c_int,
                    b: *mut c_float_complex, ldb: *const c_int, ilo: *mut c_int, ihi: *mut c_int,
-                   lscale: *mut c_float, rscale: *mut c_float, work: *mut c_float,
-                   info: *mut c_int);
+                   lscale: *mut c_float, rscale: *mut c_float, work: *mut c_float, info: *mut c_int);
     pub fn zggbal_(job: *const c_char, n: *const c_int, a: *mut c_double_complex,
                    lda: *const c_int, b: *mut c_double_complex, ldb: *const c_int, ilo: *mut c_int,
                    ihi: *mut c_int, lscale: *mut c_double, rscale: *mut c_double,
@@ -2900,13 +2883,11 @@ extern "C" {
     pub fn cheevd_(jobz: *const c_char, uplo: *const c_char, n: *const c_int,
                    a: *mut c_float_complex, lda: *const c_int, w: *mut c_float,
                    work: *mut c_float_complex, lwork: *const c_int, rwork: *mut c_float,
-                   lrwork: *const c_int, iwork: *mut c_int, liwork: *const c_int,
-                   info: *mut c_int);
+                   lrwork: *const c_int, iwork: *mut c_int, liwork: *const c_int, info: *mut c_int);
     pub fn zheevd_(jobz: *const c_char, uplo: *const c_char, n: *const c_int,
                    a: *mut c_double_complex, lda: *const c_int, w: *mut c_double,
                    work: *mut c_double_complex, lwork: *const c_int, rwork: *mut c_double,
-                   lrwork: *const c_int, iwork: *mut c_int, liwork: *const c_int,
-                   info: *mut c_int);
+                   lrwork: *const c_int, iwork: *mut c_int, liwork: *const c_int, info: *mut c_int);
 
     pub fn ssyevx_(jobz: *const c_char, range: *const c_char, uplo: *const c_char, n: *const c_int,
                    a: *mut c_float, lda: *const c_int, vl: *const c_float, vu: *const c_float,
@@ -2957,8 +2938,7 @@ extern "C" {
                    abstol: *const c_double, m: *mut c_int, w: *mut c_double,
                    z: *mut c_double_complex, ldz: *const c_int, isuppz: *mut c_int,
                    work: *mut c_double_complex, lwork: *const c_int, rwork: *mut c_double,
-                   lrwork: *const c_int, iwork: *mut c_int, liwork: *const c_int,
-                   info: *mut c_int);
+                   lrwork: *const c_int, iwork: *mut c_int, liwork: *const c_int, info: *mut c_int);
 
     pub fn sspev_(jobz: *const c_char, uplo: *const c_char, n: *const c_int, ap: *mut c_float,
                   w: *mut c_float, z: *mut c_float, ldz: *const c_int, work: *mut c_float,
@@ -3698,8 +3678,7 @@ extern "C" {
     pub fn sgeqrfp_(m: *const c_int, n: *const c_int, a: *mut c_float, lda: *const c_int,
                     tau: *mut c_float, work: *mut c_float, lwork: *const c_int, info: *mut c_int);
     pub fn dgeqrfp_(m: *const c_int, n: *const c_int, a: *mut c_double, lda: *const c_int,
-                    tau: *mut c_double, work: *mut c_double, lwork: *const c_int,
-                    info: *mut c_int);
+                    tau: *mut c_double, work: *mut c_double, lwork: *const c_int, info: *mut c_int);
     pub fn cgeqrfp_(m: *const c_int, n: *const c_int, a: *mut c_float_complex, lda: *const c_int,
                     tau: *mut c_float_complex, work: *mut c_float_complex, lwork: *const c_int,
                     info: *mut c_int);
@@ -3712,8 +3691,7 @@ extern "C" {
 
     pub fn slarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int, x: *mut c_float);
     pub fn dlarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int, x: *mut c_double);
-    pub fn clarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int,
-                   x: *mut c_float_complex);
+    pub fn clarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int, x: *mut c_float_complex);
     pub fn zlarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int,
                    x: *mut c_double_complex);
 
@@ -3770,27 +3748,37 @@ extern "C" {
                    k2: *const c_int, ipiv: *const c_int, incx: *const c_int);
 
     pub fn slange_(norm: *const c_char, m: *const c_int, n: *const c_int, a: *const c_float,
-                   lda: *const c_int, work: *mut c_float) -> c_float;
+                   lda: *const c_int, work: *mut c_float)
+                   -> c_float;
     pub fn dlange_(norm: *const c_char, m: *const c_int, n: *const c_int, a: *const c_double,
-                   lda: *const c_int, work: *mut c_double) -> c_double;
+                   lda: *const c_int, work: *mut c_double)
+                   -> c_double;
     pub fn clange_(norm: *const c_char, m: *const c_int, n: *const c_int,
-                   a: *const c_float_complex, lda: *const c_int, work: *mut c_float) -> c_float;
+                   a: *const c_float_complex, lda: *const c_int, work: *mut c_float)
+                   -> c_float;
     pub fn zlange_(norm: *const c_char, m: *const c_int, n: *const c_int,
-                   a: *const c_double_complex, lda: *const c_int, work: *mut c_double) -> c_double;
+                   a: *const c_double_complex, lda: *const c_int, work: *mut c_double)
+                   -> c_double;
 
     pub fn clanhe_(norm: *const c_char, uplo: *const c_char, n: *const c_int,
-                   a: *const c_float_complex, lda: *const c_int, work: *mut c_float) -> c_float;
+                   a: *const c_float_complex, lda: *const c_int, work: *mut c_float)
+                   -> c_float;
     pub fn zlanhe_(norm: *const c_char, uplo: *const c_char, n: *const c_int,
-                   a: *const c_double_complex, lda: *const c_int, work: *mut c_double) -> c_double;
+                   a: *const c_double_complex, lda: *const c_int, work: *mut c_double)
+                   -> c_double;
 
     pub fn slansy_(norm: *const c_char, uplo: *const c_char, n: *const c_int, a: *const c_float,
-                   lda: *const c_int, work: *mut c_float) -> c_float;
+                   lda: *const c_int, work: *mut c_float)
+                   -> c_float;
     pub fn dlansy_(norm: *const c_char, uplo: *const c_char, n: *const c_int, a: *const c_double,
-                   lda: *const c_int, work: *mut c_double) -> c_double;
+                   lda: *const c_int, work: *mut c_double)
+                   -> c_double;
     pub fn clansy_(norm: *const c_char, uplo: *const c_char, n: *const c_int,
-                   a: *const c_float_complex, lda: *const c_int, work: *mut c_float) -> c_float;
+                   a: *const c_float_complex, lda: *const c_int, work: *mut c_float)
+                   -> c_float;
     pub fn zlansy_(norm: *const c_char, uplo: *const c_char, n: *const c_int,
-                   a: *const c_double_complex, lda: *const c_int, work: *mut c_double) -> c_double;
+                   a: *const c_double_complex, lda: *const c_int, work: *mut c_double)
+                   -> c_double;
 
     pub fn slantr_(norm: *const c_char, uplo: *const c_char, diag: *const c_char, m: *const c_int,
                    n: *const c_int, a: *const c_float, lda: *const c_int, work: *mut c_float)
@@ -3800,10 +3788,12 @@ extern "C" {
                    -> c_double;
     pub fn clantr_(norm: *const c_char, uplo: *const c_char, diag: *const c_char, m: *const c_int,
                    n: *const c_int, a: *const c_float_complex, lda: *const c_int,
-                   work: *mut c_float) -> c_float;
+                   work: *mut c_float)
+                   -> c_float;
     pub fn zlantr_(norm: *const c_char, uplo: *const c_char, diag: *const c_char, m: *const c_int,
                    n: *const c_int, a: *const c_double_complex, lda: *const c_int,
-                   work: *mut c_double) -> c_double;
+                   work: *mut c_double)
+                   -> c_double;
 
     pub fn slamch_(cmach: *const c_char) -> c_float;
     pub fn dlamch_(cmach: *const c_char) -> c_double;
@@ -4141,8 +4131,7 @@ extern "C" {
                    ldu1: *const c_int, u2: *mut c_double_complex, ldu2: *const c_int,
                    v1t: *mut c_double_complex, ldv1t: *const c_int, v2t: *mut c_double_complex,
                    ldv2t: *const c_int, work: *mut c_double_complex, lwork: *const c_int,
-                   rwork: *mut c_double, lrwork: *const c_int, iwork: *mut c_int,
-                   info: *mut c_int);
+                   rwork: *mut c_double, lrwork: *const c_int, iwork: *mut c_int, info: *mut c_int);
 
     pub fn sorbdb_(trans: *const c_char, signs: *const c_char, m: *const c_int, p: *const c_int,
                    q: *const c_int, x11: *mut c_float, ldx11: *const c_int, x12: *mut c_float,
