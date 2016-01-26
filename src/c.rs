@@ -9775,7 +9775,7 @@ extern "C" {
                            -> c_int;
 
 
-    // LAPACK 3.3.0
+    // Version 3.3.0
     pub fn LAPACKE_cbbcsd(matrix_layout: c_int, jobu1: c_char, jobu2: c_char, jobv1t: c_char,
                           jobv2t: c_char, trans: c_char, m: c_int, p: c_int, q: c_int,
                           theta: *mut c_float, phi: *mut c_float, u1: *mut c_float_complex,
@@ -10247,7 +10247,7 @@ extern "C" {
                                    lrwork: c_int, iwork: *mut c_int)
                                    -> c_int;
 
-    // LAPACK 3.4.0
+    // Version 3.4.0
     pub fn LAPACKE_sgemqrt(matrix_layout: c_int, side: c_char, trans: c_char, m: c_int, n: c_int,
                            k: c_int, nb: c_int, v: *const c_float, ldv: c_int, t: *const c_float,
                            ldt: c_int, c: *mut c_float, ldc: c_int)
@@ -10533,7 +10533,7 @@ extern "C" {
                                b: *mut c_double_complex, ldb: c_int, work: *mut c_double_complex,
                                ldwork: c_int)
                                -> c_int;
-    // LAPACK 3.X.X
+    // Version 3.X.X
     pub fn LAPACKE_ssysv_rook(matrix_layout: c_int, uplo: c_char, n: c_int, nrhs: c_int,
                               a: *mut c_float, lda: c_int, ipiv: *mut c_int, b: *mut c_float,
                               ldb: c_int)
@@ -14738,7 +14738,7 @@ extern "C" {
                           sn: *mut c_float);
     pub fn LAPACK_dlartgs(x: *mut c_double, y: *mut c_double, sigma: *mut c_double,
                           cs: *mut c_double, sn: *mut c_double);
-    // LAPACK 3.3.0
+    // Version 3.3.0
     pub fn LAPACK_cbbcsd(jobu1: *mut c_char, jobu2: *mut c_char, jobv1t: *mut c_char,
                          jobv2t: *mut c_char, trans: *mut c_char, m: *mut c_int, p: *mut c_int,
                          q: *mut c_int, theta: *mut c_float, phi: *mut c_float,
@@ -14963,7 +14963,7 @@ extern "C" {
                              v1t: *mut c_double_complex, ldv1t: *mut c_int,
                              work: *mut c_double_complex, lwork: *mut c_int, rwork: *mut c_double,
                              lrwork: *mut c_int, iwork: *mut c_int, info: *mut c_int);
-    // LAPACK 3.4.0
+    // Version 3.4.0
     pub fn LAPACK_sgemqrt(side: *mut c_char, trans: *mut c_char, m: *mut c_int, n: *mut c_int,
                           k: *mut c_int, nb: *mut c_int, v: *const c_float, ldv: *mut c_int,
                           t: *const c_float, ldt: *mut c_int, c: *mut c_float, ldc: *mut c_int,
@@ -15078,7 +15078,7 @@ extern "C" {
                          t: *const c_double_complex, ldt: *mut c_int, a: *mut c_double_complex,
                          lda: *mut c_int, b: *mut c_double_complex, ldb: *mut c_int,
                          work: *mut c_double_complex, ldwork: *mut c_int);
-    // LAPACK 3.5.0
+    // Version 3.5.0
     pub fn LAPACK_ssysv_rook(uplo: *mut c_char, n: *mut c_int, nrhs: *mut c_int, a: *mut c_float,
                              lda: *mut c_int, ipiv: *mut c_int, b: *mut c_float, ldb: *mut c_int,
                              work: *mut c_float, lwork: *mut c_int, info: *mut c_int);
