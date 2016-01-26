@@ -9,12 +9,15 @@ use {c_double_complex, c_float_complex};
 pub type LAPACK_S_SELECT2 = Option<extern "C" fn(*const c_float, *const c_float) -> c_int>;
 pub type LAPACK_S_SELECT3 = Option<extern "C" fn(*const c_float, *const c_float, *const c_float)
                                                  -> c_int>;
+
 pub type LAPACK_D_SELECT2 = Option<extern "C" fn(*const c_double, *const c_double) -> c_int>;
 pub type LAPACK_D_SELECT3 = Option<extern "C" fn(*const c_double, *const c_double, *const c_double)
                                                  -> c_int>;
+
 pub type LAPACK_C_SELECT1 = Option<extern "C" fn(*const c_float_complex) -> c_int>;
 pub type LAPACK_C_SELECT2 = Option<extern "C" fn(*const c_float_complex, *const c_float_complex)
                                                  -> c_int>;
+
 pub type LAPACK_Z_SELECT1 = Option<extern "C" fn(*const c_double_complex) -> c_int>;
 pub type LAPACK_Z_SELECT2 = Option<extern "C" fn(*const c_double_complex, *const c_double_complex)
                                                  -> c_int>;
