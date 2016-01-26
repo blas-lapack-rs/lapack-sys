@@ -1,7 +1,9 @@
-extern crate lapack_sys as ffi;
+extern crate lapack_sys;
 
 #[test]
-fn link() {
+fn link_fortran() {
+    use lapack_sys::fortran as ffi;
+
     let jobz = b'V' as i8;
     let uplo = b'U' as i8;
     let n = 1;
