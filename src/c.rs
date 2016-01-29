@@ -2168,7 +2168,6 @@ extern "C" {
                           n: c_int, a: *const c_double_complex, lda: c_int)
                           -> c_double;
 
-
     pub fn LAPACKE_slarfb(matrix_layout: c_int, side: c_char, trans: c_char, direct: c_char,
                           storev: c_char, m: c_int, n: c_int, k: c_int, v: *const c_float,
                           ldv: c_int, t: *const c_float, ldt: c_int, c: *mut c_float, ldc: c_int)
@@ -7135,7 +7134,6 @@ extern "C" {
     pub fn LAPACKE_zlarnv_work(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_double_complex)
                                -> c_int;
 
-
     pub fn LAPACKE_slascl_work(matrix_layout: c_int, _type: c_char, kl: c_int, ku: c_int,
                                cfrom: c_float, cto: c_float, m: c_int, n: c_int, a: *mut c_float,
                                lda: c_int)
@@ -9774,7 +9772,6 @@ extern "C" {
                            sn: *mut c_double)
                            -> c_int;
 
-
     // Version 3.3.0
     pub fn LAPACKE_cbbcsd(matrix_layout: c_int, jobu1: c_char, jobu2: c_char, jobv1t: c_char,
                           jobv2t: c_char, trans: c_char, m: c_int, p: c_int, q: c_int,
@@ -10675,7 +10672,6 @@ extern "C" {
                                     a: *const c_double_complex, lda: c_int, ipiv: *const c_int,
                                     b: *mut c_double_complex, ldb: c_int)
                                     -> c_int;
-
 
     pub fn LAPACKE_csyr_work(matrix_layout: c_int, uplo: c_char, n: c_int, alpha: c_float_complex,
                              x: *const c_float_complex, incx: c_int, a: *mut c_float_complex,
