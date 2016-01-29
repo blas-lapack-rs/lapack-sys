@@ -2,6 +2,8 @@
 //!
 //! [1]: http://en.wikipedia.org/wiki/LAPACK
 
+#![allow(non_camel_case_types)]
+
 extern crate libc;
 
 #[cfg(feature = "accelerate")]

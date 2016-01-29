@@ -1,44 +1,12 @@
 //! The C bindings (LAPACKE).
 
-#![allow(non_camel_case_types)]
-
-use libc::{c_char, c_double, c_float, c_int};
-
-use {c_double_complex, c_float_complex};
-
-pub type lapack_int = c_int;
-
-pub type lapack_logical = lapack_int;
-
-pub type lapack_complex_float = c_float_complex;
-
-pub type lapack_complex_double = c_double_complex;
+include!("common.rs");
 
 pub const LAPACK_ROW_MAJOR: c_int = 101;
 pub const LAPACK_COL_MAJOR: c_int = 102;
 
 pub const LAPACK_WORK_MEMORY_ERROR: lapack_int = -1010;
 pub const LAPACK_TRANSPOSE_MEMORY_ERROR: lapack_int = -1011;
-
-pub type LAPACK_S_SELECT2 = Option<extern "C" fn(*const c_float, *const c_float)
-                                                 -> lapack_logical>;
-pub type LAPACK_S_SELECT3 = Option<extern "C" fn(*const c_float, *const c_float, *const c_float)
-                                                 -> lapack_logical>;
-
-pub type LAPACK_D_SELECT2 = Option<extern "C" fn(*const c_double, *const c_double)
-                                                 -> lapack_logical>;
-pub type LAPACK_D_SELECT3 = Option<extern "C" fn(*const c_double, *const c_double, *const c_double)
-                                                 -> lapack_logical>;
-
-pub type LAPACK_C_SELECT1 = Option<extern "C" fn(*const lapack_complex_float) -> lapack_logical>;
-pub type LAPACK_C_SELECT2 = Option<extern "C" fn(*const lapack_complex_float,
-                                                 *const lapack_complex_float)
-                                                 -> lapack_logical>;
-
-pub type LAPACK_Z_SELECT1 = Option<extern "C" fn(*const lapack_complex_double) -> lapack_logical>;
-pub type LAPACK_Z_SELECT2 = Option<extern "C" fn(*const lapack_complex_double,
-                                                 *const lapack_complex_double)
-                                                 -> lapack_logical>;
 
 extern "C" {
     pub fn LAPACKE_sbdsdc(matrix_layout: c_int, uplo: c_char, compq: c_char, n: lapack_int,
@@ -73,6 +41,7 @@ extern "C" {
                           u: *mut lapack_complex_double, ldu: lapack_int,
                           c: *mut lapack_complex_double, ldc: lapack_int)
                           -> lapack_int;
+
     pub fn LAPACKE_sbdsvdx(matrix_layout: c_int, uplo: c_char, jobz: c_char, range: c_char,
                            n: lapack_int, d: *mut c_float, e: *mut c_float, vl: lapack_int,
                            vu: lapack_int, il: lapack_int, iu: lapack_int, ns: lapack_int,
@@ -85,6 +54,7 @@ extern "C" {
                            s: *mut c_double, z: *mut c_double, ldz: lapack_int,
                            superb: *mut lapack_int)
                            -> lapack_int;
+
     pub fn LAPACKE_sdisna(job: c_char, m: lapack_int, n: lapack_int, d: *const c_float,
                           sep: *mut c_float)
                           -> lapack_int;
@@ -11842,7 +11812,7 @@ extern "C" {
                                b: *mut lapack_complex_double, ldb: lapack_int,
                                work: *mut lapack_complex_double, ldwork: lapack_int)
                                -> lapack_int;
-    // Version 3.X.X
+    // Version 3.5.0
     pub fn LAPACKE_ssysv_rook(matrix_layout: c_int, uplo: c_char, n: lapack_int, nrhs: lapack_int,
                               a: *mut c_float, lda: lapack_int, ipiv: *mut lapack_int,
                               b: *mut c_float, ldb: lapack_int)
@@ -12015,6 +11985,7 @@ extern "C" {
                              alpha: lapack_complex_double, x: *const lapack_complex_double,
                              incx: lapack_int, a: *mut lapack_complex_double, lda: lapack_int)
                              -> lapack_int;
+
     pub fn LAPACKE_ilaver(vers_major: *const lapack_int, vers_minor: *const lapack_int,
                           vers_patch: *const lapack_int);
 }
