@@ -6,27 +6,33 @@ use libc::{c_char, c_double, c_float, c_int};
 
 use {c_double_complex, c_float_complex};
 
+pub type lapack_int = c_int;
+
+pub type lapack_logical = lapack_int;
+
 pub const LAPACK_ROW_MAJOR: c_int = 101;
 pub const LAPACK_COL_MAJOR: c_int = 102;
 
 pub const LAPACK_WORK_MEMORY_ERROR: c_int = -1010;
 pub const LAPACK_TRANSPOSE_MEMORY_ERROR: c_int = -1011;
 
-pub type LAPACK_S_SELECT2 = Option<extern "C" fn(*const c_float, *const c_float) -> c_int>;
+pub type LAPACK_S_SELECT2 = Option<extern "C" fn(*const c_float, *const c_float)
+                                                 -> lapack_logical>;
 pub type LAPACK_S_SELECT3 = Option<extern "C" fn(*const c_float, *const c_float, *const c_float)
-                                                 -> c_int>;
+                                                 -> lapack_logical>;
 
-pub type LAPACK_D_SELECT2 = Option<extern "C" fn(*const c_double, *const c_double) -> c_int>;
+pub type LAPACK_D_SELECT2 = Option<extern "C" fn(*const c_double, *const c_double)
+                                                 -> lapack_logical>;
 pub type LAPACK_D_SELECT3 = Option<extern "C" fn(*const c_double, *const c_double, *const c_double)
-                                                 -> c_int>;
+                                                 -> lapack_logical>;
 
-pub type LAPACK_C_SELECT1 = Option<extern "C" fn(*const c_float_complex) -> c_int>;
+pub type LAPACK_C_SELECT1 = Option<extern "C" fn(*const c_float_complex) -> lapack_logical>;
 pub type LAPACK_C_SELECT2 = Option<extern "C" fn(*const c_float_complex, *const c_float_complex)
-                                                 -> c_int>;
+                                                 -> lapack_logical>;
 
-pub type LAPACK_Z_SELECT1 = Option<extern "C" fn(*const c_double_complex) -> c_int>;
+pub type LAPACK_Z_SELECT1 = Option<extern "C" fn(*const c_double_complex) -> lapack_logical>;
 pub type LAPACK_Z_SELECT2 = Option<extern "C" fn(*const c_double_complex, *const c_double_complex)
-                                                 -> c_int>;
+                                                 -> lapack_logical>;
 
 extern "C" {
     pub fn LAPACKE_sbdsdc(matrix_layout: c_int, uplo: c_char, compq: c_char, n: c_int,
@@ -2009,28 +2015,28 @@ extern "C" {
                           -> c_int;
 
     pub fn LAPACKE_shsein(matrix_layout: c_int, job: c_char, eigsrc: c_char, initv: c_char,
-                          select: *mut c_int, n: c_int, h: *const c_float, ldh: c_int,
+                          select: *mut lapack_logical, n: c_int, h: *const c_float, ldh: c_int,
                           wr: *mut c_float, wi: *const c_float, vl: *mut c_float, ldvl: c_int,
                           vr: *mut c_float, ldvr: c_int, mm: c_int, m: *mut c_int,
                           ifaill: *mut c_int, ifailr: *mut c_int)
                           -> c_int;
     pub fn LAPACKE_dhsein(matrix_layout: c_int, job: c_char, eigsrc: c_char, initv: c_char,
-                          select: *mut c_int, n: c_int, h: *const c_double, ldh: c_int,
+                          select: *mut lapack_logical, n: c_int, h: *const c_double, ldh: c_int,
                           wr: *mut c_double, wi: *const c_double, vl: *mut c_double, ldvl: c_int,
                           vr: *mut c_double, ldvr: c_int, mm: c_int, m: *mut c_int,
                           ifaill: *mut c_int, ifailr: *mut c_int)
                           -> c_int;
     pub fn LAPACKE_chsein(matrix_layout: c_int, job: c_char, eigsrc: c_char, initv: c_char,
-                          select: *const c_int, n: c_int, h: *const c_float_complex, ldh: c_int,
-                          w: *mut c_float_complex, vl: *mut c_float_complex, ldvl: c_int,
-                          vr: *mut c_float_complex, ldvr: c_int, mm: c_int, m: *mut c_int,
-                          ifaill: *mut c_int, ifailr: *mut c_int)
+                          select: *const lapack_logical, n: c_int, h: *const c_float_complex,
+                          ldh: c_int, w: *mut c_float_complex, vl: *mut c_float_complex,
+                          ldvl: c_int, vr: *mut c_float_complex, ldvr: c_int, mm: c_int,
+                          m: *mut c_int, ifaill: *mut c_int, ifailr: *mut c_int)
                           -> c_int;
     pub fn LAPACKE_zhsein(matrix_layout: c_int, job: c_char, eigsrc: c_char, initv: c_char,
-                          select: *const c_int, n: c_int, h: *const c_double_complex, ldh: c_int,
-                          w: *mut c_double_complex, vl: *mut c_double_complex, ldvl: c_int,
-                          vr: *mut c_double_complex, ldvr: c_int, mm: c_int, m: *mut c_int,
-                          ifaill: *mut c_int, ifailr: *mut c_int)
+                          select: *const lapack_logical, n: c_int, h: *const c_double_complex,
+                          ldh: c_int, w: *mut c_double_complex, vl: *mut c_double_complex,
+                          ldvl: c_int, vr: *mut c_double_complex, ldvr: c_int, mm: c_int,
+                          m: *mut c_int, ifaill: *mut c_int, ifailr: *mut c_int)
                           -> c_int;
 
     pub fn LAPACKE_shseqr(matrix_layout: c_int, job: c_char, compz: c_char, n: c_int, ilo: c_int,
@@ -2951,16 +2957,16 @@ extern "C" {
                           -> c_int;
 
     pub fn LAPACKE_spptrf(matrix_layout: c_int, uplo: c_char, n: c_int, ap: *mut c_float) -> c_int;
-    pub fn LAPACKE_dpptrf(matrix_layout: c_int, uplo: c_char, n: c_int,
-                          ap: *mut c_double) -> c_int;
+    pub fn LAPACKE_dpptrf(matrix_layout: c_int, uplo: c_char, n: c_int, ap: *mut c_double)
+                          -> c_int;
     pub fn LAPACKE_cpptrf(matrix_layout: c_int, uplo: c_char, n: c_int, ap: *mut c_float_complex)
                           -> c_int;
     pub fn LAPACKE_zpptrf(matrix_layout: c_int, uplo: c_char, n: c_int, ap: *mut c_double_complex)
                           -> c_int;
 
     pub fn LAPACKE_spptri(matrix_layout: c_int, uplo: c_char, n: c_int, ap: *mut c_float) -> c_int;
-    pub fn LAPACKE_dpptri(matrix_layout: c_int, uplo: c_char, n: c_int,
-                          ap: *mut c_double) -> c_int;
+    pub fn LAPACKE_dpptri(matrix_layout: c_int, uplo: c_char, n: c_int, ap: *mut c_double)
+                          -> c_int;
     pub fn LAPACKE_cpptri(matrix_layout: c_int, uplo: c_char, n: c_int, ap: *mut c_float_complex)
                           -> c_int;
     pub fn LAPACKE_zpptri(matrix_layout: c_int, uplo: c_char, n: c_int, ap: *mut c_double_complex)
@@ -3437,23 +3443,23 @@ extern "C" {
     pub fn LAPACKE_sstemr(matrix_layout: c_int, jobz: c_char, range: c_char, n: c_int,
                           d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float, il: c_int,
                           iu: c_int, m: *mut c_int, w: *mut c_float, z: *mut c_float, ldz: c_int,
-                          nzc: c_int, isuppz: *mut c_int, tryrac: *mut c_int)
+                          nzc: c_int, isuppz: *mut c_int, tryrac: *mut lapack_logical)
                           -> c_int;
     pub fn LAPACKE_dstemr(matrix_layout: c_int, jobz: c_char, range: c_char, n: c_int,
                           d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double,
                           il: c_int, iu: c_int, m: *mut c_int, w: *mut c_double, z: *mut c_double,
-                          ldz: c_int, nzc: c_int, isuppz: *mut c_int, tryrac: *mut c_int)
+                          ldz: c_int, nzc: c_int, isuppz: *mut c_int, tryrac: *mut lapack_logical)
                           -> c_int;
     pub fn LAPACKE_cstemr(matrix_layout: c_int, jobz: c_char, range: c_char, n: c_int,
                           d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float, il: c_int,
                           iu: c_int, m: *mut c_int, w: *mut c_float, z: *mut c_float_complex,
-                          ldz: c_int, nzc: c_int, isuppz: *mut c_int, tryrac: *mut c_int)
+                          ldz: c_int, nzc: c_int, isuppz: *mut c_int, tryrac: *mut lapack_logical)
                           -> c_int;
     pub fn LAPACKE_zstemr(matrix_layout: c_int, jobz: c_char, range: c_char, n: c_int,
                           d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double,
                           il: c_int, iu: c_int, m: *mut c_int, w: *mut c_double,
                           z: *mut c_double_complex, ldz: c_int, nzc: c_int, isuppz: *mut c_int,
-                          tryrac: *mut c_int)
+                          tryrac: *mut lapack_logical)
                           -> c_int;
 
     pub fn LAPACKE_ssteqr(matrix_layout: c_int, compz: c_char, n: c_int, d: *mut c_float,
@@ -3896,77 +3902,78 @@ extern "C" {
                           arf: *const c_double_complex, a: *mut c_double_complex, lda: c_int)
                           -> c_int;
 
-    pub fn LAPACKE_stgevc(matrix_layout: c_int, side: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, s: *const c_float, lds: c_int, p: *const c_float, ldp: c_int,
-                          vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int, mm: c_int,
-                          m: *mut c_int)
+    pub fn LAPACKE_stgevc(matrix_layout: c_int, side: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, s: *const c_float, lds: c_int,
+                          p: *const c_float, ldp: c_int, vl: *mut c_float, ldvl: c_int,
+                          vr: *mut c_float, ldvr: c_int, mm: c_int, m: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_dtgevc(matrix_layout: c_int, side: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, s: *const c_double, lds: c_int, p: *const c_double, ldp: c_int,
-                          vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int,
-                          mm: c_int, m: *mut c_int)
+    pub fn LAPACKE_dtgevc(matrix_layout: c_int, side: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, s: *const c_double, lds: c_int,
+                          p: *const c_double, ldp: c_int, vl: *mut c_double, ldvl: c_int,
+                          vr: *mut c_double, ldvr: c_int, mm: c_int, m: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_ctgevc(matrix_layout: c_int, side: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, s: *const c_float_complex, lds: c_int,
-                          p: *const c_float_complex, ldp: c_int, vl: *mut c_float_complex,
-                          ldvl: c_int, vr: *mut c_float_complex, ldvr: c_int, mm: c_int,
-                          m: *mut c_int)
+    pub fn LAPACKE_ctgevc(matrix_layout: c_int, side: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, s: *const c_float_complex,
+                          lds: c_int, p: *const c_float_complex, ldp: c_int,
+                          vl: *mut c_float_complex, ldvl: c_int, vr: *mut c_float_complex,
+                          ldvr: c_int, mm: c_int, m: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_ztgevc(matrix_layout: c_int, side: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, s: *const c_double_complex, lds: c_int,
-                          p: *const c_double_complex, ldp: c_int, vl: *mut c_double_complex,
-                          ldvl: c_int, vr: *mut c_double_complex, ldvr: c_int, mm: c_int,
-                          m: *mut c_int)
+    pub fn LAPACKE_ztgevc(matrix_layout: c_int, side: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, s: *const c_double_complex,
+                          lds: c_int, p: *const c_double_complex, ldp: c_int,
+                          vl: *mut c_double_complex, ldvl: c_int, vr: *mut c_double_complex,
+                          ldvr: c_int, mm: c_int, m: *mut c_int)
                           -> c_int;
 
-    pub fn LAPACKE_stgexc(matrix_layout: c_int, wantq: c_int, wantz: c_int, n: c_int,
-                          a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int,
+    pub fn LAPACKE_stgexc(matrix_layout: c_int, wantq: lapack_logical, wantz: lapack_logical,
+                          n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int,
                           q: *mut c_float, ldq: c_int, z: *mut c_float, ldz: c_int,
                           ifst: *mut c_int, ilst: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_dtgexc(matrix_layout: c_int, wantq: c_int, wantz: c_int, n: c_int,
-                          a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int,
+    pub fn LAPACKE_dtgexc(matrix_layout: c_int, wantq: lapack_logical, wantz: lapack_logical,
+                          n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int,
                           q: *mut c_double, ldq: c_int, z: *mut c_double, ldz: c_int,
                           ifst: *mut c_int, ilst: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_ctgexc(matrix_layout: c_int, wantq: c_int, wantz: c_int, n: c_int,
-                          a: *mut c_float_complex, lda: c_int, b: *mut c_float_complex, ldb: c_int,
-                          q: *mut c_float_complex, ldq: c_int, z: *mut c_float_complex, ldz: c_int,
-                          ifst: c_int, ilst: c_int)
+    pub fn LAPACKE_ctgexc(matrix_layout: c_int, wantq: lapack_logical, wantz: lapack_logical,
+                          n: c_int, a: *mut c_float_complex, lda: c_int, b: *mut c_float_complex,
+                          ldb: c_int, q: *mut c_float_complex, ldq: c_int, z: *mut c_float_complex,
+                          ldz: c_int, ifst: c_int, ilst: c_int)
                           -> c_int;
-    pub fn LAPACKE_ztgexc(matrix_layout: c_int, wantq: c_int, wantz: c_int, n: c_int,
-                          a: *mut c_double_complex, lda: c_int, b: *mut c_double_complex,
+    pub fn LAPACKE_ztgexc(matrix_layout: c_int, wantq: lapack_logical, wantz: lapack_logical,
+                          n: c_int, a: *mut c_double_complex, lda: c_int, b: *mut c_double_complex,
                           ldb: c_int, q: *mut c_double_complex, ldq: c_int,
                           z: *mut c_double_complex, ldz: c_int, ifst: c_int, ilst: c_int)
                           -> c_int;
 
-    pub fn LAPACKE_stgsen(matrix_layout: c_int, ijob: c_int, wantq: c_int, wantz: c_int,
-                          select: *const c_int, n: c_int, a: *mut c_float, lda: c_int,
-                          b: *mut c_float, ldb: c_int, alphar: *mut c_float, alphai: *mut c_float,
-                          beta: *mut c_float, q: *mut c_float, ldq: c_int, z: *mut c_float,
-                          ldz: c_int, m: *mut c_int, pl: *mut c_float, pr: *mut c_float,
-                          dif: *mut c_float)
+    pub fn LAPACKE_stgsen(matrix_layout: c_int, ijob: c_int, wantq: lapack_logical,
+                          wantz: lapack_logical, select: *const lapack_logical, n: c_int,
+                          a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int,
+                          alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float,
+                          q: *mut c_float, ldq: c_int, z: *mut c_float, ldz: c_int, m: *mut c_int,
+                          pl: *mut c_float, pr: *mut c_float, dif: *mut c_float)
                           -> c_int;
-    pub fn LAPACKE_dtgsen(matrix_layout: c_int, ijob: c_int, wantq: c_int, wantz: c_int,
-                          select: *const c_int, n: c_int, a: *mut c_double, lda: c_int,
-                          b: *mut c_double, ldb: c_int, alphar: *mut c_double,
-                          alphai: *mut c_double, beta: *mut c_double, q: *mut c_double, ldq: c_int,
-                          z: *mut c_double, ldz: c_int, m: *mut c_int, pl: *mut c_double,
-                          pr: *mut c_double, dif: *mut c_double)
+    pub fn LAPACKE_dtgsen(matrix_layout: c_int, ijob: c_int, wantq: lapack_logical,
+                          wantz: lapack_logical, select: *const lapack_logical, n: c_int,
+                          a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int,
+                          alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double,
+                          q: *mut c_double, ldq: c_int, z: *mut c_double, ldz: c_int,
+                          m: *mut c_int, pl: *mut c_double, pr: *mut c_double, dif: *mut c_double)
                           -> c_int;
-    pub fn LAPACKE_ctgsen(matrix_layout: c_int, ijob: c_int, wantq: c_int, wantz: c_int,
-                          select: *const c_int, n: c_int, a: *mut c_float_complex, lda: c_int,
-                          b: *mut c_float_complex, ldb: c_int, alpha: *mut c_float_complex,
-                          beta: *mut c_float_complex, q: *mut c_float_complex, ldq: c_int,
-                          z: *mut c_float_complex, ldz: c_int, m: *mut c_int, pl: *mut c_float,
-                          pr: *mut c_float, dif: *mut c_float)
+    pub fn LAPACKE_ctgsen(matrix_layout: c_int, ijob: c_int, wantq: lapack_logical,
+                          wantz: lapack_logical, select: *const lapack_logical, n: c_int,
+                          a: *mut c_float_complex, lda: c_int, b: *mut c_float_complex, ldb: c_int,
+                          alpha: *mut c_float_complex, beta: *mut c_float_complex,
+                          q: *mut c_float_complex, ldq: c_int, z: *mut c_float_complex, ldz: c_int,
+                          m: *mut c_int, pl: *mut c_float, pr: *mut c_float, dif: *mut c_float)
                           -> c_int;
-    pub fn LAPACKE_ztgsen(matrix_layout: c_int, ijob: c_int, wantq: c_int, wantz: c_int,
-                          select: *const c_int, n: c_int, a: *mut c_double_complex, lda: c_int,
-                          b: *mut c_double_complex, ldb: c_int, alpha: *mut c_double_complex,
-                          beta: *mut c_double_complex, q: *mut c_double_complex, ldq: c_int,
-                          z: *mut c_double_complex, ldz: c_int, m: *mut c_int, pl: *mut c_double,
-                          pr: *mut c_double, dif: *mut c_double)
+    pub fn LAPACKE_ztgsen(matrix_layout: c_int, ijob: c_int, wantq: lapack_logical,
+                          wantz: lapack_logical, select: *const lapack_logical, n: c_int,
+                          a: *mut c_double_complex, lda: c_int, b: *mut c_double_complex,
+                          ldb: c_int, alpha: *mut c_double_complex, beta: *mut c_double_complex,
+                          q: *mut c_double_complex, ldq: c_int, z: *mut c_double_complex,
+                          ldz: c_int, m: *mut c_int, pl: *mut c_double, pr: *mut c_double,
+                          dif: *mut c_double)
                           -> c_int;
 
     pub fn LAPACKE_stgsja(matrix_layout: c_int, jobu: c_char, jobv: c_char, jobq: c_char, m: c_int,
@@ -3998,27 +4005,31 @@ extern "C" {
                           ldv: c_int, q: *mut c_double_complex, ldq: c_int, ncycle: *mut c_int)
                           -> c_int;
 
-    pub fn LAPACKE_stgsna(matrix_layout: c_int, job: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, a: *const c_float, lda: c_int, b: *const c_float, ldb: c_int,
-                          vl: *const c_float, ldvl: c_int, vr: *const c_float, ldvr: c_int,
-                          s: *mut c_float, dif: *mut c_float, mm: c_int, m: *mut c_int)
+    pub fn LAPACKE_stgsna(matrix_layout: c_int, job: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, a: *const c_float, lda: c_int,
+                          b: *const c_float, ldb: c_int, vl: *const c_float, ldvl: c_int,
+                          vr: *const c_float, ldvr: c_int, s: *mut c_float, dif: *mut c_float,
+                          mm: c_int, m: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_dtgsna(matrix_layout: c_int, job: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, a: *const c_double, lda: c_int, b: *const c_double, ldb: c_int,
-                          vl: *const c_double, ldvl: c_int, vr: *const c_double, ldvr: c_int,
-                          s: *mut c_double, dif: *mut c_double, mm: c_int, m: *mut c_int)
+    pub fn LAPACKE_dtgsna(matrix_layout: c_int, job: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, a: *const c_double, lda: c_int,
+                          b: *const c_double, ldb: c_int, vl: *const c_double, ldvl: c_int,
+                          vr: *const c_double, ldvr: c_int, s: *mut c_double, dif: *mut c_double,
+                          mm: c_int, m: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_ctgsna(matrix_layout: c_int, job: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, a: *const c_float_complex, lda: c_int,
-                          b: *const c_float_complex, ldb: c_int, vl: *const c_float_complex,
-                          ldvl: c_int, vr: *const c_float_complex, ldvr: c_int, s: *mut c_float,
-                          dif: *mut c_float, mm: c_int, m: *mut c_int)
+    pub fn LAPACKE_ctgsna(matrix_layout: c_int, job: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, a: *const c_float_complex,
+                          lda: c_int, b: *const c_float_complex, ldb: c_int,
+                          vl: *const c_float_complex, ldvl: c_int, vr: *const c_float_complex,
+                          ldvr: c_int, s: *mut c_float, dif: *mut c_float, mm: c_int,
+                          m: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_ztgsna(matrix_layout: c_int, job: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, a: *const c_double_complex, lda: c_int,
-                          b: *const c_double_complex, ldb: c_int, vl: *const c_double_complex,
-                          ldvl: c_int, vr: *const c_double_complex, ldvr: c_int, s: *mut c_double,
-                          dif: *mut c_double, mm: c_int, m: *mut c_int)
+    pub fn LAPACKE_ztgsna(matrix_layout: c_int, job: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, a: *const c_double_complex,
+                          lda: c_int, b: *const c_double_complex, ldb: c_int,
+                          vl: *const c_double_complex, ldvl: c_int, vr: *const c_double_complex,
+                          ldvr: c_int, s: *mut c_double, dif: *mut c_double, mm: c_int,
+                          m: *mut c_int)
                           -> c_int;
 
     pub fn LAPACKE_stgsyl(matrix_layout: c_int, trans: c_char, ijob: c_int, m: c_int, n: c_int,
@@ -4148,23 +4159,25 @@ extern "C" {
                           a: *const c_double_complex, lda: c_int, rcond: *mut c_double)
                           -> c_int;
 
-    pub fn LAPACKE_strevc(matrix_layout: c_int, side: c_char, howmny: c_char, select: *mut c_int,
-                          n: c_int, t: *const c_float, ldt: c_int, vl: *mut c_float, ldvl: c_int,
-                          vr: *mut c_float, ldvr: c_int, mm: c_int, m: *mut c_int)
-                          -> c_int;
-    pub fn LAPACKE_dtrevc(matrix_layout: c_int, side: c_char, howmny: c_char, select: *mut c_int,
-                          n: c_int, t: *const c_double, ldt: c_int, vl: *mut c_double, ldvl: c_int,
-                          vr: *mut c_double, ldvr: c_int, mm: c_int, m: *mut c_int)
-                          -> c_int;
-    pub fn LAPACKE_ctrevc(matrix_layout: c_int, side: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, t: *mut c_float_complex, ldt: c_int, vl: *mut c_float_complex,
-                          ldvl: c_int, vr: *mut c_float_complex, ldvr: c_int, mm: c_int,
+    pub fn LAPACKE_strevc(matrix_layout: c_int, side: c_char, howmny: c_char,
+                          select: *mut lapack_logical, n: c_int, t: *const c_float, ldt: c_int,
+                          vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int, mm: c_int,
                           m: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_ztrevc(matrix_layout: c_int, side: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, t: *mut c_double_complex, ldt: c_int,
-                          vl: *mut c_double_complex, ldvl: c_int, vr: *mut c_double_complex,
-                          ldvr: c_int, mm: c_int, m: *mut c_int)
+    pub fn LAPACKE_dtrevc(matrix_layout: c_int, side: c_char, howmny: c_char,
+                          select: *mut lapack_logical, n: c_int, t: *const c_double, ldt: c_int,
+                          vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int,
+                          mm: c_int, m: *mut c_int)
+                          -> c_int;
+    pub fn LAPACKE_ctrevc(matrix_layout: c_int, side: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, t: *mut c_float_complex,
+                          ldt: c_int, vl: *mut c_float_complex, ldvl: c_int,
+                          vr: *mut c_float_complex, ldvr: c_int, mm: c_int, m: *mut c_int)
+                          -> c_int;
+    pub fn LAPACKE_ztrevc(matrix_layout: c_int, side: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, t: *mut c_double_complex,
+                          ldt: c_int, vl: *mut c_double_complex, ldvl: c_int,
+                          vr: *mut c_double_complex, ldvr: c_int, mm: c_int, m: *mut c_int)
                           -> c_int;
 
     pub fn LAPACKE_strexc(matrix_layout: c_int, compq: c_char, n: c_int, t: *mut c_float,
@@ -4205,48 +4218,49 @@ extern "C" {
                           ldx: c_int, ferr: *mut c_double, berr: *mut c_double)
                           -> c_int;
 
-    pub fn LAPACKE_strsen(matrix_layout: c_int, job: c_char, compq: c_char, select: *const c_int,
-                          n: c_int, t: *mut c_float, ldt: c_int, q: *mut c_float, ldq: c_int,
-                          wr: *mut c_float, wi: *mut c_float, m: *mut c_int, s: *mut c_float,
-                          sep: *mut c_float)
+    pub fn LAPACKE_strsen(matrix_layout: c_int, job: c_char, compq: c_char,
+                          select: *const lapack_logical, n: c_int, t: *mut c_float, ldt: c_int,
+                          q: *mut c_float, ldq: c_int, wr: *mut c_float, wi: *mut c_float,
+                          m: *mut c_int, s: *mut c_float, sep: *mut c_float)
                           -> c_int;
-    pub fn LAPACKE_dtrsen(matrix_layout: c_int, job: c_char, compq: c_char, select: *const c_int,
-                          n: c_int, t: *mut c_double, ldt: c_int, q: *mut c_double, ldq: c_int,
-                          wr: *mut c_double, wi: *mut c_double, m: *mut c_int, s: *mut c_double,
-                          sep: *mut c_double)
+    pub fn LAPACKE_dtrsen(matrix_layout: c_int, job: c_char, compq: c_char,
+                          select: *const lapack_logical, n: c_int, t: *mut c_double, ldt: c_int,
+                          q: *mut c_double, ldq: c_int, wr: *mut c_double, wi: *mut c_double,
+                          m: *mut c_int, s: *mut c_double, sep: *mut c_double)
                           -> c_int;
-    pub fn LAPACKE_ctrsen(matrix_layout: c_int, job: c_char, compq: c_char, select: *const c_int,
-                          n: c_int, t: *mut c_float_complex, ldt: c_int, q: *mut c_float_complex,
-                          ldq: c_int, w: *mut c_float_complex, m: *mut c_int, s: *mut c_float,
-                          sep: *mut c_float)
+    pub fn LAPACKE_ctrsen(matrix_layout: c_int, job: c_char, compq: c_char,
+                          select: *const lapack_logical, n: c_int, t: *mut c_float_complex,
+                          ldt: c_int, q: *mut c_float_complex, ldq: c_int, w: *mut c_float_complex,
+                          m: *mut c_int, s: *mut c_float, sep: *mut c_float)
                           -> c_int;
-    pub fn LAPACKE_ztrsen(matrix_layout: c_int, job: c_char, compq: c_char, select: *const c_int,
-                          n: c_int, t: *mut c_double_complex, ldt: c_int, q: *mut c_double_complex,
-                          ldq: c_int, w: *mut c_double_complex, m: *mut c_int, s: *mut c_double,
+    pub fn LAPACKE_ztrsen(matrix_layout: c_int, job: c_char, compq: c_char,
+                          select: *const lapack_logical, n: c_int, t: *mut c_double_complex,
+                          ldt: c_int, q: *mut c_double_complex, ldq: c_int,
+                          w: *mut c_double_complex, m: *mut c_int, s: *mut c_double,
                           sep: *mut c_double)
                           -> c_int;
 
-    pub fn LAPACKE_strsna(matrix_layout: c_int, job: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, t: *const c_float, ldt: c_int, vl: *const c_float, ldvl: c_int,
-                          vr: *const c_float, ldvr: c_int, s: *mut c_float, sep: *mut c_float,
-                          mm: c_int, m: *mut c_int)
+    pub fn LAPACKE_strsna(matrix_layout: c_int, job: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, t: *const c_float, ldt: c_int,
+                          vl: *const c_float, ldvl: c_int, vr: *const c_float, ldvr: c_int,
+                          s: *mut c_float, sep: *mut c_float, mm: c_int, m: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_dtrsna(matrix_layout: c_int, job: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, t: *const c_double, ldt: c_int, vl: *const c_double,
-                          ldvl: c_int, vr: *const c_double, ldvr: c_int, s: *mut c_double,
+    pub fn LAPACKE_dtrsna(matrix_layout: c_int, job: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, t: *const c_double, ldt: c_int,
+                          vl: *const c_double, ldvl: c_int, vr: *const c_double, ldvr: c_int,
+                          s: *mut c_double, sep: *mut c_double, mm: c_int, m: *mut c_int)
+                          -> c_int;
+    pub fn LAPACKE_ctrsna(matrix_layout: c_int, job: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, t: *const c_float_complex,
+                          ldt: c_int, vl: *const c_float_complex, ldvl: c_int,
+                          vr: *const c_float_complex, ldvr: c_int, s: *mut c_float,
+                          sep: *mut c_float, mm: c_int, m: *mut c_int)
+                          -> c_int;
+    pub fn LAPACKE_ztrsna(matrix_layout: c_int, job: c_char, howmny: c_char,
+                          select: *const lapack_logical, n: c_int, t: *const c_double_complex,
+                          ldt: c_int, vl: *const c_double_complex, ldvl: c_int,
+                          vr: *const c_double_complex, ldvr: c_int, s: *mut c_double,
                           sep: *mut c_double, mm: c_int, m: *mut c_int)
-                          -> c_int;
-    pub fn LAPACKE_ctrsna(matrix_layout: c_int, job: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, t: *const c_float_complex, ldt: c_int,
-                          vl: *const c_float_complex, ldvl: c_int, vr: *const c_float_complex,
-                          ldvr: c_int, s: *mut c_float, sep: *mut c_float, mm: c_int,
-                          m: *mut c_int)
-                          -> c_int;
-    pub fn LAPACKE_ztrsna(matrix_layout: c_int, job: c_char, howmny: c_char, select: *const c_int,
-                          n: c_int, t: *const c_double_complex, ldt: c_int,
-                          vl: *const c_double_complex, ldvl: c_int, vr: *const c_double_complex,
-                          ldvr: c_int, s: *mut c_double, sep: *mut c_double, mm: c_int,
-                          m: *mut c_int)
                           -> c_int;
 
     pub fn LAPACKE_strsyl(matrix_layout: c_int, trana: c_char, tranb: c_char, isgn: c_int,
@@ -4918,25 +4932,25 @@ extern "C" {
                               select: LAPACK_S_SELECT2, n: c_int, a: *mut c_float, lda: c_int,
                               sdim: *mut c_int, wr: *mut c_float, wi: *mut c_float,
                               vs: *mut c_float, ldvs: c_int, work: *mut c_float, lwork: c_int,
-                              bwork: *mut c_int)
+                              bwork: *mut lapack_logical)
                               -> c_int;
     pub fn LAPACKE_dgees_work(matrix_layout: c_int, jobvs: c_char, sort: c_char,
                               select: LAPACK_D_SELECT2, n: c_int, a: *mut c_double, lda: c_int,
                               sdim: *mut c_int, wr: *mut c_double, wi: *mut c_double,
                               vs: *mut c_double, ldvs: c_int, work: *mut c_double, lwork: c_int,
-                              bwork: *mut c_int)
+                              bwork: *mut lapack_logical)
                               -> c_int;
     pub fn LAPACKE_cgees_work(matrix_layout: c_int, jobvs: c_char, sort: c_char,
                               select: LAPACK_C_SELECT1, n: c_int, a: *mut c_float_complex,
                               lda: c_int, sdim: *mut c_int, w: *mut c_float_complex,
                               vs: *mut c_float_complex, ldvs: c_int, work: *mut c_float_complex,
-                              lwork: c_int, rwork: *mut c_float, bwork: *mut c_int)
+                              lwork: c_int, rwork: *mut c_float, bwork: *mut lapack_logical)
                               -> c_int;
     pub fn LAPACKE_zgees_work(matrix_layout: c_int, jobvs: c_char, sort: c_char,
                               select: LAPACK_Z_SELECT1, n: c_int, a: *mut c_double_complex,
                               lda: c_int, sdim: *mut c_int, w: *mut c_double_complex,
                               vs: *mut c_double_complex, ldvs: c_int, work: *mut c_double_complex,
-                              lwork: c_int, rwork: *mut c_double, bwork: *mut c_int)
+                              lwork: c_int, rwork: *mut c_double, bwork: *mut lapack_logical)
                               -> c_int;
 
     pub fn LAPACKE_sgeesx_work(matrix_layout: c_int, jobvs: c_char, sort: c_char,
@@ -4944,14 +4958,14 @@ extern "C" {
                                lda: c_int, sdim: *mut c_int, wr: *mut c_float, wi: *mut c_float,
                                vs: *mut c_float, ldvs: c_int, rconde: *mut c_float,
                                rcondv: *mut c_float, work: *mut c_float, lwork: c_int,
-                               iwork: *mut c_int, liwork: c_int, bwork: *mut c_int)
+                               iwork: *mut c_int, liwork: c_int, bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_dgeesx_work(matrix_layout: c_int, jobvs: c_char, sort: c_char,
                                select: LAPACK_D_SELECT2, sense: c_char, n: c_int, a: *mut c_double,
                                lda: c_int, sdim: *mut c_int, wr: *mut c_double, wi: *mut c_double,
                                vs: *mut c_double, ldvs: c_int, rconde: *mut c_double,
                                rcondv: *mut c_double, work: *mut c_double, lwork: c_int,
-                               iwork: *mut c_int, liwork: c_int, bwork: *mut c_int)
+                               iwork: *mut c_int, liwork: c_int, bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_cgeesx_work(matrix_layout: c_int, jobvs: c_char, sort: c_char,
                                select: LAPACK_C_SELECT1, sense: c_char, n: c_int,
@@ -4959,7 +4973,7 @@ extern "C" {
                                w: *mut c_float_complex, vs: *mut c_float_complex, ldvs: c_int,
                                rconde: *mut c_float, rcondv: *mut c_float,
                                work: *mut c_float_complex, lwork: c_int, rwork: *mut c_float,
-                               bwork: *mut c_int)
+                               bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_zgeesx_work(matrix_layout: c_int, jobvs: c_char, sort: c_char,
                                select: LAPACK_Z_SELECT1, sense: c_char, n: c_int,
@@ -4967,7 +4981,7 @@ extern "C" {
                                w: *mut c_double_complex, vs: *mut c_double_complex, ldvs: c_int,
                                rconde: *mut c_double, rcondv: *mut c_double,
                                work: *mut c_double_complex, lwork: c_int, rwork: *mut c_double,
-                               bwork: *mut c_int)
+                               bwork: *mut lapack_logical)
                                -> c_int;
 
     pub fn LAPACKE_sgeev_work(matrix_layout: c_int, jobvl: c_char, jobvr: c_char, n: c_int,
@@ -5662,14 +5676,14 @@ extern "C" {
                               b: *mut c_float, ldb: c_int, sdim: *mut c_int, alphar: *mut c_float,
                               alphai: *mut c_float, beta: *mut c_float, vsl: *mut c_float,
                               ldvsl: c_int, vsr: *mut c_float, ldvsr: c_int, work: *mut c_float,
-                              lwork: c_int, bwork: *mut c_int)
+                              lwork: c_int, bwork: *mut lapack_logical)
                               -> c_int;
     pub fn LAPACKE_dgges_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                               selctg: LAPACK_D_SELECT3, n: c_int, a: *mut c_double, lda: c_int,
                               b: *mut c_double, ldb: c_int, sdim: *mut c_int,
                               alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double,
                               vsl: *mut c_double, ldvsl: c_int, vsr: *mut c_double, ldvsr: c_int,
-                              work: *mut c_double, lwork: c_int, bwork: *mut c_int)
+                              work: *mut c_double, lwork: c_int, bwork: *mut lapack_logical)
                               -> c_int;
     pub fn LAPACKE_cgges_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                               selctg: LAPACK_C_SELECT2, n: c_int, a: *mut c_float_complex,
@@ -5677,7 +5691,7 @@ extern "C" {
                               alpha: *mut c_float_complex, beta: *mut c_float_complex,
                               vsl: *mut c_float_complex, ldvsl: c_int, vsr: *mut c_float_complex,
                               ldvsr: c_int, work: *mut c_float_complex, lwork: c_int,
-                              rwork: *mut c_float, bwork: *mut c_int)
+                              rwork: *mut c_float, bwork: *mut lapack_logical)
                               -> c_int;
     pub fn LAPACKE_zgges_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                               selctg: LAPACK_Z_SELECT2, n: c_int, a: *mut c_double_complex,
@@ -5685,7 +5699,7 @@ extern "C" {
                               alpha: *mut c_double_complex, beta: *mut c_double_complex,
                               vsl: *mut c_double_complex, ldvsl: c_int, vsr: *mut c_double_complex,
                               ldvsr: c_int, work: *mut c_double_complex, lwork: c_int,
-                              rwork: *mut c_double, bwork: *mut c_int)
+                              rwork: *mut c_double, bwork: *mut lapack_logical)
                               -> c_int;
 
     pub fn LAPACKE_sgges3_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
@@ -5693,14 +5707,14 @@ extern "C" {
                                b: *mut c_float, ldb: c_int, sdim: *mut c_int, alphar: *mut c_float,
                                alphai: *mut c_float, beta: *mut c_float, vsl: *mut c_float,
                                ldvsl: c_int, vsr: *mut c_float, ldvsr: c_int, work: *mut c_float,
-                               lwork: c_int, bwork: *mut c_int)
+                               lwork: c_int, bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_dgges3_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                                selctg: LAPACK_D_SELECT3, n: c_int, a: *mut c_double, lda: c_int,
                                b: *mut c_double, ldb: c_int, sdim: *mut c_int,
                                alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double,
                                vsl: *mut c_double, ldvsl: c_int, vsr: *mut c_double, ldvsr: c_int,
-                               work: *mut c_double, lwork: c_int, bwork: *mut c_int)
+                               work: *mut c_double, lwork: c_int, bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_cgges3_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                                selctg: LAPACK_C_SELECT2, n: c_int, a: *mut c_float_complex,
@@ -5708,7 +5722,7 @@ extern "C" {
                                alpha: *mut c_float_complex, beta: *mut c_float_complex,
                                vsl: *mut c_float_complex, ldvsl: c_int, vsr: *mut c_float_complex,
                                ldvsr: c_int, work: *mut c_float_complex, lwork: c_int,
-                               rwork: *mut c_float, bwork: *mut c_int)
+                               rwork: *mut c_float, bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_zgges3_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                                selctg: LAPACK_Z_SELECT2, n: c_int, a: *mut c_double_complex,
@@ -5717,7 +5731,7 @@ extern "C" {
                                vsl: *mut c_double_complex, ldvsl: c_int,
                                vsr: *mut c_double_complex, ldvsr: c_int,
                                work: *mut c_double_complex, lwork: c_int, rwork: *mut c_double,
-                               bwork: *mut c_int)
+                               bwork: *mut lapack_logical)
                                -> c_int;
 
     pub fn LAPACKE_sggesx_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
@@ -5726,7 +5740,8 @@ extern "C" {
                                alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float,
                                vsl: *mut c_float, ldvsl: c_int, vsr: *mut c_float, ldvsr: c_int,
                                rconde: *mut c_float, rcondv: *mut c_float, work: *mut c_float,
-                               lwork: c_int, iwork: *mut c_int, liwork: c_int, bwork: *mut c_int)
+                               lwork: c_int, iwork: *mut c_int, liwork: c_int,
+                               bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_dggesx_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                                selctg: LAPACK_D_SELECT3, sense: c_char, n: c_int, a: *mut c_double,
@@ -5734,7 +5749,8 @@ extern "C" {
                                alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double,
                                vsl: *mut c_double, ldvsl: c_int, vsr: *mut c_double, ldvsr: c_int,
                                rconde: *mut c_double, rcondv: *mut c_double, work: *mut c_double,
-                               lwork: c_int, iwork: *mut c_int, liwork: c_int, bwork: *mut c_int)
+                               lwork: c_int, iwork: *mut c_int, liwork: c_int,
+                               bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_cggesx_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                                selctg: LAPACK_C_SELECT2, sense: c_char, n: c_int,
@@ -5744,7 +5760,7 @@ extern "C" {
                                vsr: *mut c_float_complex, ldvsr: c_int, rconde: *mut c_float,
                                rcondv: *mut c_float, work: *mut c_float_complex, lwork: c_int,
                                rwork: *mut c_float, iwork: *mut c_int, liwork: c_int,
-                               bwork: *mut c_int)
+                               bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_zggesx_work(matrix_layout: c_int, jobvsl: c_char, jobvsr: c_char, sort: c_char,
                                selctg: LAPACK_Z_SELECT2, sense: c_char, n: c_int,
@@ -5754,7 +5770,7 @@ extern "C" {
                                ldvsl: c_int, vsr: *mut c_double_complex, ldvsr: c_int,
                                rconde: *mut c_double, rcondv: *mut c_double,
                                work: *mut c_double_complex, lwork: c_int, rwork: *mut c_double,
-                               iwork: *mut c_int, liwork: c_int, bwork: *mut c_int)
+                               iwork: *mut c_int, liwork: c_int, bwork: *mut lapack_logical)
                                -> c_int;
 
     pub fn LAPACKE_sggev_work(matrix_layout: c_int, jobvl: c_char, jobvr: c_char, n: c_int,
@@ -5819,7 +5835,7 @@ extern "C" {
                                ihi: *mut c_int, lscale: *mut c_float, rscale: *mut c_float,
                                abnrm: *mut c_float, bbnrm: *mut c_float, rconde: *mut c_float,
                                rcondv: *mut c_float, work: *mut c_float, lwork: c_int,
-                               iwork: *mut c_int, bwork: *mut c_int)
+                               iwork: *mut c_int, bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_dggevx_work(matrix_layout: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char,
                                sense: c_char, n: c_int, a: *mut c_double, lda: c_int,
@@ -5829,7 +5845,7 @@ extern "C" {
                                ihi: *mut c_int, lscale: *mut c_double, rscale: *mut c_double,
                                abnrm: *mut c_double, bbnrm: *mut c_double, rconde: *mut c_double,
                                rcondv: *mut c_double, work: *mut c_double, lwork: c_int,
-                               iwork: *mut c_int, bwork: *mut c_int)
+                               iwork: *mut c_int, bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_cggevx_work(matrix_layout: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char,
                                sense: c_char, n: c_int, a: *mut c_float_complex, lda: c_int,
@@ -5839,7 +5855,7 @@ extern "C" {
                                ihi: *mut c_int, lscale: *mut c_float, rscale: *mut c_float,
                                abnrm: *mut c_float, bbnrm: *mut c_float, rconde: *mut c_float,
                                rcondv: *mut c_float, work: *mut c_float_complex, lwork: c_int,
-                               rwork: *mut c_float, iwork: *mut c_int, bwork: *mut c_int)
+                               rwork: *mut c_float, iwork: *mut c_int, bwork: *mut lapack_logical)
                                -> c_int;
     pub fn LAPACKE_zggevx_work(matrix_layout: c_int, balanc: c_char, jobvl: c_char, jobvr: c_char,
                                sense: c_char, n: c_int, a: *mut c_double_complex, lda: c_int,
@@ -5849,7 +5865,7 @@ extern "C" {
                                ihi: *mut c_int, lscale: *mut c_double, rscale: *mut c_double,
                                abnrm: *mut c_double, bbnrm: *mut c_double, rconde: *mut c_double,
                                rcondv: *mut c_double, work: *mut c_double_complex, lwork: c_int,
-                               rwork: *mut c_double, iwork: *mut c_int, bwork: *mut c_int)
+                               rwork: *mut c_double, iwork: *mut c_int, bwork: *mut lapack_logical)
                                -> c_int;
 
     pub fn LAPACKE_sggglm_work(matrix_layout: c_int, n: c_int, m: c_int, p: c_int, a: *mut c_float,
@@ -6809,27 +6825,28 @@ extern "C" {
                                -> c_int;
 
     pub fn LAPACKE_shsein_work(matrix_layout: c_int, job: c_char, eigsrc: c_char, initv: c_char,
-                               select: *mut c_int, n: c_int, h: *const c_float, ldh: c_int,
-                               wr: *mut c_float, wi: *const c_float, vl: *mut c_float, ldvl: c_int,
-                               vr: *mut c_float, ldvr: c_int, mm: c_int, m: *mut c_int,
-                               work: *mut c_float, ifaill: *mut c_int, ifailr: *mut c_int)
+                               select: *mut lapack_logical, n: c_int, h: *const c_float,
+                               ldh: c_int, wr: *mut c_float, wi: *const c_float, vl: *mut c_float,
+                               ldvl: c_int, vr: *mut c_float, ldvr: c_int, mm: c_int,
+                               m: *mut c_int, work: *mut c_float, ifaill: *mut c_int,
+                               ifailr: *mut c_int)
                                -> c_int;
     pub fn LAPACKE_dhsein_work(matrix_layout: c_int, job: c_char, eigsrc: c_char, initv: c_char,
-                               select: *mut c_int, n: c_int, h: *const c_double, ldh: c_int,
-                               wr: *mut c_double, wi: *const c_double, vl: *mut c_double,
-                               ldvl: c_int, vr: *mut c_double, ldvr: c_int, mm: c_int,
-                               m: *mut c_int, work: *mut c_double, ifaill: *mut c_int,
+                               select: *mut lapack_logical, n: c_int, h: *const c_double,
+                               ldh: c_int, wr: *mut c_double, wi: *const c_double,
+                               vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int,
+                               mm: c_int, m: *mut c_int, work: *mut c_double, ifaill: *mut c_int,
                                ifailr: *mut c_int)
                                -> c_int;
     pub fn LAPACKE_chsein_work(matrix_layout: c_int, job: c_char, eigsrc: c_char, initv: c_char,
-                               select: *const c_int, n: c_int, h: *const c_float_complex,
+                               select: *const lapack_logical, n: c_int, h: *const c_float_complex,
                                ldh: c_int, w: *mut c_float_complex, vl: *mut c_float_complex,
                                ldvl: c_int, vr: *mut c_float_complex, ldvr: c_int, mm: c_int,
                                m: *mut c_int, work: *mut c_float_complex, rwork: *mut c_float,
                                ifaill: *mut c_int, ifailr: *mut c_int)
                                -> c_int;
     pub fn LAPACKE_zhsein_work(matrix_layout: c_int, job: c_char, eigsrc: c_char, initv: c_char,
-                               select: *const c_int, n: c_int, h: *const c_double_complex,
+                               select: *const lapack_logical, n: c_int, h: *const c_double_complex,
                                ldh: c_int, w: *mut c_double_complex, vl: *mut c_double_complex,
                                ldvl: c_int, vr: *mut c_double_complex, ldvr: c_int, mm: c_int,
                                m: *mut c_int, work: *mut c_double_complex, rwork: *mut c_double,
@@ -6956,29 +6973,29 @@ extern "C" {
                                work: *mut c_double_complex)
                                -> c_int;
 
-    pub fn LAPACKE_slapmr_work(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_slapmr_work(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                                x: *mut c_float, ldx: c_int, k: *mut c_int)
                                -> c_int;
-    pub fn LAPACKE_dlapmr_work(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_dlapmr_work(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                                x: *mut c_double, ldx: c_int, k: *mut c_int)
                                -> c_int;
-    pub fn LAPACKE_clapmr_work(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_clapmr_work(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                                x: *mut c_float_complex, ldx: c_int, k: *mut c_int)
                                -> c_int;
-    pub fn LAPACKE_zlapmr_work(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_zlapmr_work(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                                x: *mut c_double_complex, ldx: c_int, k: *mut c_int)
                                -> c_int;
 
-    pub fn LAPACKE_slapmt_work(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_slapmt_work(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                                x: *mut c_float, ldx: c_int, k: *mut c_int)
                                -> c_int;
-    pub fn LAPACKE_dlapmt_work(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_dlapmt_work(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                                x: *mut c_double, ldx: c_int, k: *mut c_int)
                                -> c_int;
-    pub fn LAPACKE_clapmt_work(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_clapmt_work(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                                x: *mut c_float_complex, ldx: c_int, k: *mut c_int)
                                -> c_int;
-    pub fn LAPACKE_zlapmt_work(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_zlapmt_work(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                                x: *mut c_double_complex, ldx: c_int, k: *mut c_int)
                                -> c_int;
 
@@ -7125,10 +7142,10 @@ extern "C" {
                                c: *mut c_double_complex, ldc: c_int, work: *mut c_double_complex)
                                -> c_int;
 
-    pub fn LAPACKE_slarnv_work(idist: c_int, iseed: *mut c_int, n: c_int,
-                               x: *mut c_float) -> c_int;
-    pub fn LAPACKE_dlarnv_work(idist: c_int, iseed: *mut c_int, n: c_int,
-                               x: *mut c_double) -> c_int;
+    pub fn LAPACKE_slarnv_work(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_float)
+                               -> c_int;
+    pub fn LAPACKE_dlarnv_work(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_double)
+                               -> c_int;
     pub fn LAPACKE_clarnv_work(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_float_complex)
                                -> c_int;
     pub fn LAPACKE_zlarnv_work(idist: c_int, iseed: *mut c_int, n: c_int, x: *mut c_double_complex)
@@ -8494,29 +8511,29 @@ extern "C" {
                                d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float,
                                il: c_int, iu: c_int, m: *mut c_int, w: *mut c_float,
                                z: *mut c_float, ldz: c_int, nzc: c_int, isuppz: *mut c_int,
-                               tryrac: *mut c_int, work: *mut c_float, lwork: c_int,
+                               tryrac: *mut lapack_logical, work: *mut c_float, lwork: c_int,
                                iwork: *mut c_int, liwork: c_int)
                                -> c_int;
     pub fn LAPACKE_dstemr_work(matrix_layout: c_int, jobz: c_char, range: c_char, n: c_int,
                                d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double,
                                il: c_int, iu: c_int, m: *mut c_int, w: *mut c_double,
                                z: *mut c_double, ldz: c_int, nzc: c_int, isuppz: *mut c_int,
-                               tryrac: *mut c_int, work: *mut c_double, lwork: c_int,
+                               tryrac: *mut lapack_logical, work: *mut c_double, lwork: c_int,
                                iwork: *mut c_int, liwork: c_int)
                                -> c_int;
     pub fn LAPACKE_cstemr_work(matrix_layout: c_int, jobz: c_char, range: c_char, n: c_int,
                                d: *mut c_float, e: *mut c_float, vl: c_float, vu: c_float,
                                il: c_int, iu: c_int, m: *mut c_int, w: *mut c_float,
                                z: *mut c_float_complex, ldz: c_int, nzc: c_int, isuppz: *mut c_int,
-                               tryrac: *mut c_int, work: *mut c_float, lwork: c_int,
+                               tryrac: *mut lapack_logical, work: *mut c_float, lwork: c_int,
                                iwork: *mut c_int, liwork: c_int)
                                -> c_int;
     pub fn LAPACKE_zstemr_work(matrix_layout: c_int, jobz: c_char, range: c_char, n: c_int,
                                d: *mut c_double, e: *mut c_double, vl: c_double, vu: c_double,
                                il: c_int, iu: c_int, m: *mut c_int, w: *mut c_double,
                                z: *mut c_double_complex, ldz: c_int, nzc: c_int,
-                               isuppz: *mut c_int, tryrac: *mut c_int, work: *mut c_double,
-                               lwork: c_int, iwork: *mut c_int, liwork: c_int)
+                               isuppz: *mut c_int, tryrac: *mut lapack_logical,
+                               work: *mut c_double, lwork: c_int, iwork: *mut c_int, liwork: c_int)
                                -> c_int;
 
     pub fn LAPACKE_ssteqr_work(matrix_layout: c_int, compz: c_char, n: c_int, d: *mut c_float,
@@ -9033,88 +9050,93 @@ extern "C" {
                                -> c_int;
 
     pub fn LAPACKE_stgevc_work(matrix_layout: c_int, side: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, s: *const c_float, lds: c_int,
-                               p: *const c_float, ldp: c_int, vl: *mut c_float, ldvl: c_int,
-                               vr: *mut c_float, ldvr: c_int, mm: c_int, m: *mut c_int,
-                               work: *mut c_float)
+                               select: *const lapack_logical, n: c_int, s: *const c_float,
+                               lds: c_int, p: *const c_float, ldp: c_int, vl: *mut c_float,
+                               ldvl: c_int, vr: *mut c_float, ldvr: c_int, mm: c_int,
+                               m: *mut c_int, work: *mut c_float)
                                -> c_int;
     pub fn LAPACKE_dtgevc_work(matrix_layout: c_int, side: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, s: *const c_double, lds: c_int,
-                               p: *const c_double, ldp: c_int, vl: *mut c_double, ldvl: c_int,
-                               vr: *mut c_double, ldvr: c_int, mm: c_int, m: *mut c_int,
-                               work: *mut c_double)
+                               select: *const lapack_logical, n: c_int, s: *const c_double,
+                               lds: c_int, p: *const c_double, ldp: c_int, vl: *mut c_double,
+                               ldvl: c_int, vr: *mut c_double, ldvr: c_int, mm: c_int,
+                               m: *mut c_int, work: *mut c_double)
                                -> c_int;
     pub fn LAPACKE_ctgevc_work(matrix_layout: c_int, side: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, s: *const c_float_complex,
+                               select: *const lapack_logical, n: c_int, s: *const c_float_complex,
                                lds: c_int, p: *const c_float_complex, ldp: c_int,
                                vl: *mut c_float_complex, ldvl: c_int, vr: *mut c_float_complex,
                                ldvr: c_int, mm: c_int, m: *mut c_int, work: *mut c_float_complex,
                                rwork: *mut c_float)
                                -> c_int;
     pub fn LAPACKE_ztgevc_work(matrix_layout: c_int, side: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, s: *const c_double_complex,
+                               select: *const lapack_logical, n: c_int, s: *const c_double_complex,
                                lds: c_int, p: *const c_double_complex, ldp: c_int,
                                vl: *mut c_double_complex, ldvl: c_int, vr: *mut c_double_complex,
                                ldvr: c_int, mm: c_int, m: *mut c_int, work: *mut c_double_complex,
                                rwork: *mut c_double)
                                -> c_int;
 
-    pub fn LAPACKE_stgexc_work(matrix_layout: c_int, wantq: c_int, wantz: c_int, n: c_int,
-                               a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int,
+    pub fn LAPACKE_stgexc_work(matrix_layout: c_int, wantq: lapack_logical, wantz: lapack_logical,
+                               n: c_int, a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int,
                                q: *mut c_float, ldq: c_int, z: *mut c_float, ldz: c_int,
                                ifst: *mut c_int, ilst: *mut c_int, work: *mut c_float,
                                lwork: c_int)
                                -> c_int;
-    pub fn LAPACKE_dtgexc_work(matrix_layout: c_int, wantq: c_int, wantz: c_int, n: c_int,
-                               a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int,
-                               q: *mut c_double, ldq: c_int, z: *mut c_double, ldz: c_int,
-                               ifst: *mut c_int, ilst: *mut c_int, work: *mut c_double,
+    pub fn LAPACKE_dtgexc_work(matrix_layout: c_int, wantq: lapack_logical, wantz: lapack_logical,
+                               n: c_int, a: *mut c_double, lda: c_int, b: *mut c_double,
+                               ldb: c_int, q: *mut c_double, ldq: c_int, z: *mut c_double,
+                               ldz: c_int, ifst: *mut c_int, ilst: *mut c_int, work: *mut c_double,
                                lwork: c_int)
                                -> c_int;
-    pub fn LAPACKE_ctgexc_work(matrix_layout: c_int, wantq: c_int, wantz: c_int, n: c_int,
-                               a: *mut c_float_complex, lda: c_int, b: *mut c_float_complex,
-                               ldb: c_int, q: *mut c_float_complex, ldq: c_int,
-                               z: *mut c_float_complex, ldz: c_int, ifst: c_int, ilst: c_int)
+    pub fn LAPACKE_ctgexc_work(matrix_layout: c_int, wantq: lapack_logical, wantz: lapack_logical,
+                               n: c_int, a: *mut c_float_complex, lda: c_int,
+                               b: *mut c_float_complex, ldb: c_int, q: *mut c_float_complex,
+                               ldq: c_int, z: *mut c_float_complex, ldz: c_int, ifst: c_int,
+                               ilst: c_int)
                                -> c_int;
-    pub fn LAPACKE_ztgexc_work(matrix_layout: c_int, wantq: c_int, wantz: c_int, n: c_int,
-                               a: *mut c_double_complex, lda: c_int, b: *mut c_double_complex,
-                               ldb: c_int, q: *mut c_double_complex, ldq: c_int,
-                               z: *mut c_double_complex, ldz: c_int, ifst: c_int, ilst: c_int)
+    pub fn LAPACKE_ztgexc_work(matrix_layout: c_int, wantq: lapack_logical, wantz: lapack_logical,
+                               n: c_int, a: *mut c_double_complex, lda: c_int,
+                               b: *mut c_double_complex, ldb: c_int, q: *mut c_double_complex,
+                               ldq: c_int, z: *mut c_double_complex, ldz: c_int, ifst: c_int,
+                               ilst: c_int)
                                -> c_int;
 
-    pub fn LAPACKE_stgsen_work(matrix_layout: c_int, ijob: c_int, wantq: c_int, wantz: c_int,
-                               select: *const c_int, n: c_int, a: *mut c_float, lda: c_int,
-                               b: *mut c_float, ldb: c_int, alphar: *mut c_float,
-                               alphai: *mut c_float, beta: *mut c_float, q: *mut c_float,
-                               ldq: c_int, z: *mut c_float, ldz: c_int, m: *mut c_int,
-                               pl: *mut c_float, pr: *mut c_float, dif: *mut c_float,
-                               work: *mut c_float, lwork: c_int, iwork: *mut c_int, liwork: c_int)
-                               -> c_int;
-    pub fn LAPACKE_dtgsen_work(matrix_layout: c_int, ijob: c_int, wantq: c_int, wantz: c_int,
-                               select: *const c_int, n: c_int, a: *mut c_double, lda: c_int,
-                               b: *mut c_double, ldb: c_int, alphar: *mut c_double,
-                               alphai: *mut c_double, beta: *mut c_double, q: *mut c_double,
-                               ldq: c_int, z: *mut c_double, ldz: c_int, m: *mut c_int,
-                               pl: *mut c_double, pr: *mut c_double, dif: *mut c_double,
-                               work: *mut c_double, lwork: c_int, iwork: *mut c_int, liwork: c_int)
-                               -> c_int;
-    pub fn LAPACKE_ctgsen_work(matrix_layout: c_int, ijob: c_int, wantq: c_int, wantz: c_int,
-                               select: *const c_int, n: c_int, a: *mut c_float_complex, lda: c_int,
-                               b: *mut c_float_complex, ldb: c_int, alpha: *mut c_float_complex,
-                               beta: *mut c_float_complex, q: *mut c_float_complex, ldq: c_int,
-                               z: *mut c_float_complex, ldz: c_int, m: *mut c_int,
-                               pl: *mut c_float, pr: *mut c_float, dif: *mut c_float,
-                               work: *mut c_float_complex, lwork: c_int, iwork: *mut c_int,
-                               liwork: c_int)
-                               -> c_int;
-    pub fn LAPACKE_ztgsen_work(matrix_layout: c_int, ijob: c_int, wantq: c_int, wantz: c_int,
-                               select: *const c_int, n: c_int, a: *mut c_double_complex,
-                               lda: c_int, b: *mut c_double_complex, ldb: c_int,
-                               alpha: *mut c_double_complex, beta: *mut c_double_complex,
-                               q: *mut c_double_complex, ldq: c_int, z: *mut c_double_complex,
-                               ldz: c_int, m: *mut c_int, pl: *mut c_double, pr: *mut c_double,
-                               dif: *mut c_double, work: *mut c_double_complex, lwork: c_int,
+    pub fn LAPACKE_stgsen_work(matrix_layout: c_int, ijob: c_int, wantq: lapack_logical,
+                               wantz: lapack_logical, select: *const lapack_logical, n: c_int,
+                               a: *mut c_float, lda: c_int, b: *mut c_float, ldb: c_int,
+                               alphar: *mut c_float, alphai: *mut c_float, beta: *mut c_float,
+                               q: *mut c_float, ldq: c_int, z: *mut c_float, ldz: c_int,
+                               m: *mut c_int, pl: *mut c_float, pr: *mut c_float,
+                               dif: *mut c_float, work: *mut c_float, lwork: c_int,
                                iwork: *mut c_int, liwork: c_int)
+                               -> c_int;
+    pub fn LAPACKE_dtgsen_work(matrix_layout: c_int, ijob: c_int, wantq: lapack_logical,
+                               wantz: lapack_logical, select: *const lapack_logical, n: c_int,
+                               a: *mut c_double, lda: c_int, b: *mut c_double, ldb: c_int,
+                               alphar: *mut c_double, alphai: *mut c_double, beta: *mut c_double,
+                               q: *mut c_double, ldq: c_int, z: *mut c_double, ldz: c_int,
+                               m: *mut c_int, pl: *mut c_double, pr: *mut c_double,
+                               dif: *mut c_double, work: *mut c_double, lwork: c_int,
+                               iwork: *mut c_int, liwork: c_int)
+                               -> c_int;
+    pub fn LAPACKE_ctgsen_work(matrix_layout: c_int, ijob: c_int, wantq: lapack_logical,
+                               wantz: lapack_logical, select: *const lapack_logical, n: c_int,
+                               a: *mut c_float_complex, lda: c_int, b: *mut c_float_complex,
+                               ldb: c_int, alpha: *mut c_float_complex, beta: *mut c_float_complex,
+                               q: *mut c_float_complex, ldq: c_int, z: *mut c_float_complex,
+                               ldz: c_int, m: *mut c_int, pl: *mut c_float, pr: *mut c_float,
+                               dif: *mut c_float, work: *mut c_float_complex, lwork: c_int,
+                               iwork: *mut c_int, liwork: c_int)
+                               -> c_int;
+    pub fn LAPACKE_ztgsen_work(matrix_layout: c_int, ijob: c_int, wantq: lapack_logical,
+                               wantz: lapack_logical, select: *const lapack_logical, n: c_int,
+                               a: *mut c_double_complex, lda: c_int, b: *mut c_double_complex,
+                               ldb: c_int, alpha: *mut c_double_complex,
+                               beta: *mut c_double_complex, q: *mut c_double_complex, ldq: c_int,
+                               z: *mut c_double_complex, ldz: c_int, m: *mut c_int,
+                               pl: *mut c_double, pr: *mut c_double, dif: *mut c_double,
+                               work: *mut c_double_complex, lwork: c_int, iwork: *mut c_int,
+                               liwork: c_int)
                                -> c_int;
 
     pub fn LAPACKE_stgsja_work(matrix_layout: c_int, jobu: c_char, jobv: c_char, jobq: c_char,
@@ -9150,21 +9172,21 @@ extern "C" {
                                -> c_int;
 
     pub fn LAPACKE_stgsna_work(matrix_layout: c_int, job: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, a: *const c_float, lda: c_int,
-                               b: *const c_float, ldb: c_int, vl: *const c_float, ldvl: c_int,
-                               vr: *const c_float, ldvr: c_int, s: *mut c_float, dif: *mut c_float,
-                               mm: c_int, m: *mut c_int, work: *mut c_float, lwork: c_int,
-                               iwork: *mut c_int)
+                               select: *const lapack_logical, n: c_int, a: *const c_float,
+                               lda: c_int, b: *const c_float, ldb: c_int, vl: *const c_float,
+                               ldvl: c_int, vr: *const c_float, ldvr: c_int, s: *mut c_float,
+                               dif: *mut c_float, mm: c_int, m: *mut c_int, work: *mut c_float,
+                               lwork: c_int, iwork: *mut c_int)
                                -> c_int;
     pub fn LAPACKE_dtgsna_work(matrix_layout: c_int, job: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, a: *const c_double, lda: c_int,
-                               b: *const c_double, ldb: c_int, vl: *const c_double, ldvl: c_int,
-                               vr: *const c_double, ldvr: c_int, s: *mut c_double,
+                               select: *const lapack_logical, n: c_int, a: *const c_double,
+                               lda: c_int, b: *const c_double, ldb: c_int, vl: *const c_double,
+                               ldvl: c_int, vr: *const c_double, ldvr: c_int, s: *mut c_double,
                                dif: *mut c_double, mm: c_int, m: *mut c_int, work: *mut c_double,
                                lwork: c_int, iwork: *mut c_int)
                                -> c_int;
     pub fn LAPACKE_ctgsna_work(matrix_layout: c_int, job: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, a: *const c_float_complex,
+                               select: *const lapack_logical, n: c_int, a: *const c_float_complex,
                                lda: c_int, b: *const c_float_complex, ldb: c_int,
                                vl: *const c_float_complex, ldvl: c_int, vr: *const c_float_complex,
                                ldvr: c_int, s: *mut c_float, dif: *mut c_float, mm: c_int,
@@ -9172,7 +9194,7 @@ extern "C" {
                                iwork: *mut c_int)
                                -> c_int;
     pub fn LAPACKE_ztgsna_work(matrix_layout: c_int, job: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, a: *const c_double_complex,
+                               select: *const lapack_logical, n: c_int, a: *const c_double_complex,
                                lda: c_int, b: *const c_double_complex, ldb: c_int,
                                vl: *const c_double_complex, ldvl: c_int,
                                vr: *const c_double_complex, ldvr: c_int, s: *mut c_double,
@@ -9327,23 +9349,23 @@ extern "C" {
                                -> c_int;
 
     pub fn LAPACKE_strevc_work(matrix_layout: c_int, side: c_char, howmny: c_char,
-                               select: *mut c_int, n: c_int, t: *const c_float, ldt: c_int,
-                               vl: *mut c_float, ldvl: c_int, vr: *mut c_float, ldvr: c_int,
-                               mm: c_int, m: *mut c_int, work: *mut c_float)
+                               select: *mut lapack_logical, n: c_int, t: *const c_float,
+                               ldt: c_int, vl: *mut c_float, ldvl: c_int, vr: *mut c_float,
+                               ldvr: c_int, mm: c_int, m: *mut c_int, work: *mut c_float)
                                -> c_int;
     pub fn LAPACKE_dtrevc_work(matrix_layout: c_int, side: c_char, howmny: c_char,
-                               select: *mut c_int, n: c_int, t: *const c_double, ldt: c_int,
-                               vl: *mut c_double, ldvl: c_int, vr: *mut c_double, ldvr: c_int,
-                               mm: c_int, m: *mut c_int, work: *mut c_double)
+                               select: *mut lapack_logical, n: c_int, t: *const c_double,
+                               ldt: c_int, vl: *mut c_double, ldvl: c_int, vr: *mut c_double,
+                               ldvr: c_int, mm: c_int, m: *mut c_int, work: *mut c_double)
                                -> c_int;
     pub fn LAPACKE_ctrevc_work(matrix_layout: c_int, side: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, t: *mut c_float_complex, ldt: c_int,
-                               vl: *mut c_float_complex, ldvl: c_int, vr: *mut c_float_complex,
-                               ldvr: c_int, mm: c_int, m: *mut c_int, work: *mut c_float_complex,
-                               rwork: *mut c_float)
+                               select: *const lapack_logical, n: c_int, t: *mut c_float_complex,
+                               ldt: c_int, vl: *mut c_float_complex, ldvl: c_int,
+                               vr: *mut c_float_complex, ldvr: c_int, mm: c_int, m: *mut c_int,
+                               work: *mut c_float_complex, rwork: *mut c_float)
                                -> c_int;
     pub fn LAPACKE_ztrevc_work(matrix_layout: c_int, side: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, t: *mut c_double_complex,
+                               select: *const lapack_logical, n: c_int, t: *mut c_double_complex,
                                ldt: c_int, vl: *mut c_double_complex, ldvl: c_int,
                                vr: *mut c_double_complex, ldvr: c_int, mm: c_int, m: *mut c_int,
                                work: *mut c_double_complex, rwork: *mut c_double)
@@ -9392,51 +9414,53 @@ extern "C" {
                                -> c_int;
 
     pub fn LAPACKE_strsen_work(matrix_layout: c_int, job: c_char, compq: c_char,
-                               select: *const c_int, n: c_int, t: *mut c_float, ldt: c_int,
-                               q: *mut c_float, ldq: c_int, wr: *mut c_float, wi: *mut c_float,
-                               m: *mut c_int, s: *mut c_float, sep: *mut c_float,
+                               select: *const lapack_logical, n: c_int, t: *mut c_float,
+                               ldt: c_int, q: *mut c_float, ldq: c_int, wr: *mut c_float,
+                               wi: *mut c_float, m: *mut c_int, s: *mut c_float, sep: *mut c_float,
                                work: *mut c_float, lwork: c_int, iwork: *mut c_int, liwork: c_int)
                                -> c_int;
     pub fn LAPACKE_dtrsen_work(matrix_layout: c_int, job: c_char, compq: c_char,
-                               select: *const c_int, n: c_int, t: *mut c_double, ldt: c_int,
-                               q: *mut c_double, ldq: c_int, wr: *mut c_double, wi: *mut c_double,
-                               m: *mut c_int, s: *mut c_double, sep: *mut c_double,
-                               work: *mut c_double, lwork: c_int, iwork: *mut c_int, liwork: c_int)
+                               select: *const lapack_logical, n: c_int, t: *mut c_double,
+                               ldt: c_int, q: *mut c_double, ldq: c_int, wr: *mut c_double,
+                               wi: *mut c_double, m: *mut c_int, s: *mut c_double,
+                               sep: *mut c_double, work: *mut c_double, lwork: c_int,
+                               iwork: *mut c_int, liwork: c_int)
                                -> c_int;
     pub fn LAPACKE_ctrsen_work(matrix_layout: c_int, job: c_char, compq: c_char,
-                               select: *const c_int, n: c_int, t: *mut c_float_complex, ldt: c_int,
-                               q: *mut c_float_complex, ldq: c_int, w: *mut c_float_complex,
-                               m: *mut c_int, s: *mut c_float, sep: *mut c_float,
-                               work: *mut c_float_complex, lwork: c_int)
+                               select: *const lapack_logical, n: c_int, t: *mut c_float_complex,
+                               ldt: c_int, q: *mut c_float_complex, ldq: c_int,
+                               w: *mut c_float_complex, m: *mut c_int, s: *mut c_float,
+                               sep: *mut c_float, work: *mut c_float_complex, lwork: c_int)
                                -> c_int;
     pub fn LAPACKE_ztrsen_work(matrix_layout: c_int, job: c_char, compq: c_char,
-                               select: *const c_int, n: c_int, t: *mut c_double_complex,
+                               select: *const lapack_logical, n: c_int, t: *mut c_double_complex,
                                ldt: c_int, q: *mut c_double_complex, ldq: c_int,
                                w: *mut c_double_complex, m: *mut c_int, s: *mut c_double,
                                sep: *mut c_double, work: *mut c_double_complex, lwork: c_int)
                                -> c_int;
 
     pub fn LAPACKE_strsna_work(matrix_layout: c_int, job: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, t: *const c_float, ldt: c_int,
-                               vl: *const c_float, ldvl: c_int, vr: *const c_float, ldvr: c_int,
-                               s: *mut c_float, sep: *mut c_float, mm: c_int, m: *mut c_int,
-                               work: *mut c_float, ldwork: c_int, iwork: *mut c_int)
+                               select: *const lapack_logical, n: c_int, t: *const c_float,
+                               ldt: c_int, vl: *const c_float, ldvl: c_int, vr: *const c_float,
+                               ldvr: c_int, s: *mut c_float, sep: *mut c_float, mm: c_int,
+                               m: *mut c_int, work: *mut c_float, ldwork: c_int, iwork: *mut c_int)
                                -> c_int;
     pub fn LAPACKE_dtrsna_work(matrix_layout: c_int, job: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, t: *const c_double, ldt: c_int,
-                               vl: *const c_double, ldvl: c_int, vr: *const c_double, ldvr: c_int,
-                               s: *mut c_double, sep: *mut c_double, mm: c_int, m: *mut c_int,
-                               work: *mut c_double, ldwork: c_int, iwork: *mut c_int)
+                               select: *const lapack_logical, n: c_int, t: *const c_double,
+                               ldt: c_int, vl: *const c_double, ldvl: c_int, vr: *const c_double,
+                               ldvr: c_int, s: *mut c_double, sep: *mut c_double, mm: c_int,
+                               m: *mut c_int, work: *mut c_double, ldwork: c_int,
+                               iwork: *mut c_int)
                                -> c_int;
     pub fn LAPACKE_ctrsna_work(matrix_layout: c_int, job: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, t: *const c_float_complex,
+                               select: *const lapack_logical, n: c_int, t: *const c_float_complex,
                                ldt: c_int, vl: *const c_float_complex, ldvl: c_int,
                                vr: *const c_float_complex, ldvr: c_int, s: *mut c_float,
                                sep: *mut c_float, mm: c_int, m: *mut c_int,
                                work: *mut c_float_complex, ldwork: c_int, rwork: *mut c_float)
                                -> c_int;
     pub fn LAPACKE_ztrsna_work(matrix_layout: c_int, job: c_char, howmny: c_char,
-                               select: *const c_int, n: c_int, t: *const c_double_complex,
+                               select: *const lapack_logical, n: c_int, t: *const c_double_complex,
                                ldt: c_int, vl: *const c_double_complex, ldvl: c_int,
                                vr: *const c_double_complex, ldvr: c_int, s: *mut c_double,
                                sep: *mut c_double, mm: c_int, m: *mut c_int,
@@ -9726,29 +9750,29 @@ extern "C" {
                           a: *mut c_double_complex, lda: c_int, iseed: *mut c_int)
                           -> c_int;
 
-    pub fn LAPACKE_slapmr(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int, x: *mut c_float,
-                          ldx: c_int, k: *mut c_int)
+    pub fn LAPACKE_slapmr(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
+                          x: *mut c_float, ldx: c_int, k: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_dlapmr(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_dlapmr(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                           x: *mut c_double, ldx: c_int, k: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_clapmr(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_clapmr(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                           x: *mut c_float_complex, ldx: c_int, k: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_zlapmr(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_zlapmr(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                           x: *mut c_double_complex, ldx: c_int, k: *mut c_int)
                           -> c_int;
 
-    pub fn LAPACKE_slapmt(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int, x: *mut c_float,
-                          ldx: c_int, k: *mut c_int)
+    pub fn LAPACKE_slapmt(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
+                          x: *mut c_float, ldx: c_int, k: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_dlapmt(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_dlapmt(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                           x: *mut c_double, ldx: c_int, k: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_clapmt(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_clapmt(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                           x: *mut c_float_complex, ldx: c_int, k: *mut c_int)
                           -> c_int;
-    pub fn LAPACKE_zlapmt(matrix_layout: c_int, forwrd: c_int, m: c_int, n: c_int,
+    pub fn LAPACKE_zlapmt(matrix_layout: c_int, forwrd: lapack_logical, m: c_int, n: c_int,
                           x: *mut c_double_complex, ldx: c_int, k: *mut c_int)
                           -> c_int;
 
