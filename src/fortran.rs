@@ -1553,13 +1553,13 @@ extern "C" {
                   b: *mut lapack_complex_double, ldb: *const lapack_int, info: *mut lapack_int);
 
     pub fn dsposv_(uplo: *const c_char, n: *const lapack_int, nrhs: *const lapack_int,
-                   a: *mut c_double, lda: *const lapack_int, b: *mut c_double,
+                   a: *mut c_double, lda: *const lapack_int, b: *const c_double,
                    ldb: *const lapack_int, x: *mut c_double, ldx: *const lapack_int,
                    work: *mut c_double, swork: *mut c_float, iter: *mut lapack_int,
                    info: *mut lapack_int);
     pub fn zcposv_(uplo: *const c_char, n: *const lapack_int, nrhs: *const lapack_int,
                    a: *mut lapack_complex_double, lda: *const lapack_int,
-                   b: *mut lapack_complex_double, ldb: *const lapack_int,
+                   b: *const lapack_complex_double, ldb: *const lapack_int,
                    x: *mut lapack_complex_double, ldx: *const lapack_int,
                    work: *mut lapack_complex_double, swork: *mut lapack_complex_float,
                    rwork: *mut c_double, iter: *mut lapack_int, info: *mut lapack_int);
@@ -2382,13 +2382,13 @@ extern "C" {
                    info: *mut lapack_int);
 
     pub fn sbdsvdx_(uplo: *const c_char, jobz: *const c_char, range: *const c_char,
-                    n: *const lapack_int, d: *mut c_float, e: *mut c_float, vl: *mut c_float,
-                    vu: *mut lapack_int, il: *const lapack_int, iu: *const lapack_int,
+                    n: *const lapack_int, d: *mut c_float, e: *mut c_float, vl: *const c_float,
+                    vu: *const lapack_int, il: *const lapack_int, iu: *const lapack_int,
                     ns: *mut lapack_int, s: *mut c_float, z: *mut c_float, ldz: *const lapack_int,
                     work: *mut c_float, iwork: *mut lapack_int, info: *mut lapack_int);
     pub fn dbdsvdx_(uplo: *const c_char, jobz: *const c_char, range: *const c_char,
-                    n: *const lapack_int, d: *mut c_double, e: *mut c_double, vl: *mut c_double,
-                    vu: *mut lapack_int, il: *const lapack_int, iu: *const lapack_int,
+                    n: *const lapack_int, d: *mut c_double, e: *mut c_double, vl: *const c_double,
+                    vu: *const lapack_int, il: *const lapack_int, iu: *const lapack_int,
                     ns: *mut lapack_int, s: *mut c_double, z: *mut c_double,
                     ldz: *const lapack_int, work: *mut c_double, iwork: *mut lapack_int,
                     info: *mut lapack_int);
@@ -2618,13 +2618,13 @@ extern "C" {
                    info: *mut lapack_int);
 
     pub fn sstebz_(range: *const c_char, order: *const c_char, n: *const lapack_int,
-                   vl: *mut c_float, vu: *mut c_float, il: *const lapack_int,
+                   vl: *const c_float, vu: *const c_float, il: *const lapack_int,
                    iu: *const lapack_int, abstol: *const c_float, d: *const c_float,
                    e: *const c_float, m: *const lapack_int, nsplit: *mut lapack_int,
                    w: *mut c_float, iblock: *mut lapack_int, isplit: *mut lapack_int,
                    work: *mut c_float, iwork: *mut lapack_int, info: *mut lapack_int);
     pub fn dstebz_(range: *const c_char, order: *const c_char, n: *const lapack_int,
-                   vl: *mut c_double, vu: *mut c_double, il: *const lapack_int,
+                   vl: *const c_double, vu: *const c_double, il: *const lapack_int,
                    iu: *const lapack_int, abstol: *const c_double, d: *const c_double,
                    e: *const c_double, m: *const lapack_int, nsplit: *mut lapack_int,
                    w: *mut c_double, iblock: *mut lapack_int, isplit: *mut lapack_int,
@@ -2725,10 +2725,10 @@ extern "C" {
                    tau: *mut lapack_complex_double, work: *mut lapack_complex_double,
                    lwork: *const lapack_int, info: *mut lapack_int);
 
-    pub fn sorghr_(n: *const lapack_int, ilo: *mut lapack_int, ihi: *mut lapack_int,
+    pub fn sorghr_(n: *const lapack_int, ilo: *const lapack_int, ihi: *const lapack_int,
                    a: *mut c_float, lda: *const lapack_int, tau: *const c_float,
                    work: *mut c_float, lwork: *const lapack_int, info: *mut lapack_int);
-    pub fn dorghr_(n: *const lapack_int, ilo: *mut lapack_int, ihi: *mut lapack_int,
+    pub fn dorghr_(n: *const lapack_int, ilo: *const lapack_int, ihi: *const lapack_int,
                    a: *mut c_double, lda: *const lapack_int, tau: *const c_double,
                    work: *mut c_double, lwork: *const lapack_int, info: *mut lapack_int);
 
@@ -4940,21 +4940,21 @@ extern "C" {
     pub fn zlapmt_(forwrd: *const lapack_logical, m: *const lapack_int, n: *const lapack_int,
                    x: *mut lapack_complex_double, ldx: *const lapack_int, k: *mut lapack_int);
 
-    pub fn slapy2_(x: *mut c_float, y: *mut c_float) -> c_float;
-    pub fn dlapy2_(x: *mut c_double, y: *mut c_double) -> c_double;
+    pub fn slapy2_(x: *const c_float, y: *const c_float) -> c_float;
+    pub fn dlapy2_(x: *const c_double, y: *const c_double) -> c_double;
 
-    pub fn slapy3_(x: *mut c_float, y: *mut c_float, z: *mut c_float) -> c_float;
-    pub fn dlapy3_(x: *mut c_double, y: *mut c_double, z: *mut c_double) -> c_double;
+    pub fn slapy3_(x: *const c_float, y: *const c_float, z: *const c_float) -> c_float;
+    pub fn dlapy3_(x: *const c_double, y: *const c_double, z: *const c_double) -> c_double;
 
-    pub fn slartgp_(f: *mut c_float, g: *mut c_float, cs: *mut c_float, sn: *mut c_float,
+    pub fn slartgp_(f: *const c_float, g: *const c_float, cs: *mut c_float, sn: *mut c_float,
                     r: *mut c_float);
-    pub fn dlartgp_(f: *mut c_double, g: *mut c_double, cs: *mut c_double, sn: *mut c_double,
+    pub fn dlartgp_(f: *const c_double, g: *const c_double, cs: *mut c_double, sn: *mut c_double,
                     r: *mut c_double);
 
-    pub fn slartgs_(x: *mut c_float, y: *mut c_float, sigma: *mut c_float, cs: *mut c_float,
+    pub fn slartgs_(x: *const c_float, y: *const c_float, sigma: *const c_float, cs: *mut c_float,
                     sn: *mut c_float);
-    pub fn dlartgs_(x: *mut c_double, y: *mut c_double, sigma: *mut c_double, cs: *mut c_double,
-                    sn: *mut c_double);
+    pub fn dlartgs_(x: *const c_double, y: *const c_double, sigma: *const c_double,
+                    cs: *mut c_double, sn: *mut c_double);
 
     // Version 3.3.0
     pub fn cbbcsd_(jobu1: *const c_char, jobu2: *const c_char, jobv1t: *const c_char,
