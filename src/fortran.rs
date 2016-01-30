@@ -5439,6 +5439,6 @@ extern "C" {
                  x: *const lapack_complex_double, incx: *const lapack_int,
                  a: *mut lapack_complex_double, lda: *const lapack_int);
 
-    pub fn ilaver_(vers_major: *const lapack_int, vers_minor: *const lapack_int,
-                   vers_patch: *const lapack_int);
+    pub fn ilaver_(vers_major: *mut lapack_int, vers_minor: *mut lapack_int,
+                   vers_patch: *mut lapack_int);
 }

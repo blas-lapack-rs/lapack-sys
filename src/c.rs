@@ -11986,6 +11986,6 @@ extern "C" {
                              incx: lapack_int, a: *mut lapack_complex_double, lda: lapack_int)
                              -> lapack_int;
 
-    pub fn LAPACKE_ilaver(vers_major: *const lapack_int, vers_minor: *const lapack_int,
-                          vers_patch: *const lapack_int);
+    pub fn LAPACKE_ilaver(vers_major: *mut lapack_int, vers_minor: *mut lapack_int,
+                          vers_patch: *mut lapack_int);
 }
