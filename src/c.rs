@@ -44,13 +44,13 @@ extern "C" {
 
     pub fn LAPACKE_sbdsvdx(matrix_layout: c_int, uplo: c_char, jobz: c_char, range: c_char,
                            n: lapack_int, d: *mut c_float, e: *mut c_float, vl: c_float,
-                           vu: lapack_int, il: lapack_int, iu: lapack_int, ns: lapack_int,
+                           vu: c_float, il: lapack_int, iu: lapack_int, ns: lapack_int,
                            s: *mut c_float, z: *mut c_float, ldz: lapack_int,
                            superb: *mut lapack_int)
                            -> lapack_int;
     pub fn LAPACKE_dbdsvdx(matrix_layout: c_int, uplo: c_char, jobz: c_char, range: c_char,
                            n: lapack_int, d: *mut c_double, e: *mut c_double, vl: c_double,
-                           vu: lapack_int, il: lapack_int, iu: lapack_int, ns: lapack_int,
+                           vu: c_double, il: lapack_int, iu: lapack_int, ns: lapack_int,
                            s: *mut c_double, z: *mut c_double, ldz: lapack_int,
                            superb: *mut lapack_int)
                            -> lapack_int;
@@ -4987,14 +4987,14 @@ extern "C" {
                                -> lapack_int;
 
     pub fn LAPACKE_sbdsvdx_work(matrix_layout: c_int, uplo: c_char, jobz: c_char, range: c_char,
-                                n: lapack_int, d: *mut c_float, e: *mut c_float, vl: lapack_int,
-                                vu: lapack_int, il: lapack_int, iu: lapack_int, ns: lapack_int,
+                                n: lapack_int, d: *mut c_float, e: *mut c_float, vl: c_float,
+                                vu: c_float, il: lapack_int, iu: lapack_int, ns: lapack_int,
                                 s: *mut c_float, z: *mut c_float, ldz: lapack_int,
                                 work: *mut c_float, iwork: *mut lapack_int)
                                 -> lapack_int;
     pub fn LAPACKE_dbdsvdx_work(matrix_layout: c_int, uplo: c_char, jobz: c_char, range: c_char,
-                                n: lapack_int, d: *mut c_double, e: *mut c_double, vl: lapack_int,
-                                vu: lapack_int, il: lapack_int, iu: lapack_int, ns: lapack_int,
+                                n: lapack_int, d: *mut c_double, e: *mut c_double, vl: c_double,
+                                vu: c_double, il: lapack_int, iu: lapack_int, ns: lapack_int,
                                 s: *mut c_double, z: *mut c_double, ldz: lapack_int,
                                 work: *mut c_double, iwork: *mut lapack_int)
                                 -> lapack_int;
@@ -6063,21 +6063,21 @@ extern "C" {
 
     pub fn LAPACKE_sgesvdx_work(matrix_layout: c_int, jobu: c_char, jobvt: c_char, range: c_char,
                                 m: lapack_int, n: lapack_int, a: *mut c_float, lda: lapack_int,
-                                vl: lapack_int, vu: lapack_int, il: lapack_int, iu: lapack_int,
+                                vl: c_float, vu: c_float, il: lapack_int, iu: lapack_int,
                                 ns: lapack_int, s: *mut c_float, u: *mut c_float, ldu: lapack_int,
                                 vt: *mut c_float, ldvt: lapack_int, work: *mut c_float,
                                 lwork: lapack_int, iwork: *mut lapack_int)
                                 -> lapack_int;
     pub fn LAPACKE_dgesvdx_work(matrix_layout: c_int, jobu: c_char, jobvt: c_char, range: c_char,
                                 m: lapack_int, n: lapack_int, a: *mut c_double, lda: lapack_int,
-                                vl: lapack_int, vu: lapack_int, il: lapack_int, iu: lapack_int,
+                                vl: c_double, vu: c_double, il: lapack_int, iu: lapack_int,
                                 ns: lapack_int, s: *mut c_double, u: *mut c_double,
                                 ldu: lapack_int, vt: *mut c_double, ldvt: lapack_int,
                                 work: *mut c_double, lwork: lapack_int, iwork: *mut lapack_int)
                                 -> lapack_int;
     pub fn LAPACKE_cgesvdx_work(matrix_layout: c_int, jobu: c_char, jobvt: c_char, range: c_char,
                                 m: lapack_int, n: lapack_int, a: *mut lapack_complex_float,
-                                lda: lapack_int, vl: lapack_int, vu: lapack_int, il: lapack_int,
+                                lda: lapack_int, vl: c_float, vu: c_float, il: lapack_int,
                                 iu: lapack_int, ns: lapack_int, s: *mut c_float,
                                 u: *mut lapack_complex_float, ldu: lapack_int,
                                 vt: *mut lapack_complex_float, ldvt: lapack_int,
@@ -6086,7 +6086,7 @@ extern "C" {
                                 -> lapack_int;
     pub fn LAPACKE_zgesvdx_work(matrix_layout: c_int, jobu: c_char, jobvt: c_char, range: c_char,
                                 m: lapack_int, n: lapack_int, a: *mut lapack_complex_double,
-                                lda: lapack_int, vl: lapack_int, vu: lapack_int, il: lapack_int,
+                                lda: lapack_int, vl: c_double, vu: c_double, il: lapack_int,
                                 iu: lapack_int, ns: lapack_int, s: *mut c_double,
                                 u: *mut lapack_complex_double, ldu: lapack_int,
                                 vt: *mut lapack_complex_double, ldvt: lapack_int,
