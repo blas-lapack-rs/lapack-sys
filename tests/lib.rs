@@ -1,5 +1,6 @@
 extern crate lapack_sys;
 
+#[cfg(not(feature = "accelerate"))]
 #[test]
 fn link_c() {
     use lapack_sys::c as ffi;

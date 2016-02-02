@@ -23,5 +23,7 @@ pub type c_double_complex = [libc::c_double; 2];
 #[allow(bad_style)]
 pub type c_float_complex = [libc::c_float; 2];
 
+#[cfg(not(feature = "accelerate"))]
 pub mod c;
+
 pub mod fortran;
