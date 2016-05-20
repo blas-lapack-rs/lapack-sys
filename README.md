@@ -12,8 +12,8 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 
 [1]: http://en.wikipedia.org/wiki/LAPACK
 
-[version-img]: https://img.shields.io/crates/v/lapack-sys.svg
-[version-url]: https://crates.io/crates/lapack-sys
+[doc]: https://stainless-steel.github.io/lapack-sys
 [status-img]: https://travis-ci.org/stainless-steel/lapack-sys.svg?branch=master
 [status-url]: https://travis-ci.org/stainless-steel/lapack-sys
-[doc]: https://stainless-steel.github.io/lapack-sys
+[version-img]: https://img.shields.io/crates/v/lapack-sys.svg
+[version-url]: https://crates.io/crates/lapack-sys
