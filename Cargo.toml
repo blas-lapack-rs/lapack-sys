@@ -1,6 +1,6 @@
 [package]
 name = "lapack-sys"
-version = "0.11.2"
+version = "0.11.3"
 license = "Apache-2.0/MIT"
 authors = [
   "Andrew Straw <strawman@astraw.com>",
@@ -8,7 +8,7 @@ authors = [
   "Ivan Ukhov <ivan.ukhov@gmail.com>",
 ]
 description = "The package provides bindings to the Linear Algebra PACKage."
-documentation = "https://stainless-steel.github.io/lapack-sys"
+documentation = "https://docs.rs/lapack-sys"
 homepage = "https://github.com/stainless-steel/lapack-sys"
 repository = "https://github.com/stainless-steel/lapack-sys"
 
