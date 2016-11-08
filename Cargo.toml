@@ -3,9 +3,9 @@ name = "lapack-sys"
 version = "0.11.3"
 license = "Apache-2.0/MIT"
 authors = [
-  "Andrew Straw <strawman@astraw.com>",
-  "Corey Richardson <corey@octayn.net>",
-  "Ivan Ukhov <ivan.ukhov@gmail.com>",
+    "Andrew Straw <strawman@astraw.com>",
+    "Corey Richardson <corey@octayn.net>",
+    "Ivan Ukhov <ivan.ukhov@gmail.com>",
 ]
 description = "The package provides bindings to the Linear Algebra PACKage."
 documentation = "https://docs.rs/lapack-sys"
