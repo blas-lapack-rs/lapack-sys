@@ -1,7 +1,6 @@
 //! Bindings to the [Linear Algebra PACKage][lapack].
 //!
 //! [lapack]: https://en.wikipedia.org/wiki/LAPACK
-
 #![allow(non_camel_case_types)]
 #![no_std]
 

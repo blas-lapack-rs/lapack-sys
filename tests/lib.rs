@@ -14,15 +14,7 @@ fn link_c() {
     let mut w = vec![0.0];
 
     unsafe {
-        ffi::LAPACKE_dsyev(
-            matrix_layout,
-            jobz,
-            uplo,
-            n,
-            a.as_mut_ptr(),
-            lda,
-            w.as_mut_ptr(),
-        );
+        ffi::LAPACKE_dsyev(matrix_layout, jobz, uplo, n, a.as_mut_ptr(), lda, w.as_mut_ptr());
     }
 }
 
