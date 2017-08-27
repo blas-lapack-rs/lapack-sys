@@ -14,7 +14,15 @@ fn link_c() {
     let mut w = vec![0.0];
 
     unsafe {
-        ffi::LAPACKE_dsyev(matrix_layout, jobz, uplo, n, a.as_mut_ptr(), lda, w.as_mut_ptr());
+        ffi::LAPACKE_dsyev(
+            matrix_layout,
+            jobz,
+            uplo,
+            n,
+            a.as_mut_ptr(),
+            lda,
+            w.as_mut_ptr(),
+        );
     }
 }
 
@@ -33,7 +41,16 @@ fn link_fortran() {
     let mut flag = 0;
 
     unsafe {
-        ffi::dsyev_(&jobz, &uplo, &n, a.as_mut_ptr(), &lda, w.as_mut_ptr(), work.as_mut_ptr(),
-                    &lwork, &mut flag);
+        ffi::dsyev_(
+            &jobz,
+            &uplo,
+            &n,
+            a.as_mut_ptr(),
+            &lda,
+            w.as_mut_ptr(),
+            work.as_mut_ptr(),
+            &lwork,
+            &mut flag,
+        );
     }
 }
