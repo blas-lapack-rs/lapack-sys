@@ -11,6 +11,7 @@ description = "The package provides bindings to the Linear Algebra PACKage."
 documentation = "https://docs.rs/lapack-sys"
 homepage = "https://github.com/stainless-steel/lapack-sys"
 repository = "https://github.com/stainless-steel/lapack-sys"
+readme = "README.md"
 categories = ["external-ffi-bindings", "science"]
 keywords = ["linear-algebra"]
 
