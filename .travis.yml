@@ -15,14 +15,14 @@ rust:
 
 env:
   matrix:
-    - FEATURE=accelerate
+    - FEATURE="accelerate lapacke_static"
     - FEATURE=netlib
     - FEATURE=openblas
 
 matrix:
   exclude:
     - os: linux
-      env: FEATURE=accelerate
+      env: FEATURE="accelerate lapacke_static"
 
 before_install:
   - curl https://stainless-steel.github.io/travis/fortran.sh | bash

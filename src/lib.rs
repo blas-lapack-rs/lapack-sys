@@ -9,6 +9,9 @@ extern crate libc;
 #[cfg(feature = "accelerate")]
 extern crate accelerate_src as raw;
 
+#[cfg(feature = "lapacke_static")]
+extern crate lapacke_static;
+
 #[cfg(feature = "netlib")]
 extern crate netlib_src as raw;
 
@@ -23,7 +26,7 @@ pub type c_double_complex = [libc::c_double; 2];
 #[allow(bad_style)]
 pub type c_float_complex = [libc::c_float; 2];
 
-#[cfg(not(feature = "accelerate"))]
+#[cfg(any(feature="lapacke_static", feature="netlib", feature="openblas"))]
 pub mod c;
 
 pub mod fortran;
