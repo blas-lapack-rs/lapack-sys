@@ -39,5 +39,5 @@ version = "0.5"
 optional = true
 
 [dependencies.intel-mkl-src]
-version = "0.2.4"
+version = "0.2.5"
 optional = true
