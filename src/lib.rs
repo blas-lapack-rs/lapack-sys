@@ -1,4 +1,4 @@
-//! Bindings to [LAPACK].
+//! Bindings to [LAPACK] (Fortran)
 //!
 //! [lapack]: https://en.wikipedia.org/wiki/LAPACK
 

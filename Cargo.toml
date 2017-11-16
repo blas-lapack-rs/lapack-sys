@@ -7,7 +7,7 @@ authors = [
     "Corey Richardson <corey@octayn.net>",
     "Ivan Ukhov <ivan.ukhov@gmail.com>",
 ]
-description = "The package provides bindings to the Linear Algebra PACKage."
+description = "The package provides bindings to LAPACK (Fortran)."
 documentation = "https://docs.rs/lapack-sys"
 homepage = "https://github.com/blas-lapack-rs/lapack-sys"
 repository = "https://github.com/blas-lapack-rs/lapack-sys"
