@@ -1,4 +1,4 @@
-//! Bindings to [LAPACK] (Fortran)
+//! Bindings to [LAPACK] \(Fortran)
 //!
 //! The usage of the package is explained [here][usage].
 //!
