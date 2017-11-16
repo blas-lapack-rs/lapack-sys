@@ -1,6 +1,9 @@
 //! Bindings to [LAPACK] (Fortran)
 //!
+//! The usage of the package is explained [here][usage].
+//!
 //! [lapack]: https://en.wikipedia.org/wiki/LAPACK
+//! [usage]: https://blas-lapack-rs.github.io/usage
 
 #![allow(non_camel_case_types)]
 #![no_std]
