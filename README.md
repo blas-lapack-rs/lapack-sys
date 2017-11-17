@@ -1,7 +1,8 @@
 # lapack-sys [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] [![Build][build-img]][build-url]
 
-The package provides bindings to [LAPACK] (Fortran). The usage of the package is
-explained [here][usage].
+The package provides bindings to [LAPACK] (Fortran).
+
+The usage of the package is explained [here][usage].
 
 ## Contribution
 
