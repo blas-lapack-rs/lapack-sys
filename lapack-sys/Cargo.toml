@@ -2,6 +2,7 @@
 name = "lapack-sys"
 version = "0.12.1"
 license = "Apache-2.0/MIT"
+edition = "2018"
 authors = [
     "Andrew Straw <strawman@astraw.com>",
     "Corey Richardson <corey@octayn.net>",
