@@ -108,28 +108,30 @@ fn parse_input(pat: &syn::PatType) -> (String, Ptr) {
 
 /// Convert pointer-based raw-LAPACK API into value and reference based API
 fn signature_input(args: &Args) -> Args {
-    let mut args = args.clone();
-    for arg in &mut args {
-        match arg {
-            syn::FnArg::Typed(arg) => {
-                let (name, ptr) = parse_input(arg);
-                let new_type = match name.to_lowercase().as_str() {
-                    // pointer -> mutable reference
-                    "info" => "&mut i32".into(),
-                    // pointer -> array
-                    "a" | "b" | "ipiv" => match ptr {
-                        Ptr::Constant(ty) => format!("&[{}]", ty),
-                        Ptr::Mutable(ty) => format!("&mut [{}]", ty),
-                    },
-                    // pointer -> value
-                    _ => ptr.ty(),
-                };
-                *arg.ty = syn::parse_str(&new_type).unwrap();
+    args.iter()
+        .cloned()
+        .map(|mut arg| {
+            match &mut arg {
+                syn::FnArg::Typed(arg) => {
+                    let (name, ptr) = parse_input(&arg);
+                    let new_type = match name.to_lowercase().as_str() {
+                        // pointer -> mutable reference
+                        "info" => "&mut i32".into(),
+                        // pointer -> array
+                        "a" | "b" | "ipiv" => match ptr {
+                            Ptr::Constant(ty) => format!("&[{}]", ty),
+                            Ptr::Mutable(ty) => format!("&mut [{}]", ty),
+                        },
+                        // pointer -> value
+                        _ => ptr.ty(),
+                    };
+                    *arg.ty = syn::parse_str(&new_type).unwrap();
+                }
+                _ => unreachable!("LAPACK raw API does not contains non-typed argument"),
             }
-            _ => unreachable!("LAPACK raw API does not contains non-typed argument"),
-        }
-    }
-    args
+            arg
+        })
+        .collect()
 }
 
 fn call(args: &Args) -> Call {
@@ -187,7 +189,7 @@ mod tests {
             ipiv: &[i32],
             B: &mut [f64],
             ldb: i32,
-            info: &mut i32,
+            info: &mut i32
             "#,
         )
         .unwrap();
@@ -255,7 +257,7 @@ mod tests {
             ipiv: &[i32],
             B: &mut [f64],
             ldb: i32,
-            info: &mut i32,
+            info: &mut i32
         ) {
             dgetrs_(
                 &(trans as c_char),
