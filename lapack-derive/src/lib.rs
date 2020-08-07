@@ -26,7 +26,7 @@ fn parse_foreign_fn(func: &TokenStream2) -> syn::ForeignItemFn {
         if let TokenTree::Group(group) = func {
             group.stream()
         } else {
-            unreachable!()
+            unreachable!("#[lapack] attribute must be put to `extern \"C\"` block")
         }
     } else {
         unreachable!("#[lapack] attribute must be put to `extern \"C\"` block")
@@ -74,22 +74,13 @@ impl From<syn::TypePtr> for Ptr {
     fn from(ptr_ty: syn::TypePtr) -> Self {
         match &*ptr_ty.elem {
             syn::Type::Path(path) => {
-                if let Some(id) = path.path.get_ident() {
-                    let id = id.to_string();
-                    let id = match id.as_str() {
-                        "c_char" => "u8",
-                        "c_int" => "i32",
-                        id => id,
-                    };
-                    match ptr_ty.mutability {
-                        Some(_) => Ptr::Mutable(id.to_string()),
-                        None => Ptr::Constant(id.to_string()),
-                    }
-                } else {
-                    unreachable!()
+                let path = quote! { #path }.to_string();
+                match ptr_ty.mutability {
+                    Some(_) => Ptr::Mutable(path),
+                    None => Ptr::Constant(path),
                 }
             }
-            _ => unreachable!(),
+            _ => unimplemented!("Pointer for non-path is not supported yet"),
         }
     }
 }
