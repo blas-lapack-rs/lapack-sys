@@ -46,8 +46,9 @@ fn wrap(f: &syn::ForeignItemFn) -> TokenStream2 {
     let lapack_name = syn::Ident::new(&lapack_name, Span::call_site());
     let input = signature_input(&f.sig.inputs);
     let call = call(&f.sig.inputs);
+    let output = &f.sig.output;
     quote! {
-        pub unsafe fn #lapack_name ( #input ) {
+        pub unsafe fn #lapack_name ( #input ) #output {
             #lapack_sys_name ( #call )
         }
     }
@@ -118,7 +119,7 @@ fn signature_input(args: &Args) -> Args {
                         // pointer -> mutable reference
                         "info" => "&mut i32".into(),
                         // pointer -> array
-                        "a" | "b" | "ipiv" => match ptr {
+                        "a" | "b" | "ipiv" | "work" => match ptr {
                             Ptr::Constant(ty) => format!("&[{}]", ty),
                             Ptr::Mutable(ty) => format!("&mut [{}]", ty),
                         },
@@ -141,7 +142,7 @@ fn call(args: &Args) -> Call {
                 let (name, ptr) = parse_input(arg);
                 let expr = match name.to_lowercase().as_str() {
                     "info" => "info".into(),
-                    "a" | "b" | "ipiv" => match ptr {
+                    "a" | "b" | "ipiv" | "work" => match ptr {
                         Ptr::Constant(_) => format!("{}.as_ptr()", name),
                         Ptr::Mutable(_) => format!("{}.as_mut_ptr()", name),
                     },
@@ -238,7 +239,7 @@ mod tests {
     }
 
     #[test]
-    fn wrap() {
+    fn wrap_dgetrs() {
         let dgetrs = r#"
         pub fn dgetrs_(
             trans: *const c_char,
@@ -275,6 +276,43 @@ mod tests {
                 B.as_mut_ptr(),
                 &ldb,
                 info
+            )
+        }
+        "#;
+        let expected: TokenStream2 = syn::parse_str(expected).unwrap();
+        assert_eq!(wrapped.to_string(), expected.to_string());
+    }
+
+    /// Test for return value case
+    #[test]
+    fn wrap_dlange() {
+        let dgetrs = r#"
+        pub fn dlange_(
+            norm: *const c_char,
+            m: *const c_int,
+            n: *const c_int,
+            A: *const f64,
+            lda: *const c_int,
+            work: *mut f64,
+        ) -> f64;
+        "#;
+        let wrapped = super::wrap(&syn::parse_str(dgetrs).unwrap());
+        let expected = r#"
+        pub unsafe fn dlange(
+            norm: u8,
+            m: i32,
+            n: i32,
+            A: &[f64],
+            lda: i32,
+            work: &mut [f64]
+        ) -> f64 {
+            dlange_(
+                &(norm as c_char),
+                &m,
+                &n,
+                A.as_ptr(),
+                &lda,
+                work.as_mut_ptr()
             )
         }
         "#;
