@@ -7,38 +7,26 @@ pub struct __BindgenComplex<T> {
     pub im: T,
 }
 pub type lapack_float_return = f32;
-pub type LAPACK_S_SELECT2 = ::core::option::Option<
-    unsafe extern "C" fn(arg1: *const f32, arg2: *const f32) -> c_int,
->;
+pub type LAPACK_S_SELECT2 =
+    ::core::option::Option<unsafe extern "C" fn(arg1: *const f32, arg2: *const f32) -> c_int>;
 pub type LAPACK_S_SELECT3 = ::core::option::Option<
-    unsafe extern "C" fn(
-        arg1: *const f32,
-        arg2: *const f32,
-        arg3: *const f32,
-    ) -> c_int,
+    unsafe extern "C" fn(arg1: *const f32, arg2: *const f32, arg3: *const f32) -> c_int,
 >;
-pub type LAPACK_D_SELECT2 = ::core::option::Option<
-    unsafe extern "C" fn(arg1: *const f64, arg2: *const f64) -> c_int,
->;
+pub type LAPACK_D_SELECT2 =
+    ::core::option::Option<unsafe extern "C" fn(arg1: *const f64, arg2: *const f64) -> c_int>;
 pub type LAPACK_D_SELECT3 = ::core::option::Option<
-    unsafe extern "C" fn(
-        arg1: *const f64,
-        arg2: *const f64,
-        arg3: *const f64,
-    ) -> c_int,
+    unsafe extern "C" fn(arg1: *const f64, arg2: *const f64, arg3: *const f64) -> c_int,
 >;
-pub type LAPACK_C_SELECT1 = ::core::option::Option<
-    unsafe extern "C" fn(arg1: *const __BindgenComplex<f32>) -> c_int,
->;
+pub type LAPACK_C_SELECT1 =
+    ::core::option::Option<unsafe extern "C" fn(arg1: *const __BindgenComplex<f32>) -> c_int>;
 pub type LAPACK_C_SELECT2 = ::core::option::Option<
     unsafe extern "C" fn(
         arg1: *const __BindgenComplex<f32>,
         arg2: *const __BindgenComplex<f32>,
     ) -> c_int,
 >;
-pub type LAPACK_Z_SELECT1 = ::core::option::Option<
-    unsafe extern "C" fn(arg1: *const __BindgenComplex<f64>) -> c_int,
->;
+pub type LAPACK_Z_SELECT1 =
+    ::core::option::Option<unsafe extern "C" fn(arg1: *const __BindgenComplex<f64>) -> c_int>;
 pub type LAPACK_Z_SELECT2 = ::core::option::Option<
     unsafe extern "C" fn(
         arg1: *const __BindgenComplex<f64>,
@@ -46,12 +34,7 @@ pub type LAPACK_Z_SELECT2 = ::core::option::Option<
     ) -> c_int,
 >;
 extern "C" {
-    pub fn lsame_(
-        ca: *mut c_char,
-        cb: *mut c_char,
-        lca: c_int,
-        lcb: c_int,
-    ) -> c_int;
+    pub fn lsame_(ca: *mut c_char, cb: *mut c_char, lca: c_int, lcb: c_int) -> c_int;
 }
 extern "C" {
     pub fn cbbcsd_(
@@ -8973,18 +8956,10 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn clacgv_(
-        n: *const c_int,
-        X: *mut __BindgenComplex<f32>,
-        incx: *const c_int,
-    );
+    pub fn clacgv_(n: *const c_int, X: *mut __BindgenComplex<f32>, incx: *const c_int);
 }
 extern "C" {
-    pub fn zlacgv_(
-        n: *const c_int,
-        X: *mut __BindgenComplex<f64>,
-        incx: *const c_int,
-    );
+    pub fn zlacgv_(n: *const c_int, X: *mut __BindgenComplex<f64>, incx: *const c_int);
 }
 extern "C" {
     pub fn clacn2_(
@@ -9611,12 +9586,7 @@ extern "C" {
     ) -> f64;
 }
 extern "C" {
-    pub fn dlanst_(
-        norm: *const c_char,
-        n: *const c_int,
-        D: *const f64,
-        E: *const f64,
-    ) -> f64;
+    pub fn dlanst_(norm: *const c_char, n: *const c_int, D: *const f64, E: *const f64) -> f64;
 }
 extern "C" {
     pub fn slanst_(
@@ -10193,20 +10163,10 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn dlarnv_(
-        idist: *const c_int,
-        iseed: *mut c_int,
-        n: *const c_int,
-        X: *mut f64,
-    );
+    pub fn dlarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int, X: *mut f64);
 }
 extern "C" {
-    pub fn slarnv_(
-        idist: *const c_int,
-        iseed: *mut c_int,
-        n: *const c_int,
-        X: *mut f32,
-    );
+    pub fn slarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int, X: *mut f32);
 }
 extern "C" {
     pub fn zlarnv_(
@@ -10329,20 +10289,10 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn dlasrt_(
-        id: *const c_char,
-        n: *const c_int,
-        D: *mut f64,
-        info: *mut c_int,
-    );
+    pub fn dlasrt_(id: *const c_char, n: *const c_int, D: *mut f64, info: *mut c_int);
 }
 extern "C" {
-    pub fn slasrt_(
-        id: *const c_char,
-        n: *const c_int,
-        D: *mut f32,
-        info: *mut c_int,
-    );
+    pub fn slasrt_(id: *const c_char, n: *const c_int, D: *mut f32, info: *mut c_int);
 }
 extern "C" {
     pub fn classq_(
@@ -10541,11 +10491,7 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn ilaver_(
-        vers_major: *mut c_int,
-        vers_minor: *mut c_int,
-        vers_patch: *mut c_int,
-    );
+    pub fn ilaver_(vers_major: *mut c_int, vers_minor: *mut c_int, vers_patch: *mut c_int);
 }
 extern "C" {
     pub fn dopgtr_(
@@ -12947,20 +12893,10 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn dpptrf_(
-        uplo: *const c_char,
-        n: *const c_int,
-        AP: *mut f64,
-        info: *mut c_int,
-    );
+    pub fn dpptrf_(uplo: *const c_char, n: *const c_int, AP: *mut f64, info: *mut c_int);
 }
 extern "C" {
-    pub fn spptrf_(
-        uplo: *const c_char,
-        n: *const c_int,
-        AP: *mut f32,
-        info: *mut c_int,
-    );
+    pub fn spptrf_(uplo: *const c_char, n: *const c_int, AP: *mut f32, info: *mut c_int);
 }
 extern "C" {
     pub fn zpptrf_(
@@ -12979,20 +12915,10 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn dpptri_(
-        uplo: *const c_char,
-        n: *const c_int,
-        AP: *mut f64,
-        info: *mut c_int,
-    );
+    pub fn dpptri_(uplo: *const c_char, n: *const c_int, AP: *mut f64, info: *mut c_int);
 }
 extern "C" {
-    pub fn spptri_(
-        uplo: *const c_char,
-        n: *const c_int,
-        AP: *mut f32,
-        info: *mut c_int,
-    );
+    pub fn spptri_(uplo: *const c_char, n: *const c_int, AP: *mut f32, info: *mut c_int);
 }
 extern "C" {
     pub fn zpptri_(
@@ -13393,36 +13319,16 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn cpttrf_(
-        n: *const c_int,
-        D: *mut f32,
-        E: *mut __BindgenComplex<f32>,
-        info: *mut c_int,
-    );
+    pub fn cpttrf_(n: *const c_int, D: *mut f32, E: *mut __BindgenComplex<f32>, info: *mut c_int);
 }
 extern "C" {
-    pub fn dpttrf_(
-        n: *const c_int,
-        D: *mut f64,
-        E: *mut f64,
-        info: *mut c_int,
-    );
+    pub fn dpttrf_(n: *const c_int, D: *mut f64, E: *mut f64, info: *mut c_int);
 }
 extern "C" {
-    pub fn spttrf_(
-        n: *const c_int,
-        D: *mut f32,
-        E: *mut f32,
-        info: *mut c_int,
-    );
+    pub fn spttrf_(n: *const c_int, D: *mut f32, E: *mut f32, info: *mut c_int);
 }
 extern "C" {
-    pub fn zpttrf_(
-        n: *const c_int,
-        D: *mut f64,
-        E: *mut __BindgenComplex<f64>,
-        info: *mut c_int,
-    );
+    pub fn zpttrf_(n: *const c_int, D: *mut f64, E: *mut __BindgenComplex<f64>, info: *mut c_int);
 }
 extern "C" {
     pub fn cpttrs_(
@@ -15001,20 +14907,10 @@ extern "C" {
     );
 }
 extern "C" {
-    pub fn dsterf_(
-        n: *const c_int,
-        D: *mut f64,
-        E: *mut f64,
-        info: *mut c_int,
-    );
+    pub fn dsterf_(n: *const c_int, D: *mut f64, E: *mut f64, info: *mut c_int);
 }
 extern "C" {
-    pub fn ssterf_(
-        n: *const c_int,
-        D: *mut f32,
-        E: *mut f32,
-        info: *mut c_int,
-    );
+    pub fn ssterf_(n: *const c_int, D: *mut f32, E: *mut f32, info: *mut c_int);
 }
 extern "C" {
     pub fn dstev_(

@@ -12,3 +12,5 @@ bindgen \
   wrapper.h \
   | sed -e "s/::std::os::raw:://g" \
   > src/lapack.rs
+# Re-format due to sed
+rustfmt src/lapack.rs
