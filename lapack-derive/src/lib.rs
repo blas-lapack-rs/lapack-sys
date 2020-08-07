@@ -1,7 +1,5 @@
-#![recursion_limit = "128"]
-
 use proc_macro::TokenStream;
-use proc_macro2::{Span, TokenStream as TokenStream2};
+use proc_macro2::{Span, TokenStream as TokenStream2, TokenTree};
 use quote::quote;
 
 type Args = syn::punctuated::Punctuated<syn::FnArg, syn::token::Comma>;
@@ -12,9 +10,32 @@ pub fn lapack(_attr: TokenStream, func: TokenStream) -> TokenStream {
     lapack2(syn::parse(func).unwrap()).into()
 }
 
-// TokenStream2-based main routine
+/// TokenStream2-based main routine
 fn lapack2(func: TokenStream2) -> TokenStream2 {
-    let f: syn::ForeignItemFn = syn::parse2(func).unwrap();
+    let f = parse_foreign_fn(&func);
+    let wrap = wrap(&f);
+    quote! {
+        #func
+        #wrap
+    }
+}
+
+/// extern "C" { fn dgetrs_(...); } -> fn dgetrs_(...);
+fn parse_foreign_fn(func: &TokenStream2) -> syn::ForeignItemFn {
+    let func = if let Some(func) = func.clone().into_iter().skip(2 /* 'extern', 'C' */).next() {
+        if let TokenTree::Group(group) = func {
+            group.stream()
+        } else {
+            unreachable!()
+        }
+    } else {
+        unreachable!("#[lapack] attribute must be put to `extern \"C\"` block")
+    };
+    syn::parse2(func).unwrap()
+}
+
+/// Generate token stream of wrapped function
+fn wrap(f: &syn::ForeignItemFn) -> TokenStream2 {
     // like dgetrs_
     let lapack_sys_name = &f.sig.ident;
     // like dgetrs
@@ -209,7 +230,7 @@ mod tests {
     }
 
     #[test]
-    fn dgetrs_convert() {
+    fn wrap() {
         let dgetrs = r#"
         pub fn dgetrs_(
             trans: *const c_char,
@@ -223,7 +244,7 @@ mod tests {
             info: *mut c_int,
         );
         "#;
-        let wrapped = lapack2(syn::parse_str(dgetrs).unwrap());
+        let wrapped = super::wrap(&syn::parse_str(dgetrs).unwrap());
         let expected = r#"
         pub unsafe fn dgetrs(
             trans: u8,
