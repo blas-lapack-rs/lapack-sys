@@ -145,9 +145,15 @@ fn call(args: &Args) -> Call {
                         Ptr::Constant(_) => format!("{}.as_ptr()", name),
                         Ptr::Mutable(_) => format!("{}.as_mut_ptr()", name),
                     },
-                    _ => match ptr.ty().as_str() {
-                        "u8" => format!("&({} as c_char)", name),
-                        _ => format!("&{}", name),
+                    _ => match ptr {
+                        Ptr::Constant(ty) => match ty.as_str() {
+                            "u8" => format!("&({} as c_char)", name),
+                            _ => format!("&{}", name),
+                        },
+                        Ptr::Mutable(ty) => match ty.as_str() {
+                            "u8" => format!("&mut ({} as c_char)", name),
+                            _ => format!("&mut {}", name),
+                        },
                     },
                 };
                 syn::parse_str::<syn::Expr>(&expr).unwrap()
