@@ -10,7 +10,8 @@ bindgen \
   --whitelist-function="^.*_$" \
   --use-core \
   wrapper.h \
-  | sed -e "s/::std::os::raw:://g" \
+  | sed -e 's/::std::os::raw:://g' \
+        -e 's/^\(extern "C"\)/#[lapack] \1/g' \
   > src/lapack.rs
 # Re-format due to sed
 rustfmt src/lapack.rs

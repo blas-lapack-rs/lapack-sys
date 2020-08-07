@@ -33,9 +33,11 @@ pub type LAPACK_Z_SELECT2 = ::core::option::Option<
         arg2: *const __BindgenComplex<f64>,
     ) -> c_int,
 >;
+#[lapack]
 extern "C" {
     pub fn lsame_(ca: *mut c_char, cb: *mut c_char, lca: c_int, lcb: c_int) -> c_int;
 }
+#[lapack]
 extern "C" {
     pub fn cbbcsd_(
         jobu1: *const c_char,
@@ -69,6 +71,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dbbcsd_(
         jobu1: *const c_char,
@@ -102,6 +105,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sbbcsd_(
         jobu1: *const c_char,
@@ -135,6 +139,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zbbcsd_(
         jobu1: *const c_char,
@@ -168,6 +173,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dbdsdc_(
         uplo: *const c_char,
@@ -186,6 +192,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sbdsdc_(
         uplo: *const c_char,
@@ -204,6 +211,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cbdsqr_(
         uplo: *const c_char,
@@ -223,6 +231,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dbdsqr_(
         uplo: *const c_char,
@@ -242,6 +251,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sbdsqr_(
         uplo: *const c_char,
@@ -261,6 +271,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zbdsqr_(
         uplo: *const c_char,
@@ -280,6 +291,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dbdsvdx_(
         uplo: *const c_char,
@@ -301,6 +313,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sbdsvdx_(
         uplo: *const c_char,
@@ -322,6 +335,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ddisna_(
         job: *const c_char,
@@ -332,6 +346,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sdisna_(
         job: *const c_char,
@@ -342,6 +357,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbbrd_(
         vect: *const c_char,
@@ -365,6 +381,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbbrd_(
         vect: *const c_char,
@@ -387,6 +404,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbbrd_(
         vect: *const c_char,
@@ -409,6 +427,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbbrd_(
         vect: *const c_char,
@@ -432,6 +451,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbcon_(
         norm: *const c_char,
@@ -448,6 +468,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbcon_(
         norm: *const c_char,
@@ -464,6 +485,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbcon_(
         norm: *const c_char,
@@ -480,6 +502,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbcon_(
         norm: *const c_char,
@@ -496,6 +519,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbequ_(
         m: *const c_int,
@@ -512,6 +536,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbequ_(
         m: *const c_int,
@@ -528,6 +553,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbequ_(
         m: *const c_int,
@@ -544,6 +570,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbequ_(
         m: *const c_int,
@@ -560,6 +587,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbequb_(
         m: *const c_int,
@@ -576,6 +604,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbequb_(
         m: *const c_int,
@@ -592,6 +621,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbequb_(
         m: *const c_int,
@@ -608,6 +638,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbequb_(
         m: *const c_int,
@@ -624,6 +655,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbrfs_(
         trans: *const c_char,
@@ -647,6 +679,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbrfs_(
         trans: *const c_char,
@@ -670,6 +703,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbrfs_(
         trans: *const c_char,
@@ -693,6 +727,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbrfs_(
         trans: *const c_char,
@@ -716,6 +751,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbrfsx_(
         trans: *const c_char,
@@ -747,6 +783,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbrfsx_(
         trans: *const c_char,
@@ -778,6 +815,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbrfsx_(
         trans: *const c_char,
@@ -809,6 +847,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbrfsx_(
         trans: *const c_char,
@@ -840,6 +879,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbsv_(
         n: *const c_int,
@@ -854,6 +894,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbsv_(
         n: *const c_int,
@@ -868,6 +909,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbsv_(
         n: *const c_int,
@@ -882,6 +924,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbsv_(
         n: *const c_int,
@@ -896,6 +939,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbsvx_(
         fact: *const c_char,
@@ -924,6 +968,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbsvx_(
         fact: *const c_char,
@@ -952,6 +997,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbsvx_(
         fact: *const c_char,
@@ -980,6 +1026,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbsvx_(
         fact: *const c_char,
@@ -1008,6 +1055,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbsvxx_(
         fact: *const c_char,
@@ -1041,6 +1089,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbsvxx_(
         fact: *const c_char,
@@ -1074,6 +1123,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbsvxx_(
         fact: *const c_char,
@@ -1107,6 +1157,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbsvxx_(
         fact: *const c_char,
@@ -1140,6 +1191,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbtrf_(
         m: *const c_int,
@@ -1152,6 +1204,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbtrf_(
         m: *const c_int,
@@ -1164,6 +1217,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbtrf_(
         m: *const c_int,
@@ -1176,6 +1230,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbtrf_(
         m: *const c_int,
@@ -1188,6 +1243,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgbtrs_(
         trans: *const c_char,
@@ -1203,6 +1259,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgbtrs_(
         trans: *const c_char,
@@ -1218,6 +1275,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgbtrs_(
         trans: *const c_char,
@@ -1233,6 +1291,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgbtrs_(
         trans: *const c_char,
@@ -1248,6 +1307,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgebak_(
         job: *const c_char,
@@ -1262,6 +1322,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgebak_(
         job: *const c_char,
@@ -1276,6 +1337,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgebak_(
         job: *const c_char,
@@ -1290,6 +1352,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgebak_(
         job: *const c_char,
@@ -1304,6 +1367,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgebal_(
         job: *const c_char,
@@ -1316,6 +1380,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgebal_(
         job: *const c_char,
@@ -1328,6 +1393,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgebal_(
         job: *const c_char,
@@ -1340,6 +1406,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgebal_(
         job: *const c_char,
@@ -1352,6 +1419,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgebrd_(
         m: *const c_int,
@@ -1367,6 +1435,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgebrd_(
         m: *const c_int,
@@ -1382,6 +1451,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgebrd_(
         m: *const c_int,
@@ -1397,6 +1467,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgebrd_(
         m: *const c_int,
@@ -1412,6 +1483,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgecon_(
         norm: *const c_char,
@@ -1425,6 +1497,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgecon_(
         norm: *const c_char,
@@ -1438,6 +1511,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgecon_(
         norm: *const c_char,
@@ -1451,6 +1525,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgecon_(
         norm: *const c_char,
@@ -1464,6 +1539,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeequ_(
         m: *const c_int,
@@ -1478,6 +1554,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeequ_(
         m: *const c_int,
@@ -1492,6 +1569,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeequ_(
         m: *const c_int,
@@ -1506,6 +1584,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeequ_(
         m: *const c_int,
@@ -1520,6 +1599,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeequb_(
         m: *const c_int,
@@ -1534,6 +1614,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeequb_(
         m: *const c_int,
@@ -1548,6 +1629,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeequb_(
         m: *const c_int,
@@ -1562,6 +1644,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeequb_(
         m: *const c_int,
@@ -1576,6 +1659,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgees_(
         jobvs: *const c_char,
@@ -1595,6 +1679,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgees_(
         jobvs: *const c_char,
@@ -1614,6 +1699,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgees_(
         jobvs: *const c_char,
@@ -1633,6 +1719,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgees_(
         jobvs: *const c_char,
@@ -1652,6 +1739,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeesx_(
         jobvs: *const c_char,
@@ -1674,6 +1762,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeesx_(
         jobvs: *const c_char,
@@ -1698,6 +1787,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeesx_(
         jobvs: *const c_char,
@@ -1722,6 +1812,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeesx_(
         jobvs: *const c_char,
@@ -1744,6 +1835,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeev_(
         jobvl: *const c_char,
@@ -1762,6 +1854,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeev_(
         jobvl: *const c_char,
@@ -1780,6 +1873,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeev_(
         jobvl: *const c_char,
@@ -1798,6 +1892,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeev_(
         jobvl: *const c_char,
@@ -1816,6 +1911,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeevx_(
         balanc: *const c_char,
@@ -1842,6 +1938,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeevx_(
         balanc: *const c_char,
@@ -1869,6 +1966,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeevx_(
         balanc: *const c_char,
@@ -1896,6 +1994,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeevx_(
         balanc: *const c_char,
@@ -1922,6 +2021,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgehrd_(
         n: *const c_int,
@@ -1935,6 +2035,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgehrd_(
         n: *const c_int,
@@ -1948,6 +2049,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgehrd_(
         n: *const c_int,
@@ -1961,6 +2063,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgehrd_(
         n: *const c_int,
@@ -1974,6 +2077,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgejsv_(
         joba: *const c_char,
@@ -1999,6 +2103,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgejsv_(
         joba: *const c_char,
@@ -2022,6 +2127,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgejsv_(
         joba: *const c_char,
@@ -2045,6 +2151,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgejsv_(
         joba: *const c_char,
@@ -2070,6 +2177,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgelq_(
         m: *const c_int,
@@ -2083,6 +2191,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgelq_(
         m: *const c_int,
@@ -2096,6 +2205,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgelq_(
         m: *const c_int,
@@ -2109,6 +2219,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgelq_(
         m: *const c_int,
@@ -2122,6 +2233,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgelq2_(
         m: *const c_int,
@@ -2133,6 +2245,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgelq2_(
         m: *const c_int,
@@ -2144,6 +2257,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgelq2_(
         m: *const c_int,
@@ -2155,6 +2269,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgelq2_(
         m: *const c_int,
@@ -2166,6 +2281,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgelqf_(
         m: *const c_int,
@@ -2178,6 +2294,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgelqf_(
         m: *const c_int,
@@ -2190,6 +2307,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgelqf_(
         m: *const c_int,
@@ -2202,6 +2320,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgelqf_(
         m: *const c_int,
@@ -2214,6 +2333,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgels_(
         trans: *const c_char,
@@ -2229,6 +2349,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgels_(
         trans: *const c_char,
@@ -2244,6 +2365,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgels_(
         trans: *const c_char,
@@ -2259,6 +2381,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgels_(
         trans: *const c_char,
@@ -2274,6 +2397,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgelsd_(
         m: *const c_int,
@@ -2293,6 +2417,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgelsd_(
         m: *const c_int,
@@ -2311,6 +2436,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgelsd_(
         m: *const c_int,
@@ -2329,6 +2455,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgelsd_(
         m: *const c_int,
@@ -2348,6 +2475,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgelss_(
         m: *const c_int,
@@ -2366,6 +2494,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgelss_(
         m: *const c_int,
@@ -2383,6 +2512,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgelss_(
         m: *const c_int,
@@ -2400,6 +2530,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgelss_(
         m: *const c_int,
@@ -2418,6 +2549,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgelsy_(
         m: *const c_int,
@@ -2436,6 +2568,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgelsy_(
         m: *const c_int,
@@ -2453,6 +2586,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgelsy_(
         m: *const c_int,
@@ -2470,6 +2604,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgelsy_(
         m: *const c_int,
@@ -2488,6 +2623,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgemlq_(
         side: *const c_char,
@@ -2506,6 +2642,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgemlq_(
         side: *const c_char,
@@ -2524,6 +2661,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgemlq_(
         side: *const c_char,
@@ -2542,6 +2680,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgemlq_(
         side: *const c_char,
@@ -2560,6 +2699,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgemqr_(
         side: *const c_char,
@@ -2578,6 +2718,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgemqr_(
         side: *const c_char,
@@ -2596,6 +2737,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgemqr_(
         side: *const c_char,
@@ -2614,6 +2756,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgemqr_(
         side: *const c_char,
@@ -2632,6 +2775,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgemqrt_(
         side: *const c_char,
@@ -2650,6 +2794,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgemqrt_(
         side: *const c_char,
@@ -2668,6 +2813,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgemqrt_(
         side: *const c_char,
@@ -2686,6 +2832,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgemqrt_(
         side: *const c_char,
@@ -2704,6 +2851,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeql2_(
         m: *const c_int,
@@ -2715,6 +2863,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeql2_(
         m: *const c_int,
@@ -2726,6 +2875,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeql2_(
         m: *const c_int,
@@ -2737,6 +2887,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeql2_(
         m: *const c_int,
@@ -2748,6 +2899,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqlf_(
         m: *const c_int,
@@ -2760,6 +2912,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqlf_(
         m: *const c_int,
@@ -2772,6 +2925,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqlf_(
         m: *const c_int,
@@ -2784,6 +2938,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqlf_(
         m: *const c_int,
@@ -2796,6 +2951,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqp3_(
         m: *const c_int,
@@ -2810,6 +2966,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqp3_(
         m: *const c_int,
@@ -2823,6 +2980,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqp3_(
         m: *const c_int,
@@ -2836,6 +2994,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqp3_(
         m: *const c_int,
@@ -2850,6 +3009,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqr_(
         m: *const c_int,
@@ -2863,6 +3023,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqr_(
         m: *const c_int,
@@ -2876,6 +3037,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqr_(
         m: *const c_int,
@@ -2889,6 +3051,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqr_(
         m: *const c_int,
@@ -2902,6 +3065,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqr2_(
         m: *const c_int,
@@ -2913,6 +3077,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqr2_(
         m: *const c_int,
@@ -2924,6 +3089,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqr2_(
         m: *const c_int,
@@ -2935,6 +3101,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqr2_(
         m: *const c_int,
@@ -2946,6 +3113,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqrf_(
         m: *const c_int,
@@ -2958,6 +3126,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqrf_(
         m: *const c_int,
@@ -2970,6 +3139,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqrf_(
         m: *const c_int,
@@ -2982,6 +3152,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqrf_(
         m: *const c_int,
@@ -2994,6 +3165,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqrfp_(
         m: *const c_int,
@@ -3006,6 +3178,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqrfp_(
         m: *const c_int,
@@ -3018,6 +3191,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqrfp_(
         m: *const c_int,
@@ -3030,6 +3204,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqrfp_(
         m: *const c_int,
@@ -3042,6 +3217,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqrt_(
         m: *const c_int,
@@ -3055,6 +3231,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqrt_(
         m: *const c_int,
@@ -3068,6 +3245,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqrt_(
         m: *const c_int,
@@ -3081,6 +3259,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqrt_(
         m: *const c_int,
@@ -3094,6 +3273,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqrt2_(
         m: *const c_int,
@@ -3105,6 +3285,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqrt2_(
         m: *const c_int,
@@ -3116,6 +3297,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqrt2_(
         m: *const c_int,
@@ -3127,6 +3309,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqrt2_(
         m: *const c_int,
@@ -3138,6 +3321,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgeqrt3_(
         m: *const c_int,
@@ -3149,6 +3333,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgeqrt3_(
         m: *const c_int,
@@ -3160,6 +3345,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgeqrt3_(
         m: *const c_int,
@@ -3171,6 +3357,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgeqrt3_(
         m: *const c_int,
@@ -3182,6 +3369,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgerfs_(
         trans: *const c_char,
@@ -3203,6 +3391,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgerfs_(
         trans: *const c_char,
@@ -3224,6 +3413,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgerfs_(
         trans: *const c_char,
@@ -3245,6 +3435,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgerfs_(
         trans: *const c_char,
@@ -3266,6 +3457,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgerfsx_(
         trans: *const c_char,
@@ -3295,6 +3487,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgerfsx_(
         trans: *const c_char,
@@ -3324,6 +3517,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgerfsx_(
         trans: *const c_char,
@@ -3353,6 +3547,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgerfsx_(
         trans: *const c_char,
@@ -3382,6 +3577,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgerq2_(
         m: *const c_int,
@@ -3393,6 +3589,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgerq2_(
         m: *const c_int,
@@ -3404,6 +3601,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgerq2_(
         m: *const c_int,
@@ -3415,6 +3613,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgerq2_(
         m: *const c_int,
@@ -3426,6 +3625,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgerqf_(
         m: *const c_int,
@@ -3438,6 +3638,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgerqf_(
         m: *const c_int,
@@ -3450,6 +3651,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgerqf_(
         m: *const c_int,
@@ -3462,6 +3664,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgerqf_(
         m: *const c_int,
@@ -3474,6 +3677,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgesdd_(
         jobz: *const c_char,
@@ -3493,6 +3697,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgesdd_(
         jobz: *const c_char,
@@ -3511,6 +3716,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgesdd_(
         jobz: *const c_char,
@@ -3529,6 +3735,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgesdd_(
         jobz: *const c_char,
@@ -3548,6 +3755,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgesv_(
         n: *const c_int,
@@ -3560,6 +3768,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgesv_(
         n: *const c_int,
@@ -3572,6 +3781,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgesv_(
         n: *const c_int,
@@ -3584,6 +3794,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgesv_(
         n: *const c_int,
@@ -3596,6 +3807,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsgesv_(
         n: *const c_int,
@@ -3613,6 +3825,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zcgesv_(
         n: *const c_int,
@@ -3631,6 +3844,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgesvd_(
         jobu: *const c_char,
@@ -3650,6 +3864,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgesvd_(
         jobu: *const c_char,
@@ -3668,6 +3883,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgesvd_(
         jobu: *const c_char,
@@ -3686,6 +3902,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgesvd_(
         jobu: *const c_char,
@@ -3705,6 +3922,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgesvdq_(
         joba: *const c_char,
@@ -3731,6 +3949,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgesvdq_(
         joba: *const c_char,
@@ -3757,6 +3976,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgesvdq_(
         joba: *const c_char,
@@ -3783,6 +4003,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgesvdq_(
         joba: *const c_char,
@@ -3809,6 +4030,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgesvdx_(
         jobu: *const c_char,
@@ -3835,6 +4057,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgesvdx_(
         jobu: *const c_char,
@@ -3860,6 +4083,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgesvdx_(
         jobu: *const c_char,
@@ -3885,6 +4109,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgesvdx_(
         jobu: *const c_char,
@@ -3911,6 +4136,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgesvj_(
         joba: *const c_char,
@@ -3931,6 +4157,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgesvj_(
         joba: *const c_char,
@@ -3949,6 +4176,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgesvj_(
         joba: *const c_char,
@@ -3967,6 +4195,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgesvj_(
         joba: *const c_char,
@@ -3987,6 +4216,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgesvx_(
         fact: *const c_char,
@@ -4013,6 +4243,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgesvx_(
         fact: *const c_char,
@@ -4039,6 +4270,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgesvx_(
         fact: *const c_char,
@@ -4065,6 +4297,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgesvx_(
         fact: *const c_char,
@@ -4091,6 +4324,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgesvxx_(
         fact: *const c_char,
@@ -4122,6 +4356,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgesvxx_(
         fact: *const c_char,
@@ -4153,6 +4388,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgesvxx_(
         fact: *const c_char,
@@ -4184,6 +4420,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgesvxx_(
         fact: *const c_char,
@@ -4215,6 +4452,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgetf2_(
         m: *const c_int,
@@ -4225,6 +4463,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgetf2_(
         m: *const c_int,
@@ -4235,6 +4474,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgetf2_(
         m: *const c_int,
@@ -4245,6 +4485,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgetf2_(
         m: *const c_int,
@@ -4255,6 +4496,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgetrf_(
         m: *const c_int,
@@ -4265,6 +4507,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgetrf_(
         m: *const c_int,
@@ -4275,6 +4518,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgetrf_(
         m: *const c_int,
@@ -4285,6 +4529,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgetrf_(
         m: *const c_int,
@@ -4295,6 +4540,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgetrf2_(
         m: *const c_int,
@@ -4305,6 +4551,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgetrf2_(
         m: *const c_int,
@@ -4315,6 +4562,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgetrf2_(
         m: *const c_int,
@@ -4325,6 +4573,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgetrf2_(
         m: *const c_int,
@@ -4335,6 +4584,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgetri_(
         n: *const c_int,
@@ -4346,6 +4596,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgetri_(
         n: *const c_int,
@@ -4357,6 +4608,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgetri_(
         n: *const c_int,
@@ -4368,6 +4620,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgetri_(
         n: *const c_int,
@@ -4379,6 +4632,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgetrs_(
         trans: *const c_char,
@@ -4392,6 +4646,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgetrs_(
         trans: *const c_char,
@@ -4405,6 +4660,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgetrs_(
         trans: *const c_char,
@@ -4418,6 +4674,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgetrs_(
         trans: *const c_char,
@@ -4431,6 +4688,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgetsls_(
         trans: *const c_char,
@@ -4446,6 +4704,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgetsls_(
         trans: *const c_char,
@@ -4461,6 +4720,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgetsls_(
         trans: *const c_char,
@@ -4476,6 +4736,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgetsls_(
         trans: *const c_char,
@@ -4491,6 +4752,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggbak_(
         job: *const c_char,
@@ -4506,6 +4768,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggbak_(
         job: *const c_char,
@@ -4521,6 +4784,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggbak_(
         job: *const c_char,
@@ -4536,6 +4800,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggbak_(
         job: *const c_char,
@@ -4551,6 +4816,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggbal_(
         job: *const c_char,
@@ -4567,6 +4833,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggbal_(
         job: *const c_char,
@@ -4583,6 +4850,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggbal_(
         job: *const c_char,
@@ -4599,6 +4867,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggbal_(
         job: *const c_char,
@@ -4615,6 +4884,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgges_(
         jobvsl: *const c_char,
@@ -4640,6 +4910,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgges_(
         jobvsl: *const c_char,
@@ -4665,6 +4936,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgges_(
         jobvsl: *const c_char,
@@ -4690,6 +4962,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgges_(
         jobvsl: *const c_char,
@@ -4715,6 +4988,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgges3_(
         jobvsl: *const c_char,
@@ -4740,6 +5014,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgges3_(
         jobvsl: *const c_char,
@@ -4765,6 +5040,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgges3_(
         jobvsl: *const c_char,
@@ -4790,6 +5066,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgges3_(
         jobvsl: *const c_char,
@@ -4815,6 +5092,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggesx_(
         jobvsl: *const c_char,
@@ -4845,6 +5123,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggesx_(
         jobvsl: *const c_char,
@@ -4875,6 +5154,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggesx_(
         jobvsl: *const c_char,
@@ -4905,6 +5185,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggesx_(
         jobvsl: *const c_char,
@@ -4935,6 +5216,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggev_(
         jobvl: *const c_char,
@@ -4956,6 +5238,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggev_(
         jobvl: *const c_char,
@@ -4977,6 +5260,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggev_(
         jobvl: *const c_char,
@@ -4998,6 +5282,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggev_(
         jobvl: *const c_char,
@@ -5019,6 +5304,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggev3_(
         jobvl: *const c_char,
@@ -5040,6 +5326,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggev3_(
         jobvl: *const c_char,
@@ -5061,6 +5348,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggev3_(
         jobvl: *const c_char,
@@ -5082,6 +5370,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggev3_(
         jobvl: *const c_char,
@@ -5103,6 +5392,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggevx_(
         balanc: *const c_char,
@@ -5136,6 +5426,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggevx_(
         balanc: *const c_char,
@@ -5169,6 +5460,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggevx_(
         balanc: *const c_char,
@@ -5202,6 +5494,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggevx_(
         balanc: *const c_char,
@@ -5235,6 +5528,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggglm_(
         n: *const c_int,
@@ -5252,6 +5546,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggglm_(
         n: *const c_int,
@@ -5269,6 +5564,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggglm_(
         n: *const c_int,
@@ -5286,6 +5582,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggglm_(
         n: *const c_int,
@@ -5303,6 +5600,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgghd3_(
         compq: *const c_char,
@@ -5323,6 +5621,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgghd3_(
         compq: *const c_char,
@@ -5343,6 +5642,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgghd3_(
         compq: *const c_char,
@@ -5363,6 +5663,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgghd3_(
         compq: *const c_char,
@@ -5383,6 +5684,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgghrd_(
         compq: *const c_char,
@@ -5401,6 +5703,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgghrd_(
         compq: *const c_char,
@@ -5419,6 +5722,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgghrd_(
         compq: *const c_char,
@@ -5437,6 +5741,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgghrd_(
         compq: *const c_char,
@@ -5455,6 +5760,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgglse_(
         m: *const c_int,
@@ -5472,6 +5778,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgglse_(
         m: *const c_int,
@@ -5489,6 +5796,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgglse_(
         m: *const c_int,
@@ -5506,6 +5814,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgglse_(
         m: *const c_int,
@@ -5523,6 +5832,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggqrf_(
         n: *const c_int,
@@ -5539,6 +5849,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggqrf_(
         n: *const c_int,
@@ -5555,6 +5866,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggqrf_(
         n: *const c_int,
@@ -5571,6 +5883,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggqrf_(
         n: *const c_int,
@@ -5587,6 +5900,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggrqf_(
         m: *const c_int,
@@ -5603,6 +5917,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggrqf_(
         m: *const c_int,
@@ -5619,6 +5934,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggrqf_(
         m: *const c_int,
@@ -5635,6 +5951,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggrqf_(
         m: *const c_int,
@@ -5651,6 +5968,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggsvd3_(
         jobu: *const c_char,
@@ -5680,6 +5998,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggsvd3_(
         jobu: *const c_char,
@@ -5708,6 +6027,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggsvd3_(
         jobu: *const c_char,
@@ -5736,6 +6056,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggsvd3_(
         jobu: *const c_char,
@@ -5765,6 +6086,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cggsvp3_(
         jobu: *const c_char,
@@ -5795,6 +6117,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dggsvp3_(
         jobu: *const c_char,
@@ -5824,6 +6147,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sggsvp3_(
         jobu: *const c_char,
@@ -5853,6 +6177,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zggsvp3_(
         jobu: *const c_char,
@@ -5883,6 +6208,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgtcon_(
         norm: *const c_char,
@@ -5898,6 +6224,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgtcon_(
         norm: *const c_char,
@@ -5914,6 +6241,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgtcon_(
         norm: *const c_char,
@@ -5930,6 +6258,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgtcon_(
         norm: *const c_char,
@@ -5945,6 +6274,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgtrfs_(
         trans: *const c_char,
@@ -5969,6 +6299,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgtrfs_(
         trans: *const c_char,
@@ -5993,6 +6324,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgtrfs_(
         trans: *const c_char,
@@ -6017,6 +6349,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgtrfs_(
         trans: *const c_char,
@@ -6041,6 +6374,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgtsv_(
         n: *const c_int,
@@ -6053,6 +6387,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgtsv_(
         n: *const c_int,
@@ -6065,6 +6400,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgtsv_(
         n: *const c_int,
@@ -6077,6 +6413,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgtsv_(
         n: *const c_int,
@@ -6089,6 +6426,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgtsvx_(
         fact: *const c_char,
@@ -6115,6 +6453,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgtsvx_(
         fact: *const c_char,
@@ -6141,6 +6480,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgtsvx_(
         fact: *const c_char,
@@ -6167,6 +6507,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgtsvx_(
         fact: *const c_char,
@@ -6193,6 +6534,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgttrf_(
         n: *const c_int,
@@ -6204,6 +6546,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgttrf_(
         n: *const c_int,
@@ -6215,6 +6558,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgttrf_(
         n: *const c_int,
@@ -6226,6 +6570,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgttrf_(
         n: *const c_int,
@@ -6237,6 +6582,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cgttrs_(
         trans: *const c_char,
@@ -6252,6 +6598,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dgttrs_(
         trans: *const c_char,
@@ -6267,6 +6614,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sgttrs_(
         trans: *const c_char,
@@ -6282,6 +6630,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zgttrs_(
         trans: *const c_char,
@@ -6297,6 +6646,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbev_(
         jobz: *const c_char,
@@ -6313,6 +6663,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbev_(
         jobz: *const c_char,
@@ -6329,6 +6680,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbev_2stage_(
         jobz: *const c_char,
@@ -6346,6 +6698,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbev_2stage_(
         jobz: *const c_char,
@@ -6363,6 +6716,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbevd_(
         jobz: *const c_char,
@@ -6383,6 +6737,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbevd_(
         jobz: *const c_char,
@@ -6403,6 +6758,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbevd_2stage_(
         jobz: *const c_char,
@@ -6423,6 +6779,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbevd_2stage_(
         jobz: *const c_char,
@@ -6443,6 +6800,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbevx_(
         jobz: *const c_char,
@@ -6470,6 +6828,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbevx_(
         jobz: *const c_char,
@@ -6497,6 +6856,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbevx_2stage_(
         jobz: *const c_char,
@@ -6525,6 +6885,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbevx_2stage_(
         jobz: *const c_char,
@@ -6553,6 +6914,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbgst_(
         vect: *const c_char,
@@ -6571,6 +6933,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbgst_(
         vect: *const c_char,
@@ -6589,6 +6952,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbgv_(
         jobz: *const c_char,
@@ -6608,6 +6972,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbgv_(
         jobz: *const c_char,
@@ -6627,6 +6992,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbgvd_(
         jobz: *const c_char,
@@ -6650,6 +7016,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbgvd_(
         jobz: *const c_char,
@@ -6673,6 +7040,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbgvx_(
         jobz: *const c_char,
@@ -6703,6 +7071,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbgvx_(
         jobz: *const c_char,
@@ -6733,6 +7102,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chbtrd_(
         vect: *const c_char,
@@ -6749,6 +7119,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhbtrd_(
         vect: *const c_char,
@@ -6765,6 +7136,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn checon_(
         uplo: *const c_char,
@@ -6778,6 +7150,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhecon_(
         uplo: *const c_char,
@@ -6791,6 +7164,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn checon_3_(
         uplo: *const c_char,
@@ -6805,6 +7179,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhecon_3_(
         uplo: *const c_char,
@@ -6819,6 +7194,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheequb_(
         uplo: *const c_char,
@@ -6832,6 +7208,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheequb_(
         uplo: *const c_char,
@@ -6845,6 +7222,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheev_(
         jobz: *const c_char,
@@ -6859,6 +7237,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheev_(
         jobz: *const c_char,
@@ -6873,6 +7252,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheev_2stage_(
         jobz: *const c_char,
@@ -6887,6 +7267,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheev_2stage_(
         jobz: *const c_char,
@@ -6901,6 +7282,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheevd_(
         jobz: *const c_char,
@@ -6918,6 +7300,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheevd_(
         jobz: *const c_char,
@@ -6935,6 +7318,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheevd_2stage_(
         jobz: *const c_char,
@@ -6952,6 +7336,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheevd_2stage_(
         jobz: *const c_char,
@@ -6969,6 +7354,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheevr_(
         jobz: *const c_char,
@@ -6996,6 +7382,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheevr_(
         jobz: *const c_char,
@@ -7023,6 +7410,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheevr_2stage_(
         jobz: *const c_char,
@@ -7050,6 +7438,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheevr_2stage_(
         jobz: *const c_char,
@@ -7077,6 +7466,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheevx_(
         jobz: *const c_char,
@@ -7102,6 +7492,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheevx_(
         jobz: *const c_char,
@@ -7127,6 +7518,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheevx_2stage_(
         jobz: *const c_char,
@@ -7152,6 +7544,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheevx_2stage_(
         jobz: *const c_char,
@@ -7177,6 +7570,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chegst_(
         itype: *const c_int,
@@ -7189,6 +7583,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhegst_(
         itype: *const c_int,
@@ -7201,6 +7596,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chegv_(
         itype: *const c_int,
@@ -7218,6 +7614,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhegv_(
         itype: *const c_int,
@@ -7235,6 +7632,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chegv_2stage_(
         itype: *const c_int,
@@ -7252,6 +7650,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhegv_2stage_(
         itype: *const c_int,
@@ -7269,6 +7668,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chegvd_(
         itype: *const c_int,
@@ -7289,6 +7689,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhegvd_(
         itype: *const c_int,
@@ -7309,6 +7710,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chegvx_(
         itype: *const c_int,
@@ -7337,6 +7739,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhegvx_(
         itype: *const c_int,
@@ -7365,6 +7768,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cherfs_(
         uplo: *const c_char,
@@ -7386,6 +7790,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zherfs_(
         uplo: *const c_char,
@@ -7407,6 +7812,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cherfsx_(
         uplo: *const c_char,
@@ -7435,6 +7841,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zherfsx_(
         uplo: *const c_char,
@@ -7463,6 +7870,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chesv_(
         uplo: *const c_char,
@@ -7478,6 +7886,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhesv_(
         uplo: *const c_char,
@@ -7493,6 +7902,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chesv_aa_(
         uplo: *const c_char,
@@ -7508,6 +7918,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhesv_aa_(
         uplo: *const c_char,
@@ -7523,6 +7934,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chesv_aa_2stage_(
         uplo: *const c_char,
@@ -7541,6 +7953,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhesv_aa_2stage_(
         uplo: *const c_char,
@@ -7559,6 +7972,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chesv_rk_(
         uplo: *const c_char,
@@ -7575,6 +7989,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhesv_rk_(
         uplo: *const c_char,
@@ -7591,6 +8006,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chesv_rook_(
         uplo: *const c_char,
@@ -7606,6 +8022,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhesv_rook_(
         uplo: *const c_char,
@@ -7621,6 +8038,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chesvx_(
         fact: *const c_char,
@@ -7645,6 +8063,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhesvx_(
         fact: *const c_char,
@@ -7669,6 +8088,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chesvxx_(
         fact: *const c_char,
@@ -7699,6 +8119,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhesvxx_(
         fact: *const c_char,
@@ -7729,6 +8150,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cheswapr_(
         uplo: *const c_char,
@@ -7739,6 +8161,7 @@ extern "C" {
         i2: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zheswapr_(
         uplo: *const c_char,
@@ -7749,6 +8172,7 @@ extern "C" {
         i2: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrd_(
         uplo: *const c_char,
@@ -7763,6 +8187,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrd_(
         uplo: *const c_char,
@@ -7777,6 +8202,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrd_2stage_(
         vect: *const c_char,
@@ -7794,6 +8220,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrd_2stage_(
         vect: *const c_char,
@@ -7811,6 +8238,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrf_(
         uplo: *const c_char,
@@ -7823,6 +8251,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrf_(
         uplo: *const c_char,
@@ -7835,6 +8264,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrf_aa_(
         uplo: *const c_char,
@@ -7847,6 +8277,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrf_aa_(
         uplo: *const c_char,
@@ -7859,6 +8290,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrf_aa_2stage_(
         uplo: *const c_char,
@@ -7874,6 +8306,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrf_aa_2stage_(
         uplo: *const c_char,
@@ -7889,6 +8322,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrf_rk_(
         uplo: *const c_char,
@@ -7902,6 +8336,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrf_rk_(
         uplo: *const c_char,
@@ -7915,6 +8350,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrf_rook_(
         uplo: *const c_char,
@@ -7927,6 +8363,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrf_rook_(
         uplo: *const c_char,
@@ -7939,6 +8376,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetri_(
         uplo: *const c_char,
@@ -7950,6 +8388,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetri_(
         uplo: *const c_char,
@@ -7961,6 +8400,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetri2_(
         uplo: *const c_char,
@@ -7973,6 +8413,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetri2_(
         uplo: *const c_char,
@@ -7985,6 +8426,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetri2x_(
         uplo: *const c_char,
@@ -7997,6 +8439,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetri2x_(
         uplo: *const c_char,
@@ -8009,6 +8452,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetri_3_(
         uplo: *const c_char,
@@ -8022,6 +8466,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetri_3_(
         uplo: *const c_char,
@@ -8035,6 +8480,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrs_(
         uplo: *const c_char,
@@ -8048,6 +8494,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrs_(
         uplo: *const c_char,
@@ -8061,6 +8508,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrs2_(
         uplo: *const c_char,
@@ -8075,6 +8523,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrs2_(
         uplo: *const c_char,
@@ -8089,6 +8538,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrs_3_(
         uplo: *const c_char,
@@ -8103,6 +8553,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrs_3_(
         uplo: *const c_char,
@@ -8117,6 +8568,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrs_aa_(
         uplo: *const c_char,
@@ -8132,6 +8584,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrs_aa_(
         uplo: *const c_char,
@@ -8147,6 +8600,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrs_aa_2stage_(
         uplo: *const c_char,
@@ -8163,6 +8617,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrs_aa_2stage_(
         uplo: *const c_char,
@@ -8179,6 +8634,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chetrs_rook_(
         uplo: *const c_char,
@@ -8192,6 +8648,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhetrs_rook_(
         uplo: *const c_char,
@@ -8205,6 +8662,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chfrk_(
         transr: *const c_char,
@@ -8219,6 +8677,7 @@ extern "C" {
         C: *mut __BindgenComplex<f32>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhfrk_(
         transr: *const c_char,
@@ -8233,6 +8692,7 @@ extern "C" {
         C: *mut __BindgenComplex<f64>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chgeqz_(
         job: *const c_char,
@@ -8257,6 +8717,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dhgeqz_(
         job: *const c_char,
@@ -8281,6 +8742,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn shgeqz_(
         job: *const c_char,
@@ -8305,6 +8767,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhgeqz_(
         job: *const c_char,
@@ -8329,6 +8792,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpcon_(
         uplo: *const c_char,
@@ -8341,6 +8805,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpcon_(
         uplo: *const c_char,
@@ -8353,6 +8818,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpev_(
         jobz: *const c_char,
@@ -8367,6 +8833,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpev_(
         jobz: *const c_char,
@@ -8381,6 +8848,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpevd_(
         jobz: *const c_char,
@@ -8399,6 +8867,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpevd_(
         jobz: *const c_char,
@@ -8417,6 +8886,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpevx_(
         jobz: *const c_char,
@@ -8440,6 +8910,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpevx_(
         jobz: *const c_char,
@@ -8463,6 +8934,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpgst_(
         itype: *const c_int,
@@ -8473,6 +8945,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpgst_(
         itype: *const c_int,
@@ -8483,6 +8956,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpgv_(
         itype: *const c_int,
@@ -8499,6 +8973,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpgv_(
         itype: *const c_int,
@@ -8515,6 +8990,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpgvd_(
         itype: *const c_int,
@@ -8535,6 +9011,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpgvd_(
         itype: *const c_int,
@@ -8555,6 +9032,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpgvx_(
         itype: *const c_int,
@@ -8580,6 +9058,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpgvx_(
         itype: *const c_int,
@@ -8605,6 +9084,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chprfs_(
         uplo: *const c_char,
@@ -8624,6 +9104,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhprfs_(
         uplo: *const c_char,
@@ -8643,6 +9124,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpsv_(
         uplo: *const c_char,
@@ -8655,6 +9137,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpsv_(
         uplo: *const c_char,
@@ -8667,6 +9150,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chpsvx_(
         fact: *const c_char,
@@ -8688,6 +9172,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhpsvx_(
         fact: *const c_char,
@@ -8709,6 +9194,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chptrd_(
         uplo: *const c_char,
@@ -8720,6 +9206,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhptrd_(
         uplo: *const c_char,
@@ -8731,6 +9218,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chptrf_(
         uplo: *const c_char,
@@ -8740,6 +9228,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhptrf_(
         uplo: *const c_char,
@@ -8749,6 +9238,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chptri_(
         uplo: *const c_char,
@@ -8759,6 +9249,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhptri_(
         uplo: *const c_char,
@@ -8769,6 +9260,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chptrs_(
         uplo: *const c_char,
@@ -8781,6 +9273,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhptrs_(
         uplo: *const c_char,
@@ -8793,6 +9286,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chsein_(
         side: *const c_char,
@@ -8816,6 +9310,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dhsein_(
         side: *const c_char,
@@ -8839,6 +9334,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn shsein_(
         side: *const c_char,
@@ -8862,6 +9358,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhsein_(
         side: *const c_char,
@@ -8885,6 +9382,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn chseqr_(
         job: *const c_char,
@@ -8902,6 +9400,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dhseqr_(
         job: *const c_char,
@@ -8920,6 +9419,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn shseqr_(
         job: *const c_char,
@@ -8938,6 +9438,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zhseqr_(
         job: *const c_char,
@@ -8955,12 +9456,15 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clacgv_(n: *const c_int, X: *mut __BindgenComplex<f32>, incx: *const c_int);
 }
+#[lapack]
 extern "C" {
     pub fn zlacgv_(n: *const c_int, X: *mut __BindgenComplex<f64>, incx: *const c_int);
 }
+#[lapack]
 extern "C" {
     pub fn clacn2_(
         n: *const c_int,
@@ -8971,6 +9475,7 @@ extern "C" {
         ISAVE: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlacn2_(
         n: *const c_int,
@@ -8982,6 +9487,7 @@ extern "C" {
         ISAVE: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slacn2_(
         n: *const c_int,
@@ -8993,6 +9499,7 @@ extern "C" {
         ISAVE: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlacn2_(
         n: *const c_int,
@@ -9003,6 +9510,7 @@ extern "C" {
         ISAVE: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clacp2_(
         uplo: *const c_char,
@@ -9014,6 +9522,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlacp2_(
         uplo: *const c_char,
@@ -9025,6 +9534,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clacpy_(
         uplo: *const c_char,
@@ -9036,6 +9546,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlacpy_(
         uplo: *const c_char,
@@ -9047,6 +9558,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slacpy_(
         uplo: *const c_char,
@@ -9058,6 +9570,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlacpy_(
         uplo: *const c_char,
@@ -9069,6 +9582,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clacrm_(
         m: *const c_int,
@@ -9082,6 +9596,7 @@ extern "C" {
         rwork: *mut f32,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlacrm_(
         m: *const c_int,
@@ -9095,6 +9610,7 @@ extern "C" {
         rwork: *mut f64,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlag2c_(
         m: *const c_int,
@@ -9106,6 +9622,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slag2d_(
         m: *const c_int,
@@ -9117,6 +9634,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlag2s_(
         m: *const c_int,
@@ -9128,6 +9646,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clag2z_(
         m: *const c_int,
@@ -9139,6 +9658,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clagge_(
         m: *const c_int,
@@ -9153,6 +9673,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlagge_(
         m: *const c_int,
@@ -9167,6 +9688,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slagge_(
         m: *const c_int,
@@ -9181,6 +9703,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlagge_(
         m: *const c_int,
@@ -9195,6 +9718,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn claghe_(
         n: *const c_int,
@@ -9207,6 +9731,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlaghe_(
         n: *const c_int,
@@ -9219,6 +9744,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clagsy_(
         n: *const c_int,
@@ -9231,6 +9757,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlagsy_(
         n: *const c_int,
@@ -9243,6 +9770,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slagsy_(
         n: *const c_int,
@@ -9255,6 +9783,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlagsy_(
         n: *const c_int,
@@ -9267,12 +9796,15 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlamch_(cmach: *const c_char) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slamch_(cmach: *const c_char) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn clangb_(
         norm: *const c_char,
@@ -9284,6 +9816,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlangb_(
         norm: *const c_char,
@@ -9295,6 +9828,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slangb_(
         norm: *const c_char,
@@ -9306,6 +9840,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlangb_(
         norm: *const c_char,
@@ -9317,6 +9852,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clange_(
         norm: *const c_char,
@@ -9327,6 +9863,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlange_(
         norm: *const c_char,
@@ -9337,6 +9874,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slange_(
         norm: *const c_char,
@@ -9347,6 +9885,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlange_(
         norm: *const c_char,
@@ -9357,6 +9896,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clangt_(
         norm: *const c_char,
@@ -9366,6 +9906,7 @@ extern "C" {
         DU: *const __BindgenComplex<f32>,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlangt_(
         norm: *const c_char,
@@ -9375,6 +9916,7 @@ extern "C" {
         DU: *const f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slangt_(
         norm: *const c_char,
@@ -9384,6 +9926,7 @@ extern "C" {
         DU: *const f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlangt_(
         norm: *const c_char,
@@ -9393,6 +9936,7 @@ extern "C" {
         DU: *const __BindgenComplex<f64>,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clanhb_(
         norm: *const c_char,
@@ -9404,6 +9948,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlanhb_(
         norm: *const c_char,
@@ -9415,6 +9960,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clanhe_(
         norm: *const c_char,
@@ -9425,6 +9971,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlanhe_(
         norm: *const c_char,
@@ -9435,6 +9982,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clanhp_(
         norm: *const c_char,
@@ -9444,6 +9992,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlanhp_(
         norm: *const c_char,
@@ -9453,6 +10002,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clanhs_(
         norm: *const c_char,
@@ -9462,6 +10012,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlanhs_(
         norm: *const c_char,
@@ -9471,6 +10022,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slanhs_(
         norm: *const c_char,
@@ -9480,6 +10032,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlanhs_(
         norm: *const c_char,
@@ -9489,6 +10042,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clanht_(
         norm: *const c_char,
@@ -9497,6 +10051,7 @@ extern "C" {
         E: *const __BindgenComplex<f32>,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlanht_(
         norm: *const c_char,
@@ -9505,6 +10060,7 @@ extern "C" {
         E: *const __BindgenComplex<f64>,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clansb_(
         norm: *const c_char,
@@ -9516,6 +10072,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlansb_(
         norm: *const c_char,
@@ -9527,6 +10084,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slansb_(
         norm: *const c_char,
@@ -9538,6 +10096,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlansb_(
         norm: *const c_char,
@@ -9549,6 +10108,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clansp_(
         norm: *const c_char,
@@ -9558,6 +10118,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlansp_(
         norm: *const c_char,
@@ -9567,6 +10128,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slansp_(
         norm: *const c_char,
@@ -9576,6 +10138,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlansp_(
         norm: *const c_char,
@@ -9585,9 +10148,11 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn dlanst_(norm: *const c_char, n: *const c_int, D: *const f64, E: *const f64) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slanst_(
         norm: *const c_char,
@@ -9596,6 +10161,7 @@ extern "C" {
         E: *const f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn clansy_(
         norm: *const c_char,
@@ -9606,6 +10172,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlansy_(
         norm: *const c_char,
@@ -9616,6 +10183,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slansy_(
         norm: *const c_char,
@@ -9626,6 +10194,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlansy_(
         norm: *const c_char,
@@ -9636,6 +10205,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clantb_(
         norm: *const c_char,
@@ -9648,6 +10218,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlantb_(
         norm: *const c_char,
@@ -9660,6 +10231,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slantb_(
         norm: *const c_char,
@@ -9672,6 +10244,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlantb_(
         norm: *const c_char,
@@ -9684,6 +10257,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clantp_(
         norm: *const c_char,
@@ -9694,6 +10268,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlantp_(
         norm: *const c_char,
@@ -9704,6 +10279,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slantp_(
         norm: *const c_char,
@@ -9714,6 +10290,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlantp_(
         norm: *const c_char,
@@ -9724,6 +10301,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clantr_(
         norm: *const c_char,
@@ -9736,6 +10314,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlantr_(
         norm: *const c_char,
@@ -9748,6 +10327,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slantr_(
         norm: *const c_char,
@@ -9760,6 +10340,7 @@ extern "C" {
         work: *mut f32,
     ) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn zlantr_(
         norm: *const c_char,
@@ -9772,6 +10353,7 @@ extern "C" {
         work: *mut f64,
     ) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn clapmr_(
         forwrd: *const c_int,
@@ -9782,6 +10364,7 @@ extern "C" {
         K: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlapmr_(
         forwrd: *const c_int,
@@ -9792,6 +10375,7 @@ extern "C" {
         K: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slapmr_(
         forwrd: *const c_int,
@@ -9802,6 +10386,7 @@ extern "C" {
         K: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlapmr_(
         forwrd: *const c_int,
@@ -9812,6 +10397,7 @@ extern "C" {
         K: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clapmt_(
         forwrd: *const c_int,
@@ -9822,6 +10408,7 @@ extern "C" {
         K: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlapmt_(
         forwrd: *const c_int,
@@ -9832,6 +10419,7 @@ extern "C" {
         K: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slapmt_(
         forwrd: *const c_int,
@@ -9842,6 +10430,7 @@ extern "C" {
         K: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlapmt_(
         forwrd: *const c_int,
@@ -9852,18 +10441,23 @@ extern "C" {
         K: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlapy2_(x: *const f64, y: *const f64) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slapy2_(x: *const f32, y: *const f32) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn dlapy3_(x: *const f64, y: *const f64, z: *const f64) -> f64;
 }
+#[lapack]
 extern "C" {
     pub fn slapy3_(x: *const f32, y: *const f32, z: *const f32) -> lapack_float_return;
 }
+#[lapack]
 extern "C" {
     pub fn clarcm_(
         m: *const c_int,
@@ -9877,6 +10471,7 @@ extern "C" {
         rwork: *mut f32,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlarcm_(
         m: *const c_int,
@@ -9890,6 +10485,7 @@ extern "C" {
         rwork: *mut f64,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clarf_(
         side: *const c_char,
@@ -9903,6 +10499,7 @@ extern "C" {
         work: *mut __BindgenComplex<f32>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlarf_(
         side: *const c_char,
@@ -9916,6 +10513,7 @@ extern "C" {
         work: *mut f64,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slarf_(
         side: *const c_char,
@@ -9929,6 +10527,7 @@ extern "C" {
         work: *mut f32,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlarf_(
         side: *const c_char,
@@ -9942,6 +10541,7 @@ extern "C" {
         work: *mut __BindgenComplex<f64>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clarfb_(
         side: *const c_char,
@@ -9961,6 +10561,7 @@ extern "C" {
         ldwork: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlarfb_(
         side: *const c_char,
@@ -9980,6 +10581,7 @@ extern "C" {
         ldwork: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slarfb_(
         side: *const c_char,
@@ -9999,6 +10601,7 @@ extern "C" {
         ldwork: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlarfb_(
         side: *const c_char,
@@ -10018,6 +10621,7 @@ extern "C" {
         ldwork: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clarfg_(
         n: *const c_int,
@@ -10027,6 +10631,7 @@ extern "C" {
         tau: *mut __BindgenComplex<f32>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlarfg_(
         n: *const c_int,
@@ -10036,6 +10641,7 @@ extern "C" {
         tau: *mut f64,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slarfg_(
         n: *const c_int,
@@ -10045,6 +10651,7 @@ extern "C" {
         tau: *mut f32,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlarfg_(
         n: *const c_int,
@@ -10054,6 +10661,7 @@ extern "C" {
         tau: *mut __BindgenComplex<f64>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clarft_(
         direct: *const c_char,
@@ -10067,6 +10675,7 @@ extern "C" {
         ldt: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlarft_(
         direct: *const c_char,
@@ -10080,6 +10689,7 @@ extern "C" {
         ldt: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slarft_(
         direct: *const c_char,
@@ -10093,6 +10703,7 @@ extern "C" {
         ldt: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlarft_(
         direct: *const c_char,
@@ -10106,6 +10717,7 @@ extern "C" {
         ldt: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clarfx_(
         side: *const c_char,
@@ -10118,6 +10730,7 @@ extern "C" {
         work: *mut __BindgenComplex<f32>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlarfx_(
         side: *const c_char,
@@ -10130,6 +10743,7 @@ extern "C" {
         work: *mut f64,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slarfx_(
         side: *const c_char,
@@ -10142,6 +10756,7 @@ extern "C" {
         work: *mut f32,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlarfx_(
         side: *const c_char,
@@ -10154,6 +10769,7 @@ extern "C" {
         work: *mut __BindgenComplex<f64>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clarnv_(
         idist: *const c_int,
@@ -10162,12 +10778,15 @@ extern "C" {
         X: *mut __BindgenComplex<f32>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int, X: *mut f64);
 }
+#[lapack]
 extern "C" {
     pub fn slarnv_(idist: *const c_int, iseed: *mut c_int, n: *const c_int, X: *mut f32);
 }
+#[lapack]
 extern "C" {
     pub fn zlarnv_(
         idist: *const c_int,
@@ -10176,18 +10795,23 @@ extern "C" {
         X: *mut __BindgenComplex<f64>,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlartgp_(f: *const f64, g: *const f64, cs: *mut f64, sn: *mut f64, r: *mut f64);
 }
+#[lapack]
 extern "C" {
     pub fn slartgp_(f: *const f32, g: *const f32, cs: *mut f32, sn: *mut f32, r: *mut f32);
 }
+#[lapack]
 extern "C" {
     pub fn dlartgs_(x: *const f64, y: *const f64, sigma: *const f64, cs: *mut f64, sn: *mut f64);
 }
+#[lapack]
 extern "C" {
     pub fn slartgs_(x: *const f32, y: *const f32, sigma: *const f32, cs: *mut f32, sn: *mut f32);
 }
+#[lapack]
 extern "C" {
     pub fn clascl_(
         type_: *const c_char,
@@ -10202,6 +10826,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlascl_(
         type_: *const c_char,
@@ -10216,6 +10841,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slascl_(
         type_: *const c_char,
@@ -10230,6 +10856,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlascl_(
         type_: *const c_char,
@@ -10244,6 +10871,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn claset_(
         uplo: *const c_char,
@@ -10255,6 +10883,7 @@ extern "C" {
         lda: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlaset_(
         uplo: *const c_char,
@@ -10266,6 +10895,7 @@ extern "C" {
         lda: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slaset_(
         uplo: *const c_char,
@@ -10277,6 +10907,7 @@ extern "C" {
         lda: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlaset_(
         uplo: *const c_char,
@@ -10288,12 +10919,15 @@ extern "C" {
         lda: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlasrt_(id: *const c_char, n: *const c_int, D: *mut f64, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn slasrt_(id: *const c_char, n: *const c_int, D: *mut f32, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn classq_(
         n: *const c_int,
@@ -10303,6 +10937,7 @@ extern "C" {
         sumsq: *mut f32,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlassq_(
         n: *const c_int,
@@ -10312,6 +10947,7 @@ extern "C" {
         sumsq: *mut f64,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slassq_(
         n: *const c_int,
@@ -10321,6 +10957,7 @@ extern "C" {
         sumsq: *mut f32,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlassq_(
         n: *const c_int,
@@ -10330,6 +10967,7 @@ extern "C" {
         sumsq: *mut f64,
     );
 }
+#[lapack]
 extern "C" {
     pub fn claswp_(
         n: *const c_int,
@@ -10341,6 +10979,7 @@ extern "C" {
         incx: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlaswp_(
         n: *const c_int,
@@ -10352,6 +10991,7 @@ extern "C" {
         incx: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slaswp_(
         n: *const c_int,
@@ -10363,6 +11003,7 @@ extern "C" {
         incx: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlaswp_(
         n: *const c_int,
@@ -10374,6 +11015,7 @@ extern "C" {
         incx: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clatms_(
         m: *const c_int,
@@ -10394,6 +11036,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlatms_(
         m: *const c_int,
@@ -10414,6 +11057,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slatms_(
         m: *const c_int,
@@ -10434,6 +11078,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlatms_(
         m: *const c_int,
@@ -10454,6 +11099,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn clauum_(
         uplo: *const c_char,
@@ -10463,6 +11109,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dlauum_(
         uplo: *const c_char,
@@ -10472,6 +11119,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn slauum_(
         uplo: *const c_char,
@@ -10481,6 +11129,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zlauum_(
         uplo: *const c_char,
@@ -10490,9 +11139,11 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ilaver_(vers_major: *mut c_int, vers_minor: *mut c_int, vers_patch: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn dopgtr_(
         uplo: *const c_char,
@@ -10505,6 +11156,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sopgtr_(
         uplo: *const c_char,
@@ -10517,6 +11169,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dopmtr_(
         side: *const c_char,
@@ -10532,6 +11185,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sopmtr_(
         side: *const c_char,
@@ -10547,6 +11201,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorbdb_(
         trans: *const c_char,
@@ -10573,6 +11228,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorbdb_(
         trans: *const c_char,
@@ -10599,6 +11255,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorcsd_(
         jobu1: *const c_char,
@@ -10633,6 +11290,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorcsd_(
         jobu1: *const c_char,
@@ -10667,6 +11325,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorcsd2by1_(
         jobu1: *const c_char,
@@ -10692,6 +11351,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorcsd2by1_(
         jobu1: *const c_char,
@@ -10717,6 +11377,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorgbr_(
         vect: *const c_char,
@@ -10731,6 +11392,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorgbr_(
         vect: *const c_char,
@@ -10745,6 +11407,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorghr_(
         n: *const c_int,
@@ -10758,6 +11421,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorghr_(
         n: *const c_int,
@@ -10771,6 +11435,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorglq_(
         m: *const c_int,
@@ -10784,6 +11449,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorglq_(
         m: *const c_int,
@@ -10797,6 +11463,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorgql_(
         m: *const c_int,
@@ -10810,6 +11477,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorgql_(
         m: *const c_int,
@@ -10823,6 +11491,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorgqr_(
         m: *const c_int,
@@ -10836,6 +11505,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorgqr_(
         m: *const c_int,
@@ -10849,6 +11519,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorgrq_(
         m: *const c_int,
@@ -10862,6 +11533,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorgrq_(
         m: *const c_int,
@@ -10875,6 +11547,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dorgtr_(
         uplo: *const c_char,
@@ -10887,6 +11560,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sorgtr_(
         uplo: *const c_char,
@@ -10899,6 +11573,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dormbr_(
         vect: *const c_char,
@@ -10917,6 +11592,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sormbr_(
         vect: *const c_char,
@@ -10935,6 +11611,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dormhr_(
         side: *const c_char,
@@ -10953,6 +11630,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sormhr_(
         side: *const c_char,
@@ -10971,6 +11649,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dormlq_(
         side: *const c_char,
@@ -10988,6 +11667,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sormlq_(
         side: *const c_char,
@@ -11005,6 +11685,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dormql_(
         side: *const c_char,
@@ -11022,6 +11703,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sormql_(
         side: *const c_char,
@@ -11039,6 +11721,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dormqr_(
         side: *const c_char,
@@ -11056,6 +11739,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sormqr_(
         side: *const c_char,
@@ -11073,6 +11757,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dormrq_(
         side: *const c_char,
@@ -11090,6 +11775,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sormrq_(
         side: *const c_char,
@@ -11107,6 +11793,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dormrz_(
         side: *const c_char,
@@ -11125,6 +11812,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sormrz_(
         side: *const c_char,
@@ -11143,6 +11831,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dormtr_(
         side: *const c_char,
@@ -11160,6 +11849,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sormtr_(
         side: *const c_char,
@@ -11177,6 +11867,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpbcon_(
         uplo: *const c_char,
@@ -11191,6 +11882,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpbcon_(
         uplo: *const c_char,
@@ -11205,6 +11897,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spbcon_(
         uplo: *const c_char,
@@ -11219,6 +11912,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpbcon_(
         uplo: *const c_char,
@@ -11233,6 +11927,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpbequ_(
         uplo: *const c_char,
@@ -11246,6 +11941,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpbequ_(
         uplo: *const c_char,
@@ -11259,6 +11955,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spbequ_(
         uplo: *const c_char,
@@ -11272,6 +11969,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpbequ_(
         uplo: *const c_char,
@@ -11285,6 +11983,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpbrfs_(
         uplo: *const c_char,
@@ -11306,6 +12005,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpbrfs_(
         uplo: *const c_char,
@@ -11327,6 +12027,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spbrfs_(
         uplo: *const c_char,
@@ -11348,6 +12049,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpbrfs_(
         uplo: *const c_char,
@@ -11369,6 +12071,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpbstf_(
         uplo: *const c_char,
@@ -11379,6 +12082,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpbstf_(
         uplo: *const c_char,
@@ -11389,6 +12093,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spbstf_(
         uplo: *const c_char,
@@ -11399,6 +12104,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpbstf_(
         uplo: *const c_char,
@@ -11409,6 +12115,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpbsv_(
         uplo: *const c_char,
@@ -11422,6 +12129,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpbsv_(
         uplo: *const c_char,
@@ -11435,6 +12143,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spbsv_(
         uplo: *const c_char,
@@ -11448,6 +12157,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpbsv_(
         uplo: *const c_char,
@@ -11461,6 +12171,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpbsvx_(
         fact: *const c_char,
@@ -11486,6 +12197,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpbsvx_(
         fact: *const c_char,
@@ -11511,6 +12223,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spbsvx_(
         fact: *const c_char,
@@ -11536,6 +12249,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpbsvx_(
         fact: *const c_char,
@@ -11561,6 +12275,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpbtrf_(
         uplo: *const c_char,
@@ -11571,6 +12286,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpbtrf_(
         uplo: *const c_char,
@@ -11581,6 +12297,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spbtrf_(
         uplo: *const c_char,
@@ -11591,6 +12308,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpbtrf_(
         uplo: *const c_char,
@@ -11601,6 +12319,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpbtrs_(
         uplo: *const c_char,
@@ -11614,6 +12333,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpbtrs_(
         uplo: *const c_char,
@@ -11627,6 +12347,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spbtrs_(
         uplo: *const c_char,
@@ -11640,6 +12361,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpbtrs_(
         uplo: *const c_char,
@@ -11653,6 +12375,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpftrf_(
         transr: *const c_char,
@@ -11662,6 +12385,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpftrf_(
         transr: *const c_char,
@@ -11671,6 +12395,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spftrf_(
         transr: *const c_char,
@@ -11680,6 +12405,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpftrf_(
         transr: *const c_char,
@@ -11689,6 +12415,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpftri_(
         transr: *const c_char,
@@ -11698,6 +12425,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpftri_(
         transr: *const c_char,
@@ -11707,6 +12435,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spftri_(
         transr: *const c_char,
@@ -11716,6 +12445,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpftri_(
         transr: *const c_char,
@@ -11725,6 +12455,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpftrs_(
         transr: *const c_char,
@@ -11737,6 +12468,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpftrs_(
         transr: *const c_char,
@@ -11749,6 +12481,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spftrs_(
         transr: *const c_char,
@@ -11761,6 +12494,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpftrs_(
         transr: *const c_char,
@@ -11773,6 +12507,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpocon_(
         uplo: *const c_char,
@@ -11786,6 +12521,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpocon_(
         uplo: *const c_char,
@@ -11799,6 +12535,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spocon_(
         uplo: *const c_char,
@@ -11812,6 +12549,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpocon_(
         uplo: *const c_char,
@@ -11825,6 +12563,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpoequ_(
         n: *const c_int,
@@ -11836,6 +12575,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpoequ_(
         n: *const c_int,
@@ -11847,6 +12587,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spoequ_(
         n: *const c_int,
@@ -11858,6 +12599,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpoequ_(
         n: *const c_int,
@@ -11869,6 +12611,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpoequb_(
         n: *const c_int,
@@ -11880,6 +12623,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpoequb_(
         n: *const c_int,
@@ -11891,6 +12635,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spoequb_(
         n: *const c_int,
@@ -11902,6 +12647,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpoequb_(
         n: *const c_int,
@@ -11913,6 +12659,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cporfs_(
         uplo: *const c_char,
@@ -11933,6 +12680,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dporfs_(
         uplo: *const c_char,
@@ -11953,6 +12701,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sporfs_(
         uplo: *const c_char,
@@ -11973,6 +12722,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zporfs_(
         uplo: *const c_char,
@@ -11993,6 +12743,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cporfsx_(
         uplo: *const c_char,
@@ -12020,6 +12771,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dporfsx_(
         uplo: *const c_char,
@@ -12047,6 +12799,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sporfsx_(
         uplo: *const c_char,
@@ -12074,6 +12827,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zporfsx_(
         uplo: *const c_char,
@@ -12101,6 +12855,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cposv_(
         uplo: *const c_char,
@@ -12113,6 +12868,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dposv_(
         uplo: *const c_char,
@@ -12125,6 +12881,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sposv_(
         uplo: *const c_char,
@@ -12137,6 +12894,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zposv_(
         uplo: *const c_char,
@@ -12149,6 +12907,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsposv_(
         uplo: *const c_char,
@@ -12166,6 +12925,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zcposv_(
         uplo: *const c_char,
@@ -12184,6 +12944,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cposvx_(
         fact: *const c_char,
@@ -12208,6 +12969,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dposvx_(
         fact: *const c_char,
@@ -12232,6 +12994,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sposvx_(
         fact: *const c_char,
@@ -12256,6 +13019,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zposvx_(
         fact: *const c_char,
@@ -12280,6 +13044,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cposvxx_(
         fact: *const c_char,
@@ -12309,6 +13074,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dposvxx_(
         fact: *const c_char,
@@ -12338,6 +13104,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sposvxx_(
         fact: *const c_char,
@@ -12367,6 +13134,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zposvxx_(
         fact: *const c_char,
@@ -12396,6 +13164,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpotf2_(
         uplo: *const c_char,
@@ -12405,6 +13174,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpotf2_(
         uplo: *const c_char,
@@ -12414,6 +13184,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spotf2_(
         uplo: *const c_char,
@@ -12423,6 +13194,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpotf2_(
         uplo: *const c_char,
@@ -12432,6 +13204,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpotrf_(
         uplo: *const c_char,
@@ -12441,6 +13214,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpotrf_(
         uplo: *const c_char,
@@ -12450,6 +13224,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spotrf_(
         uplo: *const c_char,
@@ -12459,6 +13234,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpotrf_(
         uplo: *const c_char,
@@ -12468,6 +13244,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpotrf2_(
         uplo: *const c_char,
@@ -12477,6 +13254,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpotrf2_(
         uplo: *const c_char,
@@ -12486,6 +13264,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spotrf2_(
         uplo: *const c_char,
@@ -12495,6 +13274,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpotrf2_(
         uplo: *const c_char,
@@ -12504,6 +13284,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpotri_(
         uplo: *const c_char,
@@ -12513,6 +13294,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpotri_(
         uplo: *const c_char,
@@ -12522,6 +13304,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spotri_(
         uplo: *const c_char,
@@ -12531,6 +13314,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpotri_(
         uplo: *const c_char,
@@ -12540,6 +13324,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpotrs_(
         uplo: *const c_char,
@@ -12552,6 +13337,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpotrs_(
         uplo: *const c_char,
@@ -12564,6 +13350,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spotrs_(
         uplo: *const c_char,
@@ -12576,6 +13363,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpotrs_(
         uplo: *const c_char,
@@ -12588,6 +13376,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cppcon_(
         uplo: *const c_char,
@@ -12600,6 +13389,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dppcon_(
         uplo: *const c_char,
@@ -12612,6 +13402,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sppcon_(
         uplo: *const c_char,
@@ -12624,6 +13415,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zppcon_(
         uplo: *const c_char,
@@ -12636,6 +13428,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cppequ_(
         uplo: *const c_char,
@@ -12647,6 +13440,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dppequ_(
         uplo: *const c_char,
@@ -12658,6 +13452,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sppequ_(
         uplo: *const c_char,
@@ -12669,6 +13464,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zppequ_(
         uplo: *const c_char,
@@ -12680,6 +13476,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpprfs_(
         uplo: *const c_char,
@@ -12698,6 +13495,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpprfs_(
         uplo: *const c_char,
@@ -12716,6 +13514,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spprfs_(
         uplo: *const c_char,
@@ -12734,6 +13533,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpprfs_(
         uplo: *const c_char,
@@ -12752,6 +13552,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cppsv_(
         uplo: *const c_char,
@@ -12763,6 +13564,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dppsv_(
         uplo: *const c_char,
@@ -12774,6 +13576,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sppsv_(
         uplo: *const c_char,
@@ -12785,6 +13588,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zppsv_(
         uplo: *const c_char,
@@ -12796,6 +13600,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cppsvx_(
         fact: *const c_char,
@@ -12818,6 +13623,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dppsvx_(
         fact: *const c_char,
@@ -12840,6 +13646,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sppsvx_(
         fact: *const c_char,
@@ -12862,6 +13669,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zppsvx_(
         fact: *const c_char,
@@ -12884,6 +13692,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpptrf_(
         uplo: *const c_char,
@@ -12892,12 +13701,15 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpptrf_(uplo: *const c_char, n: *const c_int, AP: *mut f64, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn spptrf_(uplo: *const c_char, n: *const c_int, AP: *mut f32, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn zpptrf_(
         uplo: *const c_char,
@@ -12906,6 +13718,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpptri_(
         uplo: *const c_char,
@@ -12914,12 +13727,15 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpptri_(uplo: *const c_char, n: *const c_int, AP: *mut f64, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn spptri_(uplo: *const c_char, n: *const c_int, AP: *mut f32, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn zpptri_(
         uplo: *const c_char,
@@ -12928,6 +13744,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpptrs_(
         uplo: *const c_char,
@@ -12939,6 +13756,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpptrs_(
         uplo: *const c_char,
@@ -12950,6 +13768,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spptrs_(
         uplo: *const c_char,
@@ -12961,6 +13780,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpptrs_(
         uplo: *const c_char,
@@ -12972,6 +13792,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpstrf_(
         uplo: *const c_char,
@@ -12985,6 +13806,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpstrf_(
         uplo: *const c_char,
@@ -12998,6 +13820,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spstrf_(
         uplo: *const c_char,
@@ -13011,6 +13834,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpstrf_(
         uplo: *const c_char,
@@ -13024,6 +13848,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cptcon_(
         n: *const c_int,
@@ -13035,6 +13860,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dptcon_(
         n: *const c_int,
@@ -13046,6 +13872,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sptcon_(
         n: *const c_int,
@@ -13057,6 +13884,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zptcon_(
         n: *const c_int,
@@ -13068,6 +13896,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpteqr_(
         compz: *const c_char,
@@ -13080,6 +13909,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpteqr_(
         compz: *const c_char,
@@ -13092,6 +13922,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spteqr_(
         compz: *const c_char,
@@ -13104,6 +13935,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpteqr_(
         compz: *const c_char,
@@ -13116,6 +13948,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cptrfs_(
         uplo: *const c_char,
@@ -13136,6 +13969,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dptrfs_(
         n: *const c_int,
@@ -13154,6 +13988,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sptrfs_(
         n: *const c_int,
@@ -13172,6 +14007,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zptrfs_(
         uplo: *const c_char,
@@ -13192,6 +14028,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cptsv_(
         n: *const c_int,
@@ -13203,6 +14040,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dptsv_(
         n: *const c_int,
@@ -13214,6 +14052,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sptsv_(
         n: *const c_int,
@@ -13225,6 +14064,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zptsv_(
         n: *const c_int,
@@ -13236,6 +14076,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cptsvx_(
         fact: *const c_char,
@@ -13257,6 +14098,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dptsvx_(
         fact: *const c_char,
@@ -13277,6 +14119,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sptsvx_(
         fact: *const c_char,
@@ -13297,6 +14140,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zptsvx_(
         fact: *const c_char,
@@ -13318,18 +14162,23 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cpttrf_(n: *const c_int, D: *mut f32, E: *mut __BindgenComplex<f32>, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn dpttrf_(n: *const c_int, D: *mut f64, E: *mut f64, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn spttrf_(n: *const c_int, D: *mut f32, E: *mut f32, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn zpttrf_(n: *const c_int, D: *mut f64, E: *mut __BindgenComplex<f64>, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn cpttrs_(
         uplo: *const c_char,
@@ -13342,6 +14191,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dpttrs_(
         n: *const c_int,
@@ -13353,6 +14203,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn spttrs_(
         n: *const c_int,
@@ -13364,6 +14215,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zpttrs_(
         uplo: *const c_char,
@@ -13376,6 +14228,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbev_(
         jobz: *const c_char,
@@ -13391,6 +14244,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbev_(
         jobz: *const c_char,
@@ -13406,6 +14260,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbev_2stage_(
         jobz: *const c_char,
@@ -13422,6 +14277,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbev_2stage_(
         jobz: *const c_char,
@@ -13438,6 +14294,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbevd_(
         jobz: *const c_char,
@@ -13456,6 +14313,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbevd_(
         jobz: *const c_char,
@@ -13474,6 +14332,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbevd_2stage_(
         jobz: *const c_char,
@@ -13492,6 +14351,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbevd_2stage_(
         jobz: *const c_char,
@@ -13510,6 +14370,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbevx_(
         jobz: *const c_char,
@@ -13536,6 +14397,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbevx_(
         jobz: *const c_char,
@@ -13562,6 +14424,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbevx_2stage_(
         jobz: *const c_char,
@@ -13589,6 +14452,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbevx_2stage_(
         jobz: *const c_char,
@@ -13616,6 +14480,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbgst_(
         vect: *const c_char,
@@ -13633,6 +14498,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbgst_(
         vect: *const c_char,
@@ -13650,6 +14516,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbgv_(
         jobz: *const c_char,
@@ -13668,6 +14535,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbgv_(
         jobz: *const c_char,
@@ -13686,6 +14554,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbgvd_(
         jobz: *const c_char,
@@ -13707,6 +14576,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbgvd_(
         jobz: *const c_char,
@@ -13728,6 +14598,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbgvx_(
         jobz: *const c_char,
@@ -13757,6 +14628,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbgvx_(
         jobz: *const c_char,
@@ -13786,6 +14658,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsbtrd_(
         vect: *const c_char,
@@ -13802,6 +14675,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssbtrd_(
         vect: *const c_char,
@@ -13818,6 +14692,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsfrk_(
         transr: *const c_char,
@@ -13832,6 +14707,7 @@ extern "C" {
         C: *mut f64,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssfrk_(
         transr: *const c_char,
@@ -13846,6 +14722,7 @@ extern "C" {
         C: *mut f32,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cspcon_(
         uplo: *const c_char,
@@ -13858,6 +14735,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspcon_(
         uplo: *const c_char,
@@ -13871,6 +14749,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspcon_(
         uplo: *const c_char,
@@ -13884,6 +14763,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zspcon_(
         uplo: *const c_char,
@@ -13896,6 +14776,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspev_(
         jobz: *const c_char,
@@ -13909,6 +14790,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspev_(
         jobz: *const c_char,
@@ -13922,6 +14804,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspevd_(
         jobz: *const c_char,
@@ -13938,6 +14821,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspevd_(
         jobz: *const c_char,
@@ -13954,6 +14838,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspevx_(
         jobz: *const c_char,
@@ -13976,6 +14861,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspevx_(
         jobz: *const c_char,
@@ -13998,6 +14884,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspgst_(
         itype: *const c_int,
@@ -14008,6 +14895,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspgst_(
         itype: *const c_int,
@@ -14018,6 +14906,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspgv_(
         itype: *const c_int,
@@ -14033,6 +14922,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspgv_(
         itype: *const c_int,
@@ -14048,6 +14938,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspgvd_(
         itype: *const c_int,
@@ -14066,6 +14957,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspgvd_(
         itype: *const c_int,
@@ -14084,6 +14976,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspgvx_(
         itype: *const c_int,
@@ -14108,6 +15001,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspgvx_(
         itype: *const c_int,
@@ -14132,6 +15026,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csprfs_(
         uplo: *const c_char,
@@ -14151,6 +15046,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsprfs_(
         uplo: *const c_char,
@@ -14170,6 +15066,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssprfs_(
         uplo: *const c_char,
@@ -14189,6 +15086,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsprfs_(
         uplo: *const c_char,
@@ -14208,6 +15106,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cspsv_(
         uplo: *const c_char,
@@ -14220,6 +15119,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspsv_(
         uplo: *const c_char,
@@ -14232,6 +15132,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspsv_(
         uplo: *const c_char,
@@ -14244,6 +15145,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zspsv_(
         uplo: *const c_char,
@@ -14256,6 +15158,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cspsvx_(
         fact: *const c_char,
@@ -14277,6 +15180,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dspsvx_(
         fact: *const c_char,
@@ -14298,6 +15202,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sspsvx_(
         fact: *const c_char,
@@ -14319,6 +15224,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zspsvx_(
         fact: *const c_char,
@@ -14340,6 +15246,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsptrd_(
         uplo: *const c_char,
@@ -14351,6 +15258,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssptrd_(
         uplo: *const c_char,
@@ -14362,6 +15270,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csptrf_(
         uplo: *const c_char,
@@ -14371,6 +15280,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsptrf_(
         uplo: *const c_char,
@@ -14380,6 +15290,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssptrf_(
         uplo: *const c_char,
@@ -14389,6 +15300,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsptrf_(
         uplo: *const c_char,
@@ -14398,6 +15310,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csptri_(
         uplo: *const c_char,
@@ -14408,6 +15321,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsptri_(
         uplo: *const c_char,
@@ -14418,6 +15332,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssptri_(
         uplo: *const c_char,
@@ -14428,6 +15343,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsptri_(
         uplo: *const c_char,
@@ -14438,6 +15354,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csptrs_(
         uplo: *const c_char,
@@ -14450,6 +15367,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsptrs_(
         uplo: *const c_char,
@@ -14462,6 +15380,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssptrs_(
         uplo: *const c_char,
@@ -14474,6 +15393,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsptrs_(
         uplo: *const c_char,
@@ -14486,6 +15406,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dstebz_(
         range: *const c_char,
@@ -14508,6 +15429,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstebz_(
         range: *const c_char,
@@ -14530,6 +15452,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cstedc_(
         compz: *const c_char,
@@ -14547,6 +15470,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dstedc_(
         compz: *const c_char,
@@ -14562,6 +15486,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstedc_(
         compz: *const c_char,
@@ -14577,6 +15502,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zstedc_(
         compz: *const c_char,
@@ -14594,6 +15520,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cstegr_(
         jobz: *const c_char,
@@ -14618,6 +15545,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dstegr_(
         jobz: *const c_char,
@@ -14642,6 +15570,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstegr_(
         jobz: *const c_char,
@@ -14666,6 +15595,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zstegr_(
         jobz: *const c_char,
@@ -14690,6 +15620,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cstein_(
         n: *const c_int,
@@ -14707,6 +15638,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dstein_(
         n: *const c_int,
@@ -14724,6 +15656,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstein_(
         n: *const c_int,
@@ -14741,6 +15674,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zstein_(
         n: *const c_int,
@@ -14758,6 +15692,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cstemr_(
         jobz: *const c_char,
@@ -14783,6 +15718,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dstemr_(
         jobz: *const c_char,
@@ -14808,6 +15744,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstemr_(
         jobz: *const c_char,
@@ -14833,6 +15770,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zstemr_(
         jobz: *const c_char,
@@ -14858,6 +15796,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csteqr_(
         compz: *const c_char,
@@ -14870,6 +15809,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsteqr_(
         compz: *const c_char,
@@ -14882,6 +15822,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssteqr_(
         compz: *const c_char,
@@ -14894,6 +15835,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsteqr_(
         compz: *const c_char,
@@ -14906,12 +15848,15 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsterf_(n: *const c_int, D: *mut f64, E: *mut f64, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn ssterf_(n: *const c_int, D: *mut f32, E: *mut f32, info: *mut c_int);
 }
+#[lapack]
 extern "C" {
     pub fn dstev_(
         jobz: *const c_char,
@@ -14924,6 +15869,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstev_(
         jobz: *const c_char,
@@ -14936,6 +15882,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dstevd_(
         jobz: *const c_char,
@@ -14951,6 +15898,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstevd_(
         jobz: *const c_char,
@@ -14966,6 +15914,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dstevr_(
         jobz: *const c_char,
@@ -14990,6 +15939,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstevr_(
         jobz: *const c_char,
@@ -15014,6 +15964,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dstevx_(
         jobz: *const c_char,
@@ -15036,6 +15987,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn sstevx_(
         jobz: *const c_char,
@@ -15058,6 +16010,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csycon_(
         uplo: *const c_char,
@@ -15071,6 +16024,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsycon_(
         uplo: *const c_char,
@@ -15085,6 +16039,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssycon_(
         uplo: *const c_char,
@@ -15099,6 +16054,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsycon_(
         uplo: *const c_char,
@@ -15112,6 +16068,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csycon_3_(
         uplo: *const c_char,
@@ -15126,6 +16083,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsycon_3_(
         uplo: *const c_char,
@@ -15141,6 +16099,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssycon_3_(
         uplo: *const c_char,
@@ -15156,6 +16115,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsycon_3_(
         uplo: *const c_char,
@@ -15170,6 +16130,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csyconv_(
         uplo: *const c_char,
@@ -15182,6 +16143,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyconv_(
         uplo: *const c_char,
@@ -15194,6 +16156,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyconv_(
         uplo: *const c_char,
@@ -15206,6 +16169,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsyconv_(
         uplo: *const c_char,
@@ -15218,6 +16182,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csyequb_(
         uplo: *const c_char,
@@ -15231,6 +16196,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyequb_(
         uplo: *const c_char,
@@ -15244,6 +16210,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyequb_(
         uplo: *const c_char,
@@ -15257,6 +16224,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsyequb_(
         uplo: *const c_char,
@@ -15270,6 +16238,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyev_(
         jobz: *const c_char,
@@ -15283,6 +16252,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyev_(
         jobz: *const c_char,
@@ -15296,6 +16266,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyev_2stage_(
         jobz: *const c_char,
@@ -15309,6 +16280,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyev_2stage_(
         jobz: *const c_char,
@@ -15322,6 +16294,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyevd_(
         jobz: *const c_char,
@@ -15337,6 +16310,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyevd_(
         jobz: *const c_char,
@@ -15352,6 +16326,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyevd_2stage_(
         jobz: *const c_char,
@@ -15367,6 +16342,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyevd_2stage_(
         jobz: *const c_char,
@@ -15382,6 +16358,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyevr_(
         jobz: *const c_char,
@@ -15407,6 +16384,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyevr_(
         jobz: *const c_char,
@@ -15432,6 +16410,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyevr_2stage_(
         jobz: *const c_char,
@@ -15457,6 +16436,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyevr_2stage_(
         jobz: *const c_char,
@@ -15482,6 +16462,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyevx_(
         jobz: *const c_char,
@@ -15506,6 +16487,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyevx_(
         jobz: *const c_char,
@@ -15530,6 +16512,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyevx_2stage_(
         jobz: *const c_char,
@@ -15554,6 +16537,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyevx_2stage_(
         jobz: *const c_char,
@@ -15578,6 +16562,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsygst_(
         itype: *const c_int,
@@ -15590,6 +16575,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssygst_(
         itype: *const c_int,
@@ -15602,6 +16588,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsygv_(
         itype: *const c_int,
@@ -15618,6 +16605,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssygv_(
         itype: *const c_int,
@@ -15634,6 +16622,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsygv_2stage_(
         itype: *const c_int,
@@ -15650,6 +16639,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssygv_2stage_(
         itype: *const c_int,
@@ -15666,6 +16656,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsygvd_(
         itype: *const c_int,
@@ -15684,6 +16675,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssygvd_(
         itype: *const c_int,
@@ -15702,6 +16694,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsygvx_(
         itype: *const c_int,
@@ -15729,6 +16722,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssygvx_(
         itype: *const c_int,
@@ -15756,6 +16750,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csyr_(
         uplo: *const c_char,
@@ -15767,6 +16762,7 @@ extern "C" {
         lda: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsyr_(
         uplo: *const c_char,
@@ -15778,6 +16774,7 @@ extern "C" {
         lda: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csyrfs_(
         uplo: *const c_char,
@@ -15799,6 +16796,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyrfs_(
         uplo: *const c_char,
@@ -15820,6 +16818,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyrfs_(
         uplo: *const c_char,
@@ -15841,6 +16840,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsyrfs_(
         uplo: *const c_char,
@@ -15862,6 +16862,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csyrfsx_(
         uplo: *const c_char,
@@ -15890,6 +16891,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyrfsx_(
         uplo: *const c_char,
@@ -15918,6 +16920,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyrfsx_(
         uplo: *const c_char,
@@ -15946,6 +16949,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsyrfsx_(
         uplo: *const c_char,
@@ -15974,6 +16978,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csysv_(
         uplo: *const c_char,
@@ -15989,6 +16994,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsysv_(
         uplo: *const c_char,
@@ -16004,6 +17010,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssysv_(
         uplo: *const c_char,
@@ -16019,6 +17026,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsysv_(
         uplo: *const c_char,
@@ -16034,6 +17042,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csysv_aa_(
         uplo: *const c_char,
@@ -16049,6 +17058,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsysv_aa_(
         uplo: *const c_char,
@@ -16064,6 +17074,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssysv_aa_(
         uplo: *const c_char,
@@ -16079,6 +17090,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsysv_aa_(
         uplo: *const c_char,
@@ -16094,6 +17106,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csysv_aa_2stage_(
         uplo: *const c_char,
@@ -16112,6 +17125,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsysv_aa_2stage_(
         uplo: *const c_char,
@@ -16130,6 +17144,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssysv_aa_2stage_(
         uplo: *const c_char,
@@ -16148,6 +17163,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsysv_aa_2stage_(
         uplo: *const c_char,
@@ -16166,6 +17182,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csysv_rk_(
         uplo: *const c_char,
@@ -16182,6 +17199,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsysv_rk_(
         uplo: *const c_char,
@@ -16198,6 +17216,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssysv_rk_(
         uplo: *const c_char,
@@ -16214,6 +17233,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsysv_rk_(
         uplo: *const c_char,
@@ -16230,6 +17250,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csysv_rook_(
         uplo: *const c_char,
@@ -16245,6 +17266,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsysv_rook_(
         uplo: *const c_char,
@@ -16260,6 +17282,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssysv_rook_(
         uplo: *const c_char,
@@ -16275,6 +17298,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsysv_rook_(
         uplo: *const c_char,
@@ -16290,6 +17314,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csysvx_(
         fact: *const c_char,
@@ -16314,6 +17339,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsysvx_(
         fact: *const c_char,
@@ -16338,6 +17364,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssysvx_(
         fact: *const c_char,
@@ -16362,6 +17389,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsysvx_(
         fact: *const c_char,
@@ -16386,6 +17414,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csysvxx_(
         fact: *const c_char,
@@ -16416,6 +17445,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsysvxx_(
         fact: *const c_char,
@@ -16446,6 +17476,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssysvxx_(
         fact: *const c_char,
@@ -16476,6 +17507,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsysvxx_(
         fact: *const c_char,
@@ -16506,6 +17538,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csyswapr_(
         uplo: *const c_char,
@@ -16516,6 +17549,7 @@ extern "C" {
         i2: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsyswapr_(
         uplo: *const c_char,
@@ -16526,6 +17560,7 @@ extern "C" {
         i2: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssyswapr_(
         uplo: *const c_char,
@@ -16536,6 +17571,7 @@ extern "C" {
         i2: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsyswapr_(
         uplo: *const c_char,
@@ -16546,6 +17582,7 @@ extern "C" {
         i2: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrd_(
         uplo: *const c_char,
@@ -16560,6 +17597,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrd_(
         uplo: *const c_char,
@@ -16574,6 +17612,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrd_2stage_(
         vect: *const c_char,
@@ -16591,6 +17630,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrd_2stage_(
         vect: *const c_char,
@@ -16608,6 +17648,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrf_(
         uplo: *const c_char,
@@ -16620,6 +17661,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrf_(
         uplo: *const c_char,
@@ -16632,6 +17674,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrf_(
         uplo: *const c_char,
@@ -16644,6 +17687,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrf_(
         uplo: *const c_char,
@@ -16656,6 +17700,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrf_aa_(
         uplo: *const c_char,
@@ -16668,6 +17713,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrf_aa_(
         uplo: *const c_char,
@@ -16680,6 +17726,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrf_aa_(
         uplo: *const c_char,
@@ -16692,6 +17739,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrf_aa_(
         uplo: *const c_char,
@@ -16704,6 +17752,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrf_aa_2stage_(
         uplo: *const c_char,
@@ -16719,6 +17768,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrf_aa_2stage_(
         uplo: *const c_char,
@@ -16734,6 +17784,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrf_aa_2stage_(
         uplo: *const c_char,
@@ -16749,6 +17800,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrf_aa_2stage_(
         uplo: *const c_char,
@@ -16764,6 +17816,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrf_rk_(
         uplo: *const c_char,
@@ -16777,6 +17830,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrf_rk_(
         uplo: *const c_char,
@@ -16790,6 +17844,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrf_rk_(
         uplo: *const c_char,
@@ -16803,6 +17858,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrf_rk_(
         uplo: *const c_char,
@@ -16816,6 +17872,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrf_rook_(
         uplo: *const c_char,
@@ -16828,6 +17885,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrf_rook_(
         uplo: *const c_char,
@@ -16840,6 +17898,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrf_rook_(
         uplo: *const c_char,
@@ -16852,6 +17911,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrf_rook_(
         uplo: *const c_char,
@@ -16864,6 +17924,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytri_(
         uplo: *const c_char,
@@ -16875,6 +17936,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytri_(
         uplo: *const c_char,
@@ -16886,6 +17948,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytri_(
         uplo: *const c_char,
@@ -16897,6 +17960,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytri_(
         uplo: *const c_char,
@@ -16908,6 +17972,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytri2_(
         uplo: *const c_char,
@@ -16920,6 +17985,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytri2_(
         uplo: *const c_char,
@@ -16932,6 +17998,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytri2_(
         uplo: *const c_char,
@@ -16944,6 +18011,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytri2_(
         uplo: *const c_char,
@@ -16956,6 +18024,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytri2x_(
         uplo: *const c_char,
@@ -16968,6 +18037,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytri2x_(
         uplo: *const c_char,
@@ -16980,6 +18050,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytri2x_(
         uplo: *const c_char,
@@ -16992,6 +18063,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytri2x_(
         uplo: *const c_char,
@@ -17004,6 +18076,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytri_3_(
         uplo: *const c_char,
@@ -17017,6 +18090,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytri_3_(
         uplo: *const c_char,
@@ -17030,6 +18104,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytri_3_(
         uplo: *const c_char,
@@ -17043,6 +18118,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytri_3_(
         uplo: *const c_char,
@@ -17056,6 +18132,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrs_(
         uplo: *const c_char,
@@ -17069,6 +18146,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrs_(
         uplo: *const c_char,
@@ -17082,6 +18160,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrs_(
         uplo: *const c_char,
@@ -17095,6 +18174,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrs_(
         uplo: *const c_char,
@@ -17108,6 +18188,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrs2_(
         uplo: *const c_char,
@@ -17122,6 +18203,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrs2_(
         uplo: *const c_char,
@@ -17136,6 +18218,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrs2_(
         uplo: *const c_char,
@@ -17150,6 +18233,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrs2_(
         uplo: *const c_char,
@@ -17164,6 +18248,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrs_3_(
         uplo: *const c_char,
@@ -17178,6 +18263,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrs_3_(
         uplo: *const c_char,
@@ -17192,6 +18278,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrs_3_(
         uplo: *const c_char,
@@ -17206,6 +18293,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrs_3_(
         uplo: *const c_char,
@@ -17220,6 +18308,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrs_aa_(
         uplo: *const c_char,
@@ -17235,6 +18324,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrs_aa_(
         uplo: *const c_char,
@@ -17250,6 +18340,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrs_aa_(
         uplo: *const c_char,
@@ -17265,6 +18356,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrs_aa_(
         uplo: *const c_char,
@@ -17280,6 +18372,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrs_aa_2stage_(
         uplo: *const c_char,
@@ -17296,6 +18389,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrs_aa_2stage_(
         uplo: *const c_char,
@@ -17312,6 +18406,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrs_aa_2stage_(
         uplo: *const c_char,
@@ -17328,6 +18423,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrs_aa_2stage_(
         uplo: *const c_char,
@@ -17344,6 +18440,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn csytrs_rook_(
         uplo: *const c_char,
@@ -17357,6 +18454,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dsytrs_rook_(
         uplo: *const c_char,
@@ -17370,6 +18468,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ssytrs_rook_(
         uplo: *const c_char,
@@ -17383,6 +18482,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zsytrs_rook_(
         uplo: *const c_char,
@@ -17396,6 +18496,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctbcon_(
         norm: *const c_char,
@@ -17411,6 +18512,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtbcon_(
         norm: *const c_char,
@@ -17426,6 +18528,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stbcon_(
         norm: *const c_char,
@@ -17441,6 +18544,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztbcon_(
         norm: *const c_char,
@@ -17456,6 +18560,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctbrfs_(
         uplo: *const c_char,
@@ -17477,6 +18582,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtbrfs_(
         uplo: *const c_char,
@@ -17498,6 +18604,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stbrfs_(
         uplo: *const c_char,
@@ -17519,6 +18626,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztbrfs_(
         uplo: *const c_char,
@@ -17540,6 +18648,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctbtrs_(
         uplo: *const c_char,
@@ -17555,6 +18664,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtbtrs_(
         uplo: *const c_char,
@@ -17570,6 +18680,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stbtrs_(
         uplo: *const c_char,
@@ -17585,6 +18696,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztbtrs_(
         uplo: *const c_char,
@@ -17600,6 +18712,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctfsm_(
         transr: *const c_char,
@@ -17615,6 +18728,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtfsm_(
         transr: *const c_char,
@@ -17630,6 +18744,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stfsm_(
         transr: *const c_char,
@@ -17645,6 +18760,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztfsm_(
         transr: *const c_char,
@@ -17660,6 +18776,7 @@ extern "C" {
         ldb: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctftri_(
         transr: *const c_char,
@@ -17670,6 +18787,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtftri_(
         transr: *const c_char,
@@ -17680,6 +18798,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stftri_(
         transr: *const c_char,
@@ -17690,6 +18809,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztftri_(
         transr: *const c_char,
@@ -17700,6 +18820,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctfttp_(
         transr: *const c_char,
@@ -17710,6 +18831,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtfttp_(
         transr: *const c_char,
@@ -17720,6 +18842,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stfttp_(
         transr: *const c_char,
@@ -17730,6 +18853,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztfttp_(
         transr: *const c_char,
@@ -17740,6 +18864,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctfttr_(
         transr: *const c_char,
@@ -17751,6 +18876,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtfttr_(
         transr: *const c_char,
@@ -17762,6 +18888,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stfttr_(
         transr: *const c_char,
@@ -17773,6 +18900,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztfttr_(
         transr: *const c_char,
@@ -17784,6 +18912,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctgevc_(
         side: *const c_char,
@@ -17805,6 +18934,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtgevc_(
         side: *const c_char,
@@ -17825,6 +18955,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stgevc_(
         side: *const c_char,
@@ -17845,6 +18976,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztgevc_(
         side: *const c_char,
@@ -17866,6 +18998,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctgexc_(
         wantq: *const c_int,
@@ -17884,6 +19017,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtgexc_(
         wantq: *const c_int,
@@ -17904,6 +19038,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stgexc_(
         wantq: *const c_int,
@@ -17924,6 +19059,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztgexc_(
         wantq: *const c_int,
@@ -17942,6 +19078,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctgsen_(
         ijob: *const c_int,
@@ -17970,6 +19107,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtgsen_(
         ijob: *const c_int,
@@ -17999,6 +19137,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stgsen_(
         ijob: *const c_int,
@@ -18028,6 +19167,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztgsen_(
         ijob: *const c_int,
@@ -18056,6 +19196,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctgsja_(
         jobu: *const c_char,
@@ -18085,6 +19226,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtgsja_(
         jobu: *const c_char,
@@ -18114,6 +19256,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stgsja_(
         jobu: *const c_char,
@@ -18143,6 +19286,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztgsja_(
         jobu: *const c_char,
@@ -18172,6 +19316,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctgsna_(
         job: *const c_char,
@@ -18196,6 +19341,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtgsna_(
         job: *const c_char,
@@ -18220,6 +19366,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stgsna_(
         job: *const c_char,
@@ -18244,6 +19391,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztgsna_(
         job: *const c_char,
@@ -18268,6 +19416,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctgsyl_(
         trans: *const c_char,
@@ -18294,6 +19443,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtgsyl_(
         trans: *const c_char,
@@ -18320,6 +19470,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stgsyl_(
         trans: *const c_char,
@@ -18346,6 +19497,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztgsyl_(
         trans: *const c_char,
@@ -18372,6 +19524,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctpcon_(
         norm: *const c_char,
@@ -18385,6 +19538,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtpcon_(
         norm: *const c_char,
@@ -18398,6 +19552,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stpcon_(
         norm: *const c_char,
@@ -18411,6 +19566,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztpcon_(
         norm: *const c_char,
@@ -18424,6 +19580,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctplqt_(
         m: *const c_int,
@@ -18440,6 +19597,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtplqt_(
         m: *const c_int,
@@ -18456,6 +19614,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stplqt_(
         m: *const c_int,
@@ -18472,6 +19631,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztplqt_(
         m: *const c_int,
@@ -18488,6 +19648,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctplqt2_(
         m: *const c_int,
@@ -18502,6 +19663,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtplqt2_(
         m: *const c_int,
@@ -18516,6 +19678,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stplqt2_(
         m: *const c_int,
@@ -18530,6 +19693,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztplqt2_(
         m: *const c_int,
@@ -18544,6 +19708,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctpmlqt_(
         side: *const c_char,
@@ -18565,6 +19730,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtpmlqt_(
         side: *const c_char,
@@ -18586,6 +19752,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stpmlqt_(
         side: *const c_char,
@@ -18607,6 +19774,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztpmlqt_(
         side: *const c_char,
@@ -18628,6 +19796,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctpmqrt_(
         side: *const c_char,
@@ -18649,6 +19818,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtpmqrt_(
         side: *const c_char,
@@ -18670,6 +19840,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stpmqrt_(
         side: *const c_char,
@@ -18691,6 +19862,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztpmqrt_(
         side: *const c_char,
@@ -18712,6 +19884,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctpqrt_(
         m: *const c_int,
@@ -18728,6 +19901,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtpqrt_(
         m: *const c_int,
@@ -18744,6 +19918,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stpqrt_(
         m: *const c_int,
@@ -18760,6 +19935,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztpqrt_(
         m: *const c_int,
@@ -18776,6 +19952,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctpqrt2_(
         m: *const c_int,
@@ -18790,6 +19967,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtpqrt2_(
         m: *const c_int,
@@ -18804,6 +19982,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stpqrt2_(
         m: *const c_int,
@@ -18818,6 +19997,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztpqrt2_(
         m: *const c_int,
@@ -18832,6 +20012,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctprfb_(
         side: *const c_char,
@@ -18854,6 +20035,7 @@ extern "C" {
         ldwork: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtprfb_(
         side: *const c_char,
@@ -18876,6 +20058,7 @@ extern "C" {
         ldwork: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stprfb_(
         side: *const c_char,
@@ -18898,6 +20081,7 @@ extern "C" {
         ldwork: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztprfb_(
         side: *const c_char,
@@ -18920,6 +20104,7 @@ extern "C" {
         ldwork: *const c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctprfs_(
         uplo: *const c_char,
@@ -18939,6 +20124,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtprfs_(
         uplo: *const c_char,
@@ -18958,6 +20144,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stprfs_(
         uplo: *const c_char,
@@ -18977,6 +20164,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztprfs_(
         uplo: *const c_char,
@@ -18996,6 +20184,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctptri_(
         uplo: *const c_char,
@@ -19005,6 +20194,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtptri_(
         uplo: *const c_char,
@@ -19014,6 +20204,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stptri_(
         uplo: *const c_char,
@@ -19023,6 +20214,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztptri_(
         uplo: *const c_char,
@@ -19032,6 +20224,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctptrs_(
         uplo: *const c_char,
@@ -19045,6 +20238,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtptrs_(
         uplo: *const c_char,
@@ -19058,6 +20252,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stptrs_(
         uplo: *const c_char,
@@ -19071,6 +20266,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztptrs_(
         uplo: *const c_char,
@@ -19084,6 +20280,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctpttf_(
         transr: *const c_char,
@@ -19094,6 +20291,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtpttf_(
         transr: *const c_char,
@@ -19104,6 +20302,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stpttf_(
         transr: *const c_char,
@@ -19114,6 +20313,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztpttf_(
         transr: *const c_char,
@@ -19124,6 +20324,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctpttr_(
         uplo: *const c_char,
@@ -19134,6 +20335,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtpttr_(
         uplo: *const c_char,
@@ -19144,6 +20346,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stpttr_(
         uplo: *const c_char,
@@ -19154,6 +20357,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztpttr_(
         uplo: *const c_char,
@@ -19164,6 +20368,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrcon_(
         norm: *const c_char,
@@ -19178,6 +20383,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrcon_(
         norm: *const c_char,
@@ -19192,6 +20398,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strcon_(
         norm: *const c_char,
@@ -19206,6 +20413,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrcon_(
         norm: *const c_char,
@@ -19220,6 +20428,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrevc_(
         side: *const c_char,
@@ -19239,6 +20448,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrevc_(
         side: *const c_char,
@@ -19257,6 +20467,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strevc_(
         side: *const c_char,
@@ -19275,6 +20486,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrevc_(
         side: *const c_char,
@@ -19294,6 +20506,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrevc3_(
         side: *const c_char,
@@ -19315,6 +20528,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrevc3_(
         side: *const c_char,
@@ -19334,6 +20548,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strevc3_(
         side: *const c_char,
@@ -19353,6 +20568,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrevc3_(
         side: *const c_char,
@@ -19374,6 +20590,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrexc_(
         compq: *const c_char,
@@ -19387,6 +20604,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrexc_(
         compq: *const c_char,
@@ -19401,6 +20619,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strexc_(
         compq: *const c_char,
@@ -19415,6 +20634,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrexc_(
         compq: *const c_char,
@@ -19428,6 +20648,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrrfs_(
         uplo: *const c_char,
@@ -19448,6 +20669,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrrfs_(
         uplo: *const c_char,
@@ -19468,6 +20690,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strrfs_(
         uplo: *const c_char,
@@ -19488,6 +20711,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrrfs_(
         uplo: *const c_char,
@@ -19508,6 +20732,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrsen_(
         job: *const c_char,
@@ -19527,6 +20752,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrsen_(
         job: *const c_char,
@@ -19549,6 +20775,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strsen_(
         job: *const c_char,
@@ -19571,6 +20798,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrsen_(
         job: *const c_char,
@@ -19590,6 +20818,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrsna_(
         job: *const c_char,
@@ -19612,6 +20841,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrsna_(
         job: *const c_char,
@@ -19634,6 +20864,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strsna_(
         job: *const c_char,
@@ -19656,6 +20887,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrsna_(
         job: *const c_char,
@@ -19678,6 +20910,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrsyl_(
         trana: *const c_char,
@@ -19695,6 +20928,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrsyl_(
         trana: *const c_char,
@@ -19712,6 +20946,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strsyl_(
         trana: *const c_char,
@@ -19729,6 +20964,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrsyl_(
         trana: *const c_char,
@@ -19746,6 +20982,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrtri_(
         uplo: *const c_char,
@@ -19756,6 +20993,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrtri_(
         uplo: *const c_char,
@@ -19766,6 +21004,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strtri_(
         uplo: *const c_char,
@@ -19776,6 +21015,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrtri_(
         uplo: *const c_char,
@@ -19786,6 +21026,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrtrs_(
         uplo: *const c_char,
@@ -19800,6 +21041,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrtrs_(
         uplo: *const c_char,
@@ -19814,6 +21056,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strtrs_(
         uplo: *const c_char,
@@ -19828,6 +21071,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrtrs_(
         uplo: *const c_char,
@@ -19842,6 +21086,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrttf_(
         transr: *const c_char,
@@ -19853,6 +21098,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrttf_(
         transr: *const c_char,
@@ -19864,6 +21110,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strttf_(
         transr: *const c_char,
@@ -19875,6 +21122,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrttf_(
         transr: *const c_char,
@@ -19886,6 +21134,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctrttp_(
         uplo: *const c_char,
@@ -19896,6 +21145,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtrttp_(
         uplo: *const c_char,
@@ -19906,6 +21156,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn strttp_(
         uplo: *const c_char,
@@ -19916,6 +21167,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztrttp_(
         uplo: *const c_char,
@@ -19926,6 +21178,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ctzrzf_(
         m: *const c_int,
@@ -19938,6 +21191,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn dtzrzf_(
         m: *const c_int,
@@ -19950,6 +21204,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn stzrzf_(
         m: *const c_int,
@@ -19962,6 +21217,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn ztzrzf_(
         m: *const c_int,
@@ -19974,6 +21230,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunbdb_(
         trans: *const c_char,
@@ -20000,6 +21257,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunbdb_(
         trans: *const c_char,
@@ -20026,6 +21284,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cuncsd_(
         jobu1: *const c_char,
@@ -20062,6 +21321,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zuncsd_(
         jobu1: *const c_char,
@@ -20098,6 +21358,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cuncsd2by1_(
         jobu1: *const c_char,
@@ -20125,6 +21386,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zuncsd2by1_(
         jobu1: *const c_char,
@@ -20152,6 +21414,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cungbr_(
         vect: *const c_char,
@@ -20166,6 +21429,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zungbr_(
         vect: *const c_char,
@@ -20180,6 +21444,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunghr_(
         n: *const c_int,
@@ -20193,6 +21458,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunghr_(
         n: *const c_int,
@@ -20206,6 +21472,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunglq_(
         m: *const c_int,
@@ -20219,6 +21486,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunglq_(
         m: *const c_int,
@@ -20232,6 +21500,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cungql_(
         m: *const c_int,
@@ -20245,6 +21514,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zungql_(
         m: *const c_int,
@@ -20258,6 +21528,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cungqr_(
         m: *const c_int,
@@ -20271,6 +21542,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zungqr_(
         m: *const c_int,
@@ -20284,6 +21556,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cungrq_(
         m: *const c_int,
@@ -20297,6 +21570,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zungrq_(
         m: *const c_int,
@@ -20310,6 +21584,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cungtr_(
         uplo: *const c_char,
@@ -20322,6 +21597,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zungtr_(
         uplo: *const c_char,
@@ -20334,6 +21610,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunmbr_(
         vect: *const c_char,
@@ -20352,6 +21629,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunmbr_(
         vect: *const c_char,
@@ -20370,6 +21648,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunmhr_(
         side: *const c_char,
@@ -20388,6 +21667,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunmhr_(
         side: *const c_char,
@@ -20406,6 +21686,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunmlq_(
         side: *const c_char,
@@ -20423,6 +21704,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunmlq_(
         side: *const c_char,
@@ -20440,6 +21722,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunmql_(
         side: *const c_char,
@@ -20457,6 +21740,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunmql_(
         side: *const c_char,
@@ -20474,6 +21758,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunmqr_(
         side: *const c_char,
@@ -20491,6 +21776,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunmqr_(
         side: *const c_char,
@@ -20508,6 +21794,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunmrq_(
         side: *const c_char,
@@ -20525,6 +21812,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunmrq_(
         side: *const c_char,
@@ -20542,6 +21830,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunmrz_(
         side: *const c_char,
@@ -20560,6 +21849,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunmrz_(
         side: *const c_char,
@@ -20578,6 +21868,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cunmtr_(
         side: *const c_char,
@@ -20595,6 +21886,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zunmtr_(
         side: *const c_char,
@@ -20612,6 +21904,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cupgtr_(
         uplo: *const c_char,
@@ -20624,6 +21917,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zupgtr_(
         uplo: *const c_char,
@@ -20636,6 +21930,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn cupmtr_(
         side: *const c_char,
@@ -20651,6 +21946,7 @@ extern "C" {
         info: *mut c_int,
     );
 }
+#[lapack]
 extern "C" {
     pub fn zupmtr_(
         side: *const c_char,
