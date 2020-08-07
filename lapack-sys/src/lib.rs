@@ -8,8 +8,7 @@
 #![allow(non_camel_case_types)]
 #![no_std]
 
-extern crate libc;
-
+use lapack_derive::lapack;
 use libc::{c_char, c_int};
 
 /// A complex number with 64-bit parts.

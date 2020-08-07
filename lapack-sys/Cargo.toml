@@ -18,3 +18,6 @@ keywords = ["linear-algebra"]
 
 [dependencies]
 libc = "0.2"
+
+[dependencies.lapack-derive]
+path = "../lapack-derive"
