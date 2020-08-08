@@ -5,7 +5,7 @@
 //! [lapack]: https://en.wikipedia.org/wiki/LAPACK
 //! [usage]: https://blas-lapack-rs.github.io/usage
 
-#![allow(non_camel_case_types)]
+#![allow(non_camel_case_types, non_snake_case)]
 #![no_std]
 
 use lapack_derive::lapack;

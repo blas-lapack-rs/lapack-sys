@@ -90,12 +90,26 @@ fn parse_input(pat: &syn::PatType) -> (String, ArgType) {
         syn::Pat::Ident(ident) => ident.ident.to_string(),
         _ => unreachable!(),
     };
-    let ptr = match &*pat.ty {
+    let arg_type = match &*pat.ty {
         syn::Type::Ptr(ptr_ty) => ptr_ty.clone().into(),
         syn::Type::Path(path) => path.clone().into(),
         _ => unimplemented!("Only Path and Pointer are supported yet"),
     };
-    (name, ptr)
+    (name, arg_type)
+}
+
+fn is_const_ref(name: &str) -> bool {
+    match name.to_lowercase().as_str() {
+        "n" | "m" | "lda" | "ldb" => true,
+        _ => false,
+    }
+}
+
+fn is_mut_ref(name: &str) -> bool {
+    match name.to_lowercase().as_str() {
+        "info" => true,
+        _ => false,
+    }
 }
 
 /// Convert pointer-based raw-LAPACK API into value and reference based API
@@ -105,22 +119,17 @@ fn signature_input(args: &Args) -> Args {
         .map(|mut arg| {
             match &mut arg {
                 syn::FnArg::Typed(arg) => {
-                    let (name, ptr) = parse_input(&arg);
-                    let new_type = match name.to_lowercase().as_str() {
-                        // pointer -> mutable reference
-                        "info" => "&mut i32".into(),
-                        // pointer -> array
-                        "a" | "b" | "ipiv" | "work" => match ptr {
-                            ArgType::ConstPtr(ty) => format!("&[{}]", ty),
-                            ArgType::MutPtr(ty) => format!("&mut [{}]", ty),
-                            ArgType::Value(_) => unreachable!("Must be array"),
+                    let (name, arg_type) = parse_input(&arg);
+                    let new_type = match arg_type {
+                        ArgType::MutPtr(ty) => match name {
+                            name if is_mut_ref(&name) => format!("&mut {}", ty),
+                            _ => format!("&mut [{}]", ty),
                         },
-                        // pointer -> value
-                        _ => match ptr {
-                            ArgType::ConstPtr(ty) => ty,
-                            ArgType::MutPtr(ty) => ty,
-                            ArgType::Value(ty) => ty,
+                        ArgType::ConstPtr(ty) => match name {
+                            name if is_const_ref(&name) => format!("&{}", ty),
+                            _ => format!("&[{}]", ty),
                         },
+                        ArgType::Value(ty) => ty,
                     };
                     *arg.ty = syn::parse_str(&new_type).unwrap();
                 }
@@ -135,25 +144,17 @@ fn call(args: &Args) -> Call {
     args.iter()
         .map(|arg| match arg {
             syn::FnArg::Typed(arg) => {
-                let (name, ptr) = parse_input(arg);
-                let expr = match name.to_lowercase().as_str() {
-                    "info" => "info".into(),
-                    "a" | "b" | "ipiv" | "work" => match ptr {
-                        ArgType::ConstPtr(_) => format!("{}.as_ptr()", name),
-                        ArgType::MutPtr(_) => format!("{}.as_mut_ptr()", name),
-                        ArgType::Value(_) => unreachable!("Must be array"),
+                let (name, arg_type) = parse_input(arg);
+                let expr = match arg_type {
+                    ArgType::MutPtr(_) => match name {
+                        name if is_mut_ref(&name) => name,
+                        _ => format!("{}.as_mut_ptr()", name),
                     },
-                    _ => match ptr {
-                        ArgType::ConstPtr(ty) => match ty.as_str() {
-                            "u8" => format!("&({} as c_char)", name),
-                            _ => format!("&{}", name),
-                        },
-                        ArgType::MutPtr(ty) => match ty.as_str() {
-                            "u8" => format!("&mut ({} as c_char)", name),
-                            _ => format!("&mut {}", name),
-                        },
-                        ArgType::Value(_) => name,
+                    ArgType::ConstPtr(_) => match name {
+                        name if is_const_ref(&name) => name,
+                        _ => format!("{}.as_ptr()", name),
                     },
+                    ArgType::Value(_) => name,
                 };
                 syn::parse_str::<syn::Expr>(&expr).unwrap()
             }
