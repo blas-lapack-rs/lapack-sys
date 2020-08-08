@@ -204,15 +204,15 @@ mod tests {
         let result_str = quote! { #result }.to_string();
         let answer: TokenStream2 = syn::parse_str(
             r#"
-            trans: u8,
-            n: i32,
-            nrhs: i32,
+            trans: c_char,
+            n: c_int,
+            nrhs: c_int,
             A: &[f64],
-            lda: i32,
-            ipiv: &[i32],
+            lda: c_int,
+            ipiv: &[c_int],
             B: &mut [f64],
-            ldb: i32,
-            info: &mut i32
+            ldb: c_int,
+            info: &mut c_int
             "#,
         )
         .unwrap();
@@ -239,7 +239,7 @@ mod tests {
         let result_str = quote! { #result }.to_string();
         let answer: TokenStream2 = syn::parse_str(
             r#"
-            &(trans as c_char),
+            &trans,
             &n,
             &nrhs,
             A.as_ptr(),
@@ -272,18 +272,18 @@ mod tests {
         let wrapped = super::wrap(&syn::parse_str(dgetrs).unwrap());
         let expected = r#"
         pub unsafe fn dgetrs(
-            trans: u8,
-            n: i32,
-            nrhs: i32,
+            trans: c_char,
+            n: c_int,
+            nrhs: c_int,
             A: &[f64],
-            lda: i32,
-            ipiv: &[i32],
+            lda: c_int,
+            ipiv: &[c_int],
             B: &mut [f64],
-            ldb: i32,
-            info: &mut i32
+            ldb: c_int,
+            info: &mut c_int
         ) {
             dgetrs_(
-                &(trans as c_char),
+                &trans,
                 &n,
                 &nrhs,
                 A.as_ptr(),
@@ -315,15 +315,15 @@ mod tests {
         let wrapped = super::wrap(&syn::parse_str(dgetrs).unwrap());
         let expected = r#"
         pub unsafe fn dlange(
-            norm: u8,
-            m: i32,
-            n: i32,
+            norm: c_char,
+            m: c_int,
+            n: c_int,
             A: &[f64],
-            lda: i32,
+            lda: c_int,
             work: &mut [f64]
         ) -> f64 {
             dlange_(
-                &(norm as c_char),
+                &norm,
                 &m,
                 &n,
                 A.as_ptr(),
