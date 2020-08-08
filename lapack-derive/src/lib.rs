@@ -98,9 +98,22 @@ fn parse_input(pat: &syn::PatType) -> (String, ArgType) {
     (name, arg_type)
 }
 
-fn is_const_ref(name: &str) -> bool {
+fn is_value(name: &str) -> bool {
     match name.to_lowercase().as_str() {
-        "n" | "m" | "lda" | "ldb" => true,
+        // sizes
+        "n" | "m" | "kl" | "ku" | "kd" | "nrhs" => true,
+        // flags
+        "itype" | "uplo" | "trans" | "balanc" | "sense" | "sort" => true,
+        // leading dimensions
+        name if name.starts_with("ld") => true,
+        // increments
+        name if name.starts_with("inc") => true,
+        // jobu / jobvt for SVD
+        name if name.starts_with("job") => true,
+        // pre-calculated norm value
+        name if name.ends_with("norm") => true,
+        // l*work is size of working memory
+        name if name.starts_with("l") && name.ends_with("work") => true,
         _ => false,
     }
 }
@@ -108,6 +121,10 @@ fn is_const_ref(name: &str) -> bool {
 fn is_mut_ref(name: &str) -> bool {
     match name.to_lowercase().as_str() {
         "info" => true,
+        // reciprocal of conditional number output
+        "rcond" => true,
+        // number of eigenvalues
+        "sdim" => true,
         _ => false,
     }
 }
@@ -126,7 +143,7 @@ fn signature_input(args: &Args) -> Args {
                             _ => format!("&mut [{}]", ty),
                         },
                         ArgType::ConstPtr(ty) => match name {
-                            name if is_const_ref(&name) => format!("&{}", ty),
+                            name if is_value(&name) => format!("{}", ty),
                             _ => format!("&[{}]", ty),
                         },
                         ArgType::Value(ty) => ty,
@@ -151,7 +168,7 @@ fn call(args: &Args) -> Call {
                         _ => format!("{}.as_mut_ptr()", name),
                     },
                     ArgType::ConstPtr(_) => match name {
-                        name if is_const_ref(&name) => name,
+                        name if is_value(&name) => format!("&{}", name),
                         _ => format!("{}.as_ptr()", name),
                     },
                     ArgType::Value(_) => name,
