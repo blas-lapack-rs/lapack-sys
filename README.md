@@ -6,7 +6,7 @@ The package provides bindings to [LAPACK] (Fortran).
 
 ## Development
 
-The function definitions are generated via a shell script based on the `lapack`
+The code is generated via a shell script based on the content of the `lapack`
 submodule. To re-generate, run the following command:
 
 ```sh
