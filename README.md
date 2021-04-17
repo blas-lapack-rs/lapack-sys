@@ -4,6 +4,15 @@ The package provides bindings to [LAPACK] (Fortran).
 
 ## [Architecture]
 
+## Development
+
+The function definitions are generated via a shell script based on the `lapack`
+submodule. To re-generate, run the following command:
+
+```sh
+./bin/generate.sh
+```
+
 ## Contribution
 
 Your contribution is highly appreciated. Do not hesitate to open an issue or a
