@@ -9,6 +9,7 @@ set -eux
 #   preserve no_std, it is truncated to `c_char` and gets taken from `libc`.
 bindgen --whitelist-function='^.*_$' --use-core bin/wrapper.h \
   | sed -e 's/::std::os::raw:://g' \
+  | sed -e '/__darwin_size_t/d' \
   > src/lapack.rs
 
 rustfmt src/lapack.rs

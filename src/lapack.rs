@@ -6,8 +6,6 @@ pub struct __BindgenComplex<T> {
     pub re: T,
     pub im: T,
 }
-pub type __darwin_size_t = c_ulong;
-pub type size_t = __darwin_size_t;
 pub type lapack_float_return = f32;
 pub type LAPACK_S_SELECT2 =
     ::core::option::Option<unsafe extern "C" fn(arg1: *const f32, arg2: *const f32) -> c_int>;
