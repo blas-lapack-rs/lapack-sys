@@ -22,8 +22,8 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 [architecture]: https://blas-lapack-rs.github.io/architecture
 [lapack]: https://en.wikipedia.org/wiki/LAPACK
 
-[build-img]: https://travis-ci.org/blas-lapack-rs/lapack-sys.svg?branch=master
-[build-url]: https://travis-ci.org/blas-lapack-rs/lapack-sys
+[build-img]: https://github.com/blas-lapack-rs/lapack-sys/actions/workflows/build.yml/badge.svg
+[build-url]: https://github.com/blas-lapack-rs/lapack-sys/actions/workflows/build.yml
 [documentation-img]: https://docs.rs/lapack-sys/badge.svg
 [documentation-url]: https://docs.rs/lapack-sys
 [package-img]: https://img.shields.io/crates/v/lapack-sys.svg
