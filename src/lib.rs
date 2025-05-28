@@ -10,7 +10,9 @@
 
 extern crate libc;
 
-use libc::{c_char, c_int, size_t};
+use core::ffi::{c_char, c_int};
+
+use libc::size_t;
 
 /// A complex number with 64-bit parts.
 pub type c_double_complex = __BindgenComplex<f64>;
